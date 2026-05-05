@@ -293,11 +293,11 @@
                 <div class="label">Master Templates</div>
             </div>
             <div class="stat-card">
-                <div class="number" id="demo-count">0</div>
+                <div class="number" id="demo-count">1</div>
                 <div class="label">Business Demos</div>
             </div>
             <div class="stat-card">
-                <div class="number" id="pending-count">0</div>
+                <div class="number" id="pending-count">1</div>
                 <div class="label">Pending Review</div>
             </div>
             <div class="stat-card">
@@ -483,10 +483,30 @@
             event.target.classList.add('active');
         }
         
+        // Default demos (pre-loaded)
+        const defaultDemos = [
+            {
+                id: 'sant-electric-001',
+                name: 'Sant Electric',
+                industry: 'Electrician',
+                url: '/sant-electric-demo/',
+                description: 'Refreshed website for Eagle Mountain electrician with crimson-elite template, featuring 24/7 emergency service, 4.7 star rating, and comprehensive electrical services',
+                status: 'pending',
+                notes: '',
+                created: '2026-05-05T12:00:00Z'
+            }
+        ];
+        
         // Load demos from localStorage (for status tracking)
         function loadDemos() {
-            const demos = JSON.parse(localStorage.getItem('makrly-demos') || '[]');
+            const storedDemos = JSON.parse(localStorage.getItem('makrly-demos') || '[]');
             const demoGrid = document.getElementById('demo-grid');
+            
+            // Merge default demos with stored demos (avoid duplicates)
+            const demoMap = new Map();
+            defaultDemos.forEach(d => demoMap.set(d.id, d));
+            storedDemos.forEach(d => demoMap.set(d.id, d));
+            const demos = Array.from(demoMap.values());
             
             if (demos.length === 0) {
                 return; // Keep empty state
