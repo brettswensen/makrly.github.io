@@ -293,11 +293,11 @@
                 <div class="label">Master Templates</div>
             </div>
             <div class="stat-card">
-                <div class="number" id="demo-count">1</div>
+                <div class="number" id="demo-count">0</div>
                 <div class="label">Business Demos</div>
             </div>
             <div class="stat-card">
-                <div class="number" id="pending-count">1</div>
+                <div class="number" id="pending-count">0</div>
                 <div class="label">Pending Review</div>
             </div>
             <div class="stat-card">
@@ -609,7 +609,21 @@
         
         // Initialize
         loadDemos();
-        updateStats();
+        
+        // Update stats to include default demos
+        function initializeStats() {
+            const storedDemos = JSON.parse(localStorage.getItem('makrly-demos') || '[]');
+            const demoMap = new Map();
+            defaultDemos.forEach(d => demoMap.set(d.id, d));
+            storedDemos.forEach(d => demoMap.set(d.id, d));
+            const allDemos = Array.from(demoMap.values());
+            
+            document.getElementById('demo-count').textContent = allDemos.length;
+            document.getElementById('pending-count').textContent = allDemos.filter(d => d.status === 'pending').length;
+            document.getElementById('approved-count').textContent = allDemos.filter(d => d.status === 'approved' || d.status === 'sent').length;
+        }
+        
+        initializeStats();
     </script>
 </body>
 </html>
