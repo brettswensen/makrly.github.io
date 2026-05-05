@@ -579,7 +579,12 @@
         }
         
         function updateStats() {
-            const demos = JSON.parse(localStorage.getItem('makrly-demos') || '[]');
+            const storedDemos = JSON.parse(localStorage.getItem('makrly-demos') || '[]');
+            const demoMap = new Map();
+            defaultDemos.forEach(d => demoMap.set(d.id, d));
+            storedDemos.forEach(d => demoMap.set(d.id, d));
+            const demos = Array.from(demoMap.values());
+            
             document.getElementById('demo-count').textContent = demos.length;
             document.getElementById('pending-count').textContent = demos.filter(d => d.status === 'pending').length;
             document.getElementById('approved-count').textContent = demos.filter(d => d.status === 'approved' || d.status === 'sent').length;
