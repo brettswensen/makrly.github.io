@@ -210,6 +210,60 @@
         }
         
         html { scroll-behavior: smooth; }
+    
+        /* Mobile Sticky CTA */
+        @media (max-width: 768px) {
+            .mobile-sticky-cta {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 12px 16px;
+                box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+                z-index: 100;
+                display: flex;
+                gap: 10px;
+                border-top: 1px solid #e2e8f0;
+            }
+            body {
+                padding-bottom: 80px;
+            }
+        }
+        
+        /* Service Card Hover Effect */
+        .service-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::after {
+            content: 'Get Free Estimate →';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(220, 38, 38, 0.95), transparent);
+            color: white;
+            padding: 30px 20px 20px;
+            text-align: center;
+            font-weight: 600;
+            transition: bottom 0.3s ease;
+        }
+        
+        .service-card:hover::after {
+            bottom: 0;
+        }
+        
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .animate-marquee {
+            animation: marquee 25s linear infinite;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-700">
@@ -821,6 +875,23 @@
         </div>
     </section>
 
+    
+    <!-- Recent Projects Marquee -->
+    <div class="bg-slate-800 text-white py-4 overflow-hidden">
+        <div class="animate-marquee whitespace-nowrap flex">
+            <span class="mx-8">✅ Just installed AC in Lehi</span>
+            <span class="mx-8">✅ Furnace repair in Provo</span>
+            <span class="mx-8">✅ HVAC maintenance in Orem</span>
+            <span class="mx-8">✅ Emergency call in Sandy</span>
+            <span class="mx-8">✅ Duct cleaning in Spanish Fork</span>
+            <span class="mx-8">✅ Just installed AC in Lehi</span>
+            <span class="mx-8">✅ Furnace repair in Provo</span>
+            <span class="mx-8">✅ HVAC maintenance in Orem</span>
+            <span class="mx-8">✅ Emergency call in Sandy</span>
+            <span class="mx-8">✅ Duct cleaning in Spanish Fork</span>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-slate-800 py-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -932,5 +1003,15 @@
             }
         });
     </script>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta md:hidden">
+        <a href="tel:8015551234" class="flex-1 py-3 bg-primary text-white font-semibold rounded-xl text-center">
+            Call Now
+        </a>
+        <a href="sms:8015551234?body=Hi, I need HVAC service" class="flex-1 py-3 bg-green-500 text-white font-semibold rounded-xl text-center">
+            Text Us
+        </a>
+    </div>
 </body>
 </html>
