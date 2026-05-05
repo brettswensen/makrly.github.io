@@ -236,15 +236,47 @@
             }
         }
         
+        /* Scrolling Ticker */
+        .ticker-wrap {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        .ticker {
+            display: inline-block;
+            animation: ticker 20s linear infinite;
+        }
+        
+        .ticker-item {
+            display: inline-block;
+            padding: 0 3rem;
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
         html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-700 pb-20 md:pb-0">
-    <!-- Emergency Banner -->
-    <div class="w-full bg-primary py-2.5 px-4 text-center">
-        <p class="text-white text-sm font-bold">
-            ⚡ 24/7 Emergency Electrical Service | Call (801) 367-7129
-        </p>
+    <!-- Scrolling Emergency Ticker -->
+    <div class="w-full bg-primary py-2 overflow-hidden">
+        <div class="ticker-wrap">
+            <div class="ticker">
+                <span class="ticker-item">⚡ 24/7 Emergency Electrical Service</span>
+                <span class="ticker-item">📞 Call (801) 367-7129</span>
+                <span class="ticker-item">✅ Licensed & Insured</span>
+                <span class="ticker-item">⚡ 24/7 Emergency Electrical Service</span>
+                <span class="ticker-item">📞 Call (801) 367-7129</span>
+                <span class="ticker-item">✅ Licensed & Insured</span>
+            </div>
+        </div>
     </div>
 
     <!-- Navigation -->
