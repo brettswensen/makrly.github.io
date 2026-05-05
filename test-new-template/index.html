@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test New Template - Deploy Verification</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            max-width: 600px;
+        }
+        h1 { font-size: 3em; margin-bottom: 20px; }
+        .check { font-size: 5em; margin-bottom: 20px; }
+        p { font-size: 1.2em; opacity: 0.9; }
+        .timestamp { margin-top: 30px; font-size: 0.9em; opacity: 0.7; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="check">✅</div>
+        <h1>Deploy Test Successful!</h1>
+        <p>This template was deployed to test the makrly.io deployment system.</p>
+        <p>If you can see this page, everything is working correctly!</p>
+        <div class="timestamp">Deployed: $(date)</div>
+    </div>
+</body>
+</html>
