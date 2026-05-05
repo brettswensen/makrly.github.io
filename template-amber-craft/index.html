@@ -209,6 +209,60 @@
         }
         
         html { scroll-behavior: smooth; }
+    
+        /* Mobile Sticky CTA */
+        @media (max-width: 768px) {
+            .mobile-sticky-cta {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 12px 16px;
+                box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+                z-index: 100;
+                display: flex;
+                gap: 10px;
+                border-top: 1px solid #e2e8f0;
+            }
+            body {
+                padding-bottom: 80px;
+            }
+        }
+        
+        /* Service Card Hover Effect */
+        .service-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::after {
+            content: 'Get Free Estimate →';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 30px 20px 20px;
+            text-align: center;
+            font-weight: 600;
+            transition: bottom 0.3s ease;
+        }
+        
+        .service-card:hover::after {
+            bottom: 0;
+        }
+        
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .animate-marquee {
+            animation: marquee 25s linear infinite;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-700">
@@ -269,6 +323,15 @@
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 letter-tight leading-tight mb-6 animate-fade-in-up opacity-0 delay-100" style="animation-fill-mode: forwards;">
                         Quality Craftsmanship You Can Trust
                     </h1>
+
+                    <!-- Social Proof -->
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="flex text-accent text-lg">★★★★★</div>
+                        <span class="text-sm text-slate-600"><strong>4.9/5</strong> from 150+ reviews</span>
+                        <span class="text-slate-300">|</span>
+                        <span class="text-sm text-slate-600">Serving Utah County</span>
+                    </div>
+
                     <p class="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed animate-fade-in-up opacity-0 delay-200" style="animation-fill-mode: forwards;">
                         Professional home remodeling, repairs, and handyman services in Utah County. From small fixes to full renovations, we build it right. Free estimates.
                     </p>
@@ -618,7 +681,40 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+        <!-- Why Choose Us Comparison -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">Why Homeowners Choose Us</h2>
+                <p class="text-slate-600">See the difference experience makes</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-slate-100 rounded-xl p-6 border-2 border-slate-200">
+                    <h3 class="font-semibold text-slate-500 mb-4 text-lg">Other Construction Companies</h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-center"><span class="text-red-500 mr-2">✗</span> Pushy sales tactics</li>
+                        <li class="flex items-center"><span class="text-red-500 mr-2">✗</span> Hidden fees & surprises</li>
+                        <li class="flex items-center"><span class="text-red-500 mr-2">✗</span> No follow-up after job</li>
+                        <li class="flex items-center"><span class="text-red-500 mr-2">✗</span> Subcontracted crews</li>
+                        <li class="flex items-center"><span class="text-red-500 mr-2">✗</span> Hard to reach</li>
+                    </ul>
+                </div>
+                <div class="bg-primary/5 border-2 border-primary rounded-xl p-6 relative">
+                    <div class="absolute -top-3 left-6 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">BETTER CHOICE</div>
+                    <h3 class="font-semibold text-primary mb-4 text-lg">We Are Different</h3>
+                    <ul class="space-y-3 text-slate-700">
+                        <li class="flex items-center"><span class="text-success mr-2">✓</span> Free inspections, no pressure</li>
+                        <li class="flex items-center"><span class="text-success mr-2">✓</span> Upfront, honest pricing</li>
+                        <li class="flex items-center"><span class="text-success mr-2">✓</span> Quality guaranteed</li>
+                        <li class="flex items-center"><span class="text-success mr-2">✓</span> Family-owned, local crew</li>
+                        <li class="flex items-center"><span class="text-success mr-2">✓</span> Owner answers the phone</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Contact Section -->
     <section id="contact" class="py-20 md:py-32 bg-pattern">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12">
@@ -741,7 +837,23 @@
         </div>
     </section>
 
-    <!-- Footer -->
+        <!-- Recent Projects Marquee -->
+    <div class="bg-slate-800 text-white py-4 overflow-hidden">
+        <div class="animate-marquee whitespace-nowrap flex">
+            <span class="mx-8">✅ Just completed job in Lehi</span>
+            <span class="mx-8">✅ Emergency service in Provo</span>
+            <span class="mx-8">✅ New installation in Orem</span>
+            <span class="mx-8">✅ Repair in Sandy</span>
+            <span class="mx-8">✅ Service call in Spanish Fork</span>
+            <span class="mx-8">✅ Just completed job in Lehi</span>
+            <span class="mx-8">✅ Emergency service in Provo</span>
+            <span class="mx-8">✅ New installation in Orem</span>
+            <span class="mx-8">✅ Repair in Sandy</span>
+            <span class="mx-8">✅ Service call in Spanish Fork</span>
+        </div>
+    </div>
+
+<!-- Footer -->
     <footer class="bg-slate-800 py-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
@@ -852,5 +964,10 @@
             }
         });
     </script>
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta md:hidden">
+        <a href="tel:801-555-0100" class="flex-1 py-3 bg-primary text-white font-semibold rounded-xl text-center">Call Now</a>
+        <a href="sms:801-555-0100?body=Hi, I need a free estimate" class="flex-1 py-3 bg-green-500 text-white font-semibold rounded-xl text-center">Text Us</a>
+    </div>
 </body>
 </html>
