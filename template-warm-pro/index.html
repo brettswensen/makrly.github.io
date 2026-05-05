@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warm Pro Template - Professional Service Business Website</title>
-    <meta name="description" content="Professional service business website template. Clean, modern design with warm tones and full feature set.">
+    <title>Warm Pro Template - Complete Business Website</title>
+    <meta name="description" content="Professional business website template with warm styling and complete feature set.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,13 +14,12 @@
             theme: {
                 extend: {
                     colors: {
-                        // Warm Professional Palette
-                        'primary': '#2d5a7b',           // Deep teal-blue (trust + warmth)
-                        'primary-dark': '#1e3d52',      // Darker for hover
-                        'accent': '#d97706',            // Warm amber for CTAs
-                        'accent-dark': '#b45309',       // Darker amber
-                        'warm': '#fef3c7',              // Warm cream background
-                        'warm-light': '#fffbeb',        // Lighter cream
+                        'primary': '#2d5a7b',
+                        'primary-dark': '#1e3d52',
+                        'accent': '#d97706',
+                        'accent-dark': '#b45309',
+                        'warm': '#fef3c7',
+                        'warm-light': '#fffbeb',
                         'slate-50': '#f8fafc',
                         'slate-100': '#f1f5f9',
                         'slate-200': '#e2e8f0',
@@ -40,7 +39,6 @@
         body { font-family: 'Inter', system-ui, sans-serif; }
         .letter-tight { letter-spacing: -0.025em; }
         
-        /* Premium Layered Shadows */
         .shadow-premium {
             box-shadow: 
                 0 1px 2px rgba(0, 0, 0, 0.02),
@@ -48,19 +46,16 @@
                 0 8px 16px rgba(0, 0, 0, 0.04);
         }
         
-        /* Warm Hero Gradient - Like Amber Craft */
         .hero-warm {
             background: linear-gradient(135deg, #fef3c7 0%, #fde68a 30%, #fef3c7 60%, #fffbeb 100%);
         }
         
-        /* Subtle Pattern Overlay */
         .bg-pattern-warm {
             background-image: 
                 radial-gradient(circle at 20% 80%, rgba(217, 119, 6, 0.05) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(45, 90, 123, 0.05) 0%, transparent 50%);
         }
         
-        /* Section Pattern */
         .bg-pattern {
             background-color: #f8fafc;
             background-image: 
@@ -68,7 +63,6 @@
                 radial-gradient(circle at 75% 75%, rgba(217, 119, 6, 0.03) 0%, transparent 50%);
         }
         
-        /* Premium Button Gradients */
         .btn-primary-gradient {
             background: linear-gradient(135deg, #2d5a7b 0%, #1e3d52 100%);
             transition: all 0.3s ease-out;
@@ -91,7 +85,6 @@
             box-shadow: 0 8px 25px rgba(217, 119, 6, 0.4);
         }
         
-        /* Animations */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -133,7 +126,6 @@
         .delay-300 { animation-delay: 0.3s; }
         .delay-400 { animation-delay: 0.4s; }
         
-        /* Trust indicator stagger */
         .trust-item {
             opacity: 0;
             animation: fadeInUp 0.6s ease-out forwards;
@@ -143,6 +135,67 @@
         .trust-item:nth-child(2) { animation-delay: 0.2s; }
         .trust-item:nth-child(3) { animation-delay: 0.3s; }
         .trust-item:nth-child(4) { animation-delay: 0.4s; }
+        
+        .scroll-animate {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .scroll-animate.js-enabled {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .scroll-animate.js-enabled.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scroll-animate.delay-1 { transition-delay: 0.1s; }
+        .scroll-animate.delay-2 { transition-delay: 0.2s; }
+        .scroll-animate.delay-3 { transition-delay: 0.3s; }
+        .scroll-animate.delay-4 { transition-delay: 0.4s; }
+        .scroll-animate.delay-5 { transition-delay: 0.5s; }
+        .scroll-animate.delay-6 { transition-delay: 0.6s; }
+        
+        .hover-lift {
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-premium {
+            position: relative;
+            background: white;
+            border-radius: 1rem;
+        }
+        
+        .card-premium::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 1rem;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(45, 90, 123, 0.2) 0%, rgba(217, 119, 6, 0.2) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        
+        html { scroll-behavior: smooth; }
+
+        .service-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 0.75rem 0.75rem 0 0;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-700">
@@ -193,10 +246,10 @@
                         <svg class="w-5 h-5 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                         </svg>
-                        <span class="font-semibold text-slate-800">4.9</span>
-                        <span class="text-slate-500 ml-1 whitespace-nowrap">(150+ reviews)</span>
+                        <span class="font-semibold text-slate-800">20+ Years</span>
+                        <span class="text-slate-500 ml-1 whitespace-nowrap">Experience</span>
                         <span class="mx-3 text-slate-300 flex-shrink-0">|</span>
-                        <span class="text-success font-medium whitespace-nowrap">Licensed & Insured</span>
+                        <span class="text-success font-medium whitespace-nowrap">Family Owned</span>
                     </div>
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 letter-tight leading-tight mb-6 animate-fade-in-up opacity-0 delay-100" style="animation-fill-mode: forwards;">
                         Quality Service You Can Trust
@@ -276,7 +329,6 @@
                         </svg>
                     </div>
                     <p class="font-semibold text-slate-800">Free Estimates</p>
-                    <p class="text-xs text-slate-500">No Obligation</p>
                 </div>
                 <div class="trust-item flex flex-col items-center">
                     <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-2">
@@ -291,108 +343,61 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 md:py-32 bg-pattern">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Our Services</h2>
-                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Comprehensive solutions for your needs. Professional service, quality results.</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white rounded-2xl shadow-premium p-8 hover:shadow-lg transition-shadow">
-                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Service One</h3>
-                    <p class="text-slate-600">Description of your first service offering. Explain the benefits and what customers can expect.</p>
-                </div>
-                <!-- Service 2 -->
-                <div class="bg-white rounded-2xl shadow-premium p-8 hover:shadow-lg transition-shadow">
-                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Service Two</h3>
-                    <p class="text-slate-600">Description of your second service offering. Highlight what makes it special.</p>
-                </div>
-                <!-- Service 3 -->
-                <div class="bg-white rounded-2xl shadow-premium p-8 hover:shadow-lg transition-shadow">
-                    <div class="w-14 h-14 bg-success/10 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-7 h-7 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Service Three</h3>
-                    <p class="text-slate-600">Description of your third service offering. Emphasize reliability and expertise.</p>
-                </div>
-                <!-- Service 4 -->
-                <div class="bg-white rounded-2xl shadow-premium p-8 hover:shadow-lg transition-shadow">
-                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Service Four</h3>
-                    <p class="text-slate-600">Description of your fourth service offering. Mention any special features or guarantees.</p>
-                </div>
-                <!-- Service 5 -->
-                <div class="bg-white rounded-2xl shadow-premium p-8 hover:shadow-lg transition-shadow">
-                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Service Five</h3>
-                    <p class="text-slate-600">Description of your fifth service offering. Focus on customer benefits and outcomes.</p>
-                </div>
-                <!-- Service 6 -->
-                <div class="bg-white rounded-2xl shadow-premium p-8 hover:shadow-lg transition-shadow">
-                    <div class="w-14 h-14 bg-success/10 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-7 h-7 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Service Six</h3>
-                    <p class="text-slate-600">Description of your sixth service offering. Include any premium or specialized aspects.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- About Section -->
     <section id="about" class="py-20 md:py-32 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6">About Your Business</h2>
-                    <p class="text-lg text-slate-600 mb-4">
-                        Founded over 20 years ago, we've built our reputation on quality workmanship and exceptional customer service. Our team of experienced professionals is dedicated to delivering results that exceed expectations.
-                    </p>
+                    <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary font-bold text-sm rounded-full mb-4">ABOUT US</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-6">
+                        Family Owned & Operated Since 2000
+                    </h2>
                     <p class="text-lg text-slate-600 mb-6">
-                        We take pride in serving our local community and treating every project as if it were our own. From small repairs to major installations, we approach every job with the same commitment to excellence.
+                        Your Business has been serving the community for over 20 years. As a family-owned business, we take pride in providing quality services with a personal touch.
                     </p>
-                    <div class="flex flex-wrap gap-4">
-                        <div class="flex items-center">
-                            <svg class="w-5 h-5 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-slate-700">Family Owned</span>
+                    <p class="text-slate-600 mb-8">
+                        We offer comprehensive solutions for all your needs. Our commitment to excellence has made us one of the most trusted service providers in the area.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">20+ Years Experience</h4>
+                            </div>
                         </div>
-                        <div class="flex items-center">
-                            <svg class="w-5 h-5 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-slate-700">Licensed & Insured</span>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Family Owned</h4>
+                            </div>
                         </div>
-                        <div class="flex items-center">
-                            <svg class="w-5 h-5 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-slate-700">Satisfaction Guaranteed</span>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Quality Materials</h4>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Strong Warranty</h4>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -412,14 +417,182 @@
         </div>
     </section>
 
+    <!-- Services Section -->
+    <section id="services" class="py-20 md:py-32 bg-pattern">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-4">Our Services</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Comprehensive solutions for your needs. Professional service, quality results.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-premium shadow-premium p-8 hover-lift scroll-animate delay-1">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Service One</h3>
+                    <p class="text-slate-600">Description of your first service offering. Explain the benefits and what customers can expect.</p>
+                </div>
+                <div class="card-premium shadow-premium p-8 hover-lift scroll-animate delay-2">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Service Two</h3>
+                    <p class="text-slate-600">Description of your second service offering. Highlight what makes it special.</p>
+                </div>
+                <div class="card-premium shadow-premium p-8 hover-lift scroll-animate delay-3">
+                    <div class="w-14 h-14 bg-success/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Service Three</h3>
+                    <p class="text-slate-600">Description of your third service offering. Emphasize reliability and expertise.</p>
+                </div>
+                <div class="card-premium shadow-premium p-8 hover-lift scroll-animate delay-4">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Service Four</h3>
+                    <p class="text-slate-600">Description of your fourth service offering. Mention any special features or guarantees.</p>
+                </div>
+                <div class="card-premium shadow-premium p-8 hover-lift scroll-animate delay-5">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Service Five</h3>
+                    <p class="text-slate-600">Description of your fifth service offering. Focus on customer benefits and outcomes.</p>
+                </div>
+                <div class="card-premium shadow-premium p-8 hover-lift scroll-animate delay-6">
+                    <div class="w-14 h-14 bg-success/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Service Six</h3>
+                    <p class="text-slate-600">Description of your sixth service offering. Include any premium or specialized aspects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 md:py-32 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-4">Our Work</h2>
+                <p class="text-lg text-slate-600">Quality craftsmanship on every project.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-100 rounded-2xl overflow-hidden shadow-premium">
+                    <div class="aspect-video bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
+                        <p class="text-slate-500">Project Image 1</p>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-slate-800 mb-2">Project One</h3>
+                        <p class="text-slate-600 text-sm">Description of project</p>
+                    </div>
+                </div>
+                <div class="bg-slate-100 rounded-2xl overflow-hidden shadow-premium">
+                    <div class="aspect-video bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
+                        <p class="text-slate-500">Project Image 2</p>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-slate-800 mb-2">Project Two</h3>
+                        <p class="text-slate-600 text-sm">Description of project</p>
+                    </div>
+                </div>
+                <div class="bg-slate-100 rounded-2xl overflow-hidden shadow-premium">
+                    <div class="aspect-video bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
+                        <p class="text-slate-500">Project Image 3</p>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-slate-800 mb-2">Project Three</h3>
+                        <p class="text-slate-600 text-sm">Description of project</p>
+                    </div>
+                </div>
+                <div class="bg-slate-100 rounded-2xl overflow-hidden shadow-premium">
+                    <div class="aspect-video bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
+                        <p class="text-slate-500">Project Image 4</p>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-slate-800 mb-2">Project Four</h3>
+                        <p class="text-slate-600 text-sm">Description of project</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 md:py-32 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary font-semibold text-sm rounded-full mb-4">Customer Reviews</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-4">What Our Customers Say</h2>
+                <p class="text-lg text-slate-600">Real reviews from real customers</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl shadow-premium p-8 scroll-animate">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-accent">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                    </div>
+                    <p class="text-slate-700 mb-6 leading-relaxed">"I was very pleased with the quick response, professional service and follow-up. They did a great job and I would definitely recommend them to anyone."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                            <span class="font-bold text-primary">JD</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-800">John Doe</p>
+                            <p class="text-sm text-slate-500">City, State</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-premium p-8 scroll-animate delay-1">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-accent">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                    </div>
+                    <p class="text-slate-700 mb-6 leading-relaxed">"Great job at a reasonable price. Very professional and quality work. I will definitely use them again and recommend to friends."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mr-4">
+                            <span class="font-bold text-accent">JS</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-800">Jane Smith</p>
+                            <p class="text-sm text-slate-500">City, State</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-20 md:py-32 bg-pattern">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12">
                 <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6">Get In Touch</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-6">Get In Touch</h2>
                     <p class="text-lg text-slate-600 mb-8">Ready to get started? Contact us today for a free estimate.</p>
-                    
                     <div class="space-y-6">
                         <div class="flex items-start">
                             <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
@@ -432,7 +605,6 @@
                                 <a href="tel:5551234567" class="text-primary hover:text-primary-dark text-lg">(555) 123-4567</a>
                             </div>
                         </div>
-                        
                         <div class="flex items-start">
                             <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
                                 <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -444,7 +616,6 @@
                                 <a href="mailto:info@yourbusiness.com" class="text-primary hover:text-primary-dark text-lg">info@yourbusiness.com</a>
                             </div>
                         </div>
-                        
                         <div class="flex items-start">
                             <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
                                 <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -459,7 +630,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="bg-white rounded-2xl shadow-premium p-8">
                     <h3 class="text-2xl font-bold text-slate-800 mb-6">Request a Free Estimate</h3>
                     <form class="space-y-4">
@@ -498,7 +668,7 @@
     <section class="py-20 md:py-32 bg-primary">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
-            <p class="text-xl text-white/90 mb-8">Contact us today for a free, no-obligation estimate.</p>
+            <p class="text-xl text-white/80 mb-8">Contact us today for a free, no-obligation estimate.</p>
             <a href="tel:5551234567" class="inline-block px-8 py-4 bg-accent text-white font-semibold text-lg rounded-xl shadow-lg hover:bg-accent-dark transition-colors">
                 Call (555) 123-4567
             </a>
@@ -542,5 +712,31 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.scroll-animate').forEach((el) => {
+                el.classList.add('js-enabled');
+            });
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '50px',
+                threshold: 0.05
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.scroll-animate').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
