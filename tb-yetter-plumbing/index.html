@@ -258,6 +258,16 @@
             transform: translateY(0);
         }
         
+        /* Ensure content is visible even if animations fail */
+        @media (prefers-reduced-motion: reduce) {
+            .scroll-animate,
+            .scroll-animate.js-enabled {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        }
+        
         .scroll-animate.delay-1 { transition-delay: 0.1s; }
         .scroll-animate.delay-2 { transition-delay: 0.2s; }
         .scroll-animate.delay-3 { transition-delay: 0.3s; }
@@ -1086,7 +1096,7 @@
                         <li>(801) 555-0123</li>
                         <li>Salt Lake City, UT</li>
                         <li>Mon-Fri: 9AM-6PM</li>
-                        <li class="text-accent">7 Days for Emergencies</li>
+                        <li class="text-primary">7 Days for Emergencies</li>
                     </ul>
                 </div>
             </div>
@@ -1140,6 +1150,13 @@
         document.querySelectorAll('.scroll-animate').forEach(el => {
             observer.observe(el);
         });
+        
+        // Fallback: make all elements visible after 3 seconds if JS fails
+        setTimeout(() => {
+            document.querySelectorAll('.scroll-animate.js-enabled:not(.visible)').forEach(el => {
+                el.classList.add('visible');
+            });
+        }, 3000);
     </script>
 </body>
 </html>
