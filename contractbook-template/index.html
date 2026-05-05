@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contractbook - Control Your Contracts with Confidence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'washed-black': '#1a1a1a',
+                        'pure-white': '#ffffff',
+                        'pearl': '#f7f7f3',
+                        'beige': '#f0f0ec',
+                        'royal-blue': '#1009f6',
+                        'energy-gold': '#ffba09',
+                        'sky-blue': '#add3e5',
+                        'thistle-bloom': '#e3c7de',
+                        'deep-moss': '#304801',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .blob { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        .blob-2 { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+        .animate-wiggle { animation: wiggle 2s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-pure-white text-washed-black">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-pure-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-8">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-washed-black rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-pure-white" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                            </svg>
+                        </div>
+                        <span class="font-bold text-lg">Contractbook</span>
+                    </div>
+                    <div class="hidden md:flex items-center gap-6 text-sm">
+                        <a href="#" class="hover:text-royal-blue transition-colors">Product</a>
+                        <a href="#" class="hover:text-royal-blue transition-colors">Templates</a>
+                        <a href="#" class="hover:text-royal-blue transition-colors">Pricing</a>
+                        <a href="#" class="hover:text-royal-blue transition-colors">Customers</a>
+                        <a href="#" class="hover:text-royal-blue transition-colors">Learn</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="#" class="hidden sm:block text-sm hover:text-royal-blue transition-colors">Log in</a>
+                    <button class="px-5 py-2.5 bg-energy-gold text-washed-black text-sm font-semibold rounded-full hover:scale-105 transition-transform">
+                        Book demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-pure-white pt-12 pb-20">
+        <!-- Playful Background Blobs -->
+        <div class="absolute top-20 right-10 w-64 h-64 bg-sky-blue/30 blob animate-float"></div>
+        <div class="absolute bottom-20 left-10 w-48 h-48 bg-thistle-bloom/30 blob-2 animate-float" style="animation-delay: 1s;"></div>
+        <div class="absolute top-40 left-1/4 w-32 h-32 bg-energy-gold/20 blob animate-float" style="animation-delay: 0.5s;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center max-w-3xl mx-auto">
+                <!-- Playful Tag -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-pearl rounded-full mb-6">
+                    <span class="text-2xl animate-wiggle inline-block">☀️</span>
+                    <span class="text-sm font-medium">New: AI-Powered Contracts</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                    Control your contracts<br>with confidence & ease
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Everything you need to manage, track, and finalize contracts — all in one clear, actionable space.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <button class="px-8 py-4 bg-energy-gold text-washed-black font-semibold rounded-full hover:scale-105 transition-transform flex items-center gap-2">
+                        <span>Request a demo</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                    <button class="px-8 py-4 border-2 border-washed-black text-washed-black font-semibold rounded-full hover:bg-washed-black hover:text-white transition-colors">
+                        Start free trial
+                    </button>
+                </div>
+            </div>
+
+            <!-- Hero Visual -->
+            <div class="mt-12 relative">
+                <div class="bg-pearl rounded-3xl p-4 md:p-8">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Video Card -->
+                        <div class="relative bg-washed-black rounded-2xl overflow-hidden aspect-video flex items-center justify-center group cursor-pointer">
+                            <div class="absolute inset-0 bg-gradient-to-br from-royal-blue/20 to-purple-600/20"></div>
+                            <div class="relative text-center text-white p-6">
+                                <div class="w-16 h-16 bg-energy-gold rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                    <svg class="w-6 h-6 text-washed-black ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                                <p class="text-sm opacity-80">Play video</p>
+                            </div>
+                        </div>
+                        <!-- Illustration Card -->
+                        <div class="bg-energy-gold rounded-2xl p-6 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute top-4 right-4 text-4xl animate-wiggle">💡</div>
+                            <div class="absolute bottom-4 left-4 text-4xl animate-wiggle" style="animation-delay: 0.5s;">👁️</div>
+                            <div class="text-center">
+                                <h3 class="text-2xl font-bold mb-2">Centralized<br>& Dynamic</h3>
+                                <p class="text-sm opacity-80">All your contracts in one place</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-pure-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Blue Card -->
+                <div class="bg-royal-blue rounded-3xl p-8 text-white relative overflow-hidden group hover:scale-[1.02] transition-transform">
+                    <div class="absolute top-4 right-4 text-3xl animate-wiggle">🎯</div>
+                    <h3 class="text-3xl font-bold mb-2">85%</h3>
+                    <p class="text-white/80 text-sm">Reduction in manual work</p>
+                    <p class="text-white/60 text-xs mt-4">"Contractbook has transformed how we handle agreements"</p>
+                </div>
+                <!-- Yellow Card -->
+                <div class="bg-energy-gold rounded-3xl p-8 text-washed-black relative overflow-hidden group hover:scale-[1.02] transition-transform">
+                    <div class="absolute top-4 right-4 text-3xl animate-wiggle" style="animation-delay: 0.3s;">⚡</div>
+                    <h3 class="text-3xl font-bold mb-2">€750,000</h3>
+                    <p class="text-washed-black/80 text-sm">Saved through re-negotiations</p>
+                    <p class="text-washed-black/60 text-xs mt-4">"We just saved €750,000 by re-negotiating one vendor contract"</p>
+                </div>
+                <!-- Green Card -->
+                <div class="bg-deep-moss rounded-3xl p-8 text-white relative overflow-hidden group hover:scale-[1.02] transition-transform">
+                    <div class="absolute top-4 right-4 text-3xl animate-wiggle" style="animation-delay: 0.6s;">🌱</div>
+                    <h3 class="text-3xl font-bold mb-2">100%</h3>
+                    <p class="text-white/80 text-sm">Contract visibility</p>
+                    <p class="text-white/60 text-xs mt-4">"With reminders, we no longer miss out on any impact to the business"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-sky-blue/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-royal-blue text-white rounded-full text-sm font-medium mb-6">
+                        <span>Insights</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                        Avoid financial risk and costly mistakes, at every stage of your contracts.
+                    </h2>
+                    <ul class="space-y-4 mt-6">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-royal-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Stay in control at every stage of your contracts</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-royal-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Never miss a deadline or face unexpected penalties again</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-royal-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">You decide who does what, and when</span>
+                        </li>
+                    </ul>
+                    <button class="mt-8 px-6 py-3 bg-energy-gold text-washed-black font-semibold rounded-full hover:scale-105 transition-transform">
+                        Request a demo
+                    </button>
+                </div>
+                <div class="relative">
+                    <div class="bg-pure-white rounded-3xl p-4 shadow-xl">
+                        <div class="bg-pearl rounded-2xl p-6 aspect-square flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute top-4 left-4 text-4xl animate-wiggle">☀️</div>
+                            <div class="absolute bottom-4 right-4 text-4xl animate-wiggle" style="animation-delay: 0.5s;">📊</div>
+                            <div class="text-center">
+                                <div class="w-24 h-24 bg-royal-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <svg class="w-12 h-12 text-royal-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                    </svg>
+                                </div>
+                                <p class="font-semibold">Contract Analytics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Carousel Section -->
+    <section class="py-20 bg-pure-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                Lose your headaches, not your contracts,<br>deals, or opportunities.
+            </h2>
+            
+            <!-- Carousel Container -->
+            <div class="relative">
+                <div class="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide" id="testimonialCarousel" style="scrollbar-width: none; -ms-overflow-style: none;">
+                    <!-- Card 1 - Yellow -->
+                    <div class="flex-shrink-0 w-80 md:w-96 snap-center">
+                        <div class="bg-energy-gold rounded-3xl p-8 h-full flex flex-col justify-between min-h-[320px]">
+                            <div>
+                                <p class="text-royal-blue font-bold text-xl mb-6">
+                                    "70-80% data extraction is pretty good to me."
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-royal-blue font-black text-3xl tracking-tight">PAVE</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 bg-pearl rounded-2xl p-6">
+                            <p class="text-sm text-gray-600">
+                                "The fact that the AI can extract 70-80% of the important information from my vendor agreement is pretty impressive to me, because normally I have no insight into it at all."
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 - Blue -->
+                    <div class="flex-shrink-0 w-80 md:w-96 snap-center">
+                        <div class="bg-royal-blue rounded-3xl p-8 h-full flex flex-col justify-between min-h-[320px]">
+                            <div>
+                                <p class="text-white font-bold text-xl mb-6">
+                                    "We saved €750,000 by re-negotiating one vendor contract."
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-white font-black text-3xl tracking-tight">LENUS</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 bg-pearl rounded-2xl p-6">
+                            <p class="text-sm text-gray-600">
+                                "Contractbook helped us identify cost savings we didn't even know existed. The ROI was immediate and substantial."
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3 - Green -->
+                    <div class="flex-shrink-0 w-80 md:w-96 snap-center">
+                        <div class="bg-deep-moss rounded-3xl p-8 h-full flex flex-col justify-between min-h-[320px]">
+                            <div>
+                                <p class="text-white font-bold text-xl mb-6">
+                                    "100% contract visibility across all departments."
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-white font-black text-3xl tracking-tight">GANNI</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 bg-pearl rounded-2xl p-6">
+                            <p class="text-sm text-gray-600">
+                                "With automated reminders, we no longer miss renewals or deadlines. Our legal team finally has complete oversight."
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 4 - Pink -->
+                    <div class="flex-shrink-0 w-80 md:w-96 snap-center">
+                        <div class="bg-thistle-bloom rounded-3xl p-8 h-full flex flex-col justify-between min-h-[320px]">
+                            <div>
+                                <p class="text-washed-black font-bold text-xl mb-6">
+                                    "Contract turnaround time reduced by 85%."
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-washed-black font-black text-3xl tracking-tight">PLEO</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 bg-pearl rounded-2xl p-6">
+                            <p class="text-sm text-gray-600">
+                                "What used to take weeks now takes days. Our sales team can close deals faster than ever before."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Dots -->
+                <div class="flex justify-center gap-2 mt-6">
+                    <button class="w-2 h-2 rounded-full bg-washed-black transition-all" onclick="scrollToCard(0)"></button>
+                    <button class="w-2 h-2 rounded-full bg-gray-300 hover:bg-washed-black transition-all" onclick="scrollToCard(1)"></button>
+                    <button class="w-2 h-2 rounded-full bg-gray-300 hover:bg-washed-black transition-all" onclick="scrollToCard(2)"></button>
+                    <button class="w-2 h-2 rounded-full bg-gray-300 hover:bg-washed-black transition-all" onclick="scrollToCard(3)"></button>
+                </div>
+                
+                <!-- Scroll Buttons -->
+                <button onclick="scrollCarousel(-1)" class="absolute left-0 top-1/3 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform z-10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <button onclick="scrollCarousel(1)" class="absolute right-0 top-1/3 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform z-10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <script>
+            const carousel = document.getElementById('testimonialCarousel');
+            const cardWidth = 384 + 24; // card width + gap
+            
+            function scrollCarousel(direction) {
+                carousel.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+            }
+            
+            function scrollToCard(index) {
+                carousel.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+            }
+            
+            // Auto-scroll
+            let currentIndex = 0;
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % 4;
+                scrollToCard(currentIndex);
+            }, 5000);
+        </script>
+    </section>
+
+    <!-- Second Feature Section -->
+    <section class="py-20 bg-pure-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="bg-thistle-bloom/30 rounded-3xl p-8 relative overflow-hidden">
+                        <div class="absolute top-4 right-4 text-4xl animate-wiggle">✨</div>
+                        <div class="bg-pure-white rounded-2xl p-6 shadow-lg">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-10 h-10 bg-energy-gold rounded-full flex items-center justify-center text-xl">📝</div>
+                                <div>
+                                    <p class="font-semibold text-sm">Contract Created</p>
+                                    <p class="text-xs text-gray-500">Just now</p>
+                                </div>
+                            </div>
+                            <div class="h-2 bg-pearl rounded-full mb-2"></div>
+                            <div class="h-2 bg-pearl rounded-full w-3/4 mb-2"></div>
+                            <div class="h-2 bg-pearl rounded-full w-1/2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                        Speed the time to sign with one tool to draft, negotiate and agree
+                    </h2>
+                    <p class="text-gray-600 mb-6">
+                        Draft, negotiate, and finalize contracts effortlessly. Collaborate in real-time with your team and counterparties.
+                    </p>
+                    <button class="px-6 py-3 border-2 border-washed-black text-washed-black font-semibold rounded-full hover:bg-washed-black hover:text-white transition-colors">
+                        Learn more
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Bar -->
+    <section class="py-12 bg-pearl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-sm text-gray-500 mb-8">Putting the power of your contracts back in your hands, however small or mighty they may be</p>
+            <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-60">
+                <span class="font-bold text-lg">Lenus</span>
+                <span class="font-bold text-lg">Cognism</span>
+                <span class="font-bold text-lg">Pleo</span>
+                <span class="font-bold text-lg">Avidly</span>
+                <span class="font-bold text-lg">Ganni</span>
+                <span class="font-bold text-lg">Pento</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-washed-black text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                Ready to take control of your contracts?
+            </h2>
+            <p class="text-gray-400 mb-8">
+                Join thousands of companies already using Contractbook.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button class="px-8 py-4 bg-energy-gold text-washed-black font-semibold rounded-full hover:scale-105 transition-transform">
+                    Start free trial
+                </button>
+                <button class="px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-washed-black transition-colors">
+                    Talk to sales
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-pure-white py-16 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-washed-black rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-pure-white" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                            </svg>
+                        </div>
+                        <span class="font-bold text-lg">Contractbook</span>
+                    </div>
+                    <p class="text-gray-500 text-sm">
+                        Modern contract management for modern teams.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-sm">Product</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-royal-blue transition-colors">Features</a></li>
+                        <li><a href="#" class="hover:text-royal-blue transition-colors">Templates</a></li>
+                        <li><a href="#" class="hover:text-royal-blue transition-colors">Pricing</a></li>
+                        <li><a href="#" class="hover:text-royal-blue transition-colors">Integrations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-sm">Company</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-royal-blue transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-royal-blue transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-royal-blue transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-royal-blue transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-sm">Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-royal-blue transition-colors">Privacy</a></li>
+                        <li><a href="#" class="hover:text-royal-blue transition-colors">Terms</a></li>
+                        <li><a href="#" class="hover:text-royal-blue transition-colors">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400 text-sm">© 2026 Contractbook. All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="#" class="text-gray-400 hover:text-royal-blue transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-royal-blue transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-royal-blue transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

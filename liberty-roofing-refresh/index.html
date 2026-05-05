@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liberty Roofing of Utah - Professional Roofing Services in Provo</title>
+    <meta name="description" content="Liberty Roofing of Utah - Family owned & operated roofing company with 40+ years experience. Residential & commercial roofing, leak detection, roof maintenance, skylights, gutters. Free estimates. Licensed & insured.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Roofing Blue-Gray Palette
+                        'primary': '#1e5aa8',           // Trust blue - main CTAs
+                        'primary-dark': '#154785',      // Darker blue for hover
+                        'primary-light': '#3d7bc9',     // Lighter blue accents
+                        'accent': '#f59e0b',            // Amber/gold for roofing
+                        'accent-dark': '#d97706',       // Darker amber
+                        'slate-50': '#f8fafc',          // Light backgrounds
+                        'slate-100': '#f1f5f9',         // Section backgrounds
+                        'slate-200': '#e2e8f0',         // Borders
+                        'slate-300': '#cbd5e1',         // Light borders
+                        'slate-400': '#94a3b8',         // Muted text
+                        'slate-500': '#64748b',         // Secondary text
+                        'slate-600': '#475569',         // Body text
+                        'slate-700': '#334155',         // Headings
+                        'slate-800': '#1e293b',         // Dark text
+                        'slate-900': '#0f172a',         // Near black
+                        'success': '#059669',           // Green for ratings
+                        'white': '#ffffff',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'subtle': '0 2px 4px rgba(0, 0, 0, 0.06)',
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04)',
+                        'elevated': '0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04)',
+                    },
+                    borderRadius: {
+                        'card': '16px',
+                        'pill': '9999px',
+                        'button': '12px',
+                        'large': '16px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        .letter-tight {
+            letter-spacing: -0.025em;
+        }
+        .gradient-hero {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+        }
+        .pattern-grid {
+            background-image: radial-gradient(circle at 1px 1px, #cbd5e1 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+    <!-- Trust Banner -->
+    <div class="w-full bg-primary py-2.5 px-4 text-center">
+        <p class="text-white text-sm font-medium whitespace-nowrap overflow-hidden text-ellipsis">
+            🏠 Family Owned • 40+ Years • Free Estimates • $100 OFF Reroof
+        </p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200 shadow-subtle">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex items-center">
+                        <svg class="w-10 h-10 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                        <span class="text-xl font-bold text-slate-800">Liberty Roofing</span>
+                    </div>
+                    <span class="hidden sm:inline text-sm text-slate-500 ml-2">| Provo, UT</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="#services" class="px-4 py-2 text-slate-600 hover:text-primary transition-colors font-medium">Services</a>
+                    <a href="#why-us" class="px-4 py-2 text-slate-600 hover:text-primary transition-colors font-medium">Why Us</a>
+                    <a href="#reviews" class="px-4 py-2 text-slate-600 hover:text-primary transition-colors font-medium">Reviews</a>
+                    <a href="#contact" class="px-4 py-2 text-slate-600 hover:text-primary transition-colors font-medium">Contact</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="flex items-center">
+                    <a href="tel:8013777720" class="px-4 py-2 bg-accent text-white font-semibold text-sm rounded-button shadow-subtle hover:bg-accent-dark transition-colors whitespace-nowrap">
+                        Get Free Estimate
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-slate-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-left order-1">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center px-4 py-2 bg-white rounded-pill shadow-subtle mb-6">
+                        <span class="flex items-center">
+                            <svg class="w-5 h-5 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <span class="font-semibold text-slate-900">40+ Years</span>
+                            <span class="text-slate-600 ml-1">Experience</span>
+                        </span>
+                        <span class="mx-3 text-slate-300 flex-shrink-0">|</span>
+                        <span class="text-success font-medium">Licensed & Insured</span>
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 letter-tight leading-tight mb-6">
+                        Professional Roofing Services in Utah County
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-700 mb-8 leading-relaxed">
+                        Family owned & operated since 1984. We specialize in residential and commercial roofing, from repairs to complete replacements. Serving Provo, Sandy, and all of Utah County with quality you can trust.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="tel:8013777720" class="px-8 py-4 bg-primary text-white font-semibold text-lg rounded-large shadow-elevated hover:bg-primary-dark transition-all transform hover:-translate-y-0.5 text-center">
+                            Get Free Estimate
+                        </a>
+                        <a href="tel:8013777720" class="px-8 py-4 bg-white text-slate-700 font-semibold text-lg rounded-large border-2 border-slate-200 hover:border-primary hover:text-primary transition-colors text-center">
+                            (801) 377-7720
+                        </a>
+                    </div>
+                    <p class="mt-6 text-sm text-slate-500 flex items-center">
+                        <svg class="w-5 h-5 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        Utah State License # 5382495-5501 • Free Estimates
+                    </p>
+                </div>
+
+                <!-- Hero Visual -->
+                <div class="relative order-2 w-full">
+                    <div class="bg-white rounded-card shadow-elevated p-4 sm:p-6 border border-slate-200 max-w-full">
+                        <div class="aspect-[4/3] rounded-xl overflow-hidden mb-4">
+                            <div class="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
+                            <svg class="w-20 h-20 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                            </svg>
+                        </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-slate-50 rounded-lg p-3 text-center">
+                                <p class="text-2xl font-bold text-primary">40+</p>
+                                <p class="text-sm text-slate-500">Years Experience</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-lg p-3 text-center">
+                                <p class="text-2xl font-bold text-primary">$100</p>
+                                <p class="text-sm text-slate-500">OFF Reroof</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decorative Elements -->
+                    <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl"></div>
+                    <div class="absolute -top-4 -left-4 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="py-8 bg-white border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-2">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <p class="font-semibold text-slate-800">Licensed & Insured</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-2">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <p class="font-semibold text-slate-800">Family Owned</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 bg-success/10 rounded-xl flex items-center justify-center mb-2">
+                        <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <p class="font-semibold text-slate-800">Free Estimates</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-2">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <p class="font-semibold text-slate-800">Quality Guaranteed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary font-semibold text-sm rounded-pill mb-4">Our Services</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-4">
+                    Complete Roofing Solutions
+                </h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    From minor repairs to complete roof replacements, we handle all your roofing needs with expertise and care.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Residential Roofing -->
+                <div class="bg-white rounded-card shadow-card p-6 border border-slate-200 hover:shadow-elevated transition-shadow">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Residential Roofing</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Complete roofing services for your home. New installations, repairs, and full replacements using quality materials.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            New roof installation
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Roof repair & replacement
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Commercial Roofing -->
+                <div class="bg-white rounded-card shadow-card p-6 border border-slate-200 hover:shadow-elevated transition-shadow">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Commercial Roofing</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Professional roofing solutions for businesses. Flat roofs, TPO, EPDM, and modified bitumen systems.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Flat & low-slope roofs
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            TPO & EPDM systems
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Roof Leak Detection -->
+                <div class="bg-white rounded-card shadow-card p-6 border border-slate-200 hover:shadow-elevated transition-shadow">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Leak Detection & Repair</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Fast, accurate leak detection and professional repairs to protect your home from water damage.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Expert diagnostics
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Emergency repairs
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Roof Maintenance -->
+                <div class="bg-white rounded-card shadow-card p-6 border border-slate-200 hover:shadow-elevated transition-shadow">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Roof Maintenance Programs</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Regular inspections and maintenance to extend your roof's life and prevent costly repairs.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Annual inspections
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Preventive care
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Skylight Installation -->
+                <div class="bg-white rounded-card shadow-card p-6 border border-slate-200 hover:shadow-elevated transition-shadow">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Skylight Installation</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Bring natural light into your home with professional skylight installation and repair services.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            New installations
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Leak repairs
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Rain Gutters -->
+                <div class="bg-white rounded-card shadow-card p-6 border border-slate-200 hover:shadow-elevated transition-shadow">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Rain Gutters & Leaf Protection</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Complete gutter services including installation, cleaning, and leaf protection systems.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Gutter installation
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Leaf guards & screens
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coupon Section -->
+    <section class="py-12 bg-accent/10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-card shadow-elevated p-8 border-2 border-accent/30 text-center">
+                <span class="inline-block px-4 py-1.5 bg-accent text-white font-bold text-sm rounded-pill mb-4">LIMITED TIME OFFER</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-2">
+                    $100 OFF
+                </h2>
+                <p class="text-xl text-slate-600 mb-4">Complete Reroof</p>
+                <p class="text-slate-500 mb-6">Mention this website when you call to receive your discount</p>
+                <a href="tel:8013777720" class="inline-block px-8 py-4 bg-accent text-white font-semibold text-lg rounded-large shadow-elevated hover:bg-accent-dark transition-all transform hover:-translate-y-0.5">
+                    Call (801) 377-7720
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="inline-block px-4 py-1.5 bg-accent/10 text-accent-dark font-semibold text-sm rounded-pill mb-4">Why Choose Us</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-6">
+                        Utah County's Trusted Roofing Company
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-8">
+                        For over 40 years, Liberty Roofing of Utah has been protecting homes and businesses throughout Utah County. As a family-owned business, we take pride in every project we complete.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">40+ Years Experience</h4>
+                                <p class="text-slate-500">Four decades of roofing expertise in Utah's unique climate.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Family Owned & Operated</h4>
+                                <p class="text-slate-500">Personal service from a local family business you can trust.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Licensed & Insured</h4>
+                                <p class="text-slate-500">Utah State License # 5382495-5501. Full coverage for your protection.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Free Estimates</h4>
+                                <p class="text-slate-500">No-obligation quotes with honest, upfront pricing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="bg-slate-100 rounded-card p-8 border border-slate-200">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-800">Liberty Roofing of Utah</h3>
+                            <p class="text-slate-500">Provo, Utah</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 mb-6 shadow-subtle">
+                            <p class="text-sm text-slate-500 mb-1">License</p>
+                            <p class="font-semibold text-slate-800">S280 - Roofing Contractor</p>
+                            <p class="text-sm text-slate-600">Utah State License # 5382495-5501</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-white rounded-lg p-4 text-center shadow-subtle">
+                                <p class="text-3xl font-bold text-primary">40+</p>
+                                <p class="text-sm text-slate-500">Years Experience</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 text-center shadow-subtle">
+                                <p class="text-3xl font-bold text-primary">$100</p>
+                                <p class="text-sm text-slate-500">OFF Reroof</p>
+                            </div>
+                        </div>
+                        
+                        <a href="tel:8013777720" class="block w-full py-3 bg-accent text-white font-semibold rounded-button shadow-subtle hover:bg-accent-dark transition-colors text-center">
+                            Call (801) 377-7720
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-1.5 bg-success/10 text-success font-semibold text-sm rounded-pill mb-4">Customer Reviews</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-4">
+                    What Our Customers Say
+                </h2>
+                <p class="text-lg text-slate-600">
+                    Trusted by homeowners throughout Utah County
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <!-- Review 1 - Larry Linde -->
+                <div class="bg-white rounded-card shadow-card p-6 border border-slate-200">
+                    <div class="flex text-accent mb-4">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-slate-600 mb-4 leading-relaxed">
+                        "Liberty Roofing responded quickly to my inquiry and provided professional service from start to finish. They followed up after the job was done to make sure everything was perfect. Highly recommend!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                            <span class="font-semibold text-primary">LL</span>
+                        </div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-slate-800">Larry Linde</p>
+                            <p class="text-sm text-slate-500">Utah County</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 - Kurt -->
+                <div class="bg-white rounded-card shadow-card p-6 border border-slate-200">
+                    <div class="flex text-accent mb-4">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-slate-600 mb-4 leading-relaxed">
+                        "As a contractor myself, I have high standards. Liberty Roofing did a great job at a reasonable price. I'll definitely refer them to my clients and use them again for future projects."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center">
+                            <span class="font-semibold text-accent-dark">K</span>
+                        </div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-slate-800">Kurt</p>
+                            <p class="text-sm text-slate-500">Contractor - Utah County</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area Section -->
+    <section class="py-12 bg-white border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-xl font-semibold text-slate-800 mb-4">Serving Utah County</h3>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-4 py-2 bg-slate-100 rounded-pill text-slate-600">Provo</span>
+                <span class="px-4 py-2 bg-slate-100 rounded-pill text-slate-600">Sandy</span>
+                <span class="px-4 py-2 bg-slate-100 rounded-pill text-slate-600">Orem</span>
+                <span class="px-4 py-2 bg-slate-100 rounded-pill text-slate-600">Lehi</span>
+                <span class="px-4 py-2 bg-slate-100 rounded-pill text-slate-600">American Fork</span>
+                <span class="px-4 py-2 bg-slate-100 rounded-pill text-slate-600">Pleasant Grove</span>
+                <span class="px-4 py-2 bg-slate-100 rounded-pill text-slate-600">And Surrounding Areas</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 bg-primary">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white letter-tight mb-4">
+                Ready for a New Roof?
+            </h2>
+            <p class="text-xl text-white/80 mb-8">
+                Get your free estimate today. No obligation, just honest pricing and quality craftsmanship.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:8013777720" class="px-8 py-4 bg-accent text-white font-semibold text-lg rounded-large shadow-elevated hover:bg-accent-dark transition-all transform hover:-translate-y-0.5 text-center">
+                    Call (801) 377-7720
+                </a>
+                <div class="px-8 py-4 bg-white/10 text-white font-semibold text-lg rounded-large border-2 border-white/30 text-center">
+                    $100 OFF Complete Reroof
+                </div>
+            </div>
+            <p class="mt-6 text-white/60 text-sm">
+                Serving Provo, Sandy, and all of Utah County
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary font-semibold text-sm rounded-pill mb-4">Contact Us</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-4">
+                        Get Your Free Estimate
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-8">
+                        Call us today for a free, no-obligation estimate on your roofing project. We're here to help protect your home.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500">Phone</p>
+                                <p class="font-semibold text-slate-800">(801) 377-7720</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500">Address</p>
+                                <p class="font-semibold text-slate-800">761 North 1890 West</p>
+                                <p class="text-slate-600">Provo, UT 84601</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500">License</p>
+                                <p class="font-semibold text-slate-800">S280 - Roofing Contractor</p>
+                                <p class="text-slate-600">Utah State License # 5382495-5501</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-50 rounded-card p-8 border border-slate-200">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Request a Free Estimate</h3>
+                    <form class="space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">First Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Doe">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Phone</label>
+                            <input type="tel" class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="(801) 555-1234">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                            <input type="email" class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Service Needed</label>
+                            <select class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+                                <option>Select a service...</option>
+                                <option>Residential Roofing</option>
+                                <option>Commercial Roofing</option>
+                                <option>Roof Leak Repair</option>
+                                <option>Roof Maintenance</option>
+                                <option>Skylight Installation</option>
+                                <option>Gutters & Leaf Protection</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none" placeholder="Tell us about your roofing needs..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-primary text-white font-semibold text-lg rounded-large shadow-elevated hover:bg-primary-dark transition-all transform hover:-translate-y-0.5">
+                            Request Free Estimate
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Brand -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                        <span class="text-xl font-bold text-white">Liberty Roofing of Utah</span>
+                    </div>
+                    <p class="text-slate-400 mb-4 max-w-md">
+                        Family owned & operated roofing company serving Utah County for over 40 years. Licensed, insured, and committed to quality.
+                    </p>
+                    <p class="text-slate-500 text-sm">
+                        761 North 1890 West, Provo, UT 84601
+                    </p>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-slate-400 hover:text-white transition-colors text-sm">Residential Roofing</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-white transition-colors text-sm">Commercial Roofing</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-white transition-colors text-sm">Leak Detection & Repair</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-white transition-colors text-sm">Roof Maintenance</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-white transition-colors text-sm">Skylights</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-white transition-colors text-sm">Gutters</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#why-us" class="text-slate-400 hover:text-white transition-colors text-sm">About Us</a></li>
+                        <li><a href="#reviews" class="text-slate-400 hover:text-white transition-colors text-sm">Reviews</a></li>
+                        <li><a href="#contact" class="text-slate-400 hover:text-white transition-colors text-sm">Contact</a></li>
+                        <li><a href="tel:8013777720" class="text-slate-400 hover:text-white transition-colors text-sm">Free Estimate</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-700 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-400 text-sm mb-4 md:mb-0">
+                    © 2026 Liberty Roofing of Utah. All rights reserved.
+                </p>
+                <div class="flex items-center space-x-6">
+                    <span class="text-slate-500 text-sm">License # 5382495-5501</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

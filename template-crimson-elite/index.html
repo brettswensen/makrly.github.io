@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crimson Elite HVAC - Utah's Heating & Cooling Experts</title>
+    <meta name="description" content="Crimson Elite HVAC - Professional heating, cooling, and plumbing services in Utah County. 24/7 emergency service. Licensed & insured. Free estimates.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#dc2626',
+                        'primary-dark': '#b91c1c',
+                        'accent': '#f59e0b',
+                        'accent-dark': '#d97706',
+                        'cool': '#0ea5e9',
+                        'heat': '#ef4444',
+                        'slate-50': '#f8fafc',
+                        'slate-100': '#f1f5f9',
+                        'slate-200': '#e2e8f0',
+                        'slate-600': '#475569',
+                        'slate-700': '#334155',
+                        'slate-800': '#1e293b',
+                        'success': '#10b981',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .letter-tight { letter-spacing: -0.025em; }
+        
+        /* Temperature Pattern Background */
+        .bg-pattern {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(circle at 30% 70%, rgba(220, 38, 38, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(14, 165, 233, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.03) 0%, transparent 40%);
+        }
+        
+        /* Thermal Wave Pattern */
+        .bg-thermal {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 50 Q25 30 50 50 T100 50' stroke='%23dc2626' stroke-width='0.5' fill='none' opacity='0.05'/%3E%3Cpath d='M0 60 Q25 40 50 60 T100 60' stroke='%230ea5e9' stroke-width='0.5' fill='none' opacity='0.05'/%3E%3C/svg%3E");
+        }
+        
+        .shadow-premium {
+            box-shadow: 
+                0 1px 2px rgba(0, 0, 0, 0.02),
+                0 4px 8px rgba(0, 0, 0, 0.03),
+                0 8px 16px rgba(0, 0, 0, 0.04),
+                0 16px 32px rgba(0, 0, 0, 0.05);
+        }
+        
+        .shadow-premium-hover:hover {
+            box-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.02),
+                0 8px 16px rgba(0, 0, 0, 0.03),
+                0 16px 32px rgba(0, 0, 0, 0.04),
+                0 32px 64px rgba(0, 0, 0, 0.06);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 50%, #fef2f2 100%);
+        }
+        
+        .btn-primary-gradient {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            transition: all 0.3s ease-out;
+        }
+        
+        .btn-primary-gradient:hover {
+            background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+        }
+        
+        .btn-accent-gradient {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            transition: all 0.3s ease-out;
+        }
+        
+        .btn-accent-gradient:hover {
+            background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); }
+            50% { box-shadow: 0 0 20px 10px rgba(220, 38, 38, 0.2); }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        
+        .trust-item {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .trust-item:nth-child(1) { animation-delay: 0.1s; }
+        .trust-item:nth-child(2) { animation-delay: 0.2s; }
+        .trust-item:nth-child(3) { animation-delay: 0.3s; }
+        .trust-item:nth-child(4) { animation-delay: 0.4s; }
+        
+        .scroll-animate {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .scroll-animate.js-enabled {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .scroll-animate.js-enabled.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scroll-animate.delay-1 { transition-delay: 0.1s; }
+        .scroll-animate.delay-2 { transition-delay: 0.2s; }
+        .scroll-animate.delay-3 { transition-delay: 0.3s; }
+        .scroll-animate.delay-4 { transition-delay: 0.4s; }
+        .scroll-animate.delay-5 { transition-delay: 0.5s; }
+        .scroll-animate.delay-6 { transition-delay: 0.6s; }
+        
+        .hover-lift {
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-premium {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            transition: all 0.3s ease-out;
+        }
+        
+        .btn-premium:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.4);
+        }
+        
+        .card-premium {
+            position: relative;
+            background: white;
+            border-radius: 1rem;
+        }
+        
+        .card-premium::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 1rem;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.2) 0%, rgba(245, 158, 11, 0.2) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+    <!-- Emergency Banner -->
+    <div class="w-full bg-primary py-2.5 px-4 text-center">
+        <p class="text-white text-sm font-bold">
+            🚨 24/7 Emergency HVAC Service | Call (801) 555-0234
+        </p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/50 shadow-premium">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-sm">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <span class="text-xl font-bold text-slate-800">Crimson Elite</span>
+                        <span class="hidden sm:inline text-sm text-slate-500 ml-2">| HVAC</span>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="#services" class="px-4 py-2 text-slate-600 hover:text-primary transition-colors font-medium">Services</a>
+                    <a href="#emergency" class="px-4 py-2 text-slate-600 hover:text-primary transition-colors font-medium">Emergency</a>
+                    <a href="#maintenance" class="px-4 py-2 text-slate-600 hover:text-primary transition-colors font-medium">Maintenance</a>
+                    <a href="#contact" class="px-4 py-2 text-slate-600 hover:text-primary transition-colors font-medium">Contact</a>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <a href="#contact" class="px-4 py-2 btn-accent-gradient text-white font-semibold text-sm rounded-xl shadow-sm">
+                        Book Service
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden hero-gradient bg-thermal">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-left">
+                    <div class="inline-flex items-center px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full shadow-premium mb-6 whitespace-nowrap animate-fade-in-up opacity-0" style="animation-fill-mode: forwards;">
+                        <svg class="w-5 h-5 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <span class="font-semibold text-slate-800">4.9</span>
+                        <span class="text-slate-500 ml-1 whitespace-nowrap">(203 reviews)</span>
+                        <span class="mx-3 text-slate-300 flex-shrink-0">|</span>
+                        <span class="text-success font-medium whitespace-nowrap">Licensed & Insured</span>
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 letter-tight leading-tight mb-6 animate-fade-in-up opacity-0 delay-100" style="animation-fill-mode: forwards;">
+                        Stay Comfortable Year-Round
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed animate-fade-in-up opacity-0 delay-200" style="animation-fill-mode: forwards;">
+                        Professional heating, cooling, and plumbing services in Utah County. 24/7 emergency repairs, installations, and maintenance plans. Free estimates.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up opacity-0 delay-300" style="animation-fill-mode: forwards;">
+                        <a href="tel:8015550234" class="w-full sm:w-auto px-8 py-4 btn-premium text-white font-semibold text-lg rounded-xl shadow-lg text-center animate-pulse-glow">
+                            (801) 555-0234
+                        </a>
+                        <button class="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 font-semibold text-lg rounded-xl border-2 border-slate-200 hover:border-primary hover:text-primary transition-all hover:shadow-lg">
+                            Schedule Service
+                        </button>
+                    </div>
+                    <p class="mt-6 text-sm text-slate-500 flex items-center">
+                        <svg class="w-5 h-5 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        Serving Lehi, Orem, Provo & Utah County
+                    </p>
+                </div>
+
+                <div class="relative animate-fade-in-up opacity-0 delay-400" style="animation-fill-mode: forwards;">
+                    <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-premium p-6 animate-float">
+                        <div class="aspect-[4/3] bg-gradient-to-br from-red-100 to-orange-50 rounded-xl flex items-center justify-center mb-4">
+                            <div class="text-center">
+                                <div class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                </div>
+                                <p class="text-slate-500 text-sm">Heating & Cooling Experts</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-slate-50 rounded-lg p-3 text-center counter-container">
+                                <p class="text-2xl font-bold text-primary"><span class="counter" data-target="15">0</span>+</p>
+                                <p class="text-sm text-slate-500">Years Experience</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-lg p-3 text-center">
+                                <p class="text-2xl font-bold text-primary">24/7</p>
+                                <p class="text-sm text-slate-500">Emergency Service</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="py-12 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="trust-item flex flex-col items-center">
+                    <div class="w-12 h-12 bg-success/10 rounded-xl flex items-center justify-center mb-2">
+                        <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <p class="font-semibold text-slate-800">Licensed & Insured</p>
+                </div>
+                <div class="trust-item flex flex-col items-center">
+                    <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-2">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <p class="font-semibold text-slate-800">Same-Day Service</p>
+                </div>
+                <div class="trust-item flex flex-col items-center">
+                    <div class="w-12 h-12 bg-success/10 rounded-xl flex items-center justify-center mb-2">
+                        <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <p class="font-semibold text-slate-800">Upfront Pricing</p>
+                </div>
+                <div class="trust-item flex flex-col items-center">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-2">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <p class="font-semibold text-slate-800">Satisfaction Guaranteed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Services Section -->
+    <section id="emergency" class="py-20 md:py-32 bg-primary">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-1.5 bg-accent text-white font-bold text-sm rounded-full mb-4">24/7 EMERGENCY</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white letter-tight mb-4">
+                    HVAC Emergencies Can't Wait
+                </h2>
+                <p class="text-lg text-white/80 max-w-2xl mx-auto">
+                    When your heating or cooling fails, you need help fast. Our emergency team is ready around the clock.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                    <div class="w-14 h-14 bg-accent rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Fast Response</h3>
+                    <p class="text-white/70">Emergency technicians dispatched immediately. Average response time under 60 minutes.</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                    <div class="w-14 h-14 bg-accent rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Fully Stocked Trucks</h3>
+                    <p class="text-white/70">Our technicians arrive with parts and tools to fix most issues on the first visit.</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                    <div class="w-14 h-14 bg-accent rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">No Overtime Charges</h3>
+                    <p class="text-white/70">Same fair pricing 24/7. Nights, weekends, and holidays - never extra.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="tel:8015550234" class="inline-flex items-center px-8 py-4 btn-premium text-white font-bold text-lg rounded-xl shadow-lg">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    Call (801) 555-0234 - Available 24/7
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 md:py-32 bg-pattern">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-4">
+                    Complete HVAC Services
+                </h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    From emergency repairs to new installations, we handle all your heating, cooling, and plumbing needs.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-premium shadow-premium p-8 hover-lift shadow-premium-hover scroll-animate delay-1">
+                    <div class="w-14 h-14 bg-heat/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-heat" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Heating Repair</h3>
+                    <p class="text-slate-600">Furnace and heater repairs, tune-ups, and emergency fixes to keep you warm.</p>
+                </div>
+
+                <div class="card-premium shadow-premium p-8 hover-lift shadow-premium-hover scroll-animate delay-2">
+                    <div class="w-14 h-14 bg-cool/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-cool" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">AC Repair</h3>
+                    <p class="text-slate-600">Air conditioning repairs, refrigerant recharges, and cooling system diagnostics.</p>
+                </div>
+
+                <div class="card-premium shadow-premium p-8 hover-lift shadow-premium-hover scroll-animate delay-3">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">System Installation</h3>
+                    <p class="text-slate-600">New HVAC system installations with energy-efficient options and financing available.</p>
+                </div>
+
+                <div class="card-premium shadow-premium p-8 hover-lift shadow-premium-hover scroll-animate delay-4">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Maintenance Plans</h3>
+                    <p class="text-slate-600">Preventive maintenance to extend system life and catch problems before they become emergencies.</p>
+                </div>
+
+                <div class="card-premium shadow-premium p-8 hover-lift shadow-premium-hover scroll-animate delay-5">
+                    <div class="w-14 h-14 bg-cool/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-cool" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Air Quality</h3>
+                    <p class="text-slate-600">Air purifiers, humidifiers, dehumidifiers, and duct cleaning for healthier indoor air.</p>
+                </div>
+
+                <div class="card-premium shadow-premium p-8 hover-lift shadow-premium-hover scroll-animate delay-6">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Smart Thermostats</h3>
+                    <p class="text-slate-600">WiFi thermostat installation and setup for energy savings and remote control.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Maintenance Section -->
+    <section id="maintenance" class="py-20 md:py-32 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary font-bold text-sm rounded-full mb-4">MAINTENANCE PLANS</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-6">
+                        Protect Your Investment
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-8">
+                        Regular maintenance prevents costly breakdowns and extends the life of your HVAC system. Join our maintenance plan for peace of mind.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Bi-Annual Tune-Ups</h4>
+                                <p class="text-slate-500">Spring AC check and fall heating inspection included.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Priority Scheduling</h4>
+                                <p class="text-slate-500">Members get priority appointment slots, even during peak seasons.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Repair Discounts</h4>
+                                <p class="text-slate-500">15% off all repairs and 10% off new equipment purchases.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">No Overtime Fees</h4>
+                                <p class="text-slate-500">Members never pay overtime charges, even on nights and weekends.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <button class="px-8 py-4 btn-primary-gradient text-white font-semibold text-lg rounded-xl shadow-lg">
+                            Join Maintenance Plan
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-slate-800">Maintenance Plan</h3>
+                        <div class="mt-4">
+                            <span class="text-5xl font-bold text-primary">$19</span>
+                            <span class="text-slate-500">/month</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-slate-600">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Bi-annual system tune-ups
+                        </li>
+                        <li class="flex items-center text-slate-600">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Priority scheduling
+                        </li>
+                        <li class="flex items-center text-slate-600">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            15% off repairs
+                        </li>
+                        <li class="flex items-center text-slate-600">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            No overtime fees
+                        </li>
+                        <li class="flex items-center text-slate-600">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Extended equipment warranties
+                        </li>
+                    </ul>
+                    <button class="w-full py-4 btn-accent-gradient text-white font-semibold text-lg rounded-xl shadow-lg">
+                        Sign Up Today
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="py-20 md:py-32 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-4">
+                    What Our Customers Say
+                </h2>
+                <p class="text-lg text-slate-600">
+                    203+ verified reviews from Utah County homeowners
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl p-6 shadow-premium">
+                    <div class="flex text-accent mb-4">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-slate-600 mb-4">"Our AC went out during a heat wave. Crimson Elite came out within an hour and had it fixed the same day. Lifesavers!"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                            <span class="font-semibold text-primary">RT</span>
+                        </div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-slate-800">Robert T.</p>
+                            <p class="text-sm text-slate-500">Lehi, UT</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-premium">
+                    <div class="flex text-accent mb-4">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-slate-600 mb-4">"Professional, honest pricing, and great work. They installed our new furnace and the whole process was smooth from start to finish."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center">
+                            <span class="font-semibold text-accent-dark">AM</span>
+                        </div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-slate-800">Amanda M.</p>
+                            <p class="text-sm text-slate-500">Orem, UT</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-premium">
+                    <div class="flex text-accent mb-4">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-slate-600 mb-4">"We've been on their maintenance plan for 3 years. Our systems run perfectly and we've saved money on repairs. Highly recommend!"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-success/20 rounded-full flex items-center justify-center">
+                            <span class="font-semibold text-success">DK</span>
+                        </div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-slate-800">David K.</p>
+                            <p class="text-sm text-slate-500">Provo, UT</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="https://g.co/kgs/EXAMPLE" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-white border-2 border-primary text-primary font-semibold rounded-full shadow-md hover:bg-primary hover:text-white transition-all">
+                    <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                    </svg>
+                    See All 203+ Reviews on Google
+                </a>
+                <p class="text-slate-500 text-sm mt-3">⭐ 4.9 Star Rating</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-32 bg-pattern">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-4">
+                        Schedule Your Service
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-8">
+                        Contact us today for a free estimate or to schedule service. We're here to keep you comfortable year-round.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500">Phone</p>
+                                <p class="font-semibold text-slate-800">(801) 555-0234</p>
+                                <p class="text-xs text-primary font-medium">24/7 Emergency Line</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500">Address</p>
+                                <p class="font-semibold text-slate-800">2850 N Commerce Pkwy</p>
+                                <p class="text-slate-600">Lehi, UT 84043</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500">Hours</p>
+                                <p class="font-semibold text-slate-800">Mon-Fri: 7AM-7PM</p>
+                                <p class="text-xs text-slate-400">Sat: 8AM-5PM | 24/7 Emergency</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-premium p-8">
+                    <form class="space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">First Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Doe">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Phone</label>
+                            <input type="tel" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="(801) 555-0234">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                            <input type="email" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Service Needed</label>
+                            <select class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+                                <option>Select a service...</option>
+                                <option>Heating Repair</option>
+                                <option>AC Repair</option>
+                                <option>Emergency Service</option>
+                                <option>System Installation</option>
+                                <option>Maintenance Plan</option>
+                                <option>Air Quality</option>
+                                <option>Smart Thermostat</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none" placeholder="Describe your issue..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 btn-accent-gradient text-white font-semibold text-lg rounded-xl shadow-lg">
+                            Request Service
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 md:py-32 bg-primary">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white letter-tight mb-4">
+                HVAC Emergency? We're Here 24/7
+            </h2>
+            <p class="text-xl text-white/80 mb-8">
+                Don't suffer through a broken heater or AC. Call our emergency hotline now.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:8015550234" class="px-8 py-4 btn-premium text-white font-bold text-lg rounded-xl shadow-lg flex items-center justify-center gap-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    (801) 555-0234
+                </a>
+                <button class="px-8 py-4 bg-white/10 text-white font-semibold text-lg rounded-xl border-2 border-white/30 hover:bg-white/20 transition-colors">
+                    Schedule Service
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <span class="ml-3 text-xl font-bold text-white">Crimson Elite</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">
+                        Utah's heating and cooling experts. Professional HVAC services, 24/7 emergency repairs, and maintenance plans in Utah County.
+                    </p>
+                    <p class="text-slate-500 text-sm">
+                        Licensed & Insured • 203+ 5-Star Reviews • 15+ Years Experience
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Heating Repair</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">AC Repair</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Installation</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Maintenance Plans</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Emergency Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li>(801) 555-0234</li>
+                        <li>2850 N Commerce Pkwy</li>
+                        <li>Lehi, UT 84043</li>
+                        <li class="text-accent">24/7 Emergency Service</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-700 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-400 text-sm mb-4 md:mb-0">
+                    © 2026 Crimson Elite HVAC. All rights reserved.
+                </p>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.scroll-animate').forEach((el) => {
+                el.classList.add('js-enabled');
+            });
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '50px',
+                threshold: 0.05
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.scroll-animate').forEach((el) => {
+                observer.observe(el);
+            });
+            
+            const counterContainer = document.querySelector('.counter-container');
+            const counter = document.querySelector('.counter');
+            let counterAnimated = false;
+            
+            if (counterContainer && counter) {
+                const counterObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !counterAnimated) {
+                            counterAnimated = true;
+                            const target = parseInt(counter.getAttribute('data-target'));
+                            const duration = 2000;
+                            const step = target / (duration / 16);
+                            let current = 0;
+                            
+                            const updateCounter = () => {
+                                current += step;
+                                if (current < target) {
+                                    counter.textContent = Math.floor(current);
+                                    requestAnimationFrame(updateCounter);
+                                } else {
+                                    counter.textContent = target;
+                                }
+                            };
+                            
+                            updateCounter();
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                counterObserver.observe(counterContainer);
+            }
+        });
+    </script>
+</body>
+</html>

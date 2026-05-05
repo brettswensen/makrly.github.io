@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headspace Style Template - Mindfulness & Meditation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sky-connect': '#0061ef',
+                        'sunshine-burst': '#ffce00',
+                        'deep-plum': '#3b197f',
+                        'ocean-glimmer': '#00a4ff',
+                        'blush-petal': '#ffa1cc',
+                        'forest-calm': '#02873a',
+                        'inkwell-gray': '#4b4c4d',
+                        'true-black': '#000000',
+                        'charcoal-tone': '#2d2c2b',
+                        'cloud-whisper': '#f9f4f2',
+                        'stone-slate': '#6b6b6b',
+                        'pure-white': '#ffffff',
+                        'pale-ash': '#e2ded9',
+                        'light-stone': '#d0d0d0',
+                    },
+                    fontFamily: {
+                        'headspace': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'subtle': 'rgba(65, 61, 69, 0.2) 0px 2px 0px 0px',
+                    },
+                    borderRadius: {
+                        'card': '16px',
+                        'pill': '800px',
+                        'button': '24px',
+                        'large-button': '32px',
+                        'content-card': '28px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        .letter-tight {
+            letter-spacing: -0.025em;
+        }
+        .letter-tighter {
+            letter-spacing: -0.03em;
+        }
+    </style>
+</head>
+<body class="bg-cloud-whisper text-inkwell-gray">
+    <!-- Accent Banner -->
+    <div class="w-full bg-sunshine-burst py-3 px-4 text-center">
+        <p class="text-charcoal-tone text-sm font-medium">
+            🎉 New: Try our AI-powered meditation guide 
+            <a href="#" class="underline hover:no-underline ml-1">Learn more →</a>
+        </p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-pure-white/95 backdrop-blur-sm border-b border-pale-ash">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-sky-connect rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-pure-white" fill="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="12" r="4" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="ml-3 text-xl font-bold text-inkwell-gray">Mindspace</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="#features" class="px-4 py-2 text-inkwell-gray hover:text-sky-connect transition-colors font-medium">Features</a>
+                    <a href="#meditations" class="px-4 py-2 text-inkwell-gray hover:text-sky-connect transition-colors font-medium">Meditations</a>
+                    <a href="#pricing" class="px-4 py-2 text-inkwell-gray hover:text-sky-connect transition-colors font-medium">Pricing</a>
+                    <a href="#about" class="px-4 py-2 text-inkwell-gray hover:text-sky-connect transition-colors font-medium">About</a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex items-center space-x-3">
+                    <button class="hidden sm:block px-5 py-2.5 text-inkwell-gray font-medium hover:text-sky-connect transition-colors">
+                        Log in
+                    </button>
+                    <button class="px-5 py-2.5 bg-sky-connect text-pure-white font-medium rounded-large-button shadow-subtle hover:bg-sky-connect/90 transition-colors">
+                        Try for free
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-inkwell-gray letter-tighter leading-tight mb-6">
+                    Sleep better, stress less, live more
+                </h1>
+                <p class="text-lg md:text-xl text-stone-slate mb-8 leading-relaxed max-w-2xl mx-auto">
+                    1,000+ meditations and mindfulness tools to help you find your calm, build healthy habits, and live a happier life.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <button class="w-full sm:w-auto px-8 py-4 bg-sky-connect text-pure-white font-semibold text-lg rounded-large-button shadow-subtle hover:bg-sky-connect/90 transition-all transform hover:-translate-y-0.5">
+                        Start your free trial
+                    </button>
+                    <button class="w-full sm:w-auto px-8 py-4 bg-cloud-whisper text-charcoal-tone font-semibold text-lg rounded-button border border-charcoal-tone hover:bg-pale-ash transition-colors">
+                        Learn more
+                    </button>
+                </div>
+                <p class="mt-4 text-sm text-stone-slate">No credit card required • Cancel anytime</p>
+            </div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 left-10 w-32 h-32 bg-sunshine-burst/30 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-40 h-40 bg-blush-petal/30 rounded-full blur-3xl"></div>
+        <div class="absolute top-40 right-20 w-24 h-24 bg-ocean-glimmer/20 rounded-full blur-2xl"></div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="py-16 md:py-24 bg-pure-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-inkwell-gray letter-tight mb-4">
+                    Tools for a healthier mind
+                </h2>
+                <p class="text-lg text-stone-slate max-w-2xl mx-auto">
+                    Everything you need to build a mindfulness practice that sticks
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Feature Card 1 -->
+                <div class="bg-pure-white rounded-content-card shadow-subtle p-6 border border-pale-ash">
+                    <div class="w-12 h-12 bg-sunshine-burst rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-charcoal-tone" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-inkwell-gray mb-2">Guided Meditations</h3>
+                    <p class="text-stone-slate leading-relaxed">Expert-led sessions for sleep, stress, focus, and more. From 1 minute to 1 hour.</p>
+                </div>
+
+                <!-- Feature Card 2 -->
+                <div class="bg-pure-white rounded-content-card shadow-subtle p-6 border border-pale-ash">
+                    <div class="w-12 h-12 bg-deep-plum rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-pure-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-inkwell-gray mb-2">AI Guidance</h3>
+                    <p class="text-stone-slate leading-relaxed">Personalized recommendations that adapt to your mood, goals, and progress.</p>
+                </div>
+
+                <!-- Feature Card 3 -->
+                <div class="bg-pure-white rounded-content-card shadow-subtle p-6 border border-pale-ash">
+                    <div class="w-12 h-12 bg-ocean-glimmer rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-pure-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-inkwell-gray mb-2">Sleep Sounds</h3>
+                    <p class="text-stone-slate leading-relaxed">Curated soundscapes and sleepcasts to help you drift off peacefully every night.</p>
+                </div>
+
+                <!-- Feature Card 4 -->
+                <div class="bg-pure-white rounded-content-card shadow-subtle p-6 border border-pale-ash">
+                    <div class="w-12 h-12 bg-blush-petal rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-charcoal-tone" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-inkwell-gray mb-2">Mindful Movement</h3>
+                    <p class="text-stone-slate leading-relaxed">Gentle exercises combining yoga, stretching, and meditation for body and mind.</p>
+                </div>
+
+                <!-- Feature Card 5 -->
+                <div class="bg-pure-white rounded-content-card shadow-subtle p-6 border border-pale-ash">
+                    <div class="w-12 h-12 bg-forest-calm rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-pure-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-inkwell-gray mb-2">Progress Tracking</h3>
+                    <p class="text-stone-slate leading-relaxed">See your journey with stats, streaks, and insights that celebrate your growth.</p>
+                </div>
+
+                <!-- Feature Card 6 -->
+                <div class="bg-pure-white rounded-content-card shadow-subtle p-6 border border-pale-ash">
+                    <div class="w-12 h-12 bg-sky-connect rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-pure-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-inkwell-gray mb-2">Family Plans</h3>
+                    <p class="text-stone-slate leading-relaxed">Share the benefits with loved ones. Special content for kids and teens included.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Two Column Section -->
+    <section class="py-16 md:py-24 bg-cloud-whisper">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="bg-pure-white rounded-content-card shadow-subtle p-8 border border-pale-ash">
+                        <div class="flex flex-wrap gap-3 mb-6">
+                            <span class="px-4 py-2 bg-charcoal-tone text-pure-white text-sm font-medium rounded-pill">AI guidance</span>
+                            <span class="px-4 py-2 bg-sunshine-burst text-charcoal-tone text-sm font-medium rounded-pill">Sleep</span>
+                            <span class="px-4 py-2 bg-deep-plum text-pure-white text-sm font-medium rounded-pill">Focus</span>
+                            <span class="px-4 py-2 bg-ocean-glimmer text-pure-white text-sm font-medium rounded-pill">Stress</span>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-inkwell-gray letter-tight mb-4">
+                            Mental health app with expert-led meditations and tools
+                        </h3>
+                        <p class="text-stone-slate leading-relaxed mb-6">
+                            Our team of psychologists, meditation teachers, and sleep experts have created content specifically designed to help you navigate life's challenges.
+                        </p>
+                        <button class="px-6 py-3 bg-sky-connect text-pure-white font-semibold rounded-large-button shadow-subtle hover:bg-sky-connect/90 transition-colors">
+                            Explore content
+                        </button>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="relative">
+                        <div class="bg-sunshine-burst/20 rounded-3xl p-8">
+                            <div class="bg-pure-white rounded-2xl shadow-lg p-6">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-10 h-10 bg-sky-connect rounded-full flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-pure-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+                                            <circle cx="12" cy="12" r="4" fill="currentColor"/>
+                                        </svg>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold text-inkwell-gray">Daily Mindfulness</p>
+                                        <p class="text-sm text-stone-slate">10 min • Beginner</p>
+                                    </div>
+                                </div>
+                                <div class="h-2 bg-pale-ash rounded-full mb-4">
+                                    <div class="h-2 bg-sky-connect rounded-full w-3/4"></div>
+                                </div>
+                                <p class="text-sm text-stone-slate">You're making great progress! 3 days in a row.</p>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-blush-petal/40 rounded-full blur-xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meditation Types Section -->
+    <section id="meditations" class="py-16 md:py-24 bg-pure-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-inkwell-gray letter-tight mb-4">
+                    Find your perfect practice
+                </h2>
+                <p class="text-lg text-stone-slate max-w-2xl mx-auto">
+                    Browse by category or let our AI recommend the perfect session for your current mood
+                </p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button class="px-6 py-2 bg-sky-connect text-pure-white font-medium rounded-lg shadow-subtle">All</button>
+                <button class="px-6 py-2 bg-pure-white text-inkwell-gray font-medium rounded-lg border border-pale-ash hover:border-sky-connect transition-colors">Sleep</button>
+                <button class="px-6 py-2 bg-pure-white text-inkwell-gray font-medium rounded-lg border border-pale-ash hover:border-sky-connect transition-colors">Stress</button>
+                <button class="px-6 py-2 bg-pure-white text-inkwell-gray font-medium rounded-lg border border-pale-ash hover:border-sky-connect transition-colors">Focus</button>
+                <button class="px-6 py-2 bg-pure-white text-inkwell-gray font-medium rounded-lg border border-pale-ash hover:border-sky-connect transition-colors">Anxiety</button>
+                <button class="px-6 py-2 bg-pure-white text-inkwell-gray font-medium rounded-lg border border-pale-ash hover:border-sky-connect transition-colors">Beginners</button>
+            </div>
+
+            <!-- Meditation Cards -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="group cursor-pointer">
+                    <div class="bg-cloud-whisper rounded-content-card p-4 mb-3 transition-transform group-hover:-translate-y-1">
+                        <div class="aspect-square bg-gradient-to-br from-deep-plum to-sky-connect rounded-2xl flex items-center justify-center">
+                            <svg class="w-12 h-12 text-pure-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h4 class="font-semibold text-inkwell-gray mb-1">Deep Sleep</h4>
+                    <p class="text-sm text-stone-slate">45 min • Sleepcast</p>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div class="bg-cloud-whisper rounded-content-card p-4 mb-3 transition-transform group-hover:-translate-y-1">
+                        <div class="aspect-square bg-gradient-to-br from-sunshine-burst to-blush-petal rounded-2xl flex items-center justify-center">
+                            <svg class="w-12 h-12 text-charcoal-tone/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h4 class="font-semibold text-inkwell-gray mb-1">Morning Joy</h4>
+                    <p class="text-sm text-stone-slate">10 min • Meditation</p>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div class="bg-cloud-whisper rounded-content-card p-4 mb-3 transition-transform group-hover:-translate-y-1">
+                        <div class="aspect-square bg-gradient-to-br from-forest-calm to-ocean-glimmer rounded-2xl flex items-center justify-center">
+                            <svg class="w-12 h-12 text-pure-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h4 class="font-semibold text-inkwell-gray mb-1">Energy Boost</h4>
+                    <p class="text-sm text-stone-slate">5 min • Quick</p>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div class="bg-cloud-whisper rounded-content-card p-4 mb-3 transition-transform group-hover:-translate-y-1">
+                        <div class="aspect-square bg-gradient-to-br from-sky-connect to-deep-plum rounded-2xl flex items-center justify-center">
+                            <svg class="w-12 h-12 text-pure-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h4 class="font-semibold text-inkwell-gray mb-1">Calm Storm</h4>
+                    <p class="text-sm text-stone-slate">20 min • Stress</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 md:py-24 bg-cloud-whisper">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-inkwell-gray letter-tight mb-4">
+                    Simple, transparent pricing
+                </h2>
+                <p class="text-lg text-stone-slate max-w-2xl mx-auto">
+                    Start free, upgrade when you're ready. No hidden fees, cancel anytime.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- Free Plan -->
+                <div class="bg-pure-white rounded-content-card shadow-subtle p-8 border border-pale-ash">
+                    <h3 class="text-xl font-bold text-inkwell-gray mb-2">Free</h3>
+                    <p class="text-stone-slate mb-6">Get started with basics</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-inkwell-gray">$0</span>
+                        <span class="text-stone-slate">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-stone-slate">
+                            <svg class="w-5 h-5 text-forest-calm mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Basic meditations
+                        </li>
+                        <li class="flex items-center text-stone-slate">
+                            <svg class="w-5 h-5 text-forest-calm mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Sleep sounds
+                        </li>
+                        <li class="flex items-center text-stone-slate">
+                            <svg class="w-5 h-5 text-forest-calm mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Progress tracking
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 bg-cloud-whisper text-charcoal-tone font-semibold rounded-button border border-charcoal-tone hover:bg-pale-ash transition-colors">
+                        Get started
+                    </button>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="bg-pure-white rounded-content-card shadow-subtle p-8 border-2 border-sky-connect relative">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                        <span class="px-4 py-1 bg-sky-connect text-pure-white text-sm font-semibold rounded-pill">Most Popular</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-inkwell-gray mb-2">Premium</h3>
+                    <p class="text-stone-slate mb-6">Full access to everything</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-inkwell-gray">$12.99</span>
+                        <span class="text-stone-slate">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-stone-slate">
+                            <svg class="w-5 h-5 text-forest-calm mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            1000+ meditations
+                        </li>
+                        <li class="flex items-center text-stone-slate">
+                            <svg class="w-5 h-5 text-forest-calm mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            AI recommendations
+                        </li>
+                        <li class="flex items-center text-stone-slate">
+                            <svg class="w-5 h-5 text-forest-calm mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Sleepcasts & stories
+                        </li>
+                        <li class="flex items-center text-stone-slate">
+                            <svg class="w-5 h-5 text-forest-calm mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Mindful movement
+                        </li>
+                        <li class="flex items-center text-stone-slate">
+                            <svg class="w-5 h-5 text-forest-calm mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Offline access
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 bg-sky-connect text-pure-white font-semibold rounded-large-button shadow-subtle hover:bg-sky-connect/90 transition-colors">
+                        Start free trial
+                    </button>
+                </div>
+
+                <!-- Family Plan -->
+                <div class="bg-pure-white rounded-content-card shadow-subtle p-8 border border-pale-ash">
+                    <h3 class="text-xl font-bold text-inkwell-gray mb-2">Family</h3>
+                    <p class="text-stone-slate mb-6">Share with loved ones</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-inkwell-gray">$19.99</span>
+                        <span class="text-stone-slate">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-stone-slate">
+                            <svg class="w-5 h-5 text-forest-calm mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Everything in Premium
+                        </li>
+                        <li class="flex items-center text-stone-slate">
+                            <svg class="w-5 h-5 text-forest-calm mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Up to 6 accounts
+                        </li>
+                        <li class="flex items-center text-stone-slate">
+                            <svg class="w-5 h-5 text-forest-calm mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Kids & teen content
+                        </li>
+                        <li class="flex items-center text-stone-slate">
+                            <svg class="w-5 h-5 text-forest-calm mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Parental controls
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 bg-cloud-whisper text-charcoal-tone font-semibold rounded-button border border-charcoal-tone hover:bg-pale-ash transition-colors">
+                        Choose Family
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 md:py-24 bg-pure-white">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-inkwell-gray letter-tight mb-4">
+                Get mindfulness tips delivered
+            </h2>
+            <p class="text-lg text-stone-slate mb-8">
+                Join 2 million+ subscribers receiving weekly insights on meditation, sleep, and mental wellness.
+            </p>
+            <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input 
+                    type="email" 
+                    placeholder="Enter your email"
+                    class="flex-1 px-4 py-3 bg-pure-white text-true-black rounded-lg border border-light-stone focus:outline-none focus:border-sky-connect transition-colors"
+                >
+                <button type="submit" class="px-6 py-3 bg-sky-connect text-pure-white font-semibold rounded-large-button shadow-subtle hover:bg-sky-connect/90 transition-colors whitespace-nowrap">
+                    Subscribe
+                </button>
+            </form>
+            <p class="mt-4 text-sm text-stone-slate">We respect your privacy. Unsubscribe anytime.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-cloud-whisper py-16 border-t border-pale-ash">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+                <!-- Brand Column -->
+                <div class="col-span-2 md:col-span-4 lg:col-span-1">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-sky-connect rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-pure-white" fill="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="12" cy="12" r="4" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="ml-3 text-xl font-bold text-inkwell-gray">Mindspace</span>
+                    </div>
+                    <p class="text-stone-slate text-sm mb-4">
+                        Your journey to a healthier, happier mind starts here.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-charcoal-tone rounded-full flex items-center justify-center hover:bg-inkwell-gray transition-colors">
+                            <svg class="w-5 h-5 text-pure-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-charcoal-tone rounded-full flex items-center justify-center hover:bg-inkwell-gray transition-colors">
+                            <svg class="w-5 h-5 text-pure-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Column -->
+                <div>
+                    <h4 class="font-semibold text-inkwell-gray mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-stone-slate hover:text-sky-connect transition-colors text-sm">Meditations</a></li>
+                        <li><a href="#" class="text-stone-slate hover:text-sky-connect transition-colors text-sm">Sleep</a></li>
+                        <li><a href="#" class="text-stone-slate hover:text-sky-connect transition-colors text-sm">Move</a></li>
+                        <li><a href="#" class="text-stone-slate hover:text-sky-connect transition-colors text-sm">Focus</a></li>
+                        <li><a href="#" class="text-stone-slate hover:text-sky-connect transition-colors text-sm">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Column -->
+                <div>
+                    <h4 class="font-semibold text-inkwell-gray mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-stone-slate hover:text-sky-connect transition-colors text-sm">About</a></li>
+                        <li><a href="#" class="text-stone-slate hover:text-sky-connect transition-colors text-sm">Careers</a></li>
+                        <li><a href="#" class="text-stone-slate hover:text-sky-connect transition-colors text-sm">Press</a></li>
+                        <li><a href="#" class="text-stone-slate hover:text-sky-connect transition-colors text-sm">Blog</a></li>
+                        <li><a href="#" class="text-stone-slate hover:text-sky-connect transition-colors text-sm">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Column -->
+                <div>
+                    <h4 class="font-semibold text-inkwell-gray mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-stone-slate hover:text-sky-connect transition-colors text-sm">Help Center</a></li>
+                        <li><a href="#" class="text-stone-slate hover:text-sky-connect transition-colors text-sm">For Work</a></li>
+                        <li><a href="#" class="text-stone-slate hover:text-sky-connect transition-colors text-sm">For Students</a></li>
+                        <li><a href="#" class="text-stone-slate hover:text-sky-connect transition-colors text-sm">Gift Cards</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Column -->
+                <div>
+                    <h4 class="font-semibold text-inkwell-gray mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-stone-slate hover:text-sky-connect transition-colors text-sm">Privacy</a></li>
+                        <li><a href="#" class="text-stone-slate hover:text-sky-connect transition-colors text-sm">Terms</a></li>
+                        <li><a href="#" class="text-stone-slate hover:text-sky-connect transition-colors text-sm">Cookies</a></li>
+                        <li><a href="#" class="text-stone-slate hover:text-sky-connect transition-colors text-sm">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-pale-ash flex flex-col md:flex-row justify-between items-center">
+                <p class="text-stone-slate text-sm mb-4 md:mb-0">
+                    © 2026 Mindspace. All rights reserved.
+                </p>
+                <div class="flex items-center space-x-4">
+                    <span class="text-stone-slate text-sm">Download the app:</span>
+                    <a href="#" class="px-4 py-2 bg-charcoal-tone text-pure-white text-sm font-medium rounded-lg hover:bg-inkwell-gray transition-colors">
+                        App Store
+                    </a>
+                    <a href="#" class="px-4 py-2 bg-charcoal-tone text-pure-white text-sm font-medium rounded-lg hover:bg-inkwell-gray transition-colors">
+                        Google Play
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
