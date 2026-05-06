@@ -416,8 +416,8 @@
                             <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80" alt="Professional Plumber at Work" class="w-full h-full object-cover">
                         </div>
                         <div class="grid grid-cols-2 gap-3">
-                            <div class="bg-slate-50 rounded-lg p-3 text-center">
-                                <p class="text-2xl font-bold text-primary">20+</p>
+                            <div class="bg-slate-50 rounded-lg p-3 text-center counter-container">
+                                <p class="text-2xl font-bold text-primary"><span class="counter" data-target="20">0</span>+</p>
                                 <p class="text-sm text-slate-500">Years Experience</p>
                             </div>
                             <div class="bg-slate-50 rounded-lg p-3 text-center">
@@ -1185,35 +1185,38 @@
             });
         }, 3000);
         
-        // Count-up animation for numbers
-        function animateCountUp(el, target, duration = 2000) {
-            let start = 0;
-            const increment = target / (duration / 16);
-            const timer = setInterval(() => {
-                start += increment;
-                if (start >= target) {
-                    el.textContent = target + (el.dataset.suffix || '');
-                    clearInterval(timer);
-                } else {
-                    el.textContent = Math.floor(start) + (el.dataset.suffix || '');
-                }
-            }, 16);
+        // Number Counter Animation - triggers on scroll
+        const counterContainer = document.querySelector('.counter-container');
+        const counter = document.querySelector('.counter');
+        let counterAnimated = false;
+        
+        if (counterContainer && counter) {
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !counterAnimated) {
+                        counterAnimated = true;
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const duration = 2000; // 2 seconds
+                        const step = target / (duration / 16); // 60fps
+                        let current = 0;
+                        
+                        const updateCounter = () => {
+                            current += step;
+                            if (current < target) {
+                                counter.textContent = Math.floor(current);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target;
+                            }
+                        };
+                        
+                        updateCounter();
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            counterObserver.observe(counterContainer);
         }
-        
-        // Observe count-up elements
-        const countObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-                    entry.target.classList.add('counted');
-                    const target = parseInt(entry.target.dataset.target);
-                    animateCountUp(entry.target, target);
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        document.querySelectorAll('.count-up').forEach(el => {
-            countObserver.observe(el);
-        });
     </script>
 </body>
 </html>
