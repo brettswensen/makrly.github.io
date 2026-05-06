@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makrly.io - Website Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #6366f1;
+        }
+        
+        .stat-card .label {
+            color: #64748b;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            background: white;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .tab {
+            padding: 12px 24px;
+            border: none;
+            background: transparent;
+            color: #64748b;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        
+        .tab:hover {
+            background: #f1f5f9;
+            color: #334155;
+        }
+        
+        .tab.active {
+            background: #6366f1;
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #1e293b;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .card-header {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        
+        .card-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .tag.template {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .tag.demo {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .tag.industry {
+            background: #f3e8ff;
+            color: #7c3aed;
+        }
+        
+        .tag.status-pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .tag.status-review {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .tag.status-approved {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .tag.status-sent {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .card-description {
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+        
+        .card-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: #6366f1;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #4f46e5;
+        }
+        
+        .btn-secondary {
+            background: #f1f5f9;
+            color: #475569;
+        }
+        
+        .btn-secondary:hover {
+            background: #e2e8f0;
+        }
+        
+        .status-select {
+            padding: 6px 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            background: white;
+            cursor: pointer;
+        }
+        
+        .notes {
+            margin-top: 15px;
+            padding: 12px;
+            background: #f8fafc;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+        
+        .notes-label {
+            font-weight: 500;
+            color: #475569;
+            margin-bottom: 4px;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #64748b;
+        }
+        
+        .empty-state-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 Makrly.io Dashboard</h1>
+            <p>Website templates and business demos for local service companies</p>
+        </header>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="number" id="template-count">8</div>
+                <div class="label">Master Templates</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="demo-count">0</div>
+                <div class="label">Business Demos</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="pending-count">0</div>
+                <div class="label">Pending Review</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="approved-count">0</div>
+                <div class="label">Approved</div>
+            </div>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('templates')">📋 Master Templates</button>
+            <button class="tab" onclick="showTab('demos')">🏢 Business Demos</button>
+        </div>
+        
+        <!-- Templates Tab -->
+        <div id="templates" class="tab-content active">
+            <h2 class="section-title">Master Templates (Starting Points)</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Liberty Roofing v3</div>
+                        <div class="card-meta">
+                            <span class="tag template">Template</span>
+                            <span class="tag industry">Roofing</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Enhanced roofing template with social proof, comparison section, and mobile CTA.</p>
+                        <div class="card-actions">
+                            <a href="/liberty-roofing-v3/" class="btn btn-primary" target="_blank">View Live →</a>
+                            <a href="/liberty-roofing-v3/index.html" class="btn btn-secondary">Source</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Crimson Elite</div>
+                        <div class="card-meta">
+                            <span class="tag template">Template</span>
+                            <span class="tag industry">HVAC</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Red-themed HVAC template with 24/7 service focus and emergency CTA.</p>
+                        <div class="card-actions">
+                            <a href="/template-crimson-elite/" class="btn btn-primary" target="_blank">View Live →</a>
+                            <a href="/template-crimson-elite/index.html" class="btn btn-secondary">Source</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Amber Craft</div>
+                        <div class="card-meta">
+                            <span class="tag template">Template</span>
+                            <span class="tag industry">Handyman</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Orange/wood themed template for construction and handyman services.</p>
+                        <div class="card-actions">
+                            <a href="/template-amber-craft/" class="btn btn-primary" target="_blank">View Live →</a>
+                            <a href="/template-amber-craft/index.html" class="btn btn-secondary">Source</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Emerald Pro</div>
+                        <div class="card-meta">
+                            <span class="tag template">Template</span>
+                            <span class="tag industry">Cleaning</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Green-themed template perfect for cleaning and landscaping businesses.</p>
+                        <div class="card-actions">
+                            <a href="/template-emerald-pro/" class="btn btn-primary" target="_blank">View Live →</a>
+                            <a href="/template-emerald-pro/index.html" class="btn btn-secondary">Source</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Midnight Pro</div>
+                        <div class="card-meta">
+                            <span class="tag template">Template</span>
+                            <span class="tag industry">General</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Dark premium theme for professional services. V3 enhanced.</p>
+                        <div class="card-actions">
+                            <a href="/template-midnight-pro/" class="btn btn-primary" target="_blank">View Live →</a>
+                            <a href="/template-midnight-pro/index.html" class="btn btn-secondary">Source</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Midnight Pro v2</div>
+                        <div class="card-meta">
+                            <span class="tag template">Template</span>
+                            <span class="tag industry">General</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Dark theme variation with different layout options.</p>
+                        <div class="card-actions">
+                            <a href="/template-midnight-pro-v2/" class="btn btn-primary" target="_blank">View Live →</a>
+                            <a href="/template-midnight-pro-v2/index.html" class="btn btn-secondary">Source</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Midnight Pro v3</div>
+                        <div class="card-meta">
+                            <span class="tag template">Template</span>
+                            <span class="tag industry">General</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Dark theme variation with enhanced animations.</p>
+                        <div class="card-actions">
+                            <a href="/template-midnight-pro-v3/" class="btn btn-primary" target="_blank">View Live →</a>
+                            <a href="/template-midnight-pro-v3/index.html" class="btn btn-secondary">Source</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Warm Pro</div>
+                        <div class="card-meta">
+                            <span class="tag template">Template</span>
+                            <span class="tag industry">Various</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Warm neutral theme suitable for various service businesses.</p>
+                        <div class="card-actions">
+                            <a href="/template-warm-pro/" class="btn btn-primary" target="_blank">View Live →</a>
+                            <a href="/template-warm-pro/index.html" class="btn btn-secondary">Source</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Demos Tab -->
+        <div id="demos" class="tab-content">
+            <h2 class="section-title">Business Demos (For Outreach)</h2>
+            <div id="demo-grid" class="grid">
+                <div class="empty-state">
+                    <div class="empty-state-icon">🏢</div>
+                    <h3>No Business Demos Yet</h3>
+                    <p>Demos created by Picasso will appear here with status tracking.</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem;">Tell Picasso: "Create a demo for [Business Name]"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Tab switching
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+        
+        // Default demos (pre-loaded)
+        const defaultDemos = [
+            {
+                id: 'sant-electric-001',
+                name: 'Sant Electric',
+                industry: 'Electrician',
+                url: '/sant-electric-demo/',
+                description: 'Refreshed website for Eagle Mountain electrician with crimson-elite template, featuring 24/7 emergency service, 4.7 star rating, and comprehensive electrical services',
+                status: 'pending',
+                notes: '',
+                created: '2026-05-05T12:00:00Z'
+            },
+            {
+                id: 'tb-yetter-001',
+                name: 'TB Yetter Plumbing',
+                industry: 'Plumber',
+                url: '/tb-yetter-plumbing/',
+                description: 'Refreshed website for Salt Lake City plumber with blue theme, featuring 20+ years experience, 4.5 star rating, and emergency plumbing services',
+                status: 'pending',
+                notes: '',
+                created: '2026-05-05T21:00:00Z'
+            }
+        ];
+        
+        // Load demos from localStorage (for status tracking)
+        function loadDemos() {
+            const storedDemos = JSON.parse(localStorage.getItem('makrly-demos') || '[]');
+            const demoGrid = document.getElementById('demo-grid');
+            
+            // Merge default demos with stored demos (avoid duplicates)
+            const demoMap = new Map();
+            defaultDemos.forEach(d => demoMap.set(d.id, d));
+            storedDemos.forEach(d => demoMap.set(d.id, d));
+            const demos = Array.from(demoMap.values());
+            
+            if (demos.length === 0) {
+                return; // Keep empty state
+            }
+            
+            demoGrid.innerHTML = demos.map(demo => `
+                <div class="card" data-id="${demo.id}">
+                    <div class="card-header">
+                        <div class="card-title">${demo.name}</div>
+                        <div class="card-meta">
+                            <span class="tag demo">Demo</span>
+                            <span class="tag industry">${demo.industry}</span>
+                            <span class="tag status-${demo.status}">${formatStatus(demo.status)}</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">${demo.description}</p>
+                        <div style="margin-bottom: 15px;">
+                            <label style="font-size: 0.875rem; color: #64748b;">Status:</label>
+                            <select class="status-select" onchange="updateStatus('${demo.id}', this.value)">
+                                <option value="pending" ${demo.status === 'pending' ? 'selected' : ''}>🟡 Pending Review</option>
+                                <option value="review" ${demo.status === 'review' ? 'selected' : ''}>🔵 In Review</option>
+                                <option value="approved" ${demo.status === 'approved' ? 'selected' : ''}>🟢 Approved</option>
+                                <option value="sent" ${demo.status === 'sent' ? 'selected' : ''}>📧 Sent to Business</option>
+                            </select>
+                        </div>
+                        <div class="card-actions">
+                            <a href="${demo.url}" class="btn btn-primary" target="_blank">View Live →</a>
+                            <button class="btn btn-secondary" onclick="addNote('${demo.id}')">Add Note</button>
+                        </div>
+                        ${demo.notes ? `<div class="notes"><div class="notes-label">Notes:</div>${demo.notes}</div>` : ''}
+                    </div>
+                </div>
+            `).join('');
+            
+            updateStats();
+        }
+        
+        function formatStatus(status) {
+            const labels = {
+                'pending': 'Pending Review',
+                'review': 'In Review',
+                'approved': 'Approved',
+                'sent': 'Sent'
+            };
+            return labels[status] || status;
+        }
+        
+        function updateStatus(id, newStatus) {
+            const demos = JSON.parse(localStorage.getItem('makrly-demos') || '[]');
+            const demo = demos.find(d => d.id === id);
+            if (demo) {
+                demo.status = newStatus;
+                localStorage.setItem('makrly-demos', JSON.stringify(demos));
+                loadDemos();
+            }
+        }
+        
+        function addNote(id) {
+            const note = prompt('Add a note:');
+            if (note) {
+                const demos = JSON.parse(localStorage.getItem('makrly-demos') || '[]');
+                const demo = demos.find(d => d.id === id);
+                if (demo) {
+                    demo.notes = note;
+                    localStorage.setItem('makrly-demos', JSON.stringify(demos));
+                    loadDemos();
+                }
+            }
+        }
+        
+        function updateStats() {
+            const storedDemos = JSON.parse(localStorage.getItem('makrly-demos') || '[]');
+            const demoMap = new Map();
+            defaultDemos.forEach(d => demoMap.set(d.id, d));
+            storedDemos.forEach(d => demoMap.set(d.id, d));
+            const demos = Array.from(demoMap.values());
+            
+            document.getElementById('demo-count').textContent = demos.length;
+            document.getElementById('pending-count').textContent = demos.filter(d => d.status === 'pending').length;
+            document.getElementById('approved-count').textContent = demos.filter(d => d.status === 'approved' || d.status === 'sent').length;
+        }
+        
+        // Add demo function (called by Picasso or manually)
+        function addDemo(name, industry, url, description) {
+            const demos = JSON.parse(localStorage.getItem('makrly-demos') || '[]');
+            demos.push({
+                id: Date.now().toString(),
+                name,
+                industry,
+                url,
+                description: description || `Demo site for ${name}`,
+                status: 'pending',
+                notes: '',
+                created: new Date().toISOString()
+            });
+            localStorage.setItem('makrly-demos', JSON.stringify(demos));
+            loadDemos();
+        }
+        
+        // Initialize
+        loadDemos();
+        
+        // Update stats to include default demos
+        function initializeStats() {
+            const storedDemos = JSON.parse(localStorage.getItem('makrly-demos') || '[]');
+            const demoMap = new Map();
+            defaultDemos.forEach(d => demoMap.set(d.id, d));
+            storedDemos.forEach(d => demoMap.set(d.id, d));
+            const allDemos = Array.from(demoMap.values());
+            
+            document.getElementById('demo-count').textContent = allDemos.length;
+            document.getElementById('pending-count').textContent = allDemos.filter(d => d.status === 'pending').length;
+            document.getElementById('approved-count').textContent = allDemos.filter(d => d.status === 'approved' || d.status === 'sent').length;
+        }
+        
+        initializeStats();
+    </script>
+</body>
+</html>
