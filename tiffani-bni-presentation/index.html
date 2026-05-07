@@ -414,10 +414,22 @@
         /* Renovation Grid */
         .reno-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            grid-template-columns: repeat(5, 1fr);
             gap: 16px;
             max-width: 700px;
             margin: 0 auto 32px;
+        }
+        
+        @media (max-width: 768px) {
+            .reno-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .reno-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         .reno-item {
