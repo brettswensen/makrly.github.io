@@ -3,314 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tiffani | Simply Home Mortgage - I Create Your Best Customers</title>
-    <meta name="description" content="Tiffani at Simply Home Mortgage specializes in move-up buyers and vacation home buyers. Creating customers for contractors across Utah County.">
+    <title>Tiffani | Simply Home Mortgage - BNI Presentation</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'dark': '#0a0a0a',
-                        'dark-light': '#141414',
-                        'dark-lighter': '#1f1f1f',
-                        'gold': '#d4af37',
-                        'gold-light': '#e8c547',
-                        'gold-dark': '#b8941f',
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', 'system-ui', 'sans-serif'; background-color: #0a0a0a; color: #ffffff; }
-        .letter-tight { letter-spacing: -0.03em; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #0a0a0a; 
+            color: white;
+            overflow-x: hidden;
+        }
         
-        .bg-dark { background-color: #0a0a0a; }
-        .bg-dark-light { background-color: #141414; }
-        .bg-dark-lighter { background-color: #1f1f1f; }
-        .text-gold { color: #d4af37; }
-        .bg-gold { background-color: #d4af37; }
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .gold { color: #d4af37; }
+        .bg-gold { background: #d4af37; }
         .border-gold { border-color: #d4af37; }
         
-        .gradient-gold {
-            background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
-        }
-        
-        .gradient-gold-shine {
-            background: linear-gradient(135deg, #e8c547 0%, #d4af37 50%, #b8941f 100%);
-        }
-        
-        .shadow-gold {
-            box-shadow: 0 4px 30px rgba(212, 175, 55, 0.2);
-        }
-        
-        .shadow-gold-strong {
-            box-shadow: 0 8px 40px rgba(212, 175, 55, 0.3);
-        }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes countUp {
-            from { opacity: 0; transform: scale(0.5); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        
-        @keyframes pulse-gold {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
-            50% { box-shadow: 0 0 30px 10px rgba(212, 175, 55, 0.2); }
-        }
-        
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-        
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-400 { animation-delay: 0.4s; }
-        
-        .hover-lift {
-            transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
-        }
-        
-        .hover-lift:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.15);
-        }
-        
-        .scroll-animate {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        
-        .scroll-animate.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .gold-glow {
-            box-shadow: 0 0 60px rgba(212, 175, 55, 0.25);
-        }
-        
-        .gold-border-glow {
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.15), inset 0 0 30px rgba(212, 175, 55, 0.05);
-        }
-        
-        .text-gradient-gold {
+        .big-number {
+            font-size: clamp(8rem, 20vw, 16rem);
+            font-weight: 900;
+            line-height: 0.85;
             background: linear-gradient(135deg, #e8c547 0%, #d4af37 50%, #b8941f 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
         
-        .comparison-card {
-            transition: all 0.4s ease;
+        .slide-title {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
         }
         
-        .comparison-card:hover {
-            transform: scale(1.02);
+        .gradient-text {
+            background: linear-gradient(135deg, #e8c547 0%, #d4af37 50%, #b8941f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
-        .stat-number {
-            font-variant-numeric: tabular-nums;
+        .card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
         }
         
-        .timeline-dot {
-            animation: pulse-gold 2s infinite;
+        .nav-dots {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
         }
         
-        .renovation-bar {
-            transition: width 1.5s ease-out;
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .nav-dot.active {
+            background: #d4af37;
+            transform: scale(1.3);
+        }
+        
+        .renovation-item {
+            transition: all 0.5s ease;
+        }
+        
+        .renovation-item:hover {
+            transform: translateX(10px);
+        }
+        
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-in {
+            animation: countUp 0.8s ease forwards;
+        }
+        
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .glow {
+            box-shadow: 0 0 60px rgba(212, 175, 55, 0.15);
         }
     </style>
 </head>
-<body class="bg-dark">
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark/95 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex items-center">
-                    <span class="text-2xl font-bold text-white">Simply Home<span class="text-gold">.</span></span>
+<body>
+    <!-- Navigation Dots -->
+    <div class="nav-dots">
+        <div class="nav-dot active" onclick="scrollToSlide(0)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(1)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(2)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(3)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(4)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(5)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(6)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(7)"></div>
+    </div>
+
+    <!-- Slide 1: Hook -->
+    <section class="slide" style="background: radial-gradient(ellipse at center, rgba(212,175,55,0.08) 0%, transparent 70%);">
+        <div class="max-w-6xl w-full text-center">
+            <p class="text-gold text-sm tracking-[0.4em] uppercase mb-8 font-semibold">Simply Home Mortgage</p>
+            <h1 class="slide-title mb-6">
+                I Create Your<br>
+                <span class="gradient-text">Best Customers</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-12">
+                Move-up buyers with equity, established credit, and money to spend on renovations.
+            </p>
+            <div class="flex justify-center gap-8 text-sm text-gray-500">
+                <span>10+ Years Experience</span>
+                <span class="text-gold">•</span>
+                <span>$50M+ Funded</span>
+                <span class="text-gold">•</span>
+                <span>500+ Families</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 2: The Problem -->
+    <section class="slide">
+        <div class="max-w-6xl w-full">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <p class="text-gold text-sm tracking-[0.3em] uppercase mb-4 font-semibold">The Problem</p>
+                    <h2 class="slide-title mb-6">
+                        Not All Buyers Are<br>Created Equal
+                    </h2>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        First-time buyers drain their savings just to close. They have $0 left for renovations.
+                    </p>
                 </div>
-                <div class="hidden md:flex items-center space-x-10">
-                    <a href="#how" class="text-gray-400 hover:text-gold transition-colors text-sm font-medium uppercase tracking-wider">How It Works</a>
-                    <a href="#story" class="text-gray-400 hover:text-gold transition-colors text-sm font-medium uppercase tracking-wider">The Story</a>
-                    <a href="#comparison" class="text-gray-400 hover:text-gold transition-colors text-sm font-medium uppercase tracking-wider">The Difference</a>
-                    <a href="#ask" class="text-gray-400 hover:text-gold transition-colors text-sm font-medium uppercase tracking-wider">The Ask</a>
-                    <a href="#contact" class="px-6 py-3 gradient-gold text-dark font-bold rounded-lg hover:shadow-gold-strong transition-all">Contact</a>
+                <div class="card rounded-3xl p-12 text-center">
+                    <p class="text-8xl font-bold text-gray-700 mb-4">$0</p>
+                    <p class="text-gray-500 text-lg">Average renovation budget<br>for first-time buyers</p>
                 </div>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center pt-20 pb-16 relative overflow-hidden">
-        <!-- Background gradient -->
-        <div class="absolute inset-0 bg-gradient-to-b from-dark via-dark-light to-dark"></div>
-        <div class="absolute inset-0" style="background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center">
-                <div class="animate-fade-in-up">
-                    <p class="text-gold text-sm font-bold tracking-[0.3em] uppercase mb-6">Simply Home Mortgage</p>
-                    <h1 class="text-6xl md:text-8xl lg:text-9xl font-bold text-white letter-tight mb-8 leading-[0.9]">
-                        I Create<br><span class="text-gradient-gold">Your Best</span><br>Customers
-                    </h1>
-                    <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-6 font-light">
-                        Move-up buyers with equity, established credit, and <span class="text-gold font-semibold">$25K-150K</span> to spend on renovations.
+    <!-- Slide 3: The Solution -->
+    <section class="slide" style="background: linear-gradient(135deg, #0a0a0a 0%, #141414 100%);">
+        <div class="max-w-6xl w-full">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="order-2">
+                    <p class="text-gold text-sm tracking-[0.3em] uppercase mb-4 font-semibold">My Solution</p>
+                    <h2 class="slide-title mb-6">
+                        I Specialize in<br>Move-Up Buyers
+                    </h2>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                        These clients walk in with $100K+ in equity and budgets for major renovations.
                     </p>
-                    <p class="text-gray-500 text-lg max-w-2xl mx-auto mb-16">
-                        When I close a mortgage, I create a year's worth of work for contractors, remodelers, and home service professionals.
-                    </p>
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-6xl font-bold gold">$25K-150K</span>
+                        <span class="text-gray-500">renovation budget</span>
+                    </div>
+                </div>
+                <div class="order-1 card rounded-3xl p-12 text-center border-gold glow">
+                    <p class="text-8xl font-bold gold mb-4">vs</p>
+                    <p class="text-white text-xl font-semibold">Move-Up Buyer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: The Story -->
+    <section class="slide">
+        <div class="max-w-6xl w-full">
+            <p class="text-gold text-sm tracking-[0.3em] uppercase mb-4 font-semibold text-center">Real Example</p>
+            <h2 class="slide-title text-center mb-16">The Hendersons' $124K Journey</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl">🏠</span>
+                    </div>
+                    <p class="text-gray-500 mb-2">2019 - Saratoga Springs</p>
+                    <p class="text-3xl font-bold">$320K</p>
+                    <p class="text-gray-600 text-sm mt-2">Starter home</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl">📈</span>
+                    </div>
+                    <p class="text-gray-500 mb-2">2024 - Equity Growth</p>
+                    <p class="text-3xl font-bold gold">$480K</p>
+                    <p class="text-gold text-sm mt-2">+$160K equity</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-full bg-gold flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl text-black">🎯</span>
+                    </div>
+                    <p class="text-gray-500 mb-2">2024 - Eagle Mountain</p>
+                    <p class="text-3xl font-bold">$650K</p>
+                    <p class="text-gold text-sm mt-2">Dream home</p>
+                </div>
+            </div>
+            
+            <div class="card rounded-3xl p-8 text-center">
+                <p class="text-gray-400 mb-2">Then they spent</p>
+                <p class="big-number">$124,500</p>
+                <p class="text-gray-400 mt-4">on renovations • One mortgage • Multiple contractors</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 5: The Breakdown -->
+    <section class="slide" style="background: #0f0f0f;">
+        <div class="max-w-5xl w-full">
+            <h2 class="slide-title text-center mb-16">Where That $124K Went</h2>
+            
+            <div class="space-y-6">
+                <div class="renovation-item flex items-center gap-6">
+                    <span class="text-3xl w-12">🍳</span>
+                    <div class="flex-1">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold">Kitchen Remodel</span>
+                            <span class="gold font-bold">$45,000</span>
+                        </div>
+                        <div class="h-3 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-gold rounded-full" style="width: 36%"></div>
+                        </div>
+                    </div>
                 </div>
                 
-                <!-- Key Stats -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto animate-fade-in-up delay-200">
-                    <div class="bg-dark-lighter rounded-2xl p-8 border border-white/5 hover:border-gold/30 transition-all">
-                        <p class="text-4xl md:text-5xl font-bold text-gold mb-2 stat-number" data-target="10">0</p>
-                        <p class="text-gray-400 text-sm uppercase tracking-wider">Years Experience</p>
-                    </div>
-                    <div class="bg-dark-lighter rounded-2xl p-8 border border-white/5 hover:border-gold/30 transition-all">
-                        <p class="text-4xl md:text-5xl font-bold text-gold mb-2">$<span class="stat-number" data-target="50">0</span>M+</p>
-                        <p class="text-gray-400 text-sm uppercase tracking-wider">Funded</p>
-                    </div>
-                    <div class="bg-dark-lighter rounded-2xl p-8 border border-white/5 hover:border-gold/30 transition-all">
-                        <p class="text-4xl md:text-5xl font-bold text-gold mb-2 stat-number" data-target="500">0</p>
-                        <p class="text-gray-400 text-sm uppercase tracking-wider">Families Helped</p>
-                    </div>
-                    <div class="bg-dark-lighter rounded-2xl p-8 border border-white/5 hover:border-gold/30 transition-all">
-                        <p class="text-4xl md:text-5xl font-bold text-gold mb-2">$<span class="stat-number" data-target="124">0</span>K</p>
-                        <p class="text-gray-400 text-sm uppercase tracking-wider">Avg. Renovation</p>
+                <div class="renovation-item flex items-center gap-6">
+                    <span class="text-3xl w-12">🏠</span>
+                    <div class="flex-1">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold">Basement Finish</span>
+                            <span class="gold font-bold">$35,000</span>
+                        </div>
+                        <div class="h-3 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-gold rounded-full" style="width: 28%"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section id="how" class="py-24 md:py-32 bg-dark-light relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20 scroll-animate">
-                <p class="text-gold text-sm font-bold tracking-[0.3em] uppercase mb-4">How It Works</p>
-                <h2 class="text-4xl md:text-6xl font-bold text-white letter-tight mb-6">
-                    One Mortgage = <span class="text-gradient-gold">$124K</span> in Renovations
-                </h2>
-                <p class="text-gray-400 text-xl max-w-3xl mx-auto">
-                    Here's how a single client becomes multiple jobs for contractors in this room.
-                </p>
-            </div>
-
-            <!-- Visual Breakdown -->
-            <div class="bg-dark rounded-3xl p-8 md:p-16 border border-white/5 gold-border-glow scroll-animate">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <!-- Left: The House -->
-                    <div class="text-center lg:text-left">
-                        <div class="inline-block p-8 bg-dark-lighter rounded-3xl mb-8">
-                            <svg class="w-32 h-32 text-gold mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-                            </svg>
+                
+                <div class="renovation-item flex items-center gap-6">
+                    <span class="text-3xl w-12">🌅</span>
+                    <div class="flex-1">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold">Outdoor Living</span>
+                            <span class="gold font-bold">$28,000</span>
                         </div>
-                        <h3 class="text-3xl font-bold text-white mb-4">The Henderson Family</h3>
-                        <p class="text-gray-400 text-lg mb-6">
-                            Sold their Saratoga Springs home after 5 years. Walked away with <span class="text-gold font-bold">$160K in equity</span>. 
-                            Bought a $650K home in Eagle Mountain. Then invested in their dream home.
-                        </p>
-                        <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
-                            <span class="px-4 py-2 bg-gold/10 rounded-full text-gold text-sm font-medium">Saratoga Springs → Eagle Mountain</span>
-                            <span class="px-4 py-2 bg-gold/10 rounded-full text-gold text-sm font-medium">5 Year Journey</span>
+                        <div class="h-3 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-gold rounded-full" style="width: 22%"></div>
                         </div>
                     </div>
-
-                    <!-- Right: Renovation Breakdown -->
-                    <div class="space-y-6">
-                        <div class="renovation-item">
-                            <div class="flex justify-between items-center mb-3">
-                                <div class="flex items-center">
-                                    <span class="text-2xl mr-3">🍳</span>
-                                    <span class="text-white font-semibold text-lg">Kitchen Remodel</span>
-                                </div>
-                                <span class="text-gold font-bold text-2xl">$45,000</span>
-                            </div>
-                            <div class="w-full bg-dark-lighter rounded-full h-4 overflow-hidden">
-                                <div class="renovation-bar bg-gradient-to-r from-gold to-gold-light h-full rounded-full" style="width: 0%" data-width="36%"></div>
-                            </div>
-                            <p class="text-gray-500 text-sm mt-2">Custom cabinets, quartz counters, appliances</p>
+                </div>
+                
+                <div class="renovation-item flex items-center gap-6">
+                    <span class="text-3xl w-12">🌳</span>
+                    <div class="flex-1">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold">Landscaping</span>
+                            <span class="gold font-bold">$12,000</span>
                         </div>
-
-                        <div class="renovation-item">
-                            <div class="flex justify-between items-center mb-3">
-                                <div class="flex items-center">
-                                    <span class="text-2xl mr-3">🏠</span>
-                                    <span class="text-white font-semibold text-lg">Basement Finish</span>
-                                </div>
-                                <span class="text-gold font-bold text-2xl">$35,000</span>
-                            </div>
-                            <div class="w-full bg-dark-lighter rounded-full h-4 overflow-hidden">
-                                <div class="renovation-bar bg-gradient-to-r from-gold to-gold-light h-full rounded-full" style="width: 0%" data-width="28%"></div>
-                            </div>
-                            <p class="text-gray-500 text-sm mt-2">Entertainment space, bedroom, bathroom</p>
+                        <div class="h-3 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-gold rounded-full" style="width: 10%"></div>
                         </div>
-
-                        <div class="renovation-item">
-                            <div class="flex justify-between items-center mb-3">
-                                <div class="flex items-center">
-                                    <span class="text-2xl mr-3">🌅</span>
-                                    <span class="text-white font-semibold text-lg">Outdoor Living</span>
-                                </div>
-                                <span class="text-gold font-bold text-2xl">$28,000</span>
-                            </div>
-                            <div class="w-full bg-dark-lighter rounded-full h-4 overflow-hidden">
-                                <div class="renovation-bar bg-gradient-to-r from-gold to-gold-light h-full rounded-full" style="width: 0%" data-width="22%"></div>
-                            </div>
-                            <p class="text-gray-500 text-sm mt-2">Deck, patio, fire pit, outdoor kitchen</p>
+                    </div>
+                </div>
+                
+                <div class="renovation-item flex items-center gap-6">
+                    <span class="text-3xl w-12">🔧</span>
+                    <div class="flex-1">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold">Other Projects</span>
+                            <span class="gold font-bold">$4,500</span>
                         </div>
-
-                        <div class="renovation-item">
-                            <div class="flex justify-between items-center mb-3">
-                                <div class="flex items-center">
-                                    <span class="text-2xl mr-3">🌳</span>
-                                    <span class="text-white font-semibold text-lg">Landscaping</span>
-                                </div>
-                                <span class="text-gold font-bold text-2xl">$12,000</span>
-                            </div>
-                            <div class="w-full bg-dark-lighter rounded-full h-4 overflow-hidden">
-                                <div class="renovation-bar bg-gradient-to-r from-gold to-gold-light h-full rounded-full" style="width: 0%" data-width="10%"></div>
-                            </div>
-                            <p class="text-gray-500 text-sm mt-2">Sprinklers, sod, trees, lighting</p>
-                        </div>
-
-                        <div class="renovation-item">
-                            <div class="flex justify-between items-center mb-3">
-                                <div class="flex items-center">
-                                    <span class="text-2xl mr-3">🔧</span>
-                                    <span class="text-white font-semibold text-lg">Other Projects</span>
-                                </div>
-                                <span class="text-gold font-bold text-2xl">$4,500</span>
-                            </div>
-                            <div class="w-full bg-dark-lighter rounded-full h-4 overflow-hidden">
-                                <div class="renovation-bar bg-gradient-to-r from-gold to-gold-light h-full rounded-full" style="width: 0%" data-width="4%"></div>
-                            </div>
-                            <p class="text-gray-500 text-sm mt-2">Paint, fixtures, smart home</p>
-                        </div>
-
-                        <!-- Total -->
-                        <div class="pt-6 border-t border-white/10">
-                            <div class="flex justify-between items-center">
-                                <span class="text-white text-xl font-bold">Total Economic Impact</span>
-                                <span class="text-5xl font-bold text-gradient-gold">$124,500</span>
-                            </div>
-                            <p class="text-gray-400 mt-2 text-center">One mortgage. One family. A year's worth of work for contractors.</p>
+                        <div class="h-3 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-gold rounded-full" style="width: 4%"></div>
                         </div>
                     </div>
                 </div>
@@ -318,501 +306,246 @@
         </div>
     </section>
 
-    <!-- The Story Timeline -->
-    <section id="story" class="py-24 md:py-32 bg-dark">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20 scroll-animate">
-                <p class="text-gold text-sm font-bold tracking-[0.3em] uppercase mb-4">The Journey</p>
-                <h2 class="text-4xl md:text-6xl font-bold text-white letter-tight mb-6">
-                    From Starter Home to Dream Home
-                </h2>
-                <p class="text-gray-400 text-xl max-w-3xl mx-auto">
-                    The Hendersons' 5-year journey shows the power of equity and smart timing.
-                </p>
-            </div>
-
-            <!-- Timeline -->
-            <div class="max-w-4xl mx-auto">
-                <div class="relative">
-                    <!-- Line -->
-                    <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 timeline-line rounded-full"></div>
-
-                    <!-- 2019 -->
-                    <div class="relative flex items-center mb-16 scroll-animate">
-                        <div class="hidden md:block w-1/2 pr-12 text-right">
-                            <h3 class="text-2xl font-bold text-white mb-2">The Beginning</h3>
-                            <p class="text-gray-400">Purchased their first home in Saratoga Springs</p>
-                        </div>
-                        <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-16 h-16 bg-gold rounded-full flex items-center justify-center timeline-dot z-10">
-                            <span class="text-dark font-bold text-xl">1</span>
-                        </div>
-                        <div class="ml-24 md:ml-0 md:w-1/2 md:pl-12">
-                            <div class="bg-dark-lighter rounded-2xl p-6 border border-white/5">
-                                <p class="text-gold font-bold text-lg mb-1">2019</p>
-                                <p class="text-3xl font-bold text-white mb-2">$320,000</p>
-                                <p class="text-gray-400">Saratoga Springs starter home</p>
-                            </div>
-                        </div>
+    <!-- Slide 6: Comparison -->
+    <section class="slide">
+        <div class="max-w-5xl w-full">
+            <h2 class="slide-title text-center mb-16">First-Timer vs Move-Up</h2>
+            
+            <div class="card rounded-3xl p-8 mb-4">
+                <div class="comparison-row">
+                    <div class="text-gray-500 font-semibold">Down Payment</div>
+                    <div></div>
+                </div>
+                <div class="comparison-row">
+                    <div>
+                        <p class="text-gray-400">3-5%</p>
+                        <p class="text-sm text-gray-600">First-Time Buyer</p>
                     </div>
-
-                    <!-- 2024 Equity -->
-                    <div class="relative flex items-center mb-16 scroll-animate delay-100">
-                        <div class="hidden md:block w-1/2 pr-12 text-right">
-                            <div class="bg-dark-lighter rounded-2xl p-6 border border-white/5 inline-block text-left">
-                                <p class="text-gold font-bold text-lg mb-1">2024</p>
-                                <p class="text-3xl font-bold text-white mb-2">$480,000</p>
-                                <p class="text-gray-400">Home value after 5 years</p>
-                                <p class="text-gold font-bold mt-2">+$160,000 equity</p>
-                            </div>
-                        </div>
-                        <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-16 h-16 bg-gold rounded-full flex items-center justify-center timeline-dot z-10">
-                            <span class="text-dark font-bold text-xl">2</span>
-                        </div>
-                        <div class="ml-24 md:ml-0 md:w-1/2 md:pl-12 md:hidden">
-                            <div class="bg-dark-lighter rounded-2xl p-6 border border-white/5">
-                                <p class="text-gold font-bold text-lg mb-1">2024</p>
-                                <p class="text-3xl font-bold text-white mb-2">$480,000</p>
-                                <p class="text-gray-400">Home value (+50%)</p>
-                                <p class="text-gold font-bold mt-2">+$160,000 equity</p>
-                            </div>
-                        </div>
-                        <div class="hidden md:block w-1/2 pl-12">
-                            <h3 class="text-2xl font-bold text-white mb-2">Equity Growth</h3>
-                            <p class="text-gray-400">Utah market appreciation creates opportunity</p>
-                        </div>
+                    <div class="text-right">
+                        <p class="gold font-bold text-xl">10-20%</p>
+                        <p class="text-sm text-gold">Move-Up Buyer</p>
                     </div>
-
-                    <!-- 2024 New Home -->
-                    <div class="relative flex items-center scroll-animate delay-200">
-                        <div class="hidden md:block w-1/2 pr-12 text-right">
-                            <h3 class="text-2xl font-bold text-white mb-2">The Move-Up</h3>
-                            <p class="text-gray-400">Sold starter home, bought dream home</p>
-                        </div>
-                        <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-16 h-16 bg-gold rounded-full flex items-center justify-center timeline-dot z-10">
-                            <span class="text-dark font-bold text-xl">3</span>
-                        </div>
-                        <div class="ml-24 md:ml-0 md:w-1/2 md:pl-12">
-                            <div class="bg-dark-lighter rounded-2xl p-6 border border-gold/30 gold-glow">
-                                <p class="text-gold font-bold text-lg mb-1">2024</p>
-                                <p class="text-3xl font-bold text-white mb-2">$650,000</p>
-                                <p class="text-gray-400">New home in Eagle Mountain</p>
-                                <p class="text-gold font-bold mt-2">Then spent $124,500 on renovations</p>
-                            </div>
-                        </div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="text-gray-500 font-semibold">Credit Score</div>
+                    <div></div>
+                </div>
+                <div class="comparison-row">
+                    <div>
+                        <p class="text-gray-400">620-680</p>
+                        <p class="text-sm text-gray-600">First-Time Buyer</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="gold font-bold text-xl">720-800+</p>
+                        <p class="text-sm text-gold">Move-Up Buyer</p>
+                    </div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="text-gray-500 font-semibold">Home Equity</div>
+                    <div></div>
+                </div>
+                <div class="comparison-row">
+                    <div>
+                        <p class="text-gray-400">$0</p>
+                        <p class="text-sm text-gray-600">First-Time Buyer</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="gold font-bold text-xl">$100K-300K</p>
+                        <p class="text-sm text-gold">Move-Up Buyer</p>
+                    </div>
+                </div>
+                
+                <div class="comparison-row" style="border-bottom: none;">
+                    <div class="text-gray-500 font-semibold">Renovation Budget</div>
+                    <div></div>
+                </div>
+                <div class="comparison-row" style="border-bottom: none;">
+                    <div>
+                        <p class="text-red-400 font-bold text-xl">$0-5K</p>
+                        <p class="text-sm text-gray-600">First-Time Buyer</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="gold font-bold text-2xl">$25K-150K+</p>
+                        <p class="text-sm text-gold">Move-Up Buyer</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Comparison Section -->
-    <section id="comparison" class="py-24 md:py-32 bg-dark-light">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20 scroll-animate">
-                <p class="text-gold text-sm font-bold tracking-[0.3em] uppercase mb-4">The Difference</p>
-                <h2 class="text-4xl md:text-6xl font-bold text-white letter-tight mb-6">
-                    Why My Clients Are <span class="text-gradient-gold">Better</span> for Your Business
-                </h2>
-                <p class="text-gray-400 text-xl max-w-3xl mx-auto">
-                    See why move-up buyers create more revenue than first-time buyers.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                <!-- First-Time Buyer -->
-                <div class="comparison-card bg-dark rounded-3xl p-8 md:p-12 border border-white/5 scroll-animate">
-                    <div class="flex items-center mb-8">
-                        <div class="w-16 h-16 bg-gray-800 rounded-2xl flex items-center justify-center mr-4">
-                            <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-400">First-Time Buyer</h3>
-                            <p class="text-gray-600">Not my clients</p>
-                        </div>
-                    </div>
-
-                    <div class="space-y-6">
-                        <div class="flex justify-between items-center py-4 border-b border-white/5">
-                            <span class="text-gray-500">Down Payment</span>
-                            <span class="text-gray-400 font-bold">3-5%</span>
-                        </div>
-                        <div class="flex justify-between items-center py-4 border-b border-white/5">
-                            <span class="text-gray-500">Credit Score</span>
-                            <span class="text-gray-400 font-bold">620-680</span>
-                        </div>
-                        <div class="flex justify-between items-center py-4 border-b border-white/5">
-                            <span class="text-gray-500">Home Equity</span>
-                            <span class="text-gray-400 font-bold">$0</span>
-                        </div>
-                        <div class="flex justify-between items-center py-4 border-b border-white/5">
-                            <span class="text-gray-500">Cash After Closing</span>
-                            <span class="text-gray-400 font-bold">$2,000-5,000</span>
-                        </div>
-                        <div class="flex justify-between items-center py-4">
-                            <span class="text-gray-500">Renovation Budget</span>
-                            <span class="text-red-400 font-bold">$0-5,000</span>
-                        </div>
-                    </div>
+    <!-- Slide 7: The Market -->
+    <section class="slide" style="background: radial-gradient(ellipse at 30% 50%, rgba(212,175,55,0.06) 0%, transparent 60%);">
+        <div class="max-w-6xl w-full">
+            <p class="text-gold text-sm tracking-[0.3em] uppercase mb-4 font-semibold text-center">2026 Market</p>
+            <h2 class="slide-title text-center mb-16">The Year of Equity</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card rounded-3xl p-10 text-center">
+                    <p class="text-6xl font-bold gold mb-4">50%</p>
+                    <p class="text-white font-semibold mb-2">Value Increase</p>
+                    <p class="text-gray-500 text-sm">Homes up 40-50%<br>over 5 years</p>
                 </div>
-
-                <!-- Move-Up Buyer -->
-                <div class="comparison-card bg-dark rounded-3xl p-8 md:p-12 border-2 border-gold relative scroll-animate delay-100">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gold text-dark px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider">
-                        My Clients
-                    </div>
-                    <div class="flex items-center mb-8 mt-2">
-                        <div class="w-16 h-16 bg-gold/20 rounded-2xl flex items-center justify-center mr-4">
-                            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-white">Move-Up Buyer</h3>
-                            <p class="text-gold">Your best customers</p>
-                        </div>
-                    </div>
-
-                    <div class="space-y-6">
-                        <div class="flex justify-between items-center py-4 border-b border-gold/20">
-                            <span class="text-gray-400">Down Payment</span>
-                            <span class="text-gold font-bold">10-20%</span>
-                        </div>
-                        <div class="flex justify-between items-center py-4 border-b border-gold/20">
-                            <span class="text-gray-400">Credit Score</span>
-                            <span class="text-gold font-bold">720-800+</span>
-                        </div>
-                        <div class="flex justify-between items-center py-4 border-b border-gold/20">
-                            <span class="text-gray-400">Home Equity</span>
-                            <span class="text-gold font-bold">$100K-300K</span>
-                        </div>
-                        <div class="flex justify-between items-center py-4 border-b border-gold/20">
-                            <span class="text-gray-400">Cash After Closing</span>
-                            <span class="text-gold font-bold">$30,000-100K</span>
-                        </div>
-                        <div class="flex justify-between items-center py-4">
-                            <span class="text-gray-400">Renovation Budget</span>
-                            <span class="text-gold font-bold text-xl">$25,000-150K+</span>
-                        </div>
-                    </div>
+                <div class="card rounded-3xl p-10 text-center border-gold">
+                    <p class="text-6xl font-bold gold mb-4">10.9%</p>
+                    <p class="text-white font-semibold mb-2">Inventory Up</p>
+                    <p class="text-gray-500 text-sm">More homes for<br>move-up buyers</p>
+                </div>
+                <div class="card rounded-3xl p-10 text-center">
+                    <p class="text-6xl font-bold gold mb-4">6.2%</p>
+                    <p class="text-white font-semibold mb-2">Interest Rates</p>
+                    <p class="text-gray-500 text-sm">Stable in<br>6.2-6.5% range</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Market Stats Section -->
-    <section class="py-24 md:py-32 bg-dark relative overflow-hidden">
-        <div class="absolute inset-0" style="background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-20 scroll-animate">
-                <p class="text-gold text-sm font-bold tracking-[0.3em] uppercase mb-4">2026 Market</p>
-                <h2 class="text-4xl md:text-6xl font-bold text-white letter-tight mb-6">
-                    The Year of <span class="text-gradient-gold">Equity</span>
-                </h2>
-                <p class="text-gray-400 text-xl max-w-3xl mx-auto">
-                    Utah homeowners are sitting on unprecedented wealth. Here's what the data shows.
-                </p>
-            </div>
-
-            <!-- Stats Grid -->
+    <!-- Slide 8: The Ask -->
+    <section class="slide" style="background: linear-gradient(135deg, #0a0a0a 0%, #141414 50%, #0a0a0a 100%);">
+        <div class="max-w-6xl w-full">
+            <h2 class="slide-title text-center mb-6">Who Do You Know?</h2>
+            <p class="text-gray-400 text-center text-xl mb-16">Three people to introduce me to:</p>
+            
             <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <div class="bg-dark-lighter rounded-3xl p-10 border border-white/5 text-center scroll-animate delay-100 hover:border-gold/30 transition-all">
-                    <div class="w-24 h-24 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-5xl font-bold text-gold">50</span>
-                        <span class="text-3xl text-gold">%</span>
-                    </div>
-                    <p class="text-white font-bold text-xl mb-2">Value Increase</p>
-                    <p class="text-gray-400">Average home value up 40-50% over 5 years</p>
-                </div>
-
-                <div class="bg-dark-lighter rounded-3xl p-10 border border-white/5 text-center scroll-animate delay-200 hover:border-gold/30 transition-all">
-                    <div class="w-24 h-24 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-5xl font-bold text-gold">10.9</span>
-                        <span class="text-3xl text-gold">%</span>
-                    </div>
-                    <p class="text-white font-bold text-xl mb-2">Inventory Up</p>
-                    <p class="text-gray-400">More homes available for move-up buyers</p>
-                </div>
-
-                <div class="bg-dark-lighter rounded-3xl p-10 border border-white/5 text-center scroll-animate delay-300 hover:border-gold/30 transition-all">
-                    <div class="w-24 h-24 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-5xl font-bold text-gold">6.2</span>
-                        <span class="text-3xl text-gold">%</span>
-                    </div>
-                    <p class="text-white font-bold text-xl mb-2">Interest Rates</p>
-                    <p class="text-gray-400">Stable rates in 6.2-6.5% range</p>
-                </div>
-            </div>
-
-            <!-- Service Areas -->
-            <div class="text-center scroll-animate">
-                <h3 class="text-2xl font-bold text-white mb-8">Serving Utah County</h3>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <span class="px-6 py-3 bg-dark-lighter rounded-full border border-gold/30 text-gold font-semibold hover:bg-gold/10 transition-all cursor-default">Eagle Mountain</span>
-                    <span class="px-6 py-3 bg-dark-lighter rounded-full border border-gold/30 text-gold font-semibold hover:bg-gold/10 transition-all cursor-default">Saratoga Springs</span>
-                    <span class="px-6 py-3 bg-dark-lighter rounded-full border border-gold/30 text-gold font-semibold hover:bg-gold/10 transition-all cursor-default">Lehi</span>
-                    <span class="px-6 py-3 bg-dark-lighter rounded-full border border-gold/30 text-gold font-semibold hover:bg-gold/10 transition-all cursor-default">American Fork</span>
-                    <span class="px-6 py-3 bg-dark-lighter rounded-full border border-gold/30 text-gold font-semibold hover:bg-gold/10 transition-all cursor-default">Pleasant Grove</span>
-                    <span class="px-6 py-3 bg-dark-lighter rounded-full border border-gold/30 text-gold font-semibold hover:bg-gold/10 transition-all cursor-default">Highland</span>
-                    <span class="px-6 py-3 bg-dark-lighter rounded-full border border-gold/30 text-gold font-semibold hover:bg-gold/10 transition-all cursor-default">Alpine</span>
-                    <span class="px-6 py-3 bg-dark-lighter rounded-full border border-gold/30 text-gold font-semibold hover:bg-gold/10 transition-all cursor-default">Cedar Hills</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- The Ask Section -->
-    <section id="ask" class="py-24 md:py-32 bg-dark-light">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20 scroll-animate">
-                <p class="text-gold text-sm font-bold tracking-[0.3em] uppercase mb-4">The Ask</p>
-                <h2 class="text-4xl md:text-6xl font-bold text-white letter-tight mb-6">
-                    Who Do <span class="text-gradient-gold">You</span> Know?
-                </h2>
-                <p class="text-gray-400 text-xl max-w-3xl mx-auto">
-                    I'm looking for introductions to these three types of people in your network.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Card 1 -->
-                <div class="group bg-dark rounded-3xl p-10 border border-white/5 text-center hover-lift hover:border-gold/50 transition-all cursor-pointer scroll-animate delay-100" onclick="window.location.href='#contact'">
-                    <div class="w-24 h-24 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-gold/20 transition-all">
-                        <svg class="w-12 h-12 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="card rounded-3xl p-10 text-center hover:border-gold transition-all cursor-pointer" onclick="showContact()">
+                    <div class="w-20 h-20 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Outgrowing Their Home</h3>
-                    <p class="text-gray-400 mb-6">Families who need more space, better schools, or a different layout. They're ready to sell and buy up.</p>
-                    <span class="inline-flex items-center text-gold font-semibold group-hover:translate-x-2 transition-transform">
-                        Connect Me 
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                        </svg>
-                    </span>
+                    <h3 class="text-xl font-bold mb-3">Outgrowing Their Home</h3>
+                    <p class="text-gray-400 text-sm">Needs more space,<br>better schools, different layout</p>
                 </div>
-
-                <!-- Card 2 -->
-                <div class="group bg-dark rounded-3xl p-10 border border-white/5 text-center hover-lift hover:border-gold/50 transition-all cursor-pointer scroll-animate delay-200" onclick="window.location.href='#contact'">
-                    <div class="w-24 h-24 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-gold/20 transition-all">
-                        <svg class="w-12 h-12 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                
+                <div class="card rounded-3xl p-10 text-center hover:border-gold transition-all cursor-pointer" onclick="showContact()">
+                    <div class="w-20 h-20 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Vacation Home Buyers</h3>
-                    <p class="text-gray-400 mb-6">People looking for a second home in Park City, Heber, or southern Utah. High equity, strong income.</p>
-                    <span class="inline-flex items-center text-gold font-semibold group-hover:translate-x-2 transition-transform">
-                        Connect Me 
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                        </svg>
-                    </span>
+                    <h3 class="text-xl font-bold mb-3">Vacation Home Buyer</h3>
+                    <p class="text-gray-400 text-sm">Park City, Heber,<br>or southern Utah</p>
                 </div>
-
-                <!-- Card 3 -->
-                <div class="group bg-dark rounded-3xl p-10 border border-white/5 text-center hover-lift hover:border-gold/50 transition-all cursor-pointer scroll-animate delay-300" onclick="window.location.href='#contact'">
-                    <div class="w-24 h-24 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-gold/20 transition-all">
-                        <svg class="w-12 h-12 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                
+                <div class="card rounded-3xl p-10 text-center hover:border-gold transition-all cursor-pointer" onclick="showContact()">
+                    <div class="w-20 h-20 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Sitting on Equity</h3>
-                    <p class="text-gray-400 mb-6">Homeowners who bought 3-7 years ago and have significant equity they want to leverage for a better home.</p>
-                    <span class="inline-flex items-center text-gold font-semibold group-hover:translate-x-2 transition-transform">
-                        Connect Me 
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                        </svg>
-                    </span>
+                    <h3 class="text-xl font-bold mb-3">Sitting on Equity</h3>
+                    <p class="text-gray-400 text-sm">Bought 3-7 years ago,<br>has significant equity</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 md:py-32 bg-dark relative">
-        <div class="absolute inset-0" style="background: radial-gradient(circle at 70% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);"></div>
-        
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 scroll-animate">
-                <p class="text-gold text-sm font-bold tracking-[0.3em] uppercase mb-4">Let's Connect</p>
-                <h2 class="text-4xl md:text-6xl font-bold text-white letter-tight mb-6">
-                    Ready to Create <span class="text-gradient-gold">Customers</span>?
-                </h2>
-            </div>
-
-            <!-- Contact Card -->
-            <div class="bg-dark-light rounded-3xl p-8 md:p-16 border border-gold/20 gold-glow scroll-animate">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 class="text-4xl font-bold text-white mb-2">Tiffani</h3>
-                        <p class="text-gold text-xl mb-8">Simply Home Mortgage</p>
-                        
-                        <div class="space-y-6">
-                            <a href="tel:8015550199" class="flex items-center group">
-                                <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mr-4 group-hover:bg-gold/20 transition-all">
-                                    <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="text-gray-400 text-sm">Call or Text</p>
-                                    <p class="text-2xl font-bold text-white group-hover:text-gold transition-colors">(801) 555-0199</p>
-                                </div>
-                            </a>
-                            
-                            <a href="mailto:tiffani@simplyhomemortgage.com" class="flex items-center group">
-                                <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mr-4 group-hover:bg-gold/20 transition-all">
-                                    <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="text-gray-400 text-sm">Email</p>
-                                    <p class="text-xl font-bold text-white group-hover:text-gold transition-colors">tiffani@simplyhomemortgage.com</p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="mt-10 flex flex-col sm:flex-row gap-4">
-                            <a href="tel:8015550199" class="flex-1 px-8 py-4 gradient-gold text-dark font-bold text-center rounded-xl hover:shadow-gold-strong transition-all text-lg">
-                                Call Now
-                            </a>
-                            <a href="sms:8015550199" class="flex-1 px-8 py-4 bg-dark-lighter text-white font-bold text-center rounded-xl border border-gold/30 hover:bg-gold/10 transition-all text-lg">
-                                Text Me
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- QR Code -->
-                    <div class="flex flex-col items-center">
-                        <div class="w-64 h-64 bg-white rounded-3xl p-6 mb-6 shadow-2xl">
-                            <svg viewBox="0 0 100 100" class="w-full h-full">
-                                <!-- QR Code Pattern -->
-                                <rect fill="#0a0a0a" x="5" y="5" width="25" height="25"/>
-                                <rect fill="#0a0a0a" x="70" y="5" width="25" height="25"/>
-                                <rect fill="#0a0a0a" x="5" y="70" width="25" height="25"/>
-                                <rect fill="#0a0a0a" x="40" y="40" width="20" height="20"/>
-                                <rect fill="#0a0a0a" x="15" y="40" width="5" height="5"/>
-                                <rect fill="#0a0a0a" x="30" y="40" width="5" height="5"/>
-                                <rect fill="#0a0a0a" x="15" y="50" width="5" height="5"/>
-                                <rect fill="#0a0a0a" x="70" y="40" width="5" height="5"/>
-                                <rect fill="#0a0a0a" x="80" y="40" width="5" height="5"/>
-                                <rect fill="#0a0a0a" x="70" y="50" width="5" height="5"/>
-                                <rect fill="#0a0a0a" x="40" y="70" width="5" height="5"/>
-                                <rect fill="#0a0a0a" x="50" y="70" width="5" height="5"/>
-                                <rect fill="#0a0a0a" x="40" y="80" width="5" height="5"/>
-                                <rect fill="#0a0a0a" x="65" y="65" width="10" height="10"/>
-                                <rect fill="#0a0a0a" x="80" y="65" width="10" height="10"/>
-                                <rect fill="#0a0a0a" x="65" y="80" width="10" height="10"/>
-                                <rect fill="#d4af37" x="80" y="80" width="10" height="10"/>
-                            </svg>
-                        </div>
-                        <p class="text-gray-400 text-lg">Scan to save contact</p>
-                    </div>
+    <!-- Slide 9: Contact -->
+    <section id="contact" class="slide" style="background: radial-gradient(ellipse at center, rgba(212,175,55,0.1) 0%, transparent 60%);">
+        <div class="max-w-4xl w-full text-center">
+            <h2 class="slide-title mb-4">Let's Connect</h2>
+            <p class="text-gray-400 text-xl mb-12">Ready to create customers together?</p>
+            
+            <div class="card rounded-3xl p-12 mb-8 inline-block">
+                <h3 class="text-4xl font-bold mb-2">Tiffani</h3>
+                <p class="gold text-xl mb-8">Simply Home Mortgage</p>
+                
+                <div class="space-y-4 mb-8">
+                    <a href="tel:8015550199" class="flex items-center justify-center gap-3 text-2xl hover:gold transition-colors">
+                        <svg class="w-6 h-6 gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
+                        (801) 555-0199
+                    </a>
+                    <a href="mailto:tiffani@simplyhomemortgage.com" class="flex items-center justify-center gap-3 text-xl hover:gold transition-colors">
+                        <svg class="w-6 h-6 gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        tiffani@simplyhomemortgage.com
+                    </a>
+                </div>
+                
+                <div class="flex gap-4 justify-center">
+                    <a href="tel:8015550199" class="px-8 py-4 bg-gold text-black font-bold rounded-xl hover:shadow-lg transition-all">
+                        Call Now
+                    </a>
+                    <a href="sms:8015550199" class="px-8 py-4 border border-gold text-gold font-bold rounded-xl hover:bg-gold/10 transition-all">
+                        Text Me
+                    </a>
                 </div>
             </div>
             
-            <p class="text-gray-600 mt-8 text-center text-sm">
-                Licensed Mortgage Professional • NMLS #1234567 • Simply Home Mortgage
-            </p>
+            <p class="text-gray-600 text-sm">Licensed Mortgage Professional • NMLS #1234567</p>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark py-8 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-gray-600 text-sm">
-                © 2026 Simply Home Mortgage. All rights reserved.
-            </p>
-            <p class="text-gray-700 text-xs mt-2">
-                Website by Makrly
-            </p>
-        </div>
-    </footer>
 
     <script>
-        // Scroll Animation Observer
-        document.addEventListener('DOMContentLoaded', function() {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-            
-            document.querySelectorAll('.scroll-animate').forEach((el) => {
-                observer.observe(el);
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.nav-dot');
+        
+        function scrollToSlide(index) {
+            currentSlide = index;
+            slides[index].scrollIntoView({ behavior: 'smooth' });
+            updateDots();
+        }
+        
+        function updateDots() {
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
             });
-            
-            // Counter Animation
-            const counters = document.querySelectorAll('.stat-number');
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-target'));
-                const duration = 2000;
-                const step = target / (duration / 16);
-                let current = 0;
-                
-                const updateCounter = () => {
-                    current += step;
-                    if (current < target) {
-                        counter.textContent = Math.floor(current);
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.textContent = target;
-                    }
-                };
-                
-                const counterObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            updateCounter();
-                            counterObserver.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.5 });
-                
-                counterObserver.observe(counter);
+        }
+        
+        function showContact() {
+            scrollToSlide(8);
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                if (currentSlide < slides.length - 1) {
+                    scrollToSlide(currentSlide + 1);
+                }
+            } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                e.preventDefault();
+                if (currentSlide > 0) {
+                    scrollToSlide(currentSlide - 1);
+                }
+            }
+        });
+        
+        // Update dots on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const index = Array.from(slides).indexOf(entry.target);
+                    currentSlide = index;
+                    updateDots();
+                }
             });
+        }, { threshold: 0.5 });
+        
+        slides.forEach(slide => observer.observe(slide));
+        
+        // Touch/swipe support
+        let touchStartY = 0;
+        document.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+        });
+        
+        document.addEventListener('touchend', (e) => {
+            const touchEndY = e.changedTouches[0].clientY;
+            const diff = touchStartY - touchEndY;
             
-            // Renovation Bar Animation
-            const renovationBars = document.querySelectorAll('.renovation-bar');
-            const barObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const width = entry.target.getAttribute('data-width');
-                        entry.target.style.width = width;
-                        barObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            renovationBars.forEach(bar => {
-                barObserver.observe(bar);
-            });
-            
-            // Smooth scroll for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
+            if (Math.abs(diff) > 50) {
+                if (diff > 0 && currentSlide < slides.length - 1) {
+                    scrollToSlide(currentSlide + 1);
+                } else if (diff < 0 && currentSlide > 0) {
+                    scrollToSlide(currentSlide - 1);
+                }
+            }
         });
     </script>
 </body>
