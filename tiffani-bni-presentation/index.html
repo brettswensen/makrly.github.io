@@ -72,6 +72,7 @@
         /* Hero */
         .hero {
             background: linear-gradient(180deg, #0f172a 0%, #0a0a0a 100%);
+            position: relative;
         }
         
         .hero::before {
@@ -80,8 +81,32 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 60%;
-            background: radial-gradient(ellipse at 50% 0%, rgba(20, 184, 166, 0.12) 0%, transparent 70%);
+            height: 70%;
+            background: radial-gradient(ellipse at 50% 0%, rgba(20, 184, 166, 0.18) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(10, 10, 10, 1) 0%, transparent 100%);
+            pointer-events: none;
+        }
+        
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(20, 184, 166, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(20, 184, 166, 0.04) 1px, transparent 1px);
+            background-size: 80px 80px;
             pointer-events: none;
         }
         
@@ -99,43 +124,71 @@
         }
         
         .hero h1 {
-            font-size: clamp(2.2rem, 6vw, 4rem);
-            font-weight: 700;
+            font-size: clamp(2.8rem, 8vw, 5.5rem);
+            font-weight: 800;
             margin-bottom: 24px;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
+            letter-spacing: -0.04em;
+            line-height: 0.95;
         }
         
         .hero h1 span {
-            background: linear-gradient(135deg, #14b8a6 0%, #2dd4bf 50%, #14b8a6 100%);
+            background: linear-gradient(135deg, #14b8a6 0%, #5eead4 50%, #14b8a6 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            animation: shimmer 3s ease infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
         
         .hero-subtitle {
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            color: #64748b;
-            max-width: 600px;
-            margin: 0 auto 48px;
-            line-height: 1.7;
+            font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+            color: #94a3b8;
+            max-width: 650px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            font-weight: 400;
         }
         
         .hero-stats {
             display: flex;
             justify-content: center;
-            gap: 48px;
+            gap: 0;
             flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 32px 16px;
+            max-width: 580px;
+            margin: 0 auto;
         }
         
         .stat {
             text-align: center;
+            flex: 1;
+            min-width: 120px;
+            padding: 0 24px;
+            position: relative;
+        }
+        
+        .stat:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
         }
         
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 2.8rem;
+            font-weight: 800;
             color: #14b8a6;
             display: block;
             line-height: 1;
@@ -143,17 +196,19 @@
         }
         
         .stat-label {
-            color: #475569;
-            font-size: 0.8rem;
+            color: #64748b;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
+            font-weight: 500;
         }
         
         .hero-tagline {
-            margin-top: 48px;
+            margin-top: 36px;
             color: #14b8a6;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 500;
+            letter-spacing: 0.5px;
         }
         
         /* Section Headers */
@@ -560,6 +615,7 @@
 <body>
     <!-- Hero -->
     <section class="hero">
+        <div class="hero-grid"></div>
         <div class="container">
             <div class="hero-content">
                 <img src="simply-home-logo.webp?v=2" alt="Simply Home Mortgage" class="hero-logo">
