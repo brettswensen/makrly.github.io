@@ -17,11 +17,13 @@
         
         .slide {
             min-height: 100vh;
+            min-height: 100dvh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            padding: 4rem 2rem;
             position: relative;
+            overflow-y: auto;
         }
         
         .gold { color: #d4af37; }
@@ -29,12 +31,13 @@
         .border-gold { border-color: #d4af37; }
         
         .big-number {
-            font-size: clamp(8rem, 20vw, 16rem);
+            font-size: clamp(5rem, 15vw, 12rem);
             font-weight: 900;
-            line-height: 0.85;
+            line-height: 1;
             background: linear-gradient(135deg, #e8c547 0%, #d4af37 50%, #b8941f 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            word-break: break-word;
         }
         
         .slide-title {
@@ -89,14 +92,56 @@
             transform: translateX(10px);
         }
         
-        @keyframes countUp {
-            from { opacity: 0; transform: translateY(50px); }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(60px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
-        .animate-in {
-            animation: countUp 0.8s ease forwards;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
+        
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .animate-fade-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .animate-scale-in {
+            animation: scaleIn 0.8s ease forwards;
+        }
+        
+        .animate-slide-left {
+            animation: slideInLeft 0.8s ease forwards;
+        }
+        
+        .animate-slide-right {
+            animation: slideInRight 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+        .delay-5 { animation-delay: 0.5s; opacity: 0; }
         
         .comparison-row {
             display: grid;
@@ -127,15 +172,15 @@
     <!-- Slide 1: Hook -->
     <section class="slide" style="background: radial-gradient(ellipse at center, rgba(212,175,55,0.08) 0%, transparent 70%);">
         <div class="max-w-6xl w-full text-center">
-            <p class="text-gold text-sm tracking-[0.4em] uppercase mb-8 font-semibold">Simply Home Mortgage</p>
-            <h1 class="slide-title mb-6">
+            <p class="text-gold text-sm tracking-[0.4em] uppercase mb-8 font-semibold animate-fade-up">Simply Home Mortgage</p>
+            <h1 class="slide-title mb-6 animate-fade-up delay-1" style="animation-fill-mode: forwards;">
                 I Create Your<br>
                 <span class="gradient-text">Best Customers</span>
             </h1>
-            <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-12">
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-12 animate-fade-up delay-2" style="animation-fill-mode: forwards;">
                 Move-up buyers with equity, established credit, and money to spend on renovations.
             </p>
-            <div class="flex justify-center gap-8 text-sm text-gray-500">
+            <div class="flex justify-center gap-8 text-sm text-gray-500 animate-fade-up delay-3" style="animation-fill-mode: forwards;">
                 <span>10+ Years Experience</span>
                 <span class="text-gold">•</span>
                 <span>$50M+ Funded</span>
@@ -224,10 +269,10 @@
                 </div>
             </div>
             
-            <div class="card rounded-3xl p-8 text-center">
-                <p class="text-gray-400 mb-2">Then they spent</p>
-                <p class="big-number">$124,500</p>
-                <p class="text-gray-400 mt-4">on renovations • One mortgage • Multiple contractors</p>
+            <div class="card rounded-3xl p-8 md:p-12 text-center max-w-3xl mx-auto">
+                <p class="text-gray-400 mb-4 text-lg">Then they spent</p>
+                <p class="text-7xl md:text-8xl font-bold gold mb-4">$124,500</p>
+                <p class="text-gray-400 text-lg">on renovations • One mortgage • Multiple contractors</p>
             </div>
         </div>
     </section>
