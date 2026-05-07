@@ -207,9 +207,14 @@
             font-size: 2.8rem;
             font-weight: 800;
             color: #14b8a6;
-            display: block;
+            display: inline;
             line-height: 1;
-            margin-bottom: 8px;
+        }
+        
+        .stat-suffix {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #14b8a6;
         }
         
         .stat-label {
@@ -640,15 +645,15 @@
                 <p class="hero-subtitle">Every home sale in Eagle Mountain and Saratoga Springs creates an average of $124,000 in renovation work. Inventory is up 10.9% this year.</p>
                 <div class="hero-stats">
                     <div class="stat">
-                        <span class="stat-number" data-target="10.9">0</span><span style="color: #14b8a6; font-size: 2.5rem; font-weight: 700;">%</span>
+                        <div><span class="stat-number" data-target="10.9">0</span><span class="stat-suffix">%</span></div>
                         <span class="stat-label">Inventory Up</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number" data-target="124">0</span><span style="color: #14b8a6; font-size: 2.5rem; font-weight: 700;">K</span>
+                        <div><span class="stat-number" data-target="124">0</span><span class="stat-suffix">K</span></div>
                         <span class="stat-label">Avg Renovation</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number" data-target="380">0</span>
+                        <div><span class="stat-number" data-target="380">0</span></div>
                         <span class="stat-label">Homes Available</span>
                     </div>
                 </div>
