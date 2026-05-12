@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bartlett Electric | Residential and Commercial Electricians in Saratoga Springs, UT</title>
+    <meta name="description" content="Bartlett Electric - Licensed, bonded & insured electrical services in Saratoga Springs. 20+ years experience. Repairs, panel upgrades, lighting, and troubleshooting. Call now for a fast quote.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#1e5aa8',
+                        'primary-dark': '#154785',
+                        'primary-light': '#3d7bc9',
+                        'accent': '#3b82f6',
+                        'accent-dark': '#2563eb',
+                        'slate-50': '#f8fafc',
+                        'slate-100': '#f1f5f9',
+                        'slate-200': '#e2e8f0',
+                        'slate-600': '#475569',
+                        'slate-700': '#334155',
+                        'slate-800': '#1e293b',
+                        'slate-900': '#0f172a',
+                        'success': '#059669',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .letter-tight { letter-spacing: -0.025em; }
+        
+        /* Premium Layered Shadows */
+        .shadow-premium {
+            box-shadow: 
+                0 1px 2px rgba(0, 0, 0, 0.02),
+                0 4px 8px rgba(0, 0, 0, 0.03),
+                0 8px 16px rgba(0, 0, 0, 0.04),
+                0 16px 32px rgba(0, 0, 0, 0.05);
+        }
+        
+        .shadow-premium-hover:hover {
+            box-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.02),
+                0 8px 16px rgba(0, 0, 0, 0.03),
+                0 16px 32px rgba(0, 0, 0, 0.04),
+                0 32px 64px rgba(0, 0, 0, 0.06);
+        }
+        
+        /* Geometric Pattern Background */
+        .bg-pattern {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(30, 90, 168, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+                linear-gradient(135deg, transparent 0%, rgba(30, 90, 168, 0.02) 50%, transparent 100%);
+        }
+        
+        /* Hero Gradient Background */
+        .hero-gradient {
+            background: linear-gradient(135deg, #f8fafc 0%, #e8f0f8 50%, #f8fafc 100%);
+        }
+        
+        /* Premium Button Gradients */
+        .btn-primary-gradient {
+            background: linear-gradient(135deg, #1e5aa8 0%, #154785 100%);
+            transition: all 0.3s ease-out;
+        }
+        
+        .btn-primary-gradient:hover {
+            background: linear-gradient(135deg, #154785 0%, #1e5aa8 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(30, 90, 168, 0.3);
+        }
+        
+        .btn-accent-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            transition: all 0.3s ease-out;
+        }
+        
+        .btn-accent-gradient:hover {
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        }
+        
+        .btn-accent-gradient:active {
+            transform: scale(0.98);
+        }
+        
+        /* Stronger card lift */
+        .hover-lift {
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Service card hover reveal */
+        .service-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::after {
+            content: 'Get Free Estimate →';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(30,90,168,0.95), transparent);
+            color: white;
+            padding: 30px 20px 20px;
+            text-align: center;
+            font-weight: 600;
+            transition: bottom 0.3s ease;
+        }
+        
+        .service-card:hover::after {
+            bottom: 0;
+        }
+        
+        /* Phone pulse animation */
+        .phone-pulse {
+            animation: phonePulse 2s infinite;
+        }
+        
+        @keyframes phonePulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+        }
+        
+        /* Marquee animation for recent projects */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .animate-marquee {
+            animation: marquee 25s linear infinite;
+        }
+        
+        /* Sticky mobile CTA */
+        @media (max-width: 768px) {
+            .mobile-sticky-cta {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 12px 16px;
+                box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+                z-index: 100;
+                display: flex;
+                gap: 10px;
+                border-top: 1px solid #e2e8f0;
+            }
+            
+            body {
+                padding-bottom: 80px;
+            }
+        }
+        
+        /* Hero Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+            50% { box-shadow: 0 0 20px 10px rgba(59, 130, 246, 0.2); }
+        }
+        
+        @keyframes countUp {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        .animate-count {
+            animation: countUp 0.6s ease-out forwards;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        
+        /* Trust indicator stagger */
+        .trust-item {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .trust-item:nth-child(1) { animation-delay: 0.1s; }
+        .trust-item:nth-child(2) { animation-delay: 0.2s; }
+        .trust-item:nth-child(3) { animation-delay: 0.3s; }
+        .trust-item:nth-child(4) { animation-delay: 0.4s; }
+        
+        /* Scroll Animation Classes */
+        .scroll-animate {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .scroll-animate.js-enabled {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .scroll-animate.js-enabled.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Ensure content is visible even if animations fail */
+        @media (prefers-reduced-motion: reduce) {
+            .scroll-animate,
+            .scroll-animate.js-enabled {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        }
+        
+        .scroll-animate.delay-1 { transition-delay: 0.1s; }
+        .scroll-animate.delay-2 { transition-delay: 0.2s; }
+        .scroll-animate.delay-3 { transition-delay: 0.3s; }
+        .scroll-animate.delay-4 { transition-delay: 0.4s; }
+        .scroll-animate.delay-5 { transition-delay: 0.5s; }
+        .scroll-animate.delay-6 { transition-delay: 0.6s; }
+        
+        /* Premium Button */
+        .btn-premium {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            transition: all 0.3s ease-out;
+        }
+        
+        .btn-premium:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+        }
+        
+        /* Border Gradient Cards */
+        .card-premium {
+            position: relative;
+            background: white;
+            border-radius: 1rem;
+        }
+        
+        .card-premium::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 1rem;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(30, 90, 168, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Service card image container */
+        .service-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 0.75rem 0.75rem 0 0;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+    <!-- Emergency Banner -->
+    <div class="w-full bg-primary py-2.5 px-4 text-center">
+        <p class="text-white text-sm font-bold">
+            🚨 Fast Emergency Service Within Hours | (801) 884-3351
+        </p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/50 shadow-premium">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-sm">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <span class="text-xl font-bold text-slate-800">Bartlett Electric</span>
+                        <span class="hidden sm:inline text-sm text-slate-500 ml-2">| Electrical Experts</span>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="#services" class="px-4 py-2 text-slate-600 hover:text-primary transition-colors font-medium">Services</a>
+                    <a href="#about" class="px-4 py-2 text-slate-600 hover:text-primary transition-colors font-medium">About</a>
+                    <a href="#reviews" class="px-4 py-2 text-slate-600 hover:text-primary transition-colors font-medium">Reviews</a>
+                    <a href="#contact" class="px-4 py-2 text-slate-600 hover:text-primary transition-colors font-medium">Contact</a>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <a href="#contact" class="px-4 py-2 btn-accent-gradient text-white font-semibold text-sm rounded-xl shadow-sm">
+                        Get Free Estimate
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden hero-gradient">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-left">
+                    <div class="inline-flex flex-wrap items-center px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full shadow-premium mb-6 animate-fade-in-up opacity-0" style="animation-fill-mode: forwards;">
+                        <svg class="w-5 h-5 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <span class="font-semibold text-slate-800">20+ Years</span>
+                        <span class="text-slate-500 ml-1">Experience</span>
+                        <span class="mx-2 text-slate-300 flex-shrink-0">|</span>
+                        <span class="text-success font-medium">Licensed</span>
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 letter-tight leading-tight mb-6 animate-fade-in-up opacity-0 delay-100" style="animation-fill-mode: forwards;">
+                        Electrical Contractors Saratoga Springs, Utah
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-600 mb-6 leading-relaxed animate-fade-in-up opacity-0 delay-200" style="animation-fill-mode: forwards;">
+                        Licensed, bonded & insured electrician with 20+ years experience. Residential & commercial electrical services. Serving homeowners and businesses with responsive electrical service.
+                    </p>
+                    
+                    <!-- Social proof right in hero -->
+                    <div class="flex flex-wrap items-center gap-4 mb-4 animate-fade-in-up opacity-0 delay-200" style="animation-fill-mode: forwards;">
+                        <div class="flex text-accent text-lg">
+                            ★★★★★
+                        </div>
+                        <span class="text-sm text-slate-600"><strong>4.5/5</strong> from 15+ reviews</span>
+                        <span class="text-slate-300">|</span>
+                        <span class="text-sm text-slate-600">Serving Utah County since 2013</span>
+                    </div>
+                    
+                    <!-- Trust Bar -->
+                    <p class="text-sm text-slate-600 mb-8 animate-fade-in-up opacity-0 delay-200" style="animation-fill-mode: forwards;">
+                        <span class="font-semibold text-slate-900">Free Estimates</span> • 
+                        <span class="font-semibold text-slate-900">Quality Guaranteed</span> • 
+                        <span class="font-semibold text-slate-900">Licensed & Insured</span>
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up opacity-0 delay-300" style="animation-fill-mode: forwards;">
+                        <a href="tel:8018843351" class="w-full sm:w-auto px-8 py-4 btn-premium text-white font-semibold text-lg rounded-xl shadow-lg text-center phone-pulse">
+                            (801) 884-3351
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 font-semibold text-lg rounded-xl border-2 border-slate-200 hover:border-primary hover:text-primary transition-colors text-center">
+                            Get Free Estimate
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative animate-fade-in opacity-0 delay-400" style="animation-fill-mode: forwards;">
+                    <div class="bg-white rounded-2xl shadow-premium p-4 sm:p-6 border border-slate-200">
+                        <div class="aspect-[4/3] rounded-xl overflow-hidden mb-4">
+                            <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80" alt="Professional Electrician at Work" class="w-full h-full object-cover">
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-slate-50 rounded-lg p-3 text-center counter-container">
+                                <p class="text-2xl font-bold text-primary"><span class="counter" data-target="20">0</span>+</p>
+                                <p class="text-sm text-slate-500">Years Experience</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-lg p-3 text-center">
+                                <p class="text-2xl font-bold text-primary">7 Days</p>
+                                <p class="text-sm text-slate-500">Emergency Service</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decorative Elements -->
+                    <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl"></div>
+                    <div class="absolute -top-4 -left-4 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="py-12 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="trust-item flex flex-col items-center">
+                    <div class="w-12 h-12 bg-success/10 rounded-xl flex items-center justify-center mb-2">
+                        <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <p class="font-semibold text-slate-800">Licensed & Insured</p>
+                    <p class="text-xs text-slate-500">Bonded Electrical Contractor</p>
+                </div>
+                <div class="trust-item flex flex-col items-center">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-2">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <p class="font-semibold text-slate-800">Fast Response</p>
+                    <p class="text-xs text-slate-500">Same-Day Service</p>
+                </div>
+                <div class="trust-item flex flex-col items-center">
+                    <div class="w-12 h-12 bg-success/10 rounded-xl flex items-center justify-center mb-2">
+                        <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <p class="font-semibold text-slate-800">Free Estimates</p>
+                    <p class="text-xs text-slate-500">No Obligation</p>
+                </div>
+                <div class="trust-item flex flex-col items-center">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-2">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <p class="font-semibold text-slate-800">Quality Guaranteed</p>
+                    <p class="text-xs text-slate-500">Satisfaction Assured</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 md:py-32 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Why Homeowners Choose Us</h2>
+                <p class="text-lg text-slate-600">See the difference experience makes</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Other Electricians -->
+                <div class="bg-white rounded-xl p-8 shadow-md">
+                    <h3 class="text-xl font-bold text-slate-400 mb-6">Other Electricians</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-red-500 mr-3 text-xl">✗</span>
+                            <span class="text-slate-600">Pushy sales tactics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-500 mr-3 text-xl">✗</span>
+                            <span class="text-slate-600">Hidden fees & surprises</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-500 mr-3 text-xl">✗</span>
+                            <span class="text-slate-600">No follow-up after job</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-500 mr-3 text-xl">✗</span>
+                            <span class="text-slate-600">Unlicensed technicians</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-500 mr-3 text-xl">✗</span>
+                            <span class="text-slate-600">Hard to reach</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Bartlett Electric -->
+                <div class="bg-slate-900 rounded-xl p-8 shadow-lg text-white">
+                    <div class="inline-block px-3 py-1 bg-white text-slate-900 text-sm font-bold rounded mb-4">BETTER CHOICE</div>
+                    <h3 class="text-xl font-bold mb-6 text-white">Bartlett Electric</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-3 text-xl font-bold">✓</span>
+                            <span class="text-white">Free estimates, no pressure</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-3 text-xl font-bold">✓</span>
+                            <span class="text-white">Upfront, honest pricing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-3 text-xl font-bold">✓</span>
+                            <span class="text-white">7-day emergency response</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-3 text-xl font-bold">✓</span>
+                            <span class="text-white">Licensed electrician on every job</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-3 text-xl font-bold">✓</span>
+                            <span class="text-white">Owner answers the phone</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-32 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary font-bold text-sm rounded-full mb-4">ABOUT US</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-6">
+                        Family Owned & Operated Since 2013
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-6">
+                        Bartlett Electric is a Saratoga Springs-based electrical contractor serving Utah County with straightforward pricing and quality workmanship.
+                    </p>
+                    <p class="text-slate-600 mb-8">
+                        We focus on clear communication, clean workmanship, and dependable scheduling for every residential and commercial project.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">20+ Years Experience</h4>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Family Owned</h4>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Licensed & Insured</h4>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Customer First</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-slate-800">Get Your Free Estimate</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <p class="font-semibold text-slate-800 mb-1">Free Electrical Inspection</p>
+                            <p class="text-sm text-slate-500">No obligation assessment</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <p class="font-semibold text-slate-800 mb-1">Upfront Pricing</p>
+                            <p class="text-sm text-slate-500">No hidden fees</p>
+                        </div>
+                        <a href="tel:8018843351" class="block w-full py-4 btn-primary-gradient text-white font-semibold text-lg rounded-xl shadow-lg text-center">
+                            (801) 884-3351
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 md:py-32 bg-pattern">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-4">
+                    Our Electrical Services
+                </h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    From minor repairs to complete installations, we handle all your electrical needs with professionalism and care.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Drain Cleaning -->
+                <div class="card-premium shadow-premium overflow-hidden hover-lift shadow-premium-hover scroll-animate delay-1 service-card">
+                    <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80" alt="Drain Cleaning" class="service-image">
+                    <div class="p-6">
+                        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Drain Cleaning & Repair</h3>
+                        <p class="text-slate-600">Clogged circuits, slow circuits, and circuit installation. We clear blockages fast and prevent future problems.</p>
+                    </div>
+                </div>
+
+                <!-- Panel Upgrades -->
+                <div class="card-premium shadow-premium overflow-hidden hover-lift shadow-premium-hover scroll-animate delay-2 service-card">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Electrical Panel Upgrade" class="service-image">
+                    <div class="p-6">
+                        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Panel Upgrades</h3>
+                        <p class="text-slate-600">Installation, repair, and maintenance of tank and tankless panel upgrades and circuits. Hot water when you need it.</p>
+                    </div>
+                </div>
+
+                <!-- Faucet Repair -->
+                <div class="card-premium shadow-premium overflow-hidden hover-lift shadow-premium-hover scroll-animate delay-3 service-card">
+                    <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80" alt="Faucet Repair" class="service-image">
+                    <div class="p-6">
+                        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Faucet & Fixture Repair</h3>
+                        <p class="text-slate-600">Leaky faucets, fixture installation, and repairs. We fix drips, leaks, and upgrade your fixtures.</p>
+                    </div>
+                </div>
+
+                <!-- Gas Line -->
+                <div class="card-premium shadow-premium overflow-hidden hover-lift shadow-premium-hover scroll-animate delay-4 service-card">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80" alt="Gas Line Services" class="service-image">
+                    <div class="p-6">
+                        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Gas Line Services</h3>
+                        <p class="text-slate-600">Dedicated circuit installs and electrical upgrades for appliances, EV chargers, and home additions.</p>
+                    </div>
+                </div>
+
+                <!-- Garbage Disposal -->
+                <div class="card-premium shadow-premium p-8 hover-lift shadow-premium-hover scroll-animate delay-5 service-card">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Garbage Disposal</h3>
+                    <p class="text-slate-600">Repair and installation of garbage disposals. We fix jams, leaks, and install new units.</p>
+                </div>
+
+                <!-- Emergency -->
+                <div class="card-premium shadow-premium p-8 hover-lift shadow-premium-hover scroll-animate delay-6 service-card">
+                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Emergency Electrical</h3>
+                    <p class="text-slate-600">Available 7 days a week for emergencies. Burst wiring, major leaks, and urgent repairs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Projects Marquee -->
+    <div class="bg-slate-900 text-white py-4 overflow-hidden">
+        <div class="animate-marquee whitespace-nowrap flex">
+            <span class="mx-8">✅ Just completed troubleshooting and repairs in Riverton</span>
+            <span class="mx-8">✅ Lighting retrofit in Eagle Mountain</span>
+            <span class="mx-8">✅ Panel upgrade completed in Lehi</span>
+            <span class="mx-8">✅ EV charger install in Saratoga Springs</span>
+            <span class="mx-8">✅ Faucet replacement in Murray</span>
+            <span class="mx-8">✅ Just completed troubleshooting and repairs in Riverton</span>
+            <span class="mx-8">✅ Lighting retrofit in Eagle Mountain</span>
+            <span class="mx-8">✅ Panel upgrade completed in Lehi</span>
+            <span class="mx-8">✅ EV charger install in Saratoga Springs</span>
+            <span class="mx-8">✅ Faucet replacement in Murray</span>
+        </div>
+    </div>
+
+    <!-- Service Areas Section -->
+    <section id="areas" class="py-20 md:py-32 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-4">
+                    Serving Utah County
+                </h2>
+                <p class="text-lg text-slate-600">
+                    Proudly providing electrical services throughout Utah County
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="bg-slate-50 rounded-xl p-4 text-center hover:bg-primary/5 transition-colors border border-slate-200">
+                    <p class="font-semibold text-slate-800">Saratoga Springs</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-4 text-center hover:bg-primary/5 transition-colors border border-slate-200">
+                    <p class="font-semibold text-slate-800">Lehi</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-4 text-center hover:bg-primary/5 transition-colors border border-slate-200">
+                    <p class="font-semibold text-slate-800">Eagle Mountain</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-4 text-center hover:bg-primary/5 transition-colors border border-slate-200">
+                    <p class="font-semibold text-slate-800">Murray</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-4 text-center hover:bg-primary/5 transition-colors border border-slate-200">
+                    <p class="font-semibold text-slate-800">Riverton</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-4 text-center hover:bg-primary/5 transition-colors border border-slate-200">
+                    <p class="font-semibold text-slate-800">South Jordan</p>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-slate-900 rounded-2xl p-8 md:p-12 text-center">
+                <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                    Need Electrical Services in Utah County?
+                </h3>
+                <p class="text-slate-300 mb-8 max-w-2xl mx-auto">
+                    Whether you're in Saratoga Springs, Lehi, Eagle Mountain, or anywhere in Utah County, we're ready to help with all your electrical needs.
+                </p>
+                <a href="tel:8018843351" class="inline-flex items-center px-8 py-4 btn-premium text-white font-bold text-lg rounded-xl shadow-lg">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    (801) 884-3351
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Details -->
+    <section class="py-20 md:py-32 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-4">
+                    The Bartlett Electric Difference
+                </h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    We're not just another electrical company. We're your neighbors, committed to serving Utah County homes.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-50 rounded-2xl p-6 text-center hover-lift">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-slate-800 mb-2">Locally Family Owned</h3>
+                    <p class="text-slate-600 text-sm">We get to know each customer personally and build long-term relationships with our community.</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-6 text-center hover-lift">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-slate-800 mb-2">Done Right The First Time</h3>
+                    <p class="text-slate-600 text-sm">Highly trained specialists ensure your electrical repair or installation is completed correctly.</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-6 text-center hover-lift">
+                    <div class="w-14 h-14 bg-success/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-slate-800 mb-2">Great Price, Great Value</h3>
+                    <p class="text-slate-600 text-sm">Quality workmanship at reasonable prices. No hidden fees or surprises.</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-6 text-center hover-lift">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-slate-800 mb-2">Personal Attention</h3>
+                    <p class="text-slate-600 text-sm">Our team takes time to explain options, answer questions, and stand behind the work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 md:py-32 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary font-semibold text-sm rounded-full mb-4">Customer Reviews</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-4">
+                    What Our Customers Say
+                </h2>
+                <p class="text-lg text-slate-600">
+                    Real reviews from real customers throughout Utah County
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 - Melissa W. -->
+                <div class="bg-white rounded-2xl shadow-premium p-8 scroll-animate">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-500">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                    </div>
+                    <p class="text-slate-700 mb-6 leading-relaxed">
+                        "Quick response, clean work, and fair pricing. They explained exactly what needed to be fixed and got it done right."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                            <span class="font-bold text-primary">MW</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-800">Melissa W.</p>
+                            <p class="text-sm text-slate-500">Riverton, UT</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 - Karla S. -->
+                <div class="bg-white rounded-2xl shadow-premium p-8 scroll-animate delay-1">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-500">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                    </div>
+                    <p class="text-slate-700 mb-6 leading-relaxed">
+                        "They upgraded our panel and installed new circuits for our remodel. Professional team and great communication start to finish."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                            <span class="font-bold text-primary">KS</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-800">Karla S.</p>
+                            <p class="text-sm text-slate-500">Lehi, UT</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 - Ryan C. -->
+                <div class="bg-white rounded-2xl shadow-premium p-8 scroll-animate delay-2">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-500">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                    </div>
+                    <p class="text-slate-700 mb-6 leading-relaxed">
+                        "Needed urgent troubleshooting after power kept tripping. Bartlett Electric diagnosed the issue fast and fixed it the same day."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mr-4">
+                            <span class="font-bold text-success">RC</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-800">Ryan C.</p>
+                            <p class="text-sm text-slate-500">Eagle Mountain, UT</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Reviews Link -->
+            <div class="text-center mt-10">
+                <a href="https://www.google.com/search?q=Bartlett+Electric+Reviews" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-white border-2 border-primary text-primary font-semibold rounded-full shadow-md hover:bg-primary hover:text-white transition-all">
+                    <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                    </svg>
+                    See All Reviews on Google
+                </a>
+                <p class="text-slate-500 text-sm mt-3">⭐ 4.5 Star Rating</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-32 bg-pattern">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 letter-tight mb-4">
+                        Get Your Free Estimate
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-8">
+                        Contact us today for a free, no-obligation electrical inspection and estimate. We're here to help.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500">Phone</p>
+                                <p class="font-semibold text-slate-800">(801) 884-3351</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500">Service Area</p>
+                                <p class="font-semibold text-slate-800">Saratoga Springs, UT</p>
+                                <p class="text-slate-600">Serving Utah County</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500">License</p>
+                                <p class="font-semibold text-slate-800">Licensed & Insured</p>
+                                <p class="text-slate-600">Bonded Electrical Contractor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-premium p-8">
+                    <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Bartlett Electric will contact you shortly.');">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">First Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Doe">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Phone</label>
+                            <input type="tel" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="(801) 884-3351">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                            <input type="email" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Service Needed</label>
+                            <select class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+                                <option>Select a service...</option>
+                                <option>Drain Cleaning</option>
+                                <option>Panel Upgrade</option>
+                                <option>Faucet Repair</option>
+                                <option>Gas Line</option>
+                                <option>Garbage Disposal</option>
+                                <option>Emergency Repair</option>
+                                <option>Free Inspection</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 btn-accent-gradient text-white font-semibold text-lg rounded-xl shadow-lg">
+                            Request Free Estimate
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 md:py-32 bg-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white letter-tight mb-4">
+                Need a Electrician in Utah County?
+            </h2>
+            <p class="text-xl text-slate-300 mb-8">
+                Don't wait for the problem to get worse. Call our team now for fast, reliable service.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:8018843351" class="px-8 py-4 btn-premium text-white font-bold text-lg rounded-xl shadow-lg flex items-center justify-center gap-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    (801) 884-3351
+                </a>
+                <a href="#contact" class="px-8 py-4 bg-white/10 text-white font-semibold text-lg rounded-xl border-2 border-white/30 hover:bg-white/20 transition-colors flex items-center justify-center">
+                    Schedule Service
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center mr-3">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Bartlett Electric</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">
+                        Licensed, bonded & insured electrical services in Saratoga Springs. 20+ years experience. Customer satisfaction is our ultimate goal.
+                    </p>
+                    <p class="text-slate-500 text-sm">
+                        Licensed & Insured • 4.5★ Rating • 20+ Years Experience
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#services" class="hover:text-white transition-colors">Drain Cleaning</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Panel Upgrades</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Faucet Repair</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Gas Lines</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Emergency Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li>(801) 884-3351</li>
+                        <li>Saratoga Springs, UT</li>
+                        <li>Mon-Fri: 9AM-6PM</li>
+                        <li class="text-primary">7 Days for Emergencies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-400 text-sm mb-4 md:mb-0">
+                    © 2026 Bartlett Electric, LLC. All rights reserved.
+                </p>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta md:hidden">
+        <a href="tel:8018843351" class="flex-1 py-3 btn-premium text-white font-bold rounded-xl text-center flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            Call Now
+        </a>
+        <a href="#contact" class="flex-1 py-3 bg-white text-primary font-bold rounded-xl text-center border-2 border-primary">
+            Get Estimate
+        </a>
+    </div>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        // Add js-enabled class for scroll animations
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            el.classList.add('js-enabled');
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Fallback: make all elements visible after 3 seconds if JS fails
+        setTimeout(() => {
+            document.querySelectorAll('.scroll-animate.js-enabled:not(.visible)').forEach(el => {
+                el.classList.add('visible');
+            });
+        }, 3000);
+        
+        // Number Counter Animation - triggers on scroll
+        const counterContainer = document.querySelector('.counter-container');
+        const counter = document.querySelector('.counter');
+        let counterAnimated = false;
+        
+        if (counterContainer && counter) {
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !counterAnimated) {
+                        counterAnimated = true;
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const duration = 2000; // 2 seconds
+                        const step = target / (duration / 16); // 60fps
+                        let current = 0;
+                        
+                        const updateCounter = () => {
+                            current += step;
+                            if (current < target) {
+                                counter.textContent = Math.floor(current);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target;
+                            }
+                        };
+                        
+                        updateCounter();
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            counterObserver.observe(counterContainer);
+        }
+    </script>
+</body>
+</html>
