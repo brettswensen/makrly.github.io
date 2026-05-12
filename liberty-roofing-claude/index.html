@@ -1,0 +1,2265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liberty Roofing — Provo's roofing, done right.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+ Tokens — Light + Blue
+ ========================================================= */
+:root {
+ --bg: #F7F7F5;
+ --bg-2: #FFFFFF;
+ --bg-tint: #EEF3FF; /* very pale blue */
+ --surface: #FFFFFF;
+ --surface-2: #F1F1EE;
+ --ink: #0A0A0B;
+ --ink-2: #1F2024;
+ --muted: #5C5F66;
+ --muted-2: #8A8B92;
+ --line: rgba(10,10,11,.08);
+ --line-2: rgba(10,10,11,.04);
+ --accent: #2D6EFF;
+ --accent-2: #1B4FE0;
+ --accent-soft: rgba(45,110,255,.10);
+ --accent-glow: rgba(45,110,255,.35);
+ --on-accent: #FFFFFF;
+
+ --shadow-sm: 0 1px 2px rgba(10,10,11,.04), 0 2px 6px rgba(10,10,11,.04);
+ --shadow-md: 0 8px 24px -8px rgba(10,10,11,.10), 0 24px 48px -20px rgba(10,10,11,.12);
+ --shadow-lg: 0 30px 60px -24px rgba(10,10,11,.18), 0 12px 24px -12px rgba(10,10,11,.10);
+
+ --radius-sm: 10px;
+ --radius: 14px;
+ --radius-lg: 20px;
+ --radius-pill: 999px;
+ --ease: cubic-bezier(.2,.7,.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; padding: 0; }
+body {
+ font-family: 'Geist', system-ui, -apple-system, sans-serif;
+ background: var(--bg);
+ color: var(--ink);
+ -webkit-font-smoothing: antialiased;
+ text-rendering: optimizeLegibility;
+ font-feature-settings: "ss01", "ss03", "cv11";
+}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: 0; background: none; }
+img { max-width: 100%; display: block; }
+
+.container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+/* =========================================================
+ Section heading system
+ ========================================================= */
+.eyebrow-chip {
+ display: inline-flex; align-items: center; gap: 8px;
+ padding: 5px 12px;
+ font-family: 'Geist Mono', monospace;
+ font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase;
+ color: var(--accent);
+ background: var(--accent-soft);
+ border-radius: 999px;
+ font-weight: 500;
+}
+.eyebrow-chip .dot {
+ width: 5px; height: 5px; border-radius: 50%;
+ background: var(--accent);
+}
+
+.section-title {
+ font-size: clamp(36px, 4.2vw, 56px);
+ line-height: 1.02;
+ letter-spacing: -0.035em;
+ font-weight: 700;
+ color: var(--ink);
+ margin: 18px 0 0;
+ max-width: 800px;
+}
+.section-title .hl { color: var(--accent); }
+
+.section-lede {
+ margin-top: 18px;
+ font-size: 18px; line-height: 1.5;
+ color: var(--muted);
+ max-width: 620px;
+ letter-spacing: -.005em;
+}
+
+/* =========================================================
+ Buttons
+ ========================================================= */
+.btn {
+ display: inline-flex; align-items: center; gap: 10px;
+ border-radius: 12px;
+ font-weight: 600; letter-spacing: -.005em;
+ transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
+ position: relative; overflow: hidden;
+}
+.btn-primary {
+ padding: 16px 22px;
+ background: var(--accent); color: var(--on-accent);
+ font-size: 16px;
+ box-shadow: 0 1px 0 rgba(255,255,255,.15) inset, 0 8px 24px -8px var(--accent-glow), 0 4px 10px -4px rgba(0,0,0,.15);
+}
+.btn-primary::before {
+ content: ""; position: absolute; inset: 0;
+ background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.18) 50%, transparent 70%);
+ transform: translateX(-100%);
+ transition: transform .6s var(--ease);
+ pointer-events: none;
+}
+.btn-primary:hover {
+ background: var(--accent-2); transform: translateY(-1px);
+ box-shadow: 0 1px 0 rgba(255,255,255,.15) inset, 0 14px 30px -8px var(--accent-glow), 0 6px 14px -4px rgba(0,0,0,.18);
+}
+.btn-primary:hover::before { transform: translateX(100%); }
+.btn-primary .icon-wrap {
+ width: 24px; height: 24px; border-radius: 50%;
+ background: rgba(255,255,255,.22);
+ display: grid; place-items: center;
+}
+.btn-primary .icon-wrap svg { width: 12px; height: 12px; }
+
+.btn-secondary {
+ padding: 15px 20px;
+ background: var(--surface); color: var(--ink);
+ border: 1px solid var(--line);
+ font-size: 15px; box-shadow: var(--shadow-sm);
+}
+.btn-secondary:hover { background: var(--surface-2); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn-secondary .arrow { width: 14px; height: 14px; transition: transform .25s var(--ease); }
+.btn-secondary:hover .arrow { transform: translateX(3px); }
+
+.btn-ghost {
+ display: inline-flex; align-items: center; gap: 6px;
+ font-size: 14px; font-weight: 600; color: var(--accent);
+ letter-spacing: -.005em;
+ transition: gap .2s var(--ease);
+}
+.btn-ghost:hover { gap: 10px; }
+.btn-ghost svg { width: 13px; height: 13px; }
+
+/* =========================================================
+ Top utility bar
+ ========================================================= */
+.util {
+ border-bottom: 1px solid var(--line-2);
+ font-size: 12.5px; color: var(--muted);
+ background: var(--bg);
+}
+.util-inner { display: flex; align-items: center; justify-content: space-between; height: 40px; gap: 20px; }
+.util-left { display: inline-flex; align-items: center; gap: 16px; }
+.util-left .live { display: inline-flex; align-items: center; gap: 8px; color: var(--ink-2); font-weight: 500; }
+.util-left .live .dot {
+ width: 7px; height: 7px; border-radius: 50%;
+ background: #34D399;
+ box-shadow: 0 0 0 3px rgba(52,211,153,.18);
+ animation: pulse 2.4s var(--ease) infinite;
+}
+@keyframes pulse {
+ 0%, 100% { box-shadow: 0 0 0 3px rgba(52,211,153,.18); }
+ 50% { box-shadow: 0 0 0 6px rgba(52,211,153,.04); }
+}
+.util-left .sep { opacity: .5; }
+.util-right { display: inline-flex; align-items: center; gap: 16px; }
+.util-right .phone {
+ color: var(--ink); font-weight: 600;
+ display: inline-flex; align-items: center; gap: 7px; letter-spacing: -.005em;
+}
+.util-right .phone svg { width: 13px; height: 13px; color: var(--accent); }
+
+/* =========================================================
+ Sticky nav
+ ========================================================= */
+.nav {
+ position: sticky; top: 0; z-index: 50;
+ background: rgba(247,247,245,.82);
+ backdrop-filter: blur(14px) saturate(140%);
+ -webkit-backdrop-filter: blur(14px) saturate(140%);
+ border-bottom: 1px solid var(--line);
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-mark {
+ width: 38px; height: 38px; border-radius: 10px;
+ background: var(--ink); color: var(--bg);
+ display: grid; place-items: center;
+ transition: transform .25s var(--ease);
+}
+.brand:hover .brand-mark { transform: rotate(-4deg) scale(1.05); }
+.brand-text { display: flex; flex-direction: column; line-height: 1; }
+.brand-text .name { font-weight: 700; font-size: 17px; letter-spacing: -.02em; color: var(--ink); }
+.brand-text .meta { font-family: 'Geist Mono', monospace; font-size: 10.5px; color: var(--muted); margin-top: 5px; letter-spacing: .04em; }
+
+.nav-links { display: flex; align-items: center; gap: 2px; }
+.nav-links a {
+ padding: 9px 14px; font-size: 14px; font-weight: 500;
+ color: var(--ink-2); border-radius: 8px;
+ transition: color .2s var(--ease), background .2s var(--ease);
+ letter-spacing: -.005em;
+}
+.nav-links a:hover { color: var(--ink); background: var(--surface-2); }
+
+.nav-actions { display: flex; align-items: center; gap: 10px; }
+.nav-cta {
+ display: inline-flex; align-items: center; gap: 8px;
+ padding: 10px 16px;
+ font-size: 13.5px; font-weight: 600;
+ color: var(--on-accent); background: var(--accent);
+ border-radius: 10px;
+ box-shadow: 0 4px 14px -4px var(--accent-glow);
+ transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease);
+ letter-spacing: -.005em;
+}
+.nav-cta:hover { background: var(--accent-2); transform: translateY(-1px); box-shadow: 0 8px 20px -4px var(--accent-glow); }
+.nav-cta svg { width: 13px; height: 13px; transition: transform .2s var(--ease); }
+.nav-cta:hover svg { transform: translateX(2px); }
+@media (max-width: 880px) { .nav-links { display: none; } }
+
+/* =========================================================
+ Hero
+ ========================================================= */
+.hero {
+ position: relative; padding: 80px 0 100px;
+ overflow: hidden;
+}
+.hero::before {
+ content: ""; position: absolute;
+ top: -120px; right: -100px;
+ width: 720px; height: 720px;
+ background: radial-gradient(circle at center, var(--accent-soft) 0%, transparent 60%);
+ pointer-events: none; z-index: 0;
+}
+.hero-grid {
+ display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+ gap: 72px; align-items: center; position: relative;
+}
+@media (max-width: 1024px) {
+ .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+ .hero { padding: 56px 0 72px; }
+}
+
+.eyebrow {
+ display: inline-flex; align-items: center; gap: 10px;
+ padding: 6px 14px 6px 6px;
+ background: var(--surface);
+ border: 1px solid var(--line);
+ border-radius: 999px;
+ box-shadow: var(--shadow-sm);
+ font-size: 13px; font-weight: 500;
+ color: var(--ink-2); letter-spacing: -.005em;
+}
+.eyebrow .badge {
+ display: inline-flex; align-items: center; gap: 5px;
+ padding: 3px 9px;
+ background: var(--accent); color: var(--on-accent);
+ border-radius: 999px;
+ font-size: 11px; font-weight: 700; letter-spacing: .02em;
+}
+.eyebrow .badge svg { width: 11px; height: 11px; }
+.eyebrow .sep { width: 3px; height: 3px; border-radius: 50%; background: var(--line); }
+
+h1.display {
+ font-size: clamp(46px, 5.8vw, 80px);
+ line-height: .98; letter-spacing: -0.04em; font-weight: 700;
+ color: var(--ink); margin: 24px 0 0;
+}
+h1.display .hl { color: var(--accent); position: relative; display: inline-block; }
+h1.display .hl::after {
+ content: ""; position: absolute;
+ left: 0; right: 0; bottom: .08em;
+ height: .12em; background: var(--accent);
+ opacity: .18; border-radius: 4px;
+}
+
+.lede {
+ margin-top: 24px; max-width: 520px;
+ font-size: 18px; line-height: 1.5; color: var(--muted);
+ letter-spacing: -.005em;
+}
+.lede strong { color: var(--ink-2); font-weight: 600; }
+
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; align-items: center; }
+
+.trust-row {
+ margin-top: 40px; padding-top: 28px;
+ border-top: 1px solid var(--line);
+ display: flex; flex-wrap: wrap; gap: 20px 28px; align-items: center;
+}
+.trust-item { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: var(--muted); }
+.trust-item strong { display: block; color: var(--ink); font-weight: 600; font-size: 13.5px; letter-spacing: -.01em; margin-bottom: 1px; }
+.trust-item .ico {
+ width: 30px; height: 30px; border-radius: 8px;
+ background: var(--accent-soft); color: var(--accent);
+ display: grid; place-items: center; flex-shrink: 0;
+}
+.trust-item .ico svg { width: 14px; height: 14px; }
+.trust-item .stars { color: var(--accent); display: inline-flex; gap: 1px; line-height: 0; }
+.trust-item .stars svg { width: 12px; height: 12px; color: #F5C842; }
+
+/* Hero visual */
+.visual { position: relative; aspect-ratio: 4 / 5; max-width: 540px; width: 100%; margin-left: auto; }
+@media (max-width: 1024px) { .visual { margin: 0 auto; max-width: 520px; aspect-ratio: 5 / 4; } }
+.photo-card {
+ position: absolute; inset: 0;
+ border-radius: 18px; overflow: hidden;
+ background: #1a2a40;
+ box-shadow: var(--shadow-lg);
+ border: 1px solid var(--line);
+ transition: transform .4s var(--ease);
+}
+.visual:hover .photo-card { transform: translateY(-2px); }
+.photo-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.visual:hover .photo-card img { transform: scale(1.03); }
+.photo-card .grad { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,.55) 100%); pointer-events: none; }
+.photo-card .corner-tag {
+ position: absolute; top: 18px; left: 18px;
+ display: inline-flex; align-items: center; gap: 8px;
+ padding: 6px 12px 6px 8px;
+ background: rgba(0,0,0,.5);
+ backdrop-filter: blur(10px);
+ color: #fff; border-radius: 999px;
+ font-size: 12px; font-weight: 500;
+ border: 1px solid rgba(255,255,255,.16);
+ letter-spacing: -.005em;
+}
+.photo-card .corner-tag .live { width: 7px; height: 7px; border-radius: 50%; background: #34D399; box-shadow: 0 0 0 3px rgba(52,211,153,.25); }
+.photo-card .caption { position: absolute; left: 22px; right: 22px; bottom: 22px; color: #fff; }
+.photo-card .caption .t1 { font-size: 12px; font-weight: 500; opacity: .8; font-family: 'Geist Mono', monospace; letter-spacing: .04em; }
+.photo-card .caption .t2 { font-size: 17px; font-weight: 600; letter-spacing: -.01em; margin-top: 4px; }
+
+.stat-card {
+ position: absolute; bottom: -28px; left: -28px;
+ background: var(--surface); border-radius: 16px;
+ padding: 18px 22px; box-shadow: var(--shadow-md);
+ border: 1px solid var(--line);
+ display: flex; align-items: center; gap: 16px;
+ min-width: 240px;
+}
+.stat-card .num { font-size: 44px; font-weight: 700; line-height: 1; color: var(--ink); letter-spacing: -.04em; font-feature-settings: "ss01", "tnum"; }
+.stat-card .num sup { font-size: .42em; color: var(--accent); top: -1.4em; margin-left: 2px; font-weight: 700; }
+.stat-card .text { line-height: 1.25; }
+.stat-card .text .t1 { font-size: 13px; font-weight: 600; color: var(--ink); letter-spacing: -.005em; }
+.stat-card .text .t2 { font-size: 12px; color: var(--muted); margin-top: 3px; }
+
+.review-chip {
+ position: absolute; top: -16px; right: -16px;
+ background: var(--surface); border: 1px solid var(--line);
+ border-radius: 14px; padding: 12px 16px;
+ box-shadow: var(--shadow-md);
+ display: flex; align-items: center; gap: 12px;
+ min-width: 200px;
+}
+.review-chip .g-logo {
+ width: 32px; height: 32px; border-radius: 50%;
+ background-image: conic-gradient(from 0deg, #4285F4 0% 25%, #34A853 25% 50%, #FBBC05 50% 75%, #EA4335 75% 100%);
+ display: grid; place-items: center;
+}
+.review-chip .g-logo::after {
+ content: "G"; color: var(--ink); background: var(--surface);
+ width: 20px; height: 20px; border-radius: 50%;
+ display: grid; place-items: center; font-size: 13px; font-weight: 700;
+}
+.review-chip .g-text { line-height: 1.2; }
+.review-chip .g-text .t1 { font-size: 12.5px; color: var(--muted); font-weight: 500; }
+.review-chip .g-text .t2 { font-size: 14px; font-weight: 600; color: var(--ink); letter-spacing: -.005em; margin-top: 2px; display: inline-flex; align-items: center; gap: 4px; }
+.review-chip .g-text .stars { color: #F5C842; display: inline-flex; gap: 1px; line-height: 0; }
+.review-chip .g-text .stars svg { width: 11px; height: 11px; }
+
+/* =========================================================
+ Marquee logo strip
+ ========================================================= */
+.logos {
+ padding: 56px 0;
+ border-top: 1px solid var(--line);
+ border-bottom: 1px solid var(--line);
+ background: var(--bg-2);
+ overflow: hidden;
+}
+.logos-head {
+ display: flex; align-items: center; justify-content: center; gap: 14px;
+ font-family: 'Geist Mono', monospace; font-size: 11.5px;
+ letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+ margin-bottom: 28px;
+}
+.logos-head .line { flex: 0 0 60px; height: 1px; background: var(--line); }
+.logos-track {
+ display: flex; gap: 56px;
+ align-items: center; justify-content: center;
+ flex-wrap: wrap;
+}
+.logos-track .lg {
+ font-weight: 700; letter-spacing: -.01em;
+ color: var(--muted-2);
+ display: inline-flex; align-items: center; gap: 10px;
+ font-size: 22px;
+ opacity: .85;
+ transition: color .2s var(--ease), opacity .2s var(--ease);
+}
+.logos-track .lg:hover { color: var(--ink); opacity: 1; }
+.logos-track .lg .pill {
+ padding: 4px 9px; border-radius: 6px;
+ background: var(--surface-2);
+ font-size: 11px;
+ font-family: 'Geist Mono', monospace;
+ letter-spacing: .04em; text-transform: uppercase;
+ color: var(--muted);
+ font-weight: 500;
+}
+.logos-track .lg .badge-icon {
+ width: 28px; height: 28px;
+ border-radius: 6px;
+ background: var(--ink); color: var(--bg);
+ display: grid; place-items: center;
+ font-size: 13px;
+}
+
+/* =========================================================
+ Services
+ ========================================================= */
+section.services { padding: 120px 0; }
+.services-head { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 56px; flex-wrap: wrap; }
+
+.svc-grid {
+ display: grid; grid-template-columns: repeat(3, 1fr);
+ gap: 20px;
+}
+@media (max-width: 1024px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .svc-grid { grid-template-columns: 1fr; } }
+
+.svc-card {
+ position: relative;
+ background: var(--surface);
+ border: 1px solid var(--line);
+ border-radius: var(--radius-lg);
+ padding: 28px;
+ display: flex; flex-direction: column;
+ min-height: 280px;
+ transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
+ overflow: hidden;
+}
+.svc-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(45,110,255,.25); }
+.svc-card .ico-wrap {
+ width: 48px; height: 48px;
+ border-radius: 12px;
+ background: var(--accent-soft);
+ color: var(--accent);
+ display: grid; place-items: center;
+ margin-bottom: 32px;
+ transition: transform .25s var(--ease), background .25s var(--ease);
+}
+.svc-card:hover .ico-wrap { background: var(--accent); color: var(--on-accent); transform: scale(1.05); }
+.svc-card .ico-wrap svg { width: 22px; height: 22px; }
+.svc-card h3 { font-size: 22px; font-weight: 600; letter-spacing: -.02em; margin: 0 0 10px; color: var(--ink); }
+.svc-card p { font-size: 14.5px; color: var(--muted); line-height: 1.5; margin: 0 0 22px; flex: 1; }
+.svc-card .meta {
+ display: flex; align-items: center; justify-content: space-between;
+ padding-top: 18px;
+ border-top: 1px solid var(--line);
+ font-size: 12.5px; color: var(--muted-2);
+ font-family: 'Geist Mono', monospace; letter-spacing: .03em;
+}
+.svc-card .meta strong { color: var(--ink); font-weight: 600; }
+.svc-card .arrow-corner {
+ position: absolute; top: 24px; right: 24px;
+ width: 32px; height: 32px;
+ border-radius: 50%;
+ border: 1px solid var(--line);
+ display: grid; place-items: center;
+ color: var(--muted-2);
+ transition: background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease);
+}
+.svc-card:hover .arrow-corner { background: var(--ink); color: var(--bg); border-color: var(--ink); transform: rotate(-45deg); }
+.svc-card .arrow-corner svg { width: 13px; height: 13px; }
+
+/* Featured (wide) services */
+.svc-card.wide {
+ grid-column: span 2;
+ flex-direction: row;
+ align-items: stretch;
+ padding: 0;
+}
+@media (max-width: 1024px) { .svc-card.wide { grid-column: span 2; flex-direction: column; } }
+@media (max-width: 640px) { .svc-card.wide { grid-column: span 1; } }
+.svc-card.wide .copy { padding: 32px; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.svc-card.wide .copy .ico-wrap { margin-bottom: 22px; }
+.svc-card.wide .photo {
+ flex: 1; min-height: 240px;
+ background: linear-gradient(135deg, #1B4FE0 0%, #2D6EFF 100%);
+ position: relative; overflow: hidden;
+}
+.svc-card.wide .photo img { width: 100%; height: 100%; object-fit: cover; opacity: .92; }
+.svc-card.wide .photo::after {
+ content: "";
+ position: absolute; inset: 0;
+ background: linear-gradient(45deg, rgba(27,79,224,.4), transparent);
+}
+
+/* =========================================================
+ Featured work
+ ========================================================= */
+section.work {
+ padding: 120px 0;
+ background: var(--ink);
+ color: var(--bg);
+ position: relative;
+ overflow: hidden;
+}
+section.work::before {
+ content: "";
+ position: absolute; inset: 0;
+ background-image:
+ radial-gradient(circle at 90% 10%, rgba(45,110,255,.18), transparent 50%),
+ radial-gradient(circle at 10% 90%, rgba(45,110,255,.10), transparent 50%);
+ pointer-events: none;
+}
+section.work > .container { position: relative; }
+
+section.work .eyebrow-chip {
+ background: rgba(45,110,255,.18);
+ color: #8FB3FF;
+}
+section.work .section-title { color: #fff; }
+section.work .section-lede { color: rgba(255,255,255,.65); }
+section.work .work-head { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 56px; flex-wrap: wrap; }
+section.work .btn-secondary { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.12); color: #fff; }
+section.work .btn-secondary:hover { background: rgba(255,255,255,.12); }
+
+.work-bento {
+ display: grid;
+ grid-template-columns: 1.2fr 1fr;
+ gap: 16px;
+}
+@media (max-width: 1024px) {
+ .work-bento { grid-template-columns: 1fr; }
+}
+
+.work-right-col {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 16px;
+}
+@media (max-width: 640px) {
+ .work-right-col { grid-template-columns: 1fr; }
+}
+
+.work-card {
+ position: relative;
+ border-radius: var(--radius-lg);
+ overflow: hidden;
+ background: #1a2a40;
+ cursor: pointer;
+ transition: transform .35s var(--ease);
+ aspect-ratio: 4/3;
+}
+.work-card:hover { transform: translateY(-3px); }
+.work-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.work-card:hover img { transform: scale(1.04); }
+.work-card::after {
+ content: "";
+ position: absolute;
+ inset: 0;
+ background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.85) 100%);
+ pointer-events: none;
+}
+.work-card .info {
+ position: absolute;
+ left: 22px;
+ right: 22px;
+ bottom: 20px;
+ z-index: 2;
+}
+.work-card .info .tag {
+ display: inline-block;
+ padding: 4px 10px;
+ font-family: 'Geist Mono', monospace;
+ font-size: 10px;
+ letter-spacing: .06em;
+ text-transform: uppercase;
+ color: #fff;
+ background: rgba(255,255,255,.2);
+ border: 1px solid rgba(255,255,255,.25);
+ border-radius: 6px;
+ backdrop-filter: blur(10px);
+ margin-bottom: 10px;
+}
+.work-card .info h4 {
+ font-size: 17px;
+ font-weight: 600;
+ letter-spacing: -.015em;
+ color: #fff;
+ margin: 0 0 4px;
+}
+.work-card .info .sub {
+ font-size: 12px;
+ color: rgba(255,255,255,.7);
+}
+
+.work-card-large {
+ grid-row: span 2;
+ aspect-ratio: auto;
+}
+@media (max-width: 1024px) {
+ .work-card-large { aspect-ratio: 4/3; }
+}
+.work-card-large .info h4 {
+ font-size: 26px;
+ font-weight: 600;
+}
+.work-card-large .info .sub {
+ font-size: 14px;
+}
+
+.work-card .arrow-corner {
+ position: absolute;
+ top: 18px;
+ right: 18px;
+ width: 36px;
+ height: 36px;
+ border-radius: 50%;
+ background: rgba(255,255,255,.12);
+ border: 1px solid rgba(255,255,255,.18);
+ display: grid;
+ place-items: center;
+ color: #fff;
+ backdrop-filter: blur(10px);
+ z-index: 2;
+ transition: background .25s var(--ease), transform .25s var(--ease);
+}
+.work-card:hover .arrow-corner {
+ background: var(--accent);
+ transform: rotate(-45deg);
+ border-color: var(--accent);
+}
+.work-card .arrow-corner svg {
+ width: 14px;
+ height: 14px;
+}
+
+/* =========================================================
+ Process
+ ========================================================= */
+section.process { padding: 120px 0; }
+.process-head { text-align: center; margin: 0 auto 64px; }
+.process-head .section-title, .process-head .section-lede { margin-left: auto; margin-right: auto; }
+.process-head .section-lede { text-align: center; }
+
+.process-grid {
+ display: grid; grid-template-columns: repeat(4, 1fr);
+ gap: 20px;
+ position: relative;
+}
+@media (max-width: 1024px) { .process-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .process-grid { grid-template-columns: 1fr; } }
+
+.process-step {
+ background: var(--surface);
+ border: 1px solid var(--line);
+ border-radius: var(--radius-lg);
+ padding: 28px;
+ position: relative;
+ transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.process-step:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.process-step .num {
+ position: absolute; top: -16px; left: 24px;
+ width: 36px; height: 36px;
+ border-radius: 10px;
+ background: var(--ink); color: var(--bg);
+ font-family: 'Geist Mono', monospace;
+ font-size: 13px; font-weight: 600;
+ display: grid; place-items: center;
+ letter-spacing: .04em;
+ box-shadow: var(--shadow-sm);
+}
+.process-step:nth-child(2n) .num { background: var(--accent); }
+.process-step h4 { font-size: 18px; font-weight: 600; letter-spacing: -.015em; margin: 24px 0 10px; color: var(--ink); }
+.process-step p { font-size: 14px; color: var(--muted); line-height: 1.5; margin: 0; }
+.process-step .duration {
+ margin-top: 18px;
+ padding-top: 14px;
+ border-top: 1px dashed var(--line);
+ font-family: 'Geist Mono', monospace;
+ font-size: 11.5px;
+ color: var(--muted-2);
+ letter-spacing: .04em;
+ display: flex; align-items: center; gap: 6px;
+}
+.process-step .duration svg { width: 12px; height: 12px; }
+
+/* =========================================================
+ About / why-us
+ ========================================================= */
+section.about {
+ padding: 120px 0;
+ background: var(--bg-tint);
+ position: relative; overflow: hidden;
+}
+.about-grid {
+ display: grid; grid-template-columns: 1fr 1fr;
+ gap: 80px; align-items: center;
+}
+@media (max-width: 1024px) { .about-grid { grid-template-columns: 1fr; gap: 56px; } }
+
+.about-photo {
+ position: relative;
+ aspect-ratio: 4/5;
+ border-radius: var(--radius-lg);
+ overflow: hidden;
+ box-shadow: var(--shadow-lg);
+ background: #1a2a40;
+}
+.about-photo img { width: 100%; height: 100%; object-fit: cover; }
+.about-photo .label {
+ position: absolute; bottom: 22px; left: 22px;
+ background: rgba(255,255,255,.95);
+ backdrop-filter: blur(10px);
+ border-radius: 12px;
+ padding: 12px 14px;
+ display: flex; align-items: center; gap: 12px;
+ font-size: 13px;
+}
+.about-photo .label .av {
+ width: 36px; height: 36px;
+ border-radius: 50%;
+ background: var(--accent);
+ display: grid; place-items: center;
+ color: #fff; font-weight: 700; font-size: 13px;
+ letter-spacing: -.01em;
+}
+.about-photo .label strong { display: block; font-weight: 600; color: var(--ink); letter-spacing: -.005em; }
+.about-photo .label span { color: var(--muted); font-size: 12px; }
+
+.about-stats {
+ margin-top: 40px;
+ display: grid; grid-template-columns: repeat(3, 1fr);
+ gap: 16px;
+}
+.about-stat {
+ background: var(--surface);
+ border-radius: var(--radius);
+ padding: 22px;
+ border: 1px solid var(--line);
+}
+.about-stat .num {
+ font-size: 36px; font-weight: 700;
+ letter-spacing: -.04em; line-height: 1;
+ color: var(--ink);
+ font-feature-settings: "tnum";
+}
+.about-stat .num sup { font-size: .5em; color: var(--accent); top: -1em; margin-left: 1px; }
+.about-stat .lab { font-size: 12.5px; color: var(--muted); margin-top: 8px; line-height: 1.4; }
+
+/* =========================================================
+ Reviews
+ ========================================================= */
+section.reviews { padding: 120px 0; }
+.reviews-head { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 56px; flex-wrap: wrap; }
+
+.google-summary {
+ display: flex; align-items: center; gap: 16px;
+ padding: 14px 18px;
+ background: var(--surface); border: 1px solid var(--line);
+ border-radius: 14px;
+ box-shadow: var(--shadow-sm);
+}
+.google-summary .g-logo {
+ width: 32px; height: 32px; border-radius: 50%;
+ background-image: conic-gradient(from 0deg, #4285F4 0% 25%, #34A853 25% 50%, #FBBC05 50% 75%, #EA4335 75% 100%);
+ display: grid; place-items: center; flex-shrink: 0;
+}
+.google-summary .g-logo::after {
+ content: "G"; color: var(--ink); background: var(--surface);
+ width: 20px; height: 20px; border-radius: 50%;
+ display: grid; place-items: center; font-size: 13px; font-weight: 700;
+}
+.google-summary .body { line-height: 1.2; }
+.google-summary .body .t1 { font-size: 12.5px; color: var(--muted); font-weight: 500; }
+.google-summary .body .t2 { display: flex; align-items: center; gap: 6px; margin-top: 3px; }
+.google-summary .body .t2 strong { font-size: 18px; font-weight: 700; letter-spacing: -.01em; color: var(--ink); }
+.google-summary .body .stars { color: #F5C842; display: inline-flex; gap: 1px; line-height: 0; }
+.google-summary .body .stars svg { width: 14px; height: 14px; }
+
+.review-grid {
+ display: grid; grid-template-columns: repeat(3, 1fr);
+ gap: 20px;
+}
+@media (max-width: 1024px) { .review-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .review-grid { grid-template-columns: 1fr; } }
+
+.review-card {
+ background: var(--surface);
+ border: 1px solid var(--line);
+ border-radius: var(--radius-lg);
+ padding: 28px;
+ display: flex; flex-direction: column;
+ transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.review-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.review-card .stars { color: #F5C842; display: inline-flex; gap: 2px; line-height: 0; margin-bottom: 16px; }
+.review-card .stars svg { width: 14px; height: 14px; }
+.review-card .quote { font-size: 16.5px; line-height: 1.55; color: var(--ink-2); flex: 1; letter-spacing: -.005em; }
+.review-card .author {
+ margin-top: 24px;
+ padding-top: 20px;
+ border-top: 1px solid var(--line);
+ display: flex; align-items: center; gap: 12px;
+}
+.review-card .author .av {
+ width: 38px; height: 38px;
+ border-radius: 50%;
+ background: var(--accent-soft);
+ color: var(--accent);
+ display: grid; place-items: center;
+ font-weight: 600; font-size: 14px;
+ letter-spacing: -.01em;
+}
+.review-card .author .a-name { font-size: 14px; font-weight: 600; color: var(--ink); letter-spacing: -.005em; }
+.review-card .author .a-meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* =========================================================
+ Contact Form
+ ========================================================= */
+section.contact-form { padding: 120px 0; background: var(--bg); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; }
+@media (max-width: 1024px) { .contact-grid { grid-template-columns: 1fr; gap: 56px; } }
+
+.contact-info h3 {
+ font-size: 32px;
+ font-weight: 700;
+ letter-spacing: -.03em;
+ color: var(--ink);
+ margin: 24px 0 16px;
+}
+.contact-info > p {
+ font-size: 17px;
+ color: var(--muted);
+ line-height: 1.6;
+ margin-bottom: 40px;
+}
+
+.contact-methods { display: flex; flex-direction: column; gap: 24px; }
+.contact-method {
+ display: flex;
+ align-items: flex-start;
+ gap: 16px;
+}
+.contact-method .ico {
+ width: 48px;
+ height: 48px;
+ border-radius: 12px;
+ background: var(--accent-soft);
+ color: var(--accent);
+ display: grid;
+ place-items: center;
+ flex-shrink: 0;
+}
+.contact-method .ico svg { width: 22px; height: 22px; }
+.contact-method .text h4 {
+ font-size: 14px;
+ font-weight: 600;
+ color: var(--muted);
+ text-transform: uppercase;
+ letter-spacing: .05em;
+ margin: 0 0 6px;
+}
+.contact-method .text p {
+ font-size: 18px;
+ font-weight: 600;
+ color: var(--ink);
+ margin: 0;
+}
+.contact-method .text a {
+ color: var(--accent);
+ font-weight: 600;
+ font-size: 18px;
+ transition: color .2s var(--ease);
+}
+.contact-method .text a:hover { color: var(--accent-2); }
+
+.form-card {
+ background: var(--surface);
+ border: 1px solid var(--line);
+ border-radius: var(--radius-lg);
+ padding: 40px;
+ box-shadow: var(--shadow-md);
+}
+@media (max-width: 640px) { .form-card { padding: 28px; } }
+
+.form-group { margin-bottom: 24px; }
+.form-group label {
+ display: block;
+ font-size: 14px;
+ font-weight: 600;
+ color: var(--ink);
+ margin-bottom: 8px;
+ letter-spacing: -.005em;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+ width: 100%;
+ padding: 14px 16px;
+ font-size: 15px;
+ font-family: inherit;
+ color: var(--ink);
+ background: var(--bg);
+ border: 1px solid var(--line);
+ border-radius: 10px;
+ transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+ outline: none;
+ border-color: var(--accent);
+ box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+ color: var(--muted-2);
+}
+.form-group textarea {
+ resize: vertical;
+ min-height: 120px;
+}
+
+.form-row {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 20px;
+}
+@media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } }
+
+.form-submit {
+ width: 100%;
+ padding: 18px 24px;
+ background: var(--accent);
+ color: var(--on-accent);
+ font-size: 16px;
+ font-weight: 600;
+ border: none;
+ border-radius: 12px;
+ cursor: pointer;
+ transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease);
+ box-shadow: 0 8px 24px -8px var(--accent-glow);
+}
+.form-submit:hover {
+ background: var(--accent-2);
+ transform: translateY(-1px);
+ box-shadow: 0 12px 30px -8px var(--accent-glow);
+}
+
+.form-note {
+ text-align: center;
+ font-size: 13px;
+ color: var(--muted);
+ margin-top: 16px;
+}
+.form-note svg {
+ width: 14px;
+ height: 14px;
+ vertical-align: middle;
+ margin-right: 4px;
+}
+
+/* =========================================================
+ Service area
+ ========================================================= */
+section.area { padding: 120px 0; background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.area-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center; }
+@media (max-width: 1024px) { .area-grid { grid-template-columns: 1fr; gap: 56px; } }
+
+.cities {
+ margin-top: 32px;
+ display: flex; flex-wrap: wrap; gap: 8px;
+}
+.city {
+ padding: 9px 14px;
+ background: var(--surface); border: 1px solid var(--line);
+ border-radius: 999px;
+ font-size: 13.5px; font-weight: 500;
+ color: var(--ink-2);
+ letter-spacing: -.005em;
+ transition: background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease);
+ display: inline-flex; align-items: center; gap: 6px;
+}
+.city:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.city .star { color: #F5C842; font-size: 11px; }
+.city.featured { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+.map-card {
+ position: relative;
+ aspect-ratio: 1.1/1;
+ border-radius: var(--radius-lg);
+ background: #F7F9FC;
+ border: 1px solid var(--line);
+ overflow: hidden;
+ box-shadow: var(--shadow-md);
+}
+.map-card svg.map { width: 100%; height: 100%; display: block; }
+
+.map-crew-badge {
+ position: absolute; top: 16px; left: 16px;
+ display: inline-flex; align-items: center; gap: 8px;
+ padding: 8px 14px;
+ background: var(--surface); border: 1px solid var(--line);
+ border-radius: 999px;
+ font-size: 12.5px; font-weight: 600;
+ color: var(--ink); letter-spacing: -.005em;
+ box-shadow: var(--shadow-sm);
+ z-index: 10;
+}
+.map-crew-badge .live {
+ width: 7px; height: 7px; border-radius: 50%;
+ background: #34D399; box-shadow: 0 0 0 3px rgba(52,211,153,.18);
+ animation: pulse 2.4s var(--ease) infinite;
+}
+
+.map-city {
+ position: absolute;
+ display: flex; align-items: center;
+ gap: 8px;
+ transform: translate(-50%, -50%);
+}
+.map-city .map-label {
+ font-size: 12px;
+ font-weight: 500;
+ color: var(--ink-2);
+ white-space: nowrap;
+ text-shadow: 0 1px 2px rgba(255,255,255,.8);
+}
+.map-city .map-label strong {
+ display: block;
+ font-weight: 600;
+ font-size: 13px;
+}
+.map-city .map-label small {
+ display: block;
+ font-size: 10px;
+ color: var(--muted);
+ font-weight: 500;
+}
+.map-city.hq .map-label {
+ margin-left: 4px;
+}
+
+.map-dot {
+ width: 10px; height: 10px;
+ border-radius: 50%;
+ background: var(--accent);
+ flex-shrink: 0;
+ animation: dotPulse 2.5s var(--ease) infinite;
+}
+
+.map-dot-hq {
+ position: relative;
+ width: 16px; height: 16px;
+ flex-shrink: 0;
+}
+.map-dot-hq::before {
+ content: '';
+ position: absolute;
+ inset: 0;
+ border-radius: 50%;
+ background: var(--ink);
+}
+.map-dot-hq::after {
+ content: '';
+ position: absolute;
+ inset: 4px;
+ border-radius: 50%;
+ background: var(--accent);
+}
+.map-dot-ring {
+ position: absolute;
+ inset: -3px;
+ border: 2px solid var(--accent);
+ border-radius: 50%;
+ opacity: 0.4;
+ animation: ringPulse 2s var(--ease) infinite;
+}
+
+/* Orem dot with light blue ring */
+.map-dot-orem {
+ position: relative;
+ width: 10px; height: 10px;
+ flex-shrink: 0;
+}
+.map-dot-orem::before {
+ content: '';
+ position: absolute;
+ inset: 0;
+ border-radius: 50%;
+ background: var(--accent);
+}
+.map-dot-ring-orem {
+ position: absolute;
+ inset: -6px;
+ background: rgba(45, 110, 255, 0.15);
+ border-radius: 50%;
+ animation: dotPulse 2.5s var(--ease) infinite;
+}
+
+@keyframes dotPulse {
+ 0%, 100% { box-shadow: 0 0 0 0 rgba(45,110,255,.4); }
+ 50% { box-shadow: 0 0 0 6px rgba(45,110,255,0); }
+}
+
+@keyframes ringPulse {
+ 0% { transform: scale(1); opacity: 0.5; }
+ 100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* =========================================================
+ FAQ
+ ========================================================= */
+section.faq { padding: 120px 0; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; }
+@media (max-width: 1024px) { .faq-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+.faq-list { display: flex; flex-direction: column; gap: 8px; }
+.faq-item {
+ background: var(--surface);
+ border: 1px solid var(--line);
+ border-radius: var(--radius);
+ overflow: hidden;
+ transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
+}
+.faq-item[open] { border-color: rgba(45,110,255,.25); box-shadow: var(--shadow-sm); }
+.faq-item summary {
+ list-style: none;
+ padding: 20px 24px;
+ display: flex; align-items: center; justify-content: space-between;
+ cursor: pointer;
+ font-size: 16px; font-weight: 600;
+ color: var(--ink);
+ letter-spacing: -.01em;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item .toggle {
+ width: 28px; height: 28px;
+ border-radius: 50%;
+ background: var(--surface-2);
+ display: grid; place-items: center;
+ color: var(--ink); flex-shrink: 0;
+ transition: transform .25s var(--ease), background .25s var(--ease);
+}
+.faq-item[open] .toggle { background: var(--accent); color: #fff; transform: rotate(45deg); }
+.faq-item .toggle svg { width: 12px; height: 12px; }
+.faq-item .answer {
+ padding: 0 24px 22px;
+ font-size: 15px; line-height: 1.55;
+ color: var(--muted);
+}
+
+/* =========================================================
+ Final CTA
+ ========================================================= */
+section.cta {
+ padding: 100px 0 120px;
+}
+.cta-card {
+ position: relative;
+ border-radius: 28px;
+ background: linear-gradient(135deg, #143A8C 0%, #2D6EFF 60%, #5A8BFF 100%);
+ color: #fff;
+ padding: 72px 64px;
+ overflow: hidden;
+ display: grid; grid-template-columns: 1.4fr 1fr;
+ gap: 56px; align-items: center;
+ box-shadow: 0 30px 80px -30px rgba(45,110,255,.5);
+}
+@media (max-width: 1024px) { .cta-card { grid-template-columns: 1fr; padding: 56px 40px; } }
+.cta-card::before {
+ content: "";
+ position: absolute; top: -200px; right: -200px;
+ width: 500px; height: 500px;
+ background: radial-gradient(circle, rgba(255,255,255,.18) 0%, transparent 60%);
+}
+.cta-card::after {
+ content: "";
+ position: absolute; bottom: -150px; left: -150px;
+ width: 400px; height: 400px;
+ background: radial-gradient(circle, rgba(255,255,255,.10) 0%, transparent 60%);
+}
+.cta-card > * { position: relative; z-index: 1; }
+.cta-card h2 {
+ font-size: clamp(36px, 4.4vw, 56px);
+ line-height: 1.02; letter-spacing: -.035em;
+ font-weight: 700; margin: 0;
+ max-width: 12ch;
+}
+.cta-card .sub {
+ margin-top: 18px; max-width: 480px;
+ font-size: 17px; line-height: 1.5;
+ color: rgba(255,255,255,.85);
+}
+.cta-card .row {
+ margin-top: 32px;
+ display: flex; gap: 12px; flex-wrap: wrap;
+}
+.cta-card .row .btn-primary {
+ background: #fff; color: var(--ink);
+ box-shadow: 0 8px 24px -8px rgba(0,0,0,.25);
+}
+.cta-card .row .btn-primary .icon-wrap { background: var(--accent-soft); color: var(--accent); }
+.cta-card .row .btn-primary:hover { background: #F5F5F2; }
+.cta-card .row .btn-secondary {
+ background: rgba(255,255,255,.10);
+ border-color: rgba(255,255,255,.20);
+ color: #fff; box-shadow: none;
+}
+.cta-card .row .btn-secondary:hover { background: rgba(255,255,255,.18); }
+
+.cta-side {
+ background: rgba(255,255,255,.10);
+ border: 1px solid rgba(255,255,255,.18);
+ backdrop-filter: blur(8px);
+ border-radius: var(--radius-lg);
+ padding: 28px;
+}
+.cta-side h4 {
+ font-size: 13px; letter-spacing: .04em; text-transform: uppercase;
+ font-family: 'Geist Mono', monospace; font-weight: 500;
+ color: rgba(255,255,255,.7);
+ margin: 0 0 18px;
+}
+.cta-side .quick-list { display: flex; flex-direction: column; gap: 14px; }
+.cta-side .ql {
+ display: flex; align-items: center; gap: 14px;
+}
+.cta-side .ql .ico {
+ width: 38px; height: 38px;
+ border-radius: 10px;
+ background: rgba(255,255,255,.16);
+ display: grid; place-items: center;
+ color: #fff; flex-shrink: 0;
+}
+.cta-side .ql .ico svg { width: 16px; height: 16px; }
+.cta-side .ql .t1 { font-size: 14px; font-weight: 600; letter-spacing: -.005em; }
+.cta-side .ql .t2 { font-size: 12.5px; color: rgba(255,255,255,.7); margin-top: 2px; }
+
+/* =========================================================
+ Footer
+ ========================================================= */
+footer.foot {
+ padding: 72px 0 40px;
+ background: var(--ink); color: var(--bg);
+ position: relative; overflow: hidden;
+}
+.foot-grid {
+ display: grid;
+ grid-template-columns: 1.4fr 1fr 1fr 1fr;
+ gap: 56px;
+}
+@media (max-width: 1024px) { .foot-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+@media (max-width: 640px) { .foot-grid { grid-template-columns: 1fr; } }
+
+.foot .brand-text .name { color: #fff; }
+.foot .brand-text .meta { color: rgba(255,255,255,.5); }
+.foot .brand-mark { background: var(--accent); color: #fff; }
+.foot .col-title {
+ font-family: 'Geist Mono', monospace;
+ font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+ color: rgba(255,255,255,.5);
+ margin: 0 0 18px;
+}
+.foot .col a {
+ display: block;
+ font-size: 14px; color: rgba(255,255,255,.78);
+ margin-bottom: 10px;
+ transition: color .2s var(--ease);
+ letter-spacing: -.005em;
+}
+.foot .col a:hover { color: #fff; }
+.foot .desc {
+ font-size: 14px; line-height: 1.5;
+ color: rgba(255,255,255,.65); margin: 18px 0 22px;
+ max-width: 320px;
+}
+.foot .contact a {
+ display: flex; align-items: center; gap: 10px;
+ color: rgba(255,255,255,.85);
+ font-size: 14px; font-weight: 500;
+ margin-bottom: 12px;
+ transition: color .2s var(--ease);
+}
+.foot .contact a:hover { color: #fff; }
+.foot .contact a .ico {
+ width: 30px; height: 30px;
+ border-radius: 8px;
+ background: rgba(255,255,255,.08);
+ display: grid; place-items: center;
+ color: var(--accent);
+}
+.foot .contact a .ico svg { width: 13px; height: 13px; }
+
+.foot-bottom {
+ margin-top: 56px; padding-top: 24px;
+ border-top: 1px solid rgba(255,255,255,.10);
+ display: flex; align-items: center; justify-content: space-between;
+ gap: 20px;
+ font-size: 12.5px; color: rgba(255,255,255,.5);
+ flex-wrap: wrap;
+}
+.foot-bottom .legal { display: flex; gap: 18px; flex-wrap: wrap; }
+.foot-bottom .legal a:hover { color: #fff; }
+.foot-bottom .built {
+ font-family: 'Geist Mono', monospace;
+ letter-spacing: .04em;
+}
+
+/* =========================================================
+ Reveal animation
+ ========================================================= */
+.reveal { opacity: 0; transform: translateY(12px); filter: blur(2px);
+ transition: opacity .65s var(--ease), transform .65s var(--ease), filter .65s var(--ease); }
+.reveal.is-in { opacity: 1; transform: none; filter: blur(0); }
+.reveal.d1 { transition-delay: .06s; }
+.reveal.d2 { transition-delay: .14s; }
+.reveal.d3 { transition-delay: .22s; }
+.reveal.d4 { transition-delay: .30s; }
+.reveal.d5 { transition-delay: .38s; }
+.reveal.d6 { transition-delay: .46s; }
+@media (prefers-reduced-motion: reduce) {
+ .reveal { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+ html { scroll-behavior: auto; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ============== Utility bar ============== -->
+<div class="util">
+ <div class="container util-inner">
+ <div class="util-left">
+ <span class="live"><span class="dot"></span> Booking inspections this week</span>
+ <span class="sep">·</span>
+ <span>Provo · Orem · Lehi · Utah County</span>
+ </div>
+ <div class="util-right">
+ <a href="tel:8013777720" class="phone">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+ (801) 377-7720
+ </a>
+ </div>
+ </div>
+</div>
+
+<!-- ============== Sticky nav ============== -->
+<nav class="nav">
+ <div class="container nav-inner">
+ <a href="#top" class="brand">
+ <div class="brand-mark" aria-hidden="true">
+ <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M3 11 12 4l9 7"/>
+ <path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9"/>
+ </svg>
+ </div>
+ <div class="brand-text">
+ <span class="name">Liberty Roofing</span>
+ <span class="meta">EST · 1980</span>
+ </div>
+ </a>
+ <div class="nav-links">
+ <a href="#services">Services</a>
+ <a href="#work">Our work</a>
+ <a href="#process">Process</a>
+ <a href="#about">About</a>
+ <a href="#reviews">Reviews</a>
+ <a href="#contact">Contact</a>
+ </div>
+ <div class="nav-actions">
+ <a href="#cta" class="nav-cta">
+ Free estimate
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+ </a>
+ </div>
+ </div>
+</nav>
+
+<!-- ============== Hero ============== -->
+<section class="hero" id="top">
+ <div class="container">
+ <div class="hero-grid">
+ <div>
+ <div class="eyebrow reveal">
+ <span class="badge">
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ Top rated 2025
+ </span>
+ <span>Family-owned roofers since 1980</span>
+ <span class="sep" aria-hidden="true"></span>
+ <span style="color: var(--accent); font-weight: 600;">Licensed S280</span>
+ </div>
+
+ <h1 class="display">
+ <span class="reveal d1" style="display:block;">Provo's roofing,</span>
+ <span class="reveal d2" style="display:block;">done <span class="hl">right.</span></span>
+ </h1>
+
+ <p class="lede reveal d3">
+ Honest estimates, premium materials, and 40+ years of <strong>showing up when we say we will</strong>. From a single shingle to a full reroof — Liberty's the call Utah County trusts.
+ </p>
+
+ <div class="cta-row reveal d4">
+ <a href="tel:8013777720" class="btn btn-primary">
+ <span class="icon-wrap" aria-hidden="true">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+ </span>
+ Call (801) 377-7720
+ </a>
+ <a href="#cta" class="btn btn-secondary">
+ Get a free estimate
+ <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+ </a>
+ </div>
+
+ <div class="trust-row reveal d5">
+ <div class="trust-item">
+ <span class="ico">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+ </span>
+ <div><strong>Licensed &amp; Insured</strong>S280 · Bonded</div>
+ </div>
+ <div class="trust-item">
+ <span class="ico">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+ </span>
+ <div><strong>Same-day repair</strong>Leaks fixed within hours</div>
+ </div>
+ <div class="trust-item">
+ <span class="stars" aria-label="4.9 of 5">
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ </span>
+ <div><strong>4.9 / 5 average</strong>200+ Google reviews</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="visual">
+ <div class="photo-card reveal d3">
+ <img src="https://libertyroofingutah.com/wp-content/uploads/2022/12/Residential-and-Commercial-Roof-Repair-and-Replacement-Utah-1.jpg" alt="Liberty Roofing crew on a residential roof in Utah County">
+ <div class="grad"></div>
+ <div class="corner-tag">
+ <span class="live"></span>
+ Currently on a job in Lehi
+ </div>
+ <div class="caption">
+ <div class="t1">PROJECT · LEHI, UT</div>
+ <div class="t2">Full reroof · 32 squares · GAF</div>
+ </div>
+ </div>
+
+ <div class="review-chip reveal d5">
+ <div class="g-logo" aria-hidden="true"></div>
+ <div class="g-text">
+ <div class="t1">Google reviews</div>
+ <div class="t2">4.9
+ <span class="stars">
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ </span>
+ </div>
+ </div>
+ </div>
+
+ <div class="stat-card reveal d6">
+ <div class="num">40<sup>+</sup></div>
+ <div class="text">
+ <div class="t1">Years on Utah rooftops</div>
+ <div class="t2">12,000+ projects · family-owned</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ============== Logos / certifications strip ============== -->
+<section class="logos">
+ <div class="container">
+ <div class="logos-head reveal">
+ <span class="line"></span>
+ <span>Certified · insured · trusted by Utah's top manufacturers</span>
+ <span class="line"></span>
+ </div>
+ <div class="logos-track">
+ <div class="lg reveal d1"><span class="badge-icon">G</span> GAF<span class="pill">Master Elite</span></div>
+ <div class="lg reveal d2">Owens Corning <span class="pill">Preferred</span></div>
+ <div class="lg reveal d3">CertainTeed <span class="pill">SELECT</span></div>
+ <div class="lg reveal d4">Malarkey <span class="pill">Pro</span></div>
+ <div class="lg reveal d5"><span class="badge-icon">★</span> BBB A+</div>
+ <div class="lg reveal d6">DaVinci <span class="pill">Roofscapes</span></div>
+ </div>
+ </div>
+</section>
+
+<!-- ============== Services ============== -->
+<section class="services" id="services">
+ <div class="container">
+ <div class="services-head">
+ <div>
+ <span class="eyebrow-chip reveal"><span class="dot"></span>What we do</span>
+ <h2 class="section-title reveal d1">Roofing services<br>that <span class="hl">last decades.</span></h2>
+ </div>
+ <p class="section-lede reveal d2">From the first shingle to the last gutter, every job is a fixed quote, a clean jobsite, and a 25-year workmanship warranty. Here's what we handle.</p>
+ </div>
+
+ <div class="svc-grid">
+ <article class="svc-card reveal d1">
+ <div class="ico-wrap">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9"/></svg>
+ </div>
+ <a href="#" class="arrow-corner" aria-label="Learn more">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+ </a>
+ <h3>Residential reroofs</h3>
+ <p>Tear-off, dry-in, and a fresh deck-to-ridge install — most homes done in 2 days, with photo updates the whole way.</p>
+ <div class="meta">
+ <span>Avg duration <strong>2 days</strong></span>
+ <span>From <strong>$8,400</strong></span>
+ </div>
+ </article>
+
+ <article class="svc-card reveal d2">
+ <div class="ico-wrap">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3"/></svg>
+ </div>
+ <a href="#" class="arrow-corner" aria-label="Learn more">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+ </a>
+ <h3>Storm &amp; leak repair</h3>
+ <p>Same-day tarps, water-tight patches, and a clear path to insurance claims. We document everything for you.</p>
+ <div class="meta">
+ <span>On-site <strong>under 4hr</strong></span>
+ <span>Insurance pros</span>
+ </div>
+ </article>
+
+ <article class="svc-card reveal d3">
+ <div class="ico-wrap">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+ </div>
+ <a href="#" class="arrow-corner" aria-label="Learn more">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+ </a>
+ <h3>Commercial flat roofs</h3>
+ <p>TPO, EPDM, and modified bitumen for offices, retail, and industrial. After-hours installs available — no business interruption.</p>
+ <div class="meta">
+ <span>Buildings up to <strong>50,000 sq ft</strong></span>
+ <span>20-yr warranty</span>
+ </div>
+ </article>
+
+ <article class="svc-card reveal d4">
+ <div class="ico-wrap">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+ </div>
+ <a href="#" class="arrow-corner" aria-label="Learn more">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+ </a>
+ <h3>Roof inspections</h3>
+ <p>Buying, selling, or just curious? A licensed inspector is on your roof in 48 hours with a 20-page photo report.</p>
+ <div class="meta">
+ <span>Turnaround <strong>48 hr</strong></span>
+ <span>Free with quote</span>
+ </div>
+ </article>
+
+ <article class="svc-card reveal d5">
+ <div class="ico-wrap">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20M5 8l-3 4 3 4M19 8l3 4-3 4"/><path d="M12 4v16"/></svg>
+ </div>
+ <a href="#" class="arrow-corner" aria-label="Learn more">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+ </a>
+ <h3>Gutters &amp; guards</h3>
+ <p>Seamless aluminum gutters, leaf guards, and downspout work — sized to your roof's actual square footage, not a guess.</p>
+ <div class="meta">
+ <span>Avg job <strong>1 day</strong></span>
+ <span>Lifetime guards</span>
+ </div>
+ </article>
+
+ <article class="svc-card reveal d6">
+ <div class="ico-wrap">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
+ </div>
+ <a href="#" class="arrow-corner" aria-label="Learn more">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+ </a>
+ <h3>Skylights &amp; vents</h3>
+ <p>Velux skylights, ridge vents, and bath fans — clean cuts, proper flashing, no leaks 10 winters from now.</p>
+ <div class="meta">
+ <span>Single unit <strong>4 hr</strong></span>
+ <span>Velux certified</span>
+ </div>
+ </article>
+ </div>
+ </div>
+</section>
+
+<!-- ============== Featured work ============== -->
+<section class="work" id="work">
+ <div class="container">
+ <div class="work-head">
+ <div>
+ <span class="eyebrow-chip reveal"><span class="dot"></span>Recent work</span>
+ <h2 class="section-title reveal d1">A few of our<br>favorite <span style="color: #5A8BFF;">rooftops.</span></h2>
+ </div>
+ <a href="#" class="btn btn-secondary reveal d2">
+ View all projects
+ <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+ </a>
+ </div>
+
+ <div class="work-bento">
+ <!-- Large featured card -->
+ <a href="#" class="work-card work-card-large reveal d1">
+ <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80" alt="Traverse Mountain reroof with mountain view">
+ <span class="arrow-corner">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+ </span>
+ <div class="info">
+ <span class="tag">Residential · Lehi</span>
+ <h4>Traverse Mountain — full reroof</h4>
+ <div class="sub">32 squares · GAF Timberline HDZ · 2-day turnaround</div>
+ </div>
+ </a>
+ <!-- Right column grid -->
+ <div class="work-right-col">
+ <a href="#" class="work-card reveal d2">
+ <img src="https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=800&q=80" alt="Storm damage repair">
+ <span class="arrow-corner">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+ </span>
+ <div class="info">
+ <span class="tag">Storm · Provo</span>
+ <h4>Hailstorm recovery</h4>
+ <div class="sub">Insurance claim in 9 days</div>
+ </div>
+ </a>
+ <a href="#" class="work-card reveal d3">
+ <img src="https://images.unsplash.com/photo-1565183997392-2f6f122e5912?w=800&q=80" alt="Commercial flat roof">
+ <span class="arrow-corner">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+ </span>
+ <div class="info">
+ <span class="tag">Commercial · Orem</span>
+ <h4>Office park TPO</h4>
+ <div class="sub">18,000 sq ft · 20-yr warranty</div>
+ </div>
+ </a>
+ <a href="#" class="work-card reveal d4">
+ <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80" alt="Skylight installation">
+ <span class="arrow-corner">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+ </span>
+ <div class="info">
+ <span class="tag">Skylights · Alpine</span>
+ <h4>Velux retrofit</h4>
+ <div class="sub">3 fixed · 1 venting</div>
+ </div>
+ </a>
+ <a href="#" class="work-card reveal d5">
+ <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80" alt="Gutter installation">
+ <span class="arrow-corner">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+ </span>
+ <div class="info">
+ <span class="tag">Gutters · Saratoga Springs</span>
+ <h4>Seamless + leaf guards</h4>
+ <div class="sub">200 ft installed</div>
+ </div>
+ </a>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ============== Process ============== -->
+<section class="process" id="process">
+ <div class="container">
+ <div class="process-head">
+ <span class="eyebrow-chip reveal"><span class="dot"></span>How it works</span>
+ <h2 class="section-title reveal d1">From call to <span class="hl">completion.</span></h2>
+ <p class="section-lede reveal d2">No surprises. No chasing. Just a clear plan and a crew that shows up on time.</p>
+ </div>
+
+ <div class="process-grid">
+ <div class="process-step reveal d1">
+ <div class="num">01</div>
+ <h4>Free inspection</h4>
+ <p>We climb, photograph, and measure. You get a 20-page report and a fixed quote — not an estimate that changes.</p>
+ <div class="duration">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+ Within 48 hours
+ </div>
+ </div>
+ <div class="process-step reveal d2">
+ <div class="num">02</div>
+ <h4>Schedule &amp; prep</h4>
+ <p>Pick a date. We handle permits, material delivery, and protection for your landscaping and driveway.</p>
+ <div class="duration">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+ 2–5 days before
+ </div>
+ </div>
+ <div class="process-step reveal d3">
+ <div class="num">03</div>
+ <h4>The build</h4>
+ <p>Our crew arrives early, works clean, and sends you photo updates. Most homes are done in 1–2 days.</p>
+ <div class="duration">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+ 1–2 days
+ </div>
+ </div>
+ <div class="process-step reveal d4">
+ <div class="num">04</div>
+ <h4>Final walkthrough</h4>
+ <p>We inspect together, clean every nail, and register your warranty. Payment only when you're satisfied.</p>
+ <div class="duration">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+ Same day
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ============== About / Why Us ============== -->
+<section class="about" id="about">
+ <div class="container">
+ <div class="about-grid">
+ <div class="about-photo reveal">
+ <img src="https://libertyroofingutah.com/wp-content/uploads/2022/12/Residential-and-Commercial-Roof-Repair-and-Replacement-Utah-1.jpg" alt="Liberty Roofing team at work">
+ <div class="label">
+ <div class="av">DS</div>
+ <div>
+ <strong>Dave Swensen</strong>
+ <span>Owner &amp; Founder</span>
+ </div>
+ </div>
+ </div>
+ <div>
+ <span class="eyebrow-chip reveal"><span class="dot"></span>Why Liberty</span>
+ <h2 class="section-title reveal d1">A local name<br>with <span class="hl">national standards.</span></h2>
+ <p class="section-lede reveal d2">We've been on Utah County roofs since 1980. Three generations, one promise: do it right, or don't put your name on it.</p>
+
+ <div class="about-stats">
+ <div class="about-stat reveal d3">
+ <div class="num">40<sup>+</sup></div>
+ <div class="lab">Years in business</div>
+ </div>
+ <div class="about-stat reveal d4">
+ <div class="num">12k<sup>+</sup></div>
+ <div class="lab">Projects completed</div>
+ </div>
+ <div class="about-stat reveal d5">
+ <div class="num">25</div>
+ <div class="lab">Year workmanship warranty</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ============== Reviews ============== -->
+<section class="reviews" id="reviews">
+ <div class="container">
+ <div class="reviews-head">
+ <div>
+ <span class="eyebrow-chip reveal"><span class="dot"></span>Reviews</span>
+ <h2 class="section-title reveal d1">What Utah County<br>homeowners <span class="hl">say.</span></h2>
+ </div>
+ <div class="google-summary reveal d2">
+ <div class="g-logo" aria-hidden="true"></div>
+ <div class="body">
+ <div class="t1">Google rating</div>
+ <div class="t2">
+ <strong>4.9</strong>
+ <span class="stars">
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ </span>
+ <span style="color: var(--muted);">· 200+ reviews</span>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <div class="review-grid">
+ <div class="review-card reveal d1">
+ <div class="stars">
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ </div>
+ <p class="quote">"I was very pleased with the quick response, professional service and follow-up from Liberty Roofing. They did a great job on my roof repair and I would definitely recommend them to anyone."</p>
+ <div class="author">
+ <div class="av">LL</div>
+ <div>
+ <div class="a-name">Larry Linde</div>
+ <div class="a-meta">Provo, UT</div>
+ </div>
+ </div>
+ </div>
+ <div class="review-card reveal d2">
+ <div class="stars">
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ </div>
+ <p class="quote">"Great job at a reasonable price. I am a contractor and will refer them to my customers. Very professional and quality work. Dave and his team know what they're doing."</p>
+ <div class="author">
+ <div class="av">K</div>
+ <div>
+ <div class="a-name">Kurt</div>
+ <div class="a-meta">General Contractor</div>
+ </div>
+ </div>
+ </div>
+ <div class="review-card reveal d3">
+ <div class="stars">
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 0 0-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.04a1 1 0 0 0-1.17 0l-2.8 2.04c-.79.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03C2.21 8.16 2.61 6.92 3.58 6.92h3.46a1 1 0 0 0 .95-.69l1.06-3.3z"/></svg>
+ </div>
+ <p class="quote">"Liberty Roofing replaced our entire roof after storm damage. They worked with our insurance and made the process so easy. The crew was professional and cleaned up perfectly."</p>
+ <div class="author">
+ <div class="av">SM</div>
+ <div>
+ <div class="a-name">Sarah M.</div>
+ <div class="a-meta">Orem, UT</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ============== Contact Form ============== -->
+<section class="contact-form" id="contact-form">
+ <div class="container">
+ <div class="contact-grid">
+ <div class="contact-info reveal">
+ <span class="eyebrow-chip"><span class="dot"></span>Get in touch</span>
+ <h3>Ready to start your project?</h3>
+ <p>Fill out the form and we'll get back to you within 24 hours. Or call us directly for emergency service.</p>
+ 
+ <div class="contact-methods">
+ <div class="contact-method">
+ <div class="ico">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+ </div>
+ <div class="text">
+ <h4>Phone</h4>
+ <a href="tel:8013777720">(801) 377-7720</a>
+ </div>
+ </div>
+ <div class="contact-method">
+ <div class="ico">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+ </div>
+ <div class="text">
+ <h4>Email</h4>
+ <a href="mailto:info@libertyroofing.com">info@libertyroofing.com</a>
+ </div>
+ </div>
+ <div class="contact-method">
+ <div class="ico">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+ </div>
+ <div class="text">
+ <h4>Office</h4>
+ <p>761 North 1890 West<br>Provo, UT 84601</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ 
+ <div class="form-card reveal d2">
+ <form onsubmit="event.preventDefault(); alert('Thanks for your message! We\'ll get back to you within 24 hours.');">
+ <div class="form-row">
+ <div class="form-group">
+ <label for="firstName">First name</label>
+ <input type="text" id="firstName" name="firstName" placeholder="John" required>
+ </div>
+ <div class="form-group">
+ <label for="lastName">Last name</label>
+ <input type="text" id="lastName" name="lastName" placeholder="Smith" required>
+ </div>
+ </div>
+ 
+ <div class="form-row">
+ <div class="form-group">
+ <label for="phone">Phone</label>
+ <input type="tel" id="phone" name="phone" placeholder="(801) 555-1234" required>
+ </div>
+ <div class="form-group">
+ <label for="email">Email</label>
+ <input type="email" id="email" name="email" placeholder="john@example.com">
+ </div>
+ </div>
+ 
+ <div class="form-group">
+ <label for="service">What do you need help with?</label>
+ <select id="service" name="service" required>
+ <option value="" disabled selected>Select a service...</option>
+ <option value="repair">Roof repair</option>
+ <option value="replacement">Full roof replacement</option>
+ <option value="inspection">Roof inspection</option>
+ <option value="emergency">Emergency repair</option>
+ <option value="commercial">Commercial roofing</option>
+ <option value="gutters">Gutters</option>
+ <option value="other">Other</option>
+ </select>
+ </div>
+ 
+ <div class="form-group">
+ <label for="message">Tell us about your project</label>
+ <textarea id="message" name="message" placeholder="Describe your roof issue or project details..."></textarea>
+ </div>
+ 
+ <button type="submit" class="form-submit">
+ Send message
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; margin-left: 8px; vertical-align: middle;"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+ </button>
+ 
+ <p class="form-note">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+ Your information is secure. We never share your data.
+ </p>
+ </form>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ============== Service Area ============== -->
+<section class="area" id="area">
+ <div class="container">
+ <div class="area-grid">
+ <div>
+ <span class="eyebrow-chip reveal"><span class="dot"></span>Service area</span>
+ <h2 class="section-title reveal d1">All of <span class="hl">Utah County.</span><br>Most of Salt Lake.</h2>
+ <p class="section-lede reveal d2">Headquartered in Provo, on the road by 7 AM. If you're within 35 miles of our shop, we're there same-day.</p>
+ <div class="cities">
+ <span class="city featured"><span class="star">★</span> Provo</span>
+ <span class="city">Orem</span>
+ <span class="city">Lehi</span>
+ <span class="city">American Fork</span>
+ <span class="city">Pleasant Grove</span>
+ <span class="city">Spanish Fork</span>
+ <span class="city">Springville</span>
+ <span class="city">Saratoga Springs</span>
+ <span class="city">Eagle Mountain</span>
+ <span class="city">Mapleton</span>
+ <span class="city">Alpine</span>
+ <span class="city">Highland</span>
+ <span class="city">Draper</span>
+ <span class="city">Sandy</span>
+ </div>
+ </div>
+ <div class="map-card reveal d3">
+ <div class="map-crew-badge">
+ <span class="live"></span>
+ Crew on the road · 7 AM
+ </div>
+ <svg class="map" viewBox="0 0 400 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <rect width="400" height="360" fill="#F7F9FC"/>
+ <!-- Grid lines -->
+ <line x1="0" y1="90" x2="400" y2="90" stroke="#E8EDF3" stroke-width="1"/>
+ <line x1="0" y1="180" x2="400" y2="180" stroke="#E8EDF3" stroke-width="1"/>
+ <line x1="0" y1="270" x2="400" y2="270" stroke="#E8EDF3" stroke-width="1"/>
+ <line x1="100" y1="0" x2="100" y2="360" stroke="#E8EDF3" stroke-width="1"/>
+ <line x1="200" y1="0" x2="200" y2="360" stroke="#E8EDF3" stroke-width="1"/>
+ <line x1="300" y1="0" x2="300" y2="360" stroke="#E8EDF3" stroke-width="1"/>
+ <!-- I-15 line -->
+ <line x1="200" y1="0" x2="200" y2="360" stroke="#C5D0E0" stroke-width="2"/>
+ <!-- I-15 label -->
+ <text x="210" y="25" fill="#8AA4C8" font-size="11" font-family="Geist, sans-serif" font-weight="500">I-15</text>
+ <!-- Utah Lake shape - more accurate -->
+ <path d="M50 120 Q60 80 100 75 Q150 70 180 100 Q200 140 190 180 Q170 210 130 215 Q80 210 60 180 Q45 150 50 120Z" fill="#D4E3F7" stroke="#B8D0EB" stroke-width="1"/>
+ <text x="105" y="150" fill="#8AA4C8" font-size="11" font-family="Geist, sans-serif" font-weight="500">UTAH LAKE</text>
+ <!-- Mountains on right -->
+ <path d="M280 60 L300 30 L320 50 L340 20 L360 45 L380 25 L400 55" stroke="#C5D0E0" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M300 280 L320 250 L340 270 L360 240 L380 265 L400 255" stroke="#C5D0E0" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ </svg>
+ <!-- City dots and labels - EXACT positioning -->
+ <!-- Saratoga Spr. - west of I-15, top -->
+ <div class="map-city" style="top: 15%; left: 45%;">
+ <div class="map-dot"></div>
+ <span class="map-label" style="margin-left: 8px;">Saratoga Spr.</span>
+ </div>
+ <!-- Lehi - east of I-15, upper -->
+ <div class="map-city" style="top: 28%; left: 58%;">
+ <div class="map-dot"></div>
+ <span class="map-label" style="margin-left: 8px;">Lehi</span>
+ </div>
+ <!-- Orem - east of I-15, middle, with ring -->
+ <div class="map-city" style="top: 42%; left: 56%;">
+ <div class="map-dot-orem">
+ <div class="map-dot-ring-orem"></div>
+ </div>
+ <span class="map-label" style="margin-left: 8px;">Orem</span>
+ </div>
+ <!-- Provo - ON I-15, center, HQ -->
+ <div class="map-city hq" style="top: 54%; left: 50%;">
+ <div class="map-dot-hq">
+ <div class="map-dot-ring"></div>
+ </div>
+ <span class="map-label" style="margin-left: 10px;">
+ <strong style="font-size: 15px;">Provo</strong>
+ <small style="color: var(--accent); font-size: 10px;">HQ · 7 AM</small>
+ </span>
+ </div>
+ <!-- Springville - east of I-15, below Provo -->
+ <div class="map-city" style="top: 62%; left: 62%;">
+ <div class="map-dot"></div>
+ <span class="map-label" style="margin-left: 8px;">Springville</span>
+ </div>
+ <!-- Spanish Fork - southeast -->
+ <div class="map-city" style="top: 75%; left: 58%;">
+ <div class="map-dot"></div>
+ <span class="map-label" style="margin-left: 8px;">Spanish Fork</span>
+ </div>
+ <!-- Mapleton - west of I-15, bottom -->
+ <div class="map-city" style="top: 88%; left: 45%;">
+ <div class="map-dot"></div>
+ <span class="map-label" style="margin-left: 8px;">Mapleton</span>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ============== FAQ ============== -->
+<section class="faq" id="faq">
+ <div class="container">
+ <div class="faq-grid">
+ <div>
+ <span class="eyebrow-chip reveal"><span class="dot"></span>FAQ</span>
+ <h2 class="section-title reveal d1">Questions?<br>We've got <span class="hl">answers.</span></h2>
+ <p class="section-lede reveal d2">Everything you need to know about working with Liberty Roofing. Can't find what you're looking for? Call us.</p>
+ </div>
+ <div class="faq-list">
+ <details class="faq-item reveal d1">
+ <summary>
+ <span>How can I tell if my roof needs repair?</span>
+ <span class="toggle">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+ </span>
+ </summary>
+ <div class="answer">Look for missing or curling shingles, granules in gutters, water stains on ceilings, or daylight visible through the roof boards. If your roof is 20+ years old, it's time for an inspection — even if you don't see obvious damage.</div>
+ </details>
+ <details class="faq-item reveal d2">
+ <summary>
+ <span>How long does a roof replacement take?</span>
+ <span class="toggle">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+ </span>
+ </summary>
+ <div class="answer">Most residential reroofs take 1–2 days. Larger homes or complex rooflines may take 3–4 days. We work efficiently while never cutting corners on quality.</div>
+ </details>
+ <details class="faq-item reveal d3">
+ <summary>
+ <span>Do you work with insurance?</span>
+ <span class="toggle">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+ </span>
+ </summary>
+ <div class="answer">Absolutely. We document storm damage with photos and detailed reports, meet adjusters on-site, and handle the paperwork. Our goal is getting your claim approved without you having to chase anyone.</div>
+ </details>
+ <details class="faq-item reveal d4">
+ <summary>
+ <span>What's your warranty?</span>
+ <span class="toggle">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+ </span>
+ </summary>
+ <div class="answer">We offer a 25-year workmanship warranty on every full reroof — one of the strongest in Utah. Manufacturer warranties on materials range from 30 years to lifetime, depending on the shingle you choose.</div>
+ </details>
+ <details class="faq-item reveal d5">
+ <summary>
+ <span>Do I need to be home during the work?</span>
+ <span class="toggle">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+ </span>
+ </summary>
+ <div class="answer">Nope. As long as we have access to your roof and a way to reach you by phone, you can go about your day. We'll send photo updates and call when we're done for final walkthrough.</div>
+ </details>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ============== Final CTA ============== -->
+<section class="cta" id="cta">
+ <div class="container">
+ <div class="cta-card">
+ <div>
+ <h2>Ready for a roof that lasts?</h2>
+ <p class="sub">Call now for a free, no-obligation inspection. We'll be on your roof within 48 hours — and you'll have a fixed quote the same day.</p>
+ <div class="row">
+ <a href="tel:8013777720" class="btn btn-primary">
+ <span class="icon-wrap">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+ </span>
+ Call (801) 377-7720
+ </a>
+ <a href="#" class="btn btn-secondary">
+ Get a free estimate
+ <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+ </a>
+ </div>
+ </div>
+ <div class="cta-side">
+ <h4>Why homeowners choose us</h4>
+ <div class="quick-list">
+ <div class="ql">
+ <div class="ico">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+ </div>
+ <div>
+ <div class="t1">Licensed & insured</div>
+ <div class="t2">S280 certified</div>
+ </div>
+ </div>
+ <div class="ql">
+ <div class="ico">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+ </div>
+ <div>
+ <div class="t1">Same-day response</div>
+ <div class="t2">Emergencies in under 4 hours</div>
+ </div>
+ </div>
+ <div class="ql">
+ <div class="ico">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/></svg>
+ </div>
+ <div>
+ <div class="t1">25-year warranty</div>
+ <div class="t2">Workmanship guaranteed</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ============== Footer ============== -->
+<footer class="foot" id="contact">
+ <div class="container">
+ <div class="foot-grid">
+ <div>
+ <a href="#top" class="brand">
+ <div class="brand-mark" aria-hidden="true">
+ <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M3 11 12 4l9 7"/>
+ <path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9"/>
+ </svg>
+ </div>
+ <div class="brand-text">
+ <span class="name">Liberty Roofing</span>
+ <span class="meta">EST · 1980</span>
+ </div>
+ </a>
+ <p class="desc">Professional residential and commercial roofing in Provo and Utah County. Family owned and operated with over 40 years of experience.</p>
+ <div class="contact">
+ <a href="tel:8013777720">
+ <span class="ico">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+ </span>
+ (801) 377-7720
+ </a>
+ <a href="#">
+ <span class="ico">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+ </span>
+ info@libertyroofing.com
+ </a>
+ </div>
+ </div>
+ <div class="col">
+ <div class="col-title">Services</div>
+ <a href="#services">Residential reroofs</a>
+ <a href="#services">Storm & leak repair</a>
+ <a href="#services">Commercial flat roofs</a>
+ <a href="#services">Roof inspections</a>
+ <a href="#services">Gutters & guards</a>
+ </div>
+ <div class="col">
+ <div class="col-title">Company</div>
+ <a href="#about">About us</a>
+ <a href="#work">Our work</a>
+ <a href="#reviews">Reviews</a>
+ <a href="#process">Process</a>
+ <a href="#faq">FAQ</a>
+ </div>
+ <div class="col">
+ <div class="col-title">Legal</div>
+ <a href="#">Privacy policy</a>
+ <a href="#">Terms of service</a>
+ <a href="#">Warranty info</a>
+ <a href="#">License: S280</a>
+ </div>
+ </div>
+ <div class="foot-bottom">
+ <div>© 2026 Liberty Roofing, Inc. All rights reserved.</div>
+ <div class="legal">
+ <a href="#">Privacy</a>
+ <a href="#">Terms</a>
+ </div>
+ </div>
+ </div>
+</footer>
+
+<script>
+ // Reveal animation on scroll
+ const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+ const observer = new IntersectionObserver((entries) => {
+ entries.forEach(entry => {
+ if (entry.isIntersecting) {
+ entry.target.classList.add('is-in');
+ }
+ });
+ }, observerOptions);
+ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
