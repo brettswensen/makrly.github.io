@@ -294,12 +294,12 @@ h1.display {
 }
 h1.display { text-wrap: balance; }
 @media (max-width: 640px) { h1.display { margin-top: 18px; } }
-h1.display .hl { color: var(--accent); position: relative; display: inline-block; }
+h1.display .hl { color: var(--accent); position: relative; display: inline-block; white-space: nowrap; }
 h1.display .hl::after {
  content: ""; position: absolute;
- left: .01em; right: .09em; bottom: .08em;
+ left: .02em; width: calc(100% - .12em); bottom: .08em;
  height: .12em; background: var(--accent);
- opacity: .18; border-radius: 2px;
+ opacity: .18; border-radius: 1px;
 }
 
 .lede {
