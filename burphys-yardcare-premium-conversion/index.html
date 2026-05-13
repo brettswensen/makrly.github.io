@@ -773,30 +773,26 @@ section.about {
  gap: 16px;
 }
 .about-stat {
- background: var(--surface);
- border-radius: var(--radius);
- padding: 22px;
+ background: linear-gradient(180deg, var(--surface), #F8FCF7);
+ border-radius: 14px;
+ padding: 20px 20px 18px;
  border: 1px solid var(--line);
+ box-shadow: var(--shadow-sm);
 }
 .about-stat .num {
- font-size: 36px; font-weight: 700;
- letter-spacing: -.04em; line-height: 1;
+ font-size: clamp(20px, 2.1vw, 28px);
+ font-weight: 600;
+ letter-spacing: -.015em;
+ line-height: 1.18;
  color: var(--ink);
- font-feature-settings: "tnum";
 }
 .about-stat .num sup { font-size: .5em; color: var(--accent); top: -1em; margin-left: 1px; }
-.about-stat .lab { font-size: 12.5px; color: var(--muted); margin-top: 8px; line-height: 1.4; }
-.about-stat.phone-stat .num {
- font-size: 28px;
- letter-spacing: -.015em;
- line-height: 1.12;
-}
-.about-stat.phone-stat .num a {
- color: inherit;
- text-decoration: none;
-}
-.about-stat.phone-stat .num a:hover {
- color: var(--accent);
+.about-stat .lab {
+ font-size: 13px;
+ color: var(--muted);
+ margin-top: 7px;
+ line-height: 1.45;
+ letter-spacing: -.003em;
 }
 
 /* =========================================================
@@ -1718,17 +1714,17 @@ footer.foot {
  <p class="section-lede reveal d2">At Burphy's Yard Care, our focus is making every outdoor space both beautiful and functional. We serve homeowners and businesses with dependable lawn care, garden care, shrub and hedge maintenance, and winter snow removal.</p>
 
 <div class="about-stats">
-<div class="about-stat phone-stat reveal d3">
-<div class="num"><a href="tel:8015563538">(801) 556-3538</a></div>
-<div class="lab">Call or text us today</div>
+<div class="about-stat reveal d3">
+<div class="num">(801) 556-3538</div>
+<div class="lab">Call or text for a fast quote</div>
 </div>
 <div class="about-stat reveal d4">
-<div class="num">Licensed</div>
-<div class="lab">&amp; Insured</div>
+<div class="num">Licensed &amp; Insured</div>
+<div class="lab">Professional, reliable service</div>
 </div>
 <div class="about-stat reveal d5">
-<div class="num">Bountiful</div>
-<div class="lab">to Draper, Utah</div>
+<div class="num">Bountiful → Draper</div>
+<div class="lab">Serving Salt Lake Valley</div>
 </div>
 </div>
  </div>
