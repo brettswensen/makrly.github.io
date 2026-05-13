@@ -458,6 +458,14 @@ section.services { padding: 120px 0; }
 @media (max-width: 1024px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .svc-grid { grid-template-columns: 1fr; } }
 
+/* Package section: keep all 4 plans on one row at desktop */
+.pkg-grid { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1200px) { .pkg-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .pkg-grid { grid-template-columns: 1fr; } }
+#packages .svc-card { min-height: 240px; }
+#packages .price-start { font-size: 12px; color: var(--muted-2); letter-spacing: .03em; }
+#packages .price-start strong { font-size: 16px; color: var(--ink); letter-spacing: 0; }
+
 .svc-card {
  position: relative;
  background: var(--surface);
@@ -1743,11 +1751,11 @@ footer.foot {
  </div>
  <p class="section-lede reveal d2">Pick the level that fits your property now. Upgrade anytime as your needs change.</p>
  </div>
- <div class="svc-grid">
- <article class="svc-card reveal d1"><h3>Bronze</h3><p>Weekly/bi-weekly mowing and edging to keep the basics handled.</p><div class="meta"><span>Best for <strong>standard upkeep</strong></span><span>Core lawn service</span></div></article>
- <article class="svc-card reveal d2"><h3>Silver</h3><p>Bronze plan plus seasonal cleanup cadence for cleaner transitions through the year.</p><div class="meta"><span>Best for <strong>busy homeowners</strong></span><span>Spring/fall reset</span></div></article>
- <article class="svc-card reveal d3"><h3>Gold</h3><p>Silver plan plus shrub/bed maintenance for a polished, curb-appeal-forward look.</p><div class="meta"><span>Best for <strong>high-visibility homes</strong></span><span>Landscape detail care</span></div></article>
- <article class="svc-card reveal d4"><h3>Platinum</h3><p>Full seasonal support with priority scheduling, irrigation support, and winter response.</p><div class="meta"><span>Best for <strong>all-season coverage</strong></span><span>Priority route support</span></div></article>
+ <div class="svc-grid pkg-grid">
+ <article class="svc-card reveal d1"><h3>Bronze</h3><p>Weekly/bi-weekly mowing and edging to keep the basics handled.</p><div class="meta"><span>Best for <strong>standard upkeep</strong></span><span class="price-start">Starting at <strong>$8/day</strong></span></div></article>
+ <article class="svc-card reveal d2"><h3>Silver</h3><p>Bronze plan plus seasonal cleanup cadence for cleaner transitions through the year.</p><div class="meta"><span>Best for <strong>busy homeowners</strong></span><span class="price-start">Starting at <strong>$10/day</strong></span></div></article>
+ <article class="svc-card reveal d3"><h3>Gold</h3><p>Silver plan plus shrub/bed maintenance for a polished, curb-appeal-forward look.</p><div class="meta"><span>Best for <strong>high-visibility homes</strong></span><span class="price-start">Starting at <strong>$12/day</strong></span></div></article>
+ <article class="svc-card reveal d4"><h3>Platinum</h3><p>Full seasonal support with priority scheduling, irrigation support, and winter response.</p><div class="meta"><span>Best for <strong>all-season coverage</strong></span><span class="price-start">Starting at <strong>$14/day</strong></span></div></article>
  </div>
  </div>
 </section>
