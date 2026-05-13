@@ -970,6 +970,33 @@ section.area { padding: 120px 0; background: var(--bg-2); border-top: 1px solid 
  animation: ringPulse 2s var(--ease) infinite;
 }
 
+@media (max-width: 640px) {
+ .map-card { aspect-ratio: 1 / 1.16; }
+ .map-crew-badge { top: 10px; left: 10px; padding: 6px 10px; font-size: 11px; }
+ .map-city { gap: 5px; }
+ .map-dot { width: 8px; height: 8px; }
+ .map-dot-hq { width: 13px; height: 13px; }
+ .map-city .map-label {
+  font-size: 10px;
+  line-height: 1.15;
+  padding: 2px 5px;
+  border-radius: 6px;
+  background: rgba(255,255,255,.86);
+  border: 1px solid rgba(148,163,184,.35);
+  text-shadow: none;
+ }
+ .map-city.hq .map-label strong { font-size: 12px !important; }
+ .map-city.hq .map-label small { font-size: 9px !important; }
+ .map-city.city-american-fork .map-label,
+ .map-city.city-pleasant-grove .map-label,
+ .map-city.city-draper .map-label {
+  order: -1;
+  margin-left: 0 !important;
+  margin-right: 6px;
+  text-align: right;
+ }
+}
+
 /* Alternate map dot style */
 .map-dot-orem {
  position: relative;
@@ -1827,38 +1854,38 @@ footer.foot {
  <path d="M300 280 L320 250 L340 270 L360 240 L380 265 L400 255" stroke="#C5D0E0" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
  </svg>
  <!-- City dots and labels -->
- <div class="map-city hq" style="top: 71.8%; left: 27.4%;">
+ <div class="map-city hq city-eagle-mountain" style="top: 71.8%; left: 27.4%;">
  <div class="map-dot-hq"><div class="map-dot-ring"></div></div>
  <span class="map-label" style="margin-left: 10px;">
  <strong style="font-size: 15px;">Eagle Mountain</strong>
  <small style="color: var(--accent); font-size: 10px;">HQ · 7 AM</small>
  </span>
  </div>
- <div class="map-city" style="top: 55.5%; left: 42.3%;">
+ <div class="map-city city-saratoga-springs" style="top: 55.5%; left: 42.3%;">
  <div class="map-dot"></div>
  <span class="map-label" style="margin-left: 8px;">Saratoga Springs</span>
  </div>
- <div class="map-city" style="top: 55.1%; left: 52.0%;">
+ <div class="map-city city-lehi" style="top: 55.1%; left: 52.0%;">
  <div class="map-dot"></div>
  <span class="map-label" style="margin-left: 8px;">Lehi</span>
  </div>
- <div class="map-city" style="top: 57.5%; left: 60.0%;">
+ <div class="map-city city-american-fork" style="top: 57.5%; left: 60.0%;">
  <div class="map-dot"></div>
  <span class="map-label" style="margin-left: 8px;">American Fork</span>
  </div>
- <div class="map-city" style="top: 60.2%; left: 68.6%;">
+ <div class="map-city city-pleasant-grove" style="top: 60.2%; left: 68.6%;">
  <div class="map-dot"></div>
  <span class="map-label" style="margin-left: 8px;">Pleasant Grove</span>
  </div>
- <div class="map-city" style="top: 33.6%; left: 38.4%;">
+ <div class="map-city city-bluffdale" style="top: 33.6%; left: 38.4%;">
  <div class="map-dot"></div>
  <span class="map-label" style="margin-left: 8px;">Bluffdale</span>
  </div>
- <div class="map-city" style="top: 27.6%; left: 38.4%;">
+ <div class="map-city city-riverton" style="top: 27.6%; left: 38.4%;">
  <div class="map-dot"></div>
  <span class="map-label" style="margin-left: 8px;">Riverton</span>
  </div>
- <div class="map-city" style="top: 26.2%; left: 49.9%;">
+ <div class="map-city city-draper" style="top: 26.2%; left: 49.9%;">
  <div class="map-dot"></div>
  <span class="map-label" style="margin-left: 8px;">Draper</span>
  </div>
