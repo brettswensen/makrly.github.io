@@ -288,9 +288,12 @@ img { max-width: 100%; display: block; }
 .eyebrow .sep { width: 3px; height: 3px; border-radius: 50%; background: var(--line); }
 
 h1.display {
- font-size: clamp(36px, 5.8vw, 80px);
- line-height: 1; letter-spacing: -0.04em; font-weight: 700;
+ font-size: clamp(36px, 5.1vw, 72px);
+ line-height: 1.02; letter-spacing: -0.035em; font-weight: 700;
  color: var(--ink); margin: 24px 0 0;
+}
+@media (min-width: 1100px) {
+ h1.display { white-space: nowrap; }
 }
 @media (max-width: 640px) { h1.display { margin-top: 18px; } }
 h1.display .hl { color: var(--accent); position: relative; display: inline-block; }
