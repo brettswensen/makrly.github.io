@@ -332,7 +332,7 @@ h1.display .hl::after {
 .photo-card {
  position: absolute; inset: 0;
  border-radius: 18px; overflow: hidden;
- background: #1a2a40;
+ background: #1F3A2F;
  box-shadow: var(--shadow-lg);
  border: 1px solid var(--line);
  transition: transform .4s var(--ease);
@@ -468,7 +468,7 @@ section.services { padding: 120px 0; }
  transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
  overflow: hidden;
 }
-.svc-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(45,110,255,.25); }
+.svc-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(63,138,90,.25); }
 .svc-card .ico-wrap {
  width: 48px; height: 48px;
  border-radius: 12px;
@@ -515,14 +515,14 @@ section.services { padding: 120px 0; }
 .svc-card.wide .copy .ico-wrap { margin-bottom: 22px; }
 .svc-card.wide .photo {
  flex: 1; min-height: 240px;
- background: linear-gradient(135deg, #1B4FE0 0%, #2D6EFF 100%);
+ background: linear-gradient(135deg, #2B6A47 0%, #3F8A5A 100%);
  position: relative; overflow: hidden;
 }
 .svc-card.wide .photo img { width: 100%; height: 100%; object-fit: cover; opacity: .92; }
 .svc-card.wide .photo::after {
  content: "";
  position: absolute; inset: 0;
- background: linear-gradient(45deg, rgba(27,79,224,.4), transparent);
+ background: linear-gradient(45deg, rgba(63,138,90,.32), transparent);
 }
 
 /* =========================================================
@@ -540,20 +540,20 @@ section.work::before {
  content: "";
  position: absolute; inset: 0;
  background-image:
- radial-gradient(circle at 90% 10%, rgba(45,110,255,.18), transparent 50%),
- radial-gradient(circle at 10% 90%, rgba(45,110,255,.10), transparent 50%);
+ radial-gradient(circle at 90% 10%, rgba(63,138,90,.18), transparent 50%),
+ radial-gradient(circle at 10% 90%, rgba(63,138,90,.10), transparent 50%);
  pointer-events: none;
 }
 section.work > .container { position: relative; }
 
 section.work .eyebrow-chip {
- background: rgba(45,110,255,.18);
+ background: rgba(63,138,90,.18);
  color: #8FB3FF;
 }
 section.work .section-title { color: #fff; }
 section.work .section-lede { color: rgba(255,255,255,.65); }
 section.work .work-head { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 56px; flex-wrap: wrap; }
-section.work .btn-secondary { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.12); color: #fff; }
+section.work .btn-secondary { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.16); color: #fff; }
 section.work .btn-secondary:hover { background: rgba(255,255,255,.12); }
 
 .work-bento {
@@ -578,7 +578,7 @@ section.work .btn-secondary:hover { background: rgba(255,255,255,.12); }
  position: relative;
  border-radius: var(--radius-lg);
  overflow: hidden;
- background: #1a2a40;
+ background: #1F3A2F;
  cursor: pointer;
  transition: transform .35s var(--ease);
  aspect-ratio: 4/3;
@@ -740,7 +740,7 @@ section.about {
  border-radius: var(--radius-lg);
  overflow: hidden;
  box-shadow: var(--shadow-lg);
- background: #1a2a40;
+ background: #1F3A2F;
 }
 .about-photo img { width: 100%; height: 100%; object-fit: cover; }
 .about-photo .label {
@@ -992,8 +992,8 @@ section.area { padding: 120px 0; background: var(--bg-2); border-top: 1px solid 
 }
 
 @keyframes dotPulse {
- 0%, 100% { box-shadow: 0 0 0 0 rgba(45,110,255,.4); }
- 50% { box-shadow: 0 0 0 6px rgba(45,110,255,0); }
+ 0%, 100% { box-shadow: 0 0 0 0 rgba(63,138,90,.38); }
+ 50% { box-shadow: 0 0 0 6px rgba(63,138,90,0); }
 }
 
 @keyframes ringPulse {
@@ -1017,7 +1017,7 @@ section.faq { padding: 120px 0; }
  overflow: hidden;
  transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
 }
-.faq-item[open] { border-color: rgba(45,110,255,.25); box-shadow: var(--shadow-sm); }
+.faq-item[open] { border-color: rgba(63,138,90,.25); box-shadow: var(--shadow-sm); }
 .faq-item summary {
  list-style: none;
  padding: 20px 24px;
@@ -1052,13 +1052,13 @@ section.cta { padding: 100px 0 120px; }
 .cta-card {
  position: relative;
  border-radius: 28px;
- background: linear-gradient(135deg, #143A8C 0%, #2D6EFF 60%, #5A8BFF 100%);
+ background: linear-gradient(135deg, #1F4D34 0%, #3F8A5A 60%, #74B87D 100%);
  color: #fff;
  padding: 72px 64px;
  overflow: hidden;
  display: grid; grid-template-columns: 1.4fr 1fr;
  gap: 56px; align-items: center;
- box-shadow: 0 30px 80px -30px rgba(45,110,255,.5);
+ box-shadow: 0 30px 80px -30px rgba(63,138,90,.42);
 }
 @media (max-width: 1024px) { .cta-card { grid-template-columns: 1fr; padding: 56px 40px; } }
 @media (max-width: 640px) { .cta-card { padding: 40px 24px; } }
@@ -1542,7 +1542,7 @@ footer.foot {
  <div class="work-head">
  <div>
  <span class="eyebrow-chip reveal"><span class="dot"></span>Recent work</span>
- <h2 class="section-title reveal d1">A few of our<br>favorite <span style="color: #5A8BFF;">projects.</span></h2>
+ <h2 class="section-title reveal d1">A few of our<br>favorite <span style="color: #74B87D;">projects.</span></h2>
  </div>
  <a href="#" class="btn btn-secondary reveal d2">
  View all projects
