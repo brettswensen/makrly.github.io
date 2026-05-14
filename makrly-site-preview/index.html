@@ -47,19 +47,28 @@
     .btn-primary{background:linear-gradient(135deg,var(--mk-teal-500),var(--mk-teal-400));color:#06211d;box-shadow:var(--shadow-1)}
     .btn-primary:hover{transform:translateY(-1px)}
 
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1)}
+    .reveal.in{opacity:1;transform:none}
+
     .hero{padding:84px 0 72px;position:relative;overflow:hidden}
     .hero:before{content:"";position:absolute;right:-140px;top:-120px;width:540px;height:540px;background:radial-gradient(circle,rgba(25,222,193,.24),transparent 62%)}
+    .hero:after{content:"";position:absolute;left:-220px;bottom:-240px;width:560px;height:560px;background:radial-gradient(circle,rgba(56,189,248,.14),transparent 66%)}
     .hero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:38px;align-items:center}
     h1{font-size:clamp(34px,6vw,64px);line-height:1.02;letter-spacing:-.03em;margin:18px 0 18px;max-width:900px}
     .teal{color:var(--mk-teal-400)}
     .lede{color:var(--mk-gray-200);font-size:19px;line-height:1.56;max-width:720px}
     .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .cred-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+    .cred{padding:8px 12px;border-radius:999px;background:rgba(148,163,184,.1);border:1px solid rgba(148,163,184,.24);font-size:12px;color:var(--mk-gray-100)}
     .btn-alt{background:rgba(148,163,184,.14);border:1px solid rgba(148,163,184,.24);color:var(--mk-gray-50)}
-    .hero-card{background:linear-gradient(180deg,#0f172a,#0b1220);border:1px solid rgba(148,163,184,.24);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-2)}
+    .hero-card{background:linear-gradient(180deg,#0f172a,#0b1220);border:1px solid rgba(148,163,184,.24);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-2);position:relative;overflow:hidden}
+    .hero-card:before{content:"";position:absolute;inset:-1px;background:linear-gradient(125deg,rgba(25,222,193,.22),transparent 45%,rgba(56,189,248,.18));opacity:.7;pointer-events:none}
+    .hero-card > *{position:relative;z-index:1}
     .hero-card h3{margin:0 0 6px;font-size:20px}
     .hero-card p{margin:0;color:var(--mk-gray-200);line-height:1.55}
     .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
-    .stat{border:1px solid rgba(148,163,184,.2);border-radius:12px;padding:14px;background:rgba(2,6,23,.45)}
+    .stat{border:1px solid rgba(148,163,184,.2);border-radius:12px;padding:14px;background:rgba(2,6,23,.45);transition:transform .25s ease,border-color .25s ease}
+    .stat:hover{transform:translateY(-2px);border-color:rgba(25,222,193,.45)}
     .stat strong{display:block;color:var(--mk-teal-300);font-size:24px;line-height:1.1}
     .stat span{color:var(--mk-gray-300, #cbd5e1);font-size:13px}
 
@@ -68,13 +77,16 @@
     .sub{margin-top:14px;color:var(--mk-gray-200);max-width:760px;font-size:17px;line-height:1.6}
 
     .services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:30px}
-    .card{background:#0b1220;border:1px solid rgba(148,163,184,.2);border-radius:var(--radius);padding:20px}
+    .card{background:#0b1220;border:1px solid rgba(148,163,184,.2);border-radius:var(--radius);padding:20px;position:relative;overflow:hidden;transition:transform .26s ease, border-color .26s ease, box-shadow .26s ease}
+    .card:after{content:"";position:absolute;inset:auto -20% -60% auto;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(25,222,193,.16),transparent 68%);pointer-events:none}
+    .card:hover{transform:translateY(-4px);border-color:rgba(25,222,193,.42);box-shadow:0 12px 26px rgba(2,6,23,.35)}
     .card h3{margin:10px 0 10px;font-size:20px}
     .card p{margin:0;color:var(--mk-gray-200);line-height:1.55}
     .tag{display:inline-block;font-size:12px;color:var(--mk-cyan-400);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 
-    .process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:28px}
-    .step{background:#0b1220;border:1px solid rgba(148,163,184,.2);padding:18px;border-radius:12px}
+    .process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:28px;position:relative}
+    .process:before{content:"";position:absolute;left:7%;right:7%;top:15px;height:2px;background:linear-gradient(90deg,rgba(25,222,193,.15),rgba(25,222,193,.45),rgba(56,189,248,.35),rgba(25,222,193,.15));z-index:0}
+    .step{background:#0b1220;border:1px solid rgba(148,163,184,.2);padding:18px;border-radius:12px;position:relative;z-index:1}
     .step b{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:999px;background:rgba(25,222,193,.2);color:var(--mk-teal-300);margin-bottom:10px}
     .step h4{margin:0 0 8px;font-size:17px}
     .step p{margin:0;color:var(--mk-gray-200);font-size:15px;line-height:1.45}
@@ -83,25 +95,41 @@
     .panel{background:#0b1220;border:1px solid rgba(148,163,184,.2);border-radius:var(--radius-lg);padding:24px}
     .panel h3{margin:0 0 12px}
     ul{margin:0;padding-left:20px;color:var(--mk-gray-200);line-height:1.7}
+    .value-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}
+    .value-chip{font-size:13px;color:var(--mk-gray-100);padding:10px 12px;border-radius:10px;border:1px solid rgba(148,163,184,.2);background:rgba(148,163,184,.08)}
 
-    .cta{background:linear-gradient(165deg,#0f172a,#071420);border:1px solid rgba(25,222,193,.25);border-radius:20px;padding:30px;margin-top:24px}
+    .cta{background:linear-gradient(165deg,#0f172a,#071420);border:1px solid rgba(25,222,193,.25);border-radius:20px;padding:30px;margin-top:24px;position:relative;overflow:hidden}
+    .cta:before{content:"";position:absolute;inset:-30% -10% auto auto;width:320px;height:320px;background:radial-gradient(circle,rgba(25,222,193,.2),transparent 62%);pointer-events:none;animation:floatGlow 8s ease-in-out infinite}
+    .cta > *{position:relative;z-index:1}
     .cta h3{margin:0 0 10px;font-size:32px;line-height:1.1}
     .cta p{margin:0;color:var(--mk-gray-200);max-width:760px}
     .cta-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
 
     footer{padding:32px 0 50px;color:var(--mk-gray-400)}
 
+    @keyframes floatGlow {
+      0%,100% { transform: translateY(0px) scale(1); opacity:.8; }
+      50% { transform: translateY(-10px) scale(1.05); opacity:1; }
+    }
+
     @media (max-width:980px){
       .links{display:none}
       .hero-grid,.about{grid-template-columns:1fr}
       .services{grid-template-columns:1fr 1fr}
       .process{grid-template-columns:1fr 1fr}
+      .process:before{display:none}
     }
     @media (max-width:680px){
       .services,.process{grid-template-columns:1fr}
       .brand img{width:160px}
       .hero{padding-top:56px}
       h1{text-wrap:balance}
+      .value-grid{grid-template-columns:1fr}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+      .reveal{opacity:1;transform:none}
     }
   </style>
 </head>
@@ -124,7 +152,7 @@
   <main id="top">
     <section class="hero">
       <div class="container hero-grid">
-        <div>
+        <div class="reveal">
           <span class="pill"><span class="dot"></span>Built for operational efficiency</span>
           <h1>Practical <span class="teal">AI solutions</span> for small businesses ready to operate smarter.</h1>
           <p class="lede">Makrly helps teams turn day-to-day bottlenecks into streamlined systems — from intake and quoting to communication and delivery. We bring strategy, implementation, and iteration so AI becomes useful in real operations.</p>
@@ -132,8 +160,13 @@
             <a class="btn btn-primary" href="#contact">Get a solution map</a>
             <a class="btn btn-alt" href="#services">See solution lanes</a>
           </div>
+          <div class="cred-row">
+            <span class="cred">Operational AI strategy</span>
+            <span class="cred">Workflow-first implementation</span>
+            <span class="cred">Fast iteration cycles</span>
+          </div>
         </div>
-        <aside class="hero-card">
+        <aside class="hero-card reveal" data-delay="120">
           <h3>What your systems should do</h3>
           <p>Not just “look good.” Your operations should answer: What comes in? Who handles it? What gets generated? What gets sent next?</p>
           <div class="stats">
@@ -147,21 +180,21 @@
 
     <section id="services">
       <div class="container">
-        <span class="pill"><span class="dot"></span>Core services</span>
-        <h2>AI solution lanes designed for real business operations.</h2>
-        <p class="sub">Whether you’re AI-curious or already experimenting, we help you identify the best starting points and implement systems your team can actually run.</p>
+        <span class="pill reveal"><span class="dot"></span>Core services</span>
+        <h2 class="reveal" data-delay="60">AI solution lanes designed for real business operations.</h2>
+        <p class="sub reveal" data-delay="120">Whether you’re AI-curious or already experimenting, we help you identify the best starting points and implement systems your team can actually run.</p>
         <div class="services">
-          <article class="card">
+          <article class="card reveal" data-delay="40">
             <span class="tag">AI Workflow Automation</span>
             <h3>Intake, routing, and follow-up flows</h3>
             <p>Capture requests consistently, route them to the right person, and automate repetitive next steps so work keeps moving.</p>
           </article>
-          <article class="card">
+          <article class="card reveal" data-delay="100">
             <span class="tag">Custom AI Tools</span>
             <h3>Quote + scope packaging systems</h3>
             <p>Turn field notes, measurements, and job details into clean proposal-ready outputs your team can use immediately.</p>
           </article>
-          <article class="card">
+          <article class="card reveal" data-delay="160">
             <span class="tag">Web + Communication Layer</span>
             <h3>Digital presence connected to workflow</h3>
             <p>Websites, forms, and communication touchpoints designed to flow into your operating systems and keep execution moving.</p>
@@ -172,26 +205,26 @@
 
     <section id="process">
       <div class="container">
-        <span class="pill"><span class="dot"></span>How we work</span>
-        <h2>Simple, transparent, fast.</h2>
-        <p class="sub">Practical implementation with clear checkpoints — no bloated agency process.</p>
+        <span class="pill reveal"><span class="dot"></span>How we work</span>
+        <h2 class="reveal" data-delay="60">Simple, transparent, fast.</h2>
+        <p class="sub reveal" data-delay="120">Practical implementation with clear checkpoints — no bloated agency process.</p>
         <div class="process">
-          <div class="step"><b>1</b><h4>Workflow diagnostic</h4><p>We map your current process, bottlenecks, and handoff gaps across intake, quoting, and communication.</p></div>
-          <div class="step"><b>2</b><h4>Solution architecture</h4><p>We define the operating system: what gets captured, transformed, routed, and delivered.</p></div>
-          <div class="step"><b>3</b><h4>Build + preview</h4><p>You get a live preview environment quickly so workflows can be tested in real context.</p></div>
-          <div class="step"><b>4</b><h4>Optimize</h4><p>We refine automation logic, prompts, outputs, and UX so the system gets cleaner with use.</p></div>
+          <div class="step reveal" data-delay="40"><b>1</b><h4>Workflow diagnostic</h4><p>We map your current process, bottlenecks, and handoff gaps across intake, quoting, and communication.</p></div>
+          <div class="step reveal" data-delay="90"><b>2</b><h4>Solution architecture</h4><p>We define the operating system: what gets captured, transformed, routed, and delivered.</p></div>
+          <div class="step reveal" data-delay="140"><b>3</b><h4>Build + preview</h4><p>You get a live preview environment quickly so workflows can be tested in real context.</p></div>
+          <div class="step reveal" data-delay="190"><b>4</b><h4>Optimize</h4><p>We refine automation logic, prompts, outputs, and UX so the system gets cleaner with use.</p></div>
         </div>
       </div>
     </section>
 
     <section id="about">
       <div class="container about">
-        <div>
+        <div class="reveal">
           <span class="pill"><span class="dot"></span>Why Makrly</span>
           <h2>Solutions-minded, implementation-focused, and built for owners who move fast.</h2>
           <p class="sub">Makrly helps small businesses confidently adopt AI through practical systems, clear implementation, and hands-on refinement. We meet you where you are and build solutions that match your team, workflow, and goals.</p>
         </div>
-        <div class="panel">
+        <div class="panel reveal" data-delay="120">
           <h3>What clients get from this approach</h3>
           <ul>
             <li>Operational workflows that are easier to run and scale.</li>
@@ -199,13 +232,19 @@
             <li>Practical AI tooling that supports the team you already have.</li>
             <li>A collaborative implementation partner focused on execution quality.</li>
           </ul>
+          <div class="value-grid">
+            <div class="value-chip">Less admin drag</div>
+            <div class="value-chip">Faster internal response</div>
+            <div class="value-chip">Higher execution consistency</div>
+            <div class="value-chip">Clearer team accountability</div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="contact">
       <div class="container">
-        <div class="cta">
+        <div class="cta reveal">
           <span class="pill"><span class="dot"></span>Next step</span>
           <h3>Let’s map your first operational AI workflow.</h3>
           <p>We’ll identify one high-friction process and design a practical AI-enabled system your team can use immediately — a clear first step that compounds over time.</p>
@@ -224,6 +263,20 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const delay = Number(entry.target.dataset.delay || 0);
+          setTimeout(() => entry.target.classList.add('in'), delay);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+    revealEls.forEach((el) => io.observe(el));
+  </script>
 </body>
 </html>
