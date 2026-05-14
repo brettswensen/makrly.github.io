@@ -100,7 +100,7 @@
     .white-block .card:hover h3,.white-block .card:hover p{color:#e2e8f0}
     .white-block .tag{color:#0e7490}
     .white-block .card:hover .tag{color:#7dd3fc}
-    .white-block .value-chip{background:#f8fafc;border:1px solid #d8e1ec;color:#1e293b}
+    .white-block .value-chip{background:linear-gradient(135deg,#ecfeff 0%,#f0fdfa 100%);border:1px solid #a7f3d0;color:#0f172a;box-shadow:0 6px 14px rgba(15,23,42,.06)}
 
     .services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:30px}
     .card{background:linear-gradient(180deg,#0b1220,#0a1628);border:1px solid rgba(148,163,184,.2);border-radius:var(--radius);padding:20px;position:relative;overflow:hidden;transition:transform .26s ease, border-color .26s ease, box-shadow .26s ease, background .26s ease}
@@ -124,7 +124,8 @@
     .panel h3{margin:0 0 12px}
     ul{margin:0;padding-left:20px;color:var(--mk-gray-200);line-height:1.7}
     .value-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}
-    .value-chip{font-size:13px;color:var(--mk-gray-100);padding:10px 12px;border-radius:10px;border:1px solid rgba(148,163,184,.2);background:rgba(148,163,184,.08)}
+    .value-chip{font-size:13px;color:var(--mk-gray-100);padding:10px 14px;border-radius:999px;border:1px solid rgba(148,163,184,.2);background:rgba(148,163,184,.08);font-weight:600;display:flex;align-items:center;gap:8px}
+    .value-chip::before{content:"✓";display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;font-size:11px;font-weight:800;background:rgba(20,184,166,.18);color:#0f766e;flex-shrink:0}
 
     .cta{background:linear-gradient(165deg,#0f172a,#071420);border:1px solid rgba(25,222,193,.25);border-radius:20px;padding:30px;margin-top:24px;position:relative;overflow:hidden}
     .cta:before{content:"";position:absolute;inset:-30% -10% auto auto;width:320px;height:320px;background:radial-gradient(circle,rgba(25,222,193,.2),transparent 62%);pointer-events:none;animation:floatGlow 8s ease-in-out infinite}
