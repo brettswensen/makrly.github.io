@@ -54,9 +54,9 @@
     .hero:before{content:"";position:absolute;right:-140px;top:-120px;width:540px;height:540px;background:radial-gradient(circle,rgba(25,222,193,.24),transparent 62%)}
     .hero:after{content:"";position:absolute;left:-220px;bottom:-240px;width:560px;height:560px;background:radial-gradient(circle,rgba(56,189,248,.14),transparent 66%)}
     .hero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:38px;align-items:center}
-    h1{font-size:clamp(34px,6vw,64px);line-height:1.02;letter-spacing:-.03em;margin:18px 0 18px;max-width:900px}
+    h1{font-size:clamp(36px,6.4vw,68px);line-height:.98;letter-spacing:-.034em;margin:16px 0 16px;max-width:900px;text-wrap:balance}
     .teal{color:var(--mk-teal-400)}
-    .lede{color:var(--mk-gray-200);font-size:19px;line-height:1.56;max-width:720px}
+    .lede{color:var(--mk-gray-200);font-size:clamp(18px,2.1vw,21px);line-height:1.58;max-width:700px}
     .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
     .cred-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
     .cred{padding:8px 12px;border-radius:999px;background:rgba(148,163,184,.1);border:1px solid rgba(148,163,184,.24);font-size:12px;color:var(--mk-gray-100)}
@@ -66,20 +66,31 @@
     .hero-card > *{position:relative;z-index:1}
     .hero-card h3{margin:0 0 6px;font-size:20px}
     .hero-card p{margin:0;color:var(--mk-gray-200);line-height:1.55}
-    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
-    .stat{border:1px solid rgba(148,163,184,.2);border-radius:12px;padding:14px;background:rgba(2,6,23,.45);transition:transform .25s ease,border-color .25s ease}
-    .stat:hover{transform:translateY(-2px);border-color:rgba(25,222,193,.45)}
-    .stat strong{display:block;color:var(--mk-teal-300);font-size:24px;line-height:1.1}
-    .stat span{color:var(--mk-gray-300, #cbd5e1);font-size:13px}
+    .workflow-card{margin-top:16px;border:1px solid rgba(148,163,184,.24);border-radius:14px;background:linear-gradient(180deg,rgba(15,23,42,.85),rgba(2,6,23,.85));padding:14px;position:relative;overflow:hidden}
+    .workflow-card:after{content:"";position:absolute;inset:-1px;background:radial-gradient(circle at 80% 10%,rgba(25,222,193,.24),transparent 45%);pointer-events:none}
+    .graph-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+    .graph-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mk-gray-400);font-weight:700}
+    .graph-pulse{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--mk-teal-300)}
+    .graph-pulse i{width:7px;height:7px;border-radius:50%;background:var(--mk-teal-400);box-shadow:0 0 0 0 rgba(25,222,193,.6);animation:pulseDot 1.8s infinite}
+    .workflow-svg{width:100%;height:auto;display:block}
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+    .stat{border:1px solid rgba(148,163,184,.2);border-radius:12px;padding:12px;background:rgba(2,6,23,.45);transition:transform .25s ease,border-color .25s ease, box-shadow .25s ease}
+    .stat:hover{transform:translateY(-2px);border-color:rgba(25,222,193,.45);box-shadow:0 10px 22px rgba(2,6,23,.35)}
+    .stat strong{display:block;color:var(--mk-teal-300);font-size:20px;line-height:1.1}
+    .stat span{color:var(--mk-gray-300, #cbd5e1);font-size:12px}
 
-    section{padding:78px 0;border-top:1px solid rgba(148,163,184,.12)}
-    h2{font-size:clamp(28px,4vw,46px);line-height:1.06;letter-spacing:-.02em;margin:14px 0 0}
-    .sub{margin-top:14px;color:var(--mk-gray-200);max-width:760px;font-size:17px;line-height:1.6}
+    section{padding:84px 0;border-top:1px solid rgba(148,163,184,.12)}
+    section:nth-of-type(odd){background:linear-gradient(180deg,rgba(15,23,42,.22),rgba(7,11,20,0) 70%)}
+    section:nth-of-type(even){background:linear-gradient(180deg,rgba(8,47,73,.14),rgba(7,11,20,0) 72%)}
+    h2{font-size:clamp(30px,4.2vw,50px);line-height:1.04;letter-spacing:-.026em;margin:14px 0 0;text-wrap:balance}
+    .sub{margin-top:16px;color:var(--mk-gray-200);max-width:760px;font-size:clamp(16px,1.8vw,18px);line-height:1.64}
 
     .services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:30px}
-    .card{background:#0b1220;border:1px solid rgba(148,163,184,.2);border-radius:var(--radius);padding:20px;position:relative;overflow:hidden;transition:transform .26s ease, border-color .26s ease, box-shadow .26s ease}
-    .card:after{content:"";position:absolute;inset:auto -20% -60% auto;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(25,222,193,.16),transparent 68%);pointer-events:none}
-    .card:hover{transform:translateY(-4px);border-color:rgba(25,222,193,.42);box-shadow:0 12px 26px rgba(2,6,23,.35)}
+    .card{background:linear-gradient(180deg,#0b1220,#0a1628);border:1px solid rgba(148,163,184,.2);border-radius:var(--radius);padding:20px;position:relative;overflow:hidden;transition:transform .26s ease, border-color .26s ease, box-shadow .26s ease, background .26s ease}
+    .card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(25,222,193,.08),transparent 48%,rgba(56,189,248,.08));opacity:.6;pointer-events:none}
+    .card:after{content:"";position:absolute;inset:auto -20% -60% auto;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(25,222,193,.16),transparent 68%);pointer-events:none;transition:transform .35s ease}
+    .card:hover{transform:translateY(-6px);border-color:rgba(25,222,193,.46);box-shadow:0 16px 32px rgba(2,6,23,.42);background:linear-gradient(180deg,#10213b,#0b1220)}
+    .card:hover:after{transform:scale(1.08)}
     .card h3{margin:10px 0 10px;font-size:20px}
     .card p{margin:0;color:var(--mk-gray-200);line-height:1.55}
     .tag{display:inline-block;font-size:12px;color:var(--mk-cyan-400);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
@@ -110,6 +121,11 @@
     @keyframes floatGlow {
       0%,100% { transform: translateY(0px) scale(1); opacity:.8; }
       50% { transform: translateY(-10px) scale(1.05); opacity:1; }
+    }
+    @keyframes pulseDot {
+      0%{box-shadow:0 0 0 0 rgba(25,222,193,.55)}
+      70%{box-shadow:0 0 0 8px rgba(25,222,193,0)}
+      100%{box-shadow:0 0 0 0 rgba(25,222,193,0)}
     }
 
     @media (max-width:980px){
@@ -169,6 +185,29 @@
         <aside class="hero-card reveal" data-delay="120">
           <h3>What your systems should do</h3>
           <p>Not just “look good.” Your operations should answer: What comes in? Who handles it? What gets generated? What gets sent next?</p>
+          <div class="workflow-card" aria-hidden="true">
+            <div class="graph-head">
+              <span class="graph-label">Live Workflow Signal</span>
+              <span class="graph-pulse"><i></i>active</span>
+            </div>
+            <svg class="workflow-svg" viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="mkLine" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#19DEC1"/>
+                  <stop offset="100%" stop-color="#38BDF8"/>
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" width="360" height="140" rx="10" fill="rgba(15,23,42,.35)" stroke="rgba(148,163,184,.16)"/>
+              <g stroke="rgba(148,163,184,.18)" stroke-width="1">
+                <line x1="22" y1="28" x2="338" y2="28"/>
+                <line x1="22" y1="56" x2="338" y2="56"/>
+                <line x1="22" y1="84" x2="338" y2="84"/>
+                <line x1="22" y1="112" x2="338" y2="112"/>
+              </g>
+              <path d="M24 94 C54 92, 60 44, 92 48 C120 52, 132 102, 160 98 C192 92, 208 38, 236 46 C266 54, 282 108, 336 78" fill="none" stroke="url(#mkLine)" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="336" cy="78" r="5" fill="#19DEC1"/>
+            </svg>
+          </div>
           <div class="stats">
             <div class="stat"><strong>Faster intake</strong><span>less back-and-forth admin</span></div>
             <div class="stat"><strong>Cleaner handoffs</strong><span>standardized outputs</span></div>
