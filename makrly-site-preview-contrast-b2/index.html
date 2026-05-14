@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Makrly — Practical AI solutions for small business operations</title>
+  <meta name="description" content="Makrly designs and implements practical AI workflows for small businesses — from quoting and intake systems to communication workflows and web presence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --mk-navy-950:#070B14;
+      --mk-navy-900:#0B1220;
+      --mk-navy-800:#111827;
+      --mk-teal-500:#00A6A6;
+      --mk-teal-400:#19DEC1;
+      --mk-teal-300:#63F2DC;
+      --mk-cyan-400:#38BDF8;
+      --mk-gray-50:#F8FAFC;
+      --mk-gray-100:#F1F5F9;
+      --mk-gray-200:#E2E8F0;
+      --mk-gray-400:#94A3B8;
+      --mk-gray-600:#475569;
+      --mk-font-ui:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      --radius:14px;
+      --radius-lg:20px;
+      --shadow-1:0 4px 14px rgba(0,0,0,.18);
+      --shadow-2:0 16px 40px rgba(0,0,0,.28);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:var(--mk-font-ui);background:var(--mk-navy-950);color:var(--mk-gray-50);-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    .container{max-width:1180px;margin:0 auto;padding:0 24px}
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;background:rgba(25,222,193,.12);border:1px solid rgba(25,222,193,.28);border-radius:999px;color:var(--mk-teal-300);font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--mk-teal-400)}
+
+    header{position:sticky;top:0;z-index:30;background:rgba(7,11,20,.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,.14)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:184px;height:auto}
+    .links{display:flex;gap:6px;align-items:center}
+    .links a{padding:10px 12px;border-radius:10px;color:var(--mk-gray-100);font-size:14px}
+    .links a:hover{background:rgba(148,163,184,.12)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:11px;font-weight:600;font-size:14px}
+    .btn-primary{background:linear-gradient(135deg,var(--mk-teal-500),var(--mk-teal-400));color:#06211d;box-shadow:var(--shadow-1)}
+    .btn-primary:hover{transform:translateY(-1px)}
+
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1)}
+    .reveal.in{opacity:1;transform:none}
+
+    .hero{padding:84px 0 72px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;right:-140px;top:-120px;width:540px;height:540px;background:radial-gradient(circle,rgba(25,222,193,.24),transparent 62%)}
+    .hero:after{content:"";position:absolute;left:-220px;bottom:-240px;width:560px;height:560px;background:radial-gradient(circle,rgba(56,189,248,.14),transparent 66%)}
+    .hero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:38px;align-items:center}
+    h1{font-size:clamp(36px,6.4vw,68px);line-height:.98;letter-spacing:-.034em;margin:16px 0 16px;max-width:900px;text-wrap:balance}
+    .teal{color:var(--mk-teal-400)}
+    .lede{color:var(--mk-gray-200);font-size:clamp(18px,2.1vw,21px);line-height:1.58;max-width:700px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .cred-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+    .cred{padding:8px 12px;border-radius:999px;background:rgba(148,163,184,.1);border:1px solid rgba(148,163,184,.24);font-size:12px;color:var(--mk-gray-100)}
+    .btn-alt{background:rgba(148,163,184,.14);border:1px solid rgba(148,163,184,.24);color:var(--mk-gray-50)}
+    .hero-card{background:linear-gradient(180deg,#0f172a,#0b1220);border:1px solid rgba(148,163,184,.24);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-2);position:relative;overflow:hidden}
+    .hero-card:before{content:"";position:absolute;inset:-1px;background:linear-gradient(125deg,rgba(25,222,193,.22),transparent 45%,rgba(56,189,248,.18));opacity:.7;pointer-events:none}
+    .hero-card > *{position:relative;z-index:1}
+    .hero-card h3{margin:0 0 6px;font-size:20px}
+    .hero-card p{margin:0;color:var(--mk-gray-200);line-height:1.55}
+    .workflow-card{margin-top:16px;border:1px solid rgba(148,163,184,.24);border-radius:14px;background:linear-gradient(180deg,rgba(15,23,42,.85),rgba(2,6,23,.85));padding:14px;position:relative;overflow:hidden}
+    .workflow-card:after{content:"";position:absolute;inset:-1px;background:radial-gradient(circle at 80% 10%,rgba(25,222,193,.24),transparent 45%);pointer-events:none}
+    .graph-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+    .graph-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mk-gray-400);font-weight:700}
+    .graph-pulse{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--mk-teal-300)}
+    .graph-pulse i{width:7px;height:7px;border-radius:50%;background:var(--mk-teal-400);box-shadow:0 0 0 0 rgba(25,222,193,.6);animation:pulseDot 1.8s infinite}
+    .workflow-svg{width:100%;height:auto;display:block}
+    .signal-path{stroke-dasharray:420;stroke-dashoffset:420;animation:drawPath 2.2s ease-out forwards}
+    .signal-wave{stroke-dasharray:9 10;animation:drift 1.6s linear infinite}
+    .signal-node{animation:nodePulse 1.4s ease-in-out infinite}
+    .signal-glow{animation:glowMove 2.6s ease-in-out infinite}
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+    .stat{border:1px solid rgba(148,163,184,.2);border-radius:12px;padding:12px;background:rgba(2,6,23,.45);transition:transform .25s ease,border-color .25s ease, box-shadow .25s ease}
+    .stat:hover{transform:translateY(-2px);border-color:rgba(25,222,193,.45);box-shadow:0 10px 22px rgba(2,6,23,.35)}
+    .stat strong{display:block;color:var(--mk-teal-300);font-size:20px;line-height:1.1}
+    .stat span{color:var(--mk-gray-300, #cbd5e1);font-size:12px}
+
+    section{padding:84px 0;border-top:1px solid rgba(148,163,184,.12)}
+    section:nth-of-type(odd){background:linear-gradient(180deg,rgba(15,23,42,.22),rgba(7,11,20,0) 70%)}
+    section:nth-of-type(even){background:linear-gradient(180deg,rgba(8,47,73,.14),rgba(7,11,20,0) 72%)}
+    h2{font-size:clamp(30px,4.2vw,50px);line-height:1.04;letter-spacing:-.026em;margin:14px 0 0;text-wrap:balance}
+    .sub{margin-top:16px;color:var(--mk-gray-200);max-width:760px;font-size:clamp(16px,1.8vw,18px);line-height:1.64}
+
+    .white-block{background:var(--mk-gray-50) !important;color:#0f172a;border-top:1px solid #dbe5ef;border-bottom:1px solid #dbe5ef;padding:110px 0}
+    .white-block .pill{background:rgba(15,23,42,.06);border:1px solid rgba(15,23,42,.16);color:#0f766e}
+    .white-block .dot{background:#0ea5a4}
+    .white-block h2,.white-block h3,.white-block h4{color:#0b1220}
+    .white-block .sub,.white-block p,.white-block li{color:#334155}
+    .white-block .card,.white-block .panel,.white-block .step{background:#ffffff;border:1px solid #d8e1ec;box-shadow:0 12px 28px rgba(15,23,42,.08)}
+    .white-block .tag{color:#0e7490}
+    .white-block .value-chip{background:#f8fafc;border:1px solid #d8e1ec;color:#1e293b}
+
+    .services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:30px}
+    .card{background:linear-gradient(180deg,#0b1220,#0a1628);border:1px solid rgba(148,163,184,.2);border-radius:var(--radius);padding:20px;position:relative;overflow:hidden;transition:transform .26s ease, border-color .26s ease, box-shadow .26s ease, background .26s ease}
+    .card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(25,222,193,.08),transparent 48%,rgba(56,189,248,.08));opacity:.6;pointer-events:none}
+    .card:after{content:"";position:absolute;inset:auto -20% -60% auto;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(25,222,193,.16),transparent 68%);pointer-events:none;transition:transform .35s ease}
+    .card:hover{transform:translateY(-6px);border-color:rgba(25,222,193,.46);box-shadow:0 16px 32px rgba(2,6,23,.42);background:linear-gradient(180deg,#10213b,#0b1220)}
+    .card:hover:after{transform:scale(1.08)}
+    .card h3{margin:10px 0 10px;font-size:20px}
+    .card p{margin:0;color:var(--mk-gray-200);line-height:1.55}
+    .tag{display:inline-block;font-size:12px;color:var(--mk-cyan-400);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+
+    .process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:28px;position:relative}
+    .process:before{content:"";position:absolute;left:7%;right:7%;top:15px;height:2px;background:linear-gradient(90deg,rgba(25,222,193,.15),rgba(25,222,193,.45),rgba(56,189,248,.35),rgba(25,222,193,.15));z-index:0}
+    .step{background:#0b1220;border:1px solid rgba(148,163,184,.2);padding:18px;border-radius:12px;position:relative;z-index:1}
+    .step b{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:999px;background:rgba(25,222,193,.2);color:var(--mk-teal-300);margin-bottom:10px}
+    .step h4{margin:0 0 8px;font-size:17px}
+    .step p{margin:0;color:var(--mk-gray-200);font-size:15px;line-height:1.45}
+
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+    .panel{background:#0b1220;border:1px solid rgba(148,163,184,.2);border-radius:var(--radius-lg);padding:24px}
+    .panel h3{margin:0 0 12px}
+    ul{margin:0;padding-left:20px;color:var(--mk-gray-200);line-height:1.7}
+    .value-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}
+    .value-chip{font-size:13px;color:var(--mk-gray-100);padding:10px 12px;border-radius:10px;border:1px solid rgba(148,163,184,.2);background:rgba(148,163,184,.08)}
+
+    .cta{background:linear-gradient(165deg,#0f172a,#071420);border:1px solid rgba(25,222,193,.25);border-radius:20px;padding:30px;margin-top:24px;position:relative;overflow:hidden}
+    .cta:before{content:"";position:absolute;inset:-30% -10% auto auto;width:320px;height:320px;background:radial-gradient(circle,rgba(25,222,193,.2),transparent 62%);pointer-events:none;animation:floatGlow 8s ease-in-out infinite}
+    .cta > *{position:relative;z-index:1}
+    .cta h3{margin:0 0 10px;font-size:32px;line-height:1.1}
+    .cta p{margin:0;color:var(--mk-gray-200);max-width:760px}
+    .cta-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+    .contrast-break{padding:42px 0;border-top:1px solid rgba(148,163,184,.18);border-bottom:1px solid rgba(148,163,184,.18)}
+    .break-kicker{margin:0 0 8px;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#7dd3fc;font-weight:700}
+    .contrast-break h3{margin:0;font-size:clamp(24px,3.4vw,40px);line-height:1.08;letter-spacing:-.02em}
+    .contrast-a .break-card{background:linear-gradient(135deg,#e2e8f0 0%,#cbd5e1 100%);color:#0b1220;padding:26px;border-radius:18px;border:1px solid rgba(255,255,255,.4)}
+    .contrast-a .break-kicker{color:#0f766e}
+    .contrast-b .break-split{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:18px;overflow:hidden;border:1px solid rgba(148,163,184,.24)}
+    .contrast-b .break-split > div:first-child{background:#111827;padding:24px}
+    .contrast-b .break-split > div:last-child{background:linear-gradient(135deg,#19DEC1,#38BDF8);color:#052126;padding:24px}
+    .contrast-b .break-split > div:last-child .break-kicker{color:#083344}
+    .contrast-c .break-band{padding:24px;border-radius:18px;background:linear-gradient(90deg,#020617 0%,#052e39 50%,#0e7490 100%);border:1px solid rgba(56,189,248,.4);box-shadow:0 12px 30px rgba(2,6,23,.45)}
+    .mini-link{display:inline-block;margin-top:12px;color:#67e8f9;font-weight:600}
+    @media (max-width:680px){.contrast-b .break-split{grid-template-columns:1fr}}
+
+    footer{padding:32px 0 50px;color:var(--mk-gray-400)}
+
+    @keyframes floatGlow {
+      0%,100% { transform: translateY(0px) scale(1); opacity:.8; }
+      50% { transform: translateY(-10px) scale(1.05); opacity:1; }
+    }
+    @keyframes pulseDot {
+      0%{box-shadow:0 0 0 0 rgba(25,222,193,.55)}
+      70%{box-shadow:0 0 0 8px rgba(25,222,193,0)}
+      100%{box-shadow:0 0 0 0 rgba(25,222,193,0)}
+    }
+    @keyframes drawPath {
+      to{stroke-dashoffset:0}
+    }
+    @keyframes drift {
+      to{stroke-dashoffset:-38}
+    }
+    @keyframes nodePulse {
+      0%,100%{r:5;opacity:1}
+      50%{r:6.5;opacity:.85}
+    }
+    @keyframes glowMove {
+      0%,100%{opacity:.35;transform:translateX(0)}
+      50%{opacity:.65;transform:translateX(-8px)}
+    }
+
+    @media (max-width:980px){
+      .links{display:none}
+      .hero-grid,.about{grid-template-columns:1fr}
+      .services{grid-template-columns:1fr 1fr}
+      .process{grid-template-columns:1fr 1fr}
+      .process:before{display:none}
+    }
+    @media (max-width:680px){
+      .services,.process{grid-template-columns:1fr}
+      .brand img{width:160px}
+      .hero{padding-top:56px}
+      h1{text-wrap:balance}
+      .value-grid{grid-template-columns:1fr}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Makrly home">
+        <img src="https://makrly.io/shared-assets/signatures/makrly-horizontal-logo-dark-bg-tight.svg?v=1" alt="Makrly logo" />
+      </a>
+      <nav class="links">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-primary" href="#contact">Book AI workflow audit</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="pill"><span class="dot"></span>Built for operational efficiency</span>
+          <h1>Practical <span class="teal">AI solutions</span> for small businesses ready to operate smarter.</h1>
+          <p class="lede">Makrly helps teams turn day-to-day bottlenecks into streamlined systems — from intake and quoting to communication and delivery. We bring strategy, implementation, and iteration so AI becomes useful in real operations.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Get a solution map</a>
+            <a class="btn btn-alt" href="#services">See solution lanes</a>
+          </div>
+          <div class="cred-row">
+            <span class="cred">Operational AI strategy</span>
+            <span class="cred">Workflow-first implementation</span>
+            <span class="cred">Fast iteration cycles</span>
+          </div>
+        </div>
+        <aside class="hero-card reveal" data-delay="120">
+          <h3>What your systems should do</h3>
+          <p>Not just “look good.” Your operations should answer: What comes in? Who handles it? What gets generated? What gets sent next?</p>
+          <div class="workflow-card" aria-hidden="true">
+            <div class="graph-head">
+              <span class="graph-label">Live Workflow Signal</span>
+              <span class="graph-pulse"><i></i>active</span>
+            </div>
+            <svg class="workflow-svg" viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="mkLine" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#19DEC1"/>
+                  <stop offset="100%" stop-color="#38BDF8"/>
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" width="360" height="140" rx="10" fill="rgba(15,23,42,.35)" stroke="rgba(148,163,184,.16)"/>
+              <g stroke="rgba(148,163,184,.18)" stroke-width="1">
+                <line x1="22" y1="28" x2="338" y2="28"/>
+                <line x1="22" y1="56" x2="338" y2="56"/>
+                <line x1="22" y1="84" x2="338" y2="84"/>
+                <line x1="22" y1="112" x2="338" y2="112"/>
+              </g>
+              <path d="M24 94 C54 92, 60 44, 92 48 C120 52, 132 102, 160 98 C192 92, 208 38, 236 46 C266 54, 282 108, 336 78" fill="none" stroke="rgba(56,189,248,.26)" stroke-width="6" stroke-linecap="round" class="signal-glow"/>
+              <path d="M24 94 C54 92, 60 44, 92 48 C120 52, 132 102, 160 98 C192 92, 208 38, 236 46 C266 54, 282 108, 336 78" fill="none" stroke="url(#mkLine)" stroke-width="4" stroke-linecap="round" class="signal-path"/>
+              <path d="M24 94 C54 92, 60 44, 92 48 C120 52, 132 102, 160 98 C192 92, 208 38, 236 46 C266 54, 282 108, 336 78" fill="none" stroke="rgba(25,222,193,.7)" stroke-width="1.8" stroke-linecap="round" class="signal-wave"/>
+              <circle cx="336" cy="78" r="5" fill="#19DEC1" class="signal-node"/>
+            </svg>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>Faster intake</strong><span>less back-and-forth admin</span></div>
+            <div class="stat"><strong>Cleaner handoffs</strong><span>standardized outputs</span></div>
+            <div class="stat"><strong>Better visibility</strong><span>clear next actions</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services" class="white-block">
+      <div class="container">
+        <span class="pill reveal"><span class="dot"></span>Core services</span>
+        <h2 class="reveal" data-delay="60">AI solution lanes designed for real business operations.</h2>
+        <p class="sub reveal" data-delay="120">Whether you’re AI-curious or already experimenting, we help you identify the best starting points and implement systems your team can actually run.</p>
+        <div class="services">
+          <article class="card reveal" data-delay="40">
+            <span class="tag">AI Workflow Automation</span>
+            <h3>Intake, routing, and follow-up flows</h3>
+            <p>Capture requests consistently, route them to the right person, and automate repetitive next steps so work keeps moving.</p>
+          </article>
+          <article class="card reveal" data-delay="100">
+            <span class="tag">Custom AI Tools</span>
+            <h3>Quote + scope packaging systems</h3>
+            <p>Turn field notes, measurements, and job details into clean proposal-ready outputs your team can use immediately.</p>
+          </article>
+          <article class="card reveal" data-delay="160">
+            <span class="tag">Web + Communication Layer</span>
+            <h3>Digital presence connected to workflow</h3>
+            <p>Websites, forms, and communication touchpoints designed to flow into your operating systems and keep execution moving.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contrast-break contrast-b reveal" aria-label="contrast break">
+      <div class="container">
+        <div class="break-split">
+          <div><p class="break-kicker">Before</p><h3>Manual handoffs<br>missed context</h3></div>
+          <div><p class="break-kicker">After</p><h3>Structured flows<br>clear next actions</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <span class="pill reveal"><span class="dot"></span>How we work</span>
+        <h2 class="reveal" data-delay="60">Simple, transparent, fast.</h2>
+        <p class="sub reveal" data-delay="120">Practical implementation with clear checkpoints — no bloated agency process.</p>
+        <div class="process">
+          <div class="step reveal" data-delay="40"><b>1</b><h4>Workflow diagnostic</h4><p>We map your current process, bottlenecks, and handoff gaps across intake, quoting, and communication.</p></div>
+          <div class="step reveal" data-delay="90"><b>2</b><h4>Solution architecture</h4><p>We define the operating system: what gets captured, transformed, routed, and delivered.</p></div>
+          <div class="step reveal" data-delay="140"><b>3</b><h4>Build + preview</h4><p>You get a live preview environment quickly so workflows can be tested in real context.</p></div>
+          <div class="step reveal" data-delay="190"><b>4</b><h4>Optimize</h4><p>We refine automation logic, prompts, outputs, and UX so the system gets cleaner with use.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="white-block">
+      <div class="container about">
+        <div class="reveal">
+          <span class="pill"><span class="dot"></span>Why Makrly</span>
+          <h2>Solutions-minded, implementation-focused, and built for owners who move fast.</h2>
+          <p class="sub">Makrly helps small businesses confidently adopt AI through practical systems, clear implementation, and hands-on refinement. We meet you where you are and build solutions that match your team, workflow, and goals.</p>
+        </div>
+        <div class="panel reveal" data-delay="120">
+          <h3>What clients get from this approach</h3>
+          <ul>
+            <li>Operational workflows that are easier to run and scale.</li>
+            <li>Standardized outputs for quoting, scoping, and internal handoffs.</li>
+            <li>Practical AI tooling that supports the team you already have.</li>
+            <li>A collaborative implementation partner focused on execution quality.</li>
+          </ul>
+          <div class="value-grid">
+            <div class="value-chip">Less admin drag</div>
+            <div class="value-chip">Faster internal response</div>
+            <div class="value-chip">Higher execution consistency</div>
+            <div class="value-chip">Clearer team accountability</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta reveal">
+          <span class="pill"><span class="dot"></span>Next step</span>
+          <h3>Let’s map your first operational AI workflow.</h3>
+          <p>We’ll identify one high-friction process and design a practical AI-enabled system your team can use immediately — a clear first step that compounds over time.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="mailto:hello@makrly.io">Book workflow audit</a>
+            <a class="btn btn-alt" href="https://makrly.io/brand-system/" target="_blank" rel="noopener noreferrer">View design system</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Makrly. Practical AI systems for small business operations. <span style="opacity:.7">(Contrast B2)</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const delay = Number(entry.target.dataset.delay || 0);
+          setTimeout(() => entry.target.classList.add('in'), delay);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+    revealEls.forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>
