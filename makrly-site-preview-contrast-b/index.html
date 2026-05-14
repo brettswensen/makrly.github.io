@@ -89,6 +89,15 @@
     h2{font-size:clamp(30px,4.2vw,50px);line-height:1.04;letter-spacing:-.026em;margin:14px 0 0;text-wrap:balance}
     .sub{margin-top:16px;color:var(--mk-gray-200);max-width:760px;font-size:clamp(16px,1.8vw,18px);line-height:1.64}
 
+    .white-block{background:var(--mk-gray-50) !important;color:#0f172a;border-top:1px solid #dbe5ef;border-bottom:1px solid #dbe5ef;padding:110px 0}
+    .white-block .pill{background:rgba(15,23,42,.06);border:1px solid rgba(15,23,42,.16);color:#0f766e}
+    .white-block .dot{background:#0ea5a4}
+    .white-block h2,.white-block h3,.white-block h4{color:#0b1220}
+    .white-block .sub,.white-block p,.white-block li{color:#334155}
+    .white-block .card,.white-block .panel,.white-block .step{background:#ffffff;border:1px solid #d8e1ec;box-shadow:0 12px 28px rgba(15,23,42,.08)}
+    .white-block .tag{color:#0e7490}
+    .white-block .value-chip{background:#f8fafc;border:1px solid #d8e1ec;color:#1e293b}
+
     .services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:30px}
     .card{background:linear-gradient(180deg,#0b1220,#0a1628);border:1px solid rgba(148,163,184,.2);border-radius:var(--radius);padding:20px;position:relative;overflow:hidden;transition:transform .26s ease, border-color .26s ease, box-shadow .26s ease, background .26s ease}
     .card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(25,222,193,.08),transparent 48%,rgba(56,189,248,.08));opacity:.6;pointer-events:none}
@@ -119,7 +128,7 @@
     .cta h3{margin:0 0 10px;font-size:32px;line-height:1.1}
     .cta p{margin:0;color:var(--mk-gray-200);max-width:760px}
     .cta-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
-    .contrast-break{padding:28px 0;border-top:1px solid rgba(148,163,184,.12);border-bottom:1px solid rgba(148,163,184,.12)}
+    .contrast-break{padding:42px 0;border-top:1px solid rgba(148,163,184,.18);border-bottom:1px solid rgba(148,163,184,.18)}
     .break-kicker{margin:0 0 8px;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#7dd3fc;font-weight:700}
     .contrast-break h3{margin:0;font-size:clamp(24px,3.4vw,40px);line-height:1.08;letter-spacing:-.02em}
     .contrast-a .break-card{background:linear-gradient(135deg,#e2e8f0 0%,#cbd5e1 100%);color:#0b1220;padding:26px;border-radius:18px;border:1px solid rgba(255,255,255,.4)}
@@ -249,7 +258,7 @@
       </div>
     </section>
 
-    <section id="services">
+    <section id="services" class="white-block">
       <div class="container">
         <span class="pill reveal"><span class="dot"></span>Core services</span>
         <h2 class="reveal" data-delay="60">AI solution lanes designed for real business operations.</h2>
@@ -297,7 +306,7 @@
       </div>
     </section>
 
-    <section id="about">
+    <section id="about" class="white-block">
       <div class="container about">
         <div class="reveal">
           <span class="pill"><span class="dot"></span>Why Makrly</span>
@@ -339,7 +348,7 @@
 
   <footer>
     <div class="container">
-      © <span id="year"></span> Makrly. Practical AI systems for small business operations.
+      © <span id="year"></span> Makrly. Practical AI systems for small business operations. <span style="opacity:.7">(Contrast B2)</span>
     </div>
   </footer>
 
