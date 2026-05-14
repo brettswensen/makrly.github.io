@@ -132,6 +132,26 @@
     .cta h3{margin:0 0 10px;font-size:32px;line-height:1.1}
     .cta p{margin:0;color:var(--mk-gray-200);max-width:760px}
     .cta-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+    .cta-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:start}
+    .cta-form{margin-top:24px}
+    .cta-form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+    .cta-input,.cta-select,.cta-textarea{width:100%;padding:13px 14px;border-radius:10px;border:1px solid rgba(148,163,184,.35);background:#f8fafc;color:#0b1220;font-size:15px;font-family:inherit}
+    .cta-input::placeholder,.cta-textarea::placeholder{color:#64748b}
+    .cta-input:focus,.cta-select:focus,.cta-textarea:focus{outline:none;border-color:var(--mk-teal-400);box-shadow:0 0 0 3px rgba(25,222,193,.22)}
+    .cta-select,.cta-textarea{margin-bottom:12px}
+    .cta-textarea{min-height:92px;resize:vertical}
+    .cta-form-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .cta-submit{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:10px;border:0;background:linear-gradient(135deg,var(--mk-teal-500),var(--mk-teal-400));color:#052126;font-weight:700;cursor:pointer}
+    .cta-submit:hover{transform:translateY(-1px)}
+    .cta-call{font-size:14px;color:var(--mk-gray-200)}
+    .cta-side{border:1px solid rgba(148,163,184,.22);border-radius:14px;padding:18px;background:rgba(2,6,23,.4)}
+    .cta-side h4{margin:0 0 12px;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--mk-gray-300, #cbd5e1)}
+    .ql{display:flex;gap:10px;align-items:flex-start}
+    .ql + .ql{margin-top:12px}
+    .ql .ico{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:rgba(25,222,193,.16);color:var(--mk-teal-300);flex-shrink:0}
+    .ql .ico svg{width:15px;height:15px}
+    .ql .t1{font-size:14px;font-weight:600;color:var(--mk-gray-100)}
+    .ql .t2{font-size:12px;color:var(--mk-gray-400);margin-top:3px}
     .contrast-break{padding:42px 0;border-top:1px solid rgba(148,163,184,.18);border-bottom:1px solid rgba(148,163,184,.18)}
     .break-kicker{margin:0 0 8px;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#7dd3fc;font-weight:700}
     .contrast-break h3{margin:0;font-size:clamp(24px,3.4vw,40px);line-height:1.08;letter-spacing:-.02em}
@@ -177,6 +197,7 @@
       .services{grid-template-columns:1fr 1fr}
       .process{grid-template-columns:1fr 1fr}
       .process:before{display:none}
+      .cta-grid{grid-template-columns:1fr}
     }
     @media (max-width:680px){
       .services,.process{grid-template-columns:1fr}
@@ -184,6 +205,8 @@
       .hero{padding-top:56px}
       h1{text-wrap:balance}
       .value-grid{grid-template-columns:1fr}
+      .cta-form-row{grid-template-columns:1fr}
+      .cta-form-actions{flex-direction:column;align-items:stretch}
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -343,12 +366,53 @@
     <section id="contact">
       <div class="container">
         <div class="cta reveal">
-          <span class="pill"><span class="dot"></span>Next step</span>
-          <h3>Let's map your first operational AI workflow.</h3>
-          <p>We'll pick one high-friction process, build a cleaner system around it, and give your team a practical first win.</p>
-          <div class="cta-actions">
-            <a class="btn btn-primary" href="mailto:hello@makrly.io">Book workflow audit</a>
-            <a class="btn btn-alt" href="https://makrly.io/brand-system/" target="_blank" rel="noopener noreferrer">View design system</a>
+          <div class="cta-grid">
+            <div>
+              <span class="pill"><span class="dot"></span>Next step</span>
+              <h3>Let's map your first operational AI workflow.</h3>
+              <p>Tell us a little about your process. We will reply with a focused plan for the first system to build.</p>
+
+              <form class="cta-form" onsubmit="event.preventDefault(); alert('Thanks. We got your request and will follow up shortly.');">
+                <div class="cta-form-row">
+                  <input class="cta-input" type="text" placeholder="First name" required>
+                  <input class="cta-input" type="text" placeholder="Last name" required>
+                </div>
+                <div class="cta-form-row">
+                  <input class="cta-input" type="tel" placeholder="Phone" required>
+                  <input class="cta-input" type="email" placeholder="Email" required>
+                </div>
+                <select class="cta-select" required>
+                  <option value="" disabled selected>What do you want to improve first?</option>
+                  <option>Intake and lead routing</option>
+                  <option>Quoting and scope generation</option>
+                  <option>Team handoffs and follow-up</option>
+                  <option>Website form to ops workflow</option>
+                  <option>General AI operations plan</option>
+                </select>
+                <textarea class="cta-textarea" placeholder="Share the current bottleneck, team size, and what a win looks like."></textarea>
+                <div class="cta-form-actions">
+                  <button type="submit" class="cta-submit">Get solution map
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                  </button>
+                  <a class="cta-call" href="mailto:hello@makrly.io">Or email hello@makrly.io</a>
+                </div>
+              </form>
+            </div>
+            <aside class="cta-side">
+              <h4>What happens next</h4>
+              <div class="ql">
+                <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9-6-18-3 9H2"/></svg></div>
+                <div><div class="t1">Fast response</div><div class="t2">We usually reply the same business day.</div></div>
+              </div>
+              <div class="ql">
+                <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+                <div><div class="t1">Practical plan</div><div class="t2">You get clear scope and recommended first build.</div></div>
+              </div>
+              <div class="ql">
+                <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 3 18 18"/><path d="M17 17H7a4 4 0 0 1-4-4V7"/><path d="M21 7v6a4 4 0 0 1-4 4"/></svg></div>
+                <div><div class="t1">No fluff</div><div class="t2">No long pitch deck. Just the workflow path forward.</div></div>
+              </div>
+            </aside>
           </div>
         </div>
       </div>
