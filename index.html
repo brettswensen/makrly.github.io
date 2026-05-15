@@ -236,13 +236,55 @@
       .cta-grid{grid-template-columns:1fr}
     }
     @media (max-width:680px){
+      .container{padding:0 16px}
+      .nav{height:auto;padding:12px 0;gap:10px;align-items:flex-start;flex-wrap:wrap}
+      .brand{min-height:34px}
+      .brand img{width:152px}
+      .nav > .btn{padding:10px 12px;font-size:13px;border-radius:10px;white-space:nowrap}
+
+      section{padding:60px 0}
+      .hero{padding:46px 0 54px}
+      h1{font-size:clamp(32px,10.2vw,44px);line-height:1.02;letter-spacing:-.03em;text-wrap:pretty}
+      .lede{font-size:17px;line-height:1.55}
+      h2{font-size:clamp(28px,8.4vw,36px);line-height:1.08}
+      .sub{font-size:16px;line-height:1.58}
+
+      .hero-actions,.cta-actions{flex-direction:column;align-items:stretch}
+      .hero-actions .btn,.cta-actions .btn{justify-content:center}
+      .cred-row{gap:8px}
+      .cred{font-size:11px;padding:7px 10px}
+
+      .hero-card{padding:18px}
+      .workflow-card{padding:12px}
+      .stats{grid-template-columns:1fr}
+
       .services,.process{grid-template-columns:1fr}
-      .brand img{width:160px}
-      .hero{padding-top:56px}
-      h1{text-wrap:balance}
+      .card,.step,.panel{padding:18px}
+      .process{gap:12px}
       .value-grid{grid-template-columns:1fr}
+
+      .white-block{padding:72px 0}
+      .contrast-break{padding:54px 0}
+      .break-intro{margin-bottom:18px}
+
+      .cta{padding:22px}
+      .cta h3{font-size:28px}
+      .cta-form{margin-top:18px}
       .cta-form-row{grid-template-columns:1fr}
       .cta-form-actions{flex-direction:column;align-items:stretch}
+      .cta-submit{justify-content:center}
+      .cta-side{padding:16px}
+
+      footer{padding:28px 0 40px}
+    }
+
+    @media (max-width:420px){
+      .container{padding:0 14px}
+      .brand img{width:142px}
+      h1{font-size:clamp(30px,10.8vw,38px)}
+      .hero{padding-top:40px}
+      .cta h3{font-size:25px}
+      .pill{font-size:11px;padding:7px 10px}
     }
 
     @media (prefers-reduced-motion: reduce){
