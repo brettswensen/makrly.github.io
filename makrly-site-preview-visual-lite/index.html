@@ -106,12 +106,10 @@
     .white-block .card:hover .tag{color:#7dd3fc}
     .white-block .value-chip{background:linear-gradient(135deg,#ecfeff 0%,#f0fdfa 100%);border:1px solid #a7f3d0;color:#0f172a;box-shadow:0 6px 14px rgba(15,23,42,.06)}
     .white-block .micro-point{background:#f1f5f9;border:1px solid #cbd5e1;color:#0f172a}
-    .white-block .micro-point i{background:#dbeafe;color:#0b3b54}
 
     .services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:30px}
     .micro-points{display:grid;gap:8px;margin-top:12px}
-    .micro-point{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;background:rgba(148,163,184,.1);border:1px solid rgba(148,163,184,.2);font-size:12px;font-weight:600;color:var(--mk-gray-100)}
-    .micro-point i{width:16px;height:16px;border-radius:50%;display:grid;place-items:center;background:rgba(25,222,193,.2);color:var(--mk-teal-300);font-style:normal;font-size:10px;line-height:1}
+    .micro-point{display:block;padding:8px 10px;border-radius:999px;background:rgba(148,163,184,.1);border:1px solid rgba(148,163,184,.2);font-size:12px;font-weight:600;color:var(--mk-gray-100)}
     .card{background:linear-gradient(180deg,#0b1220,#0a1628);border:1px solid rgba(148,163,184,.2);border-radius:var(--radius);padding:20px;position:relative;overflow:hidden;transition:transform .26s ease, border-color .26s ease, box-shadow .26s ease, background .26s ease}
     .card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(25,222,193,.08),transparent 48%,rgba(56,189,248,.08));opacity:.6;pointer-events:none}
     .card:after{content:"";position:absolute;inset:auto -20% -60% auto;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(25,222,193,.16),transparent 68%);pointer-events:none;transition:transform .35s ease}
@@ -184,9 +182,8 @@
     .contrast-b .break-panel h3{margin-bottom:10px}
     .contrast-b .break-panel p{margin:0 0 12px;font-size:15px;line-height:1.45}
     .contrast-b .break-list{margin:0;padding-left:18px;display:grid;gap:8px;font-size:14px;line-height:1.45}
-    .icon-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
-    .icon-list li{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;background:rgba(5,33,38,.1);border:1px solid rgba(5,33,38,.18);color:#041316;font-weight:600}
-    .icon-list i{width:18px;height:18px;border-radius:6px;display:grid;place-items:center;background:rgba(5,33,38,.18);font-style:normal;font-size:11px;line-height:1;color:#041316;flex-shrink:0}
+    .signal-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+    .signal-list li{display:block;padding:9px 12px;border-radius:10px;background:rgba(5,33,38,.08);border:1px solid rgba(5,33,38,.16);color:#041316;font-weight:600}
     .contrast-b .break-metric{margin-top:14px;display:inline-block;padding:7px 10px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.03em}
     .contrast-b .break-panel.before{background:#111827}
     .contrast-b .break-panel.before .break-metric{background:rgba(248,113,113,.14);border:1px solid rgba(248,113,113,.4);color:#fecaca}
@@ -390,8 +387,8 @@
             <h3>Intake, routing, and follow-up flows</h3>
             <p>Capture requests the same way every time, route them to the right person, and automate the repetitive follow-up.</p>
             <div class="micro-points">
-              <span class="micro-point"><i>✓</i>Required fields at intake</span>
-              <span class="micro-point"><i>✓</i>Auto-route to owner</span>
+              <span class="micro-point">Required fields at intake</span>
+              <span class="micro-point">Auto-route to owner</span>
             </div>
           </article>
           <article class="card reveal" data-delay="100">
@@ -399,8 +396,8 @@
             <h3>Quote + scope packaging systems</h3>
             <p>Turn field notes, measurements, and job details into quote drafts your team can review and send fast.</p>
             <div class="micro-points">
-              <span class="micro-point"><i>✓</i>Draft scope output</span>
-              <span class="micro-point"><i>✓</i>Review-ready quote packet</span>
+              <span class="micro-point">Draft scope output</span>
+              <span class="micro-point">Review-ready quote packet</span>
             </div>
           </article>
           <article class="card reveal" data-delay="160">
@@ -408,8 +405,8 @@
             <h3>Digital presence connected to workflow</h3>
             <p>Connect your website and forms to the tools your team already uses so nothing gets lost between sales and delivery.</p>
             <div class="micro-points">
-              <span class="micro-point"><i>✓</i>Form-to-workflow handoff</span>
-              <span class="micro-point"><i>✓</i>Status updates in sync</span>
+              <span class="micro-point">Form-to-workflow handoff</span>
+              <span class="micro-point">Status updates in sync</span>
             </div>
           </article>
         </div>
@@ -442,10 +439,10 @@
             <p class="break-kicker">After</p>
             <h3>Structured flows<br>clear next actions</h3>
             <p>Every request enters the same path, gets routed immediately, and produces a consistent output your team can act on right away.</p>
-            <ul class="icon-list">
-              <li><i>🧾</i><span>Standard intake with required context</span></li>
-              <li><i>📦</i><span>Auto-drafted quote package for review</span></li>
-              <li><i>🧭</i><span>Assigned next step and status visibility</span></li>
+            <ul class="signal-list">
+              <li>Standard intake with required context</li>
+              <li>Auto-drafted quote package for review</li>
+              <li>Assigned next step and status visibility</li>
             </ul>
             <span class="break-metric">Same-day quote delivery on most jobs</span>
           </div>
