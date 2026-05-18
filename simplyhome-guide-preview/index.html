@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simply Home Buyer + Seller Guide (Web Version)</title>
+  <style>
+    :root{--teal:#003040;--teal2:#004050;--teal3:#104050;--gold:#C08040;--light:#F0F0F0;--dark:#000;--g1:#606060;--g2:#707070;--white:#fff}
+    *{box-sizing:border-box} body{margin:0;font-family:Montserrat,Arial,sans-serif;color:var(--teal);background:var(--light)}
+    .top{background:linear-gradient(120deg,var(--teal3),var(--teal));color:#fff;padding:20px 22px;position:sticky;top:0;z-index:5}
+    .top-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:20px;justify-content:space-between}
+    .logo{background:#fff;padding:8px 12px;border-radius:3px}.logo img{height:42px;display:block}
+    .meta{font-size:13px;line-height:1.4;text-align:right}
+    .meta a{color:#fff}
+    .wrap{max-width:1200px;margin:24px auto;padding:0 16px 28px}
+    .hero{background:#fff;border-radius:14px;padding:24px;border:1px solid #dbe3e8}
+    .hero h1{margin:0 0 8px;font-family:Georgia,serif;font-size:42px;color:var(--teal)}
+    .hero p{margin:4px 0;color:var(--g1)}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+    .section-title{margin:28px 0 10px;font-size:22px;letter-spacing:.4px;color:var(--teal2)}
+    .card{background:#fff;border:1px solid #dbe3e8;border-radius:14px;overflow:hidden}
+    .thumb{aspect-ratio:16/9;background:#d6dde2}
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .body{padding:14px 14px 16px}
+    .k{font-size:11px;letter-spacing:1.6px;color:var(--g2);text-transform:uppercase;margin-bottom:6px}
+    .t{font-family:Georgia,serif;font-size:28px;color:var(--teal);margin:0 0 6px}
+    .d{font-size:14px;color:var(--g1);line-height:1.45;margin:0}
+    .pill{display:inline-block;background:rgba(192,128,64,.14);color:#8c5d2e;border:1px solid rgba(192,128,64,.35);padding:4px 8px;border-radius:999px;font-size:11px;margin-top:10px}
+    @media(max-width:920px){.grid{grid-template-columns:1fr}.hero h1{font-size:32px}.meta{display:none}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <div class="logo"><img src="assets/img_0c71a4226f94.jpg" alt="Simply Home logo"></div>
+      <div class="meta">
+        Tiffani Swensen • Simply Home<br>
+        <a href="mailto:tiffani@simplyhome.io">tiffani@simplyhome.io</a> • 801-403-7779
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Home Buyer & Seller Guide</h1>
+      <p>Web conversion of your uploaded template with locked Simply Home colors and logo.</p>
+      <p>Images are intentionally left from template placeholders for now, as requested.</p>
+    </section>
+
+    <h2 class="section-title">Seller Guide Pages</h2>
+    <section class="grid">
+      <article class="card"><div class="thumb"><img src="assets/img_ac269a6cd6c3.jpg"></div><div class="body"><div class="k">Seller</div><h3 class="t">About Your Situation</h3><p class="d">Clarify timeline, motivation, and decision priorities before listing.</p><span class="pill">Branded copy + colors</span></div></article>
+      <article class="card"><div class="thumb"><img src="assets/img_fa15360c8257.jpg"></div><div class="body"><div class="k">Seller</div><h3 class="t">Meet Our Team</h3><p class="d">Introduce your process support and communication expectations.</p></div></article>
+      <article class="card"><div class="thumb"><img src="assets/img_9013dfb48d21.jpg"></div><div class="body"><div class="k">Seller</div><h3 class="t">About Your Home</h3><p class="d">Capture features, neighborhood strengths, and seller notes for positioning.</p></div></article>
+      <article class="card"><div class="thumb"><img src="assets/img_4e14a890d0f3.jpg"></div><div class="body"><div class="k">Seller</div><h3 class="t">Listing Roadmap</h3><p class="d">Preparation, pricing, launch, negotiations, and closing checkpoints.</p></div></article>
+    </section>
+
+    <h2 class="section-title">Buyer Guide Pages</h2>
+    <section class="grid">
+      <article class="card"><div class="thumb"><img src="assets/img_bbff8beb1216.jpg"></div><div class="body"><div class="k">Buyer</div><h3 class="t">Buyer Roadmap</h3><p class="d">From pre-approval to keys in hand with step-by-step guidance.</p></div></article>
+      <article class="card"><div class="thumb"><img src="assets/img_033eb7105643.jpg"></div><div class="body"><div class="k">Buyer</div><h3 class="t">Financing & Lenders</h3><p class="d">Mortgage planning, lender coordination, and monthly payment strategy.</p></div></article>
+      <article class="card"><div class="thumb"><img src="assets/img_304104e76295.jpg"></div><div class="body"><div class="k">Buyer</div><h3 class="t">Offers & Negotiations</h3><p class="d">Write competitive offers and protect terms through contingencies.</p></div></article>
+      <article class="card"><div class="thumb"><img src="assets/img_3943668a5264.jpg"></div><div class="body"><div class="k">Buyer</div><h3 class="t">Closing Preparation</h3><p class="d">Final walkthrough, settlement details, and move-in readiness checklist.</p></div></article>
+    </section>
+  </main>
+</body>
+</html>
