@@ -1,0 +1,36 @@
+{
+  "buyers": [
+    {
+      "id": "buyer-a",
+      "name": "Buyer A",
+      "headline": "Let\u2019s Find Your Home",
+      "agent_name": "Tiffani Swensen",
+      "phone": "801-403-7779",
+      "email": "tiffani@simplyhome.io"
+    },
+    {
+      "id": "buyer-b",
+      "name": "Buyer B",
+      "headline": "Your Homebuying Plan",
+      "agent_name": "Tiffani Swensen",
+      "phone": "801-403-7779",
+      "email": "tiffani@simplyhome.io"
+    },
+    {
+      "id": "buyer-c",
+      "name": "Buyer C",
+      "headline": "Homeownership Starts Here",
+      "agent_name": "Tiffani Swensen",
+      "phone": "801-403-7779",
+      "email": "tiffani@simplyhome.io"
+    },
+    {
+      "id": "buyer-d",
+      "name": "Buyer D",
+      "headline": "Buy Confidently",
+      "agent_name": "Tiffani Swensen",
+      "phone": "801-403-7779",
+      "email": "tiffani@simplyhome.io"
+    }
+  ]
+}

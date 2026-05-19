@@ -1,14 +1,44 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page 01</title><link rel="stylesheet" href="assets/styles.css"></head><body>
-<div class="page">
-<div class="hero-img" aria-label="replaceable hero image"></div><div class="overlay"></div>
-<div class="cover-copy">
-  <h1 contenteditable="true">LET’S FIND<br>YOUR HOME</h1>
-  <p contenteditable="true">Simply Home Buyer Guide</p>
+<!doctype html>
+<html><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simply Home Buyer Guide • Page 01</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head><body>
+<div class="wrap">
+  <div class="topbar">Fully Editable HTML • Source PDF structure preserved • Page 01 • <a href="index.html">Back to index</a></div>
+  <main class="page-shell">
+    <img class="base" src="assets/pdf-pages/page-01.jpg" alt="Source PDF page 01">
+    <div class="tint"></div>
+    <div class="gold-accent"></div>
+    <div class="edit-layer">
+    <section class="block" style="left:72px;top:100px;width:820px;">
+      <div class="badge">SIMPLY HOME</div>
+      <h2 class="title" contenteditable="true">Let’s Find Your Home</h2>
+      <p class="sub" contenteditable="true">Cover Page — editable copy field that preserves original PDF structure underneath.</p>
+    </section>
+    <section class="block" style="left:72px;top:320px;width:700px;">
+      <p class="small" contenteditable="true">Update this paragraph for each buyer while keeping page layout, imagery, and iconography from the source PDF design.</p>
+      <p class="small" contenteditable="true"><strong>Agent:</strong> <span data-profile="agent_name">Tiffani Swensen</span> &nbsp; <strong>Phone:</strong> <span data-profile="phone">801-403-7779</span></p>
+      <p class="small" contenteditable="true"><strong>Email:</strong> <span data-profile="email">tiffani@simplyhome.io</span></p>
+    </section>
+    </div>
+    <div class="meta">Page 01 · Cover Page</div>
+  </main>
 </div>
-<div class="brandbar"></div>
-<section class="bottom">
-  <div class="kicker" contenteditable="true">SIMPLY HOME MORTGAGE</div>
-  <h2 class="h2" contenteditable="true">Confident Buying Starts Here</h2>
-  <p class="p" contenteditable="true">This guide mirrors your original PDF structure and is fully editable in HTML for buyer-specific versions.</p>
-</section>
-</div></body></html>
+<script>
+(async function(){
+  const qs = new URLSearchParams(location.search);
+  const buyer = qs.get('buyer') || 'buyer-a';
+  try {
+    const r = await fetch('data/buyer-variants.json');
+    const data = await r.json();
+    const p = (data.buyers||[]).find(x=>x.id===buyer) || (data.buyers||[])[0];
+    if(!p) return;
+    document.querySelectorAll('[data-profile]').forEach(el=>{
+      const k = el.getAttribute('data-profile');
+      if(p[k]) el.textContent = p[k];
+    });
+  } catch(e){}
+})();
+</script>
+</body></html>
