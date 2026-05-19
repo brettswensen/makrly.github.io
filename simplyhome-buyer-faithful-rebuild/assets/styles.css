@@ -1,0 +1,25 @@
+
+:root{--teal900:#003040;--teal800:#004050;--teal700:#104050;--gold:#C08040;--g0:#fff;--g1:#f0f0f0;--g6:#606060;--g5:#707070}
+*{box-sizing:border-box} body{margin:0;background:#e9eef0;font-family:Montserrat,Arial,sans-serif;color:#111}
+.page{width:1275px;min-height:1650px;margin:24px auto;background:#fff;position:relative;overflow:hidden;box-shadow:0 12px 28px rgba(0,0,0,.14)}
+.hero-img{position:absolute;inset:0 0 auto 0;height:760px;background:#cad7de url('../simplyhome-guide-preview/assets/pdf-pages/page-01.jpg') center/cover no-repeat;filter:saturate(.85)}
+.overlay{position:absolute;inset:0 0 auto 0;height:760px;background:linear-gradient(180deg,rgba(0,48,64,.58),rgba(0,48,64,.50));}
+.brandbar{position:absolute;left:0;right:0;top:760px;height:12px;background:var(--gold)}
+.cover-copy{position:absolute;left:95px;top:410px;color:#fff;max-width:980px}
+.cover-copy h1{font-size:86px;line-height:.96;margin:0 0 20px;font-weight:700;letter-spacing:.01em}
+.cover-copy p{font-size:34px;line-height:1.2;margin:0;color:#e8f2f5}
+.bottom{position:absolute;left:0;right:0;bottom:0;height:878px;background:#fff;padding:80px 95px}
+.kicker{font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal800);font-weight:700}
+.h2{font-size:58px;line-height:1.02;color:var(--teal900);margin:14px 0 18px;font-weight:700}
+.p{font-size:30px;line-height:1.35;color:#495a62;max-width:980px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:38px}
+.card{border:1px solid #d9e1e5;border-radius:14px;padding:34px;background:#fff}
+.card h3{margin:0 0 12px;color:var(--teal900);font-size:44px}
+.card p,.card li{font-size:28px;line-height:1.4;color:#4e5e66}
+.badge{display:inline-block;background:#edf4f7;color:var(--teal800);padding:8px 14px;border-radius:999px;font-size:18px;font-weight:700;letter-spacing:.06em}
+.iconrow{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+.icon{border:1px solid #cfdae0;border-radius:12px;padding:24px;text-align:center}
+.icon .glyph{font-size:48px;color:var(--gold)}
+.icon .txt{font-size:22px;color:#56656d;margin-top:10px}
+.edit{outline:0} [contenteditable="true"]:focus{box-shadow:0 0 0 3px rgba(192,128,64,.35);border-radius:6px}
+.links{width:1275px;margin:18px auto;font-size:16px}.links a{margin-right:10px}
