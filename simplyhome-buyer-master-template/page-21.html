@@ -1,0 +1,54 @@
+<!doctype html>
+<html><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simply Home • Thank You</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head><body>
+<main class="page">
+  <header class="header">
+    <div class="kicker" contenteditable="true">Simply Home Buyer Guide</div>
+    <h1 contenteditable="true">Thank You</h1>
+    <p contenteditable="true">We’re excited to help you become a homeowner.</p>
+  </header>
+  <div class="gold-line"></div>
+  <section class="content two-col">
+    <article>
+      <h2 class="h2" contenteditable="true">Thank You</h2>
+      <p class="p" contenteditable="true">Use this section for buyer-specific copy. Everything on this page is editable directly in HTML, and can be swapped for each buyer scenario.</p>
+      <p class="p" contenteditable="true">Keep this master design and only update text, images, and minor section details per buyer.</p>
+      <ul class="list" contenteditable="true">
+        <li>Editable bullet one</li>
+        <li>Editable bullet two</li>
+        <li>Editable bullet three</li>
+      </ul>
+      <span class="badge" contenteditable="true">BRAND ACCENT</span>
+    </article>
+    <aside>
+      <div class="card">
+        <h3 class="h3" contenteditable="true">Image / Icon Area</h3>
+        <div class="img-box">Replace with buyer-specific photo, icon set, or infographic</div>
+        <p class="small" contenteditable="true">Tip: Replace this block with an actual &lt;img&gt; tag when finalizing each buyer version.</p>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <h3 class="h3">Contact</h3>
+        <p class="p" style="margin:0">
+          <strong id="agent-name"></strong><br>
+          <span id="company"></span><br>
+          <span id="phone"></span><br>
+          <span id="email"></span>
+        </p>
+      </div>
+    </aside>
+  </section>
+  <footer class="footer">Master Template • Page 21 • Fully Editable HTML</footer>
+</main>
+<script>
+fetch('data/buyer-profiles.json').then(r=>r.json()).then(data=>{
+ const p=data.default||{};
+ document.getElementById('agent-name').textContent=p.agent_name||'';
+ document.getElementById('company').textContent=p.company||'';
+ document.getElementById('phone').textContent=p.phone||'';
+ document.getElementById('email').textContent=p.email||'';
+})
+</script>
+</body></html>
