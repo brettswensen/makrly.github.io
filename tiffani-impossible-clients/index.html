@@ -116,24 +116,6 @@
   .client-card { border-color: rgba(139, 92, 246, 0.15); background: rgba(139, 92, 246, 0.03); }
   .client-card .card-label { color: #a78bfa; }
 
-  .question-card { border-color: rgba(251, 191, 36, 0.15); background: rgba(251, 191, 36, 0.03); }
-  .question-card .card-label { color: #fbbf24; }
-
-  .live-prompt {
-    background: rgba(20, 184, 166, 0.08); border: 2px solid rgba(20, 184, 166, 0.25);
-    border-radius: 16px; padding: 24px; margin: 20px 0; text-align: center;
-  }
-  .live-prompt .icon { font-size: 40px; margin-bottom: 8px; }
-  .live-prompt p { font-size: 1rem; color: #5eead4; line-height: 1.5; }
-  .live-prompt strong { color: #14b8a6; }
-
-  .volunteer-box {
-    background: rgba(139, 92, 246, 0.05); border: 2px dashed rgba(139, 92, 246, 0.3);
-    border-radius: 16px; padding: 24px; margin: 20px 0; text-align: center;
-  }
-  .volunteer-box .icon { font-size: 36px; margin-bottom: 8px; }
-  .volunteer-box p { font-size: 0.95rem; color: #a78bfa; line-height: 1.5; }
-
   .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
     background: rgba(20, 184, 166, 0.1); border: 1px solid rgba(20, 184, 166, 0.25);
@@ -145,8 +127,6 @@
     background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
     border-radius: 16px; padding: 32px; text-align: center; margin-top: 32px;
   }
-  .cta-title { color: #14b8a6; font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; }
-  .cta-text { color: #94a3b8; font-size: 1rem; line-height: 1.6; }
 
   .btn {
     padding: 14px 32px; border-radius: 50px; font-weight: 600;
@@ -158,29 +138,18 @@
   .btn-secondary { background: transparent; color: #14b8a6; border: 1px solid rgba(20, 184, 166, 0.4); }
   .btn-secondary:hover { background: rgba(20, 184, 166, 0.1); }
 
-  .number-badge {
-    width: 44px; height: 44px;
-    background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
-    color: #0a0a0a; border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 1.1rem; margin: 0 auto 16px;
-  }
-
   footer {
     background: #0a0a0a; padding: 40px 24px; text-align: center;
     border-top: 1px solid rgba(255,255,255,0.05);
   }
   footer p { color: #475569; font-size: 0.8rem; }
 
-  .contact-info { text-align: center; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.08); }
-  .contact-info h3 { font-size: 1.5rem; margin-bottom: 8px; }
-  .contact-info p { color: #64748b; font-size: 0.95rem; margin: 4px 0; }
   .license { color: #14b8a6; font-weight: 500; margin-top: 16px; font-size: 0.85rem; }
 </style>
 </head>
 <body>
 
-<!-- SLIDE 1: Title / How It Works -->
+<!-- SLIDE 1: Title -->
 <section class="hero">
   <div class="hero-grid"></div>
   <div class="container">
@@ -191,14 +160,7 @@
         Three borrowers. Three situations that sound impossible.<br>
         Spoiler: they're not.
       </p>
-      <div class="card" style="max-width: 580px; margin: 0 auto;">
-        <div class="card-label" style="color: #14b8a6;">🎯 How This Works</div>
-        <div class="card-text">
-          I'll hand a card to a volunteer. They <strong>become</strong> the client — introduce themselves, tell their story, and present their "impossible" problem.<br><br>
-          Then I <strong>swoop in like a mortgage superhero</strong> and show how we strategize a solution together. The group gets to guess: <em>Is this actually impossible?</em>
-        </div>
-      </div>
-      <p style="color: #64748b; font-size: 0.85rem; margin-top: 24px;">Scroll down to begin ↓</p>
+      <p style="color: #64748b; font-size: 0.85rem; margin-top: 32px;">Scroll down ↓</p>
     </div>
   </div>
 </section>
@@ -209,61 +171,45 @@
     <div class="section-header">
       <span class="section-badge">Scenario 1 of 3</span>
       <h2 class="section-title">The Job-Hopping Veteran</h2>
-      <p class="section-subtitle">A volunteer "becomes" this person. Make it funny. Get into character.</p>
-    </div>
-    <div class="volunteer-box animate-on-scroll">
-      <div class="icon">🙋‍♂️</div>
-      <p><strong>Volunteer:</strong> Introduce yourself to the group. Your name, your story, your situation. Make it real.</p>
+      <p class="section-subtitle">"I'll never qualify with my work history."</p>
     </div>
     <div class="card client-card animate-on-scroll">
-      <div class="card-label">👤 You Are...</div>
+      <div class="card-label">👤 The Client</div>
       <div class="card-text">
-        A veteran who served in the military. You have your <strong>Certificate of Eligibility</strong> and know you can buy with <strong>zero down</strong>. You're also <strong>100% disabled</strong>.<br><br>
-        You came to this meeting thinking: <span class="highlight">"I'll never qualify."</span>
+        A disabled veteran with a <strong>Certificate of Eligibility</strong> who can buy with <strong>zero down</strong>. He's had <span class="highlight">6 jobs in the last 2 years</span> and is <strong>100% disabled</strong>. His spouse thinks homeownership is a pipe dream.
       </div>
     </div>
     <div class="card problem-card animate-on-scroll">
-      <div class="card-label">❌ Your "Impossible" Problem</div>
+      <div class="card-label">❌ The Problem</div>
       <div class="card-text">
-        "I have <strong>6 jobs in 2 years</strong>. No lender will touch me. I'm disabled, I have no stability, and my spouse thinks buying a home is a pipe dream. Why would anyone give me a loan?"
-      </div>
-    </div>
-    <div class="live-prompt animate-on-scroll">
-      <div class="icon">🎤</div>
-      <p><strong>Tiffani takes over now.</strong><br>She'll ask questions, dig into your situation, and strategize a solution right here — live.</p>
-    </div>
-    <div class="card question-card animate-on-scroll">
-      <div class="card-label">💬 Group Question</div>
-      <div class="card-text">
-        <strong>Is this actually impossible? What would you do?</strong>
+        "I have no stability. Six jobs in two years? I'm unqualified. And I'm disabled — who would give me a loan?"
       </div>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 3: Scenario 1 — The Reveal -->
+<!-- SLIDE 3: Scenario 1 — The Solution -->
 <section style="background: linear-gradient(180deg, #0f172a 0%, #0a0a0a 100%);">
   <div class="container">
     <div class="section-header">
-      <span class="section-badge">The Reveal</span>
-      <h2 class="section-title">The Job-Hopping Veteran — Solved</h2>
+      <span class="section-badge">How Tiffani Solved It</span>
+      <h2 class="section-title">The Job-Hopping Veteran</h2>
     </div>
     <div class="card solution-card animate-on-scroll">
-      <div class="card-label">✅ What Tiffani Found</div>
+      <div class="card-label">✅ The Strategy</div>
       <div class="card-text">
-        She walked through his <strong>2-year work history</strong>. Six jobs, yes — but every single one was <strong>in the same industry</strong>. And there was <strong>never more than a 3-day gap</strong> between positions.<br><br>
-        That showed <strong>consistency</strong>, not chaos. He qualified for a <strong>VA loan</strong> with his Certificate of Eligibility — 6 jobs and all.
+        Tiffani walked through his 2-year work history. Six jobs — but every single one was <strong>in the same industry</strong>. And there was <strong>never more than a 3-day gap</strong> between positions.<br><br>
+        That showed <strong>consistency</strong>, not chaos. He qualified for a <strong>VA loan</strong> with his Certificate of Eligibility.
       </div>
     </div>
     <div class="card solution-card animate-on-scroll">
       <div class="card-label">🎁 The Bonus Win</div>
       <div class="card-text">
-        Because he's <strong>100% disabled</strong>, Tiffani also got his <strong>property taxes removed entirely</strong>. His monthly payment dropped even further.<br><br>
-        What felt like a pipe dream became a dream home — with money left over every month.
+        Because he's <strong>100% disabled</strong>, Tiffani also got his <strong>property taxes removed entirely</strong>. His monthly payment dropped even further — more money in his pocket every month.
       </div>
     </div>
     <div style="text-align: center;">
-      <div class="hero-badge">🦸‍♀️ Mortgage Superhero Strikes Again</div>
+      <div class="hero-badge">🦸‍♀️ Problem Solved</div>
     </div>
   </div>
 </section>
@@ -274,50 +220,35 @@
     <div class="section-header">
       <span class="section-badge">Scenario 2 of 3</span>
       <h2 class="section-title">The Contingent Buyer</h2>
-      <p class="section-subtitle">A volunteer "becomes" this person. Tell us about your dream move.</p>
-    </div>
-    <div class="volunteer-box animate-on-scroll">
-      <div class="icon">🙋‍♀️</div>
-      <p><strong>Volunteer:</strong> You live in Herriman but your heart is set on Cottonwood Heights. Your agent just burst your bubble. Act it out.</p>
+      <p class="section-subtitle">"I can't buy without selling first."</p>
     </div>
     <div class="card client-card animate-on-scroll">
-      <div class="card-label">👤 You Are...</div>
+      <div class="card-label">👤 The Client</div>
       <div class="card-text">
-        You own a home in <strong>Herriman</strong> and want to move to <strong>Cottonwood Heights</strong> — a more coveted area with way hotter competition.<br><br>
-        You came to this meeting thinking: <span class="highlight">"I'll never get an offer accepted."</span>
+        Owns a home in <strong>Herriman</strong> and wants to move to <strong>Cottonwood Heights</strong> — a more coveted, competitive area. Her agent told her contingent offers won't even be looked at.
       </div>
     </div>
     <div class="card problem-card animate-on-scroll">
-      <div class="card-label">❌ Your "Impossible" Problem</div>
+      <div class="card-label">❌ The Problem</div>
       <div class="card-text">
-        "My agent told me: 'If your offer is contingent on selling your Herriman house, they won't even look at it.' I have to sell before I can buy. But I can't buy without selling first. It's a chicken-and-egg problem in the most competitive market around. I'm stuck."
-      </div>
-    </div>
-    <div class="live-prompt animate-on-scroll">
-      <div class="icon">🎤</div>
-      <p><strong>Tiffani takes over now.</strong><br>She'll ask questions about your finances, your timeline, and find the path no one else saw.</p>
-    </div>
-    <div class="card question-card animate-on-scroll">
-      <div class="card-label">💬 Group Question</div>
-      <div class="card-text">
-        <strong>Is this actually impossible? What's the workaround?</strong>
+        "I have to sell before I can buy. But I can't buy without selling first. It's a chicken-and-egg problem in the most competitive market around. I'm stuck."
       </div>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 5: Scenario 2 — The Reveal -->
+<!-- SLIDE 5: Scenario 2 — The Solution -->
 <section style="background: linear-gradient(180deg, #0f172a 0%, #0a0a0a 100%);">
   <div class="container">
     <div class="section-header">
-      <span class="section-badge">The Reveal</span>
-      <h2 class="section-title">The Contingent Buyer — Solved</h2>
+      <span class="section-badge">How Tiffani Solved It</span>
+      <h2 class="section-title">The Contingent Buyer</h2>
     </div>
     <div class="card solution-card animate-on-scroll">
-      <div class="card-label">✅ What Tiffani Found</div>
+      <div class="card-label">✅ The Strategy</div>
       <div class="card-text">
-        Her debt-to-income ratio on a <strong>conventional loan</strong> was too tight — she'd need to sell first.<br><br>
-        But on an <strong>FHA loan</strong>, the DTI rules are more flexible. Tiffani realized: <span class="highlight">she could qualify carrying BOTH mortgage payments at once.</span> That meant buying Cottonwood Heights <strong>without a sale contingency</strong>.
+        Her debt-to-income on a <strong>conventional loan</strong> was too tight — she'd need to sell first. But on an <strong>FHA loan</strong>, the DTI limits are more flexible.<br><br>
+        Tiffani realized: <span class="highlight">she could qualify carrying BOTH mortgage payments at once.</span> That meant buying Cottonwood Heights <strong>without a sale contingency</strong>.
       </div>
     </div>
     <div class="card solution-card animate-on-scroll">
@@ -328,7 +259,7 @@
       </div>
     </div>
     <div style="text-align: center;">
-      <div class="hero-badge">🦸‍♀️ Mortgage Superhero Strikes Again</div>
+      <div class="hero-badge">🦸‍♀️ Problem Solved</div>
     </div>
   </div>
 </section>
@@ -339,47 +270,32 @@
     <div class="section-header">
       <span class="section-badge">Scenario 3 of 3</span>
       <h2 class="section-title">The Cash-Strapped Investor</h2>
-      <p class="section-subtitle">A volunteer "becomes" this person. You've got assets but no cash. Make us feel it.</p>
-    </div>
-    <div class="volunteer-box animate-on-scroll">
-      <div class="icon">🙋‍♂️</div>
-      <p><strong>Volunteer:</strong> You're a self-employed investor with a paid-off property and a can't-miss deal. But there's a $100,000 problem.</p>
+      <p class="section-subtitle">"I have assets but no cash. This deal dies."</p>
     </div>
     <div class="card client-card animate-on-scroll">
-      <div class="card-label">👤 You Are...</div>
+      <div class="card-label">👤 The Client</div>
       <div class="card-text">
-        You found a <strong>$400,000 investment property</strong> that's fairly priced with huge potential. You need <strong>25% down</strong> — about $100,000.<br><br>
-        You're <strong>self-employed</strong>, so your income doesn't fit in a W-2 box. You came thinking: <span class="highlight">"I have assets, but I can't access them. This deal is dead."</span>
+        Found a <strong>$400,000 investment property</strong> that's fairly priced with huge potential. Needs <strong>25% down</strong> — about $100,000. <strong>Self-employed</strong>, so traditional income verification doesn't work.
       </div>
     </div>
     <div class="card problem-card animate-on-scroll">
-      <div class="card-label">❌ Your "Impossible" Problem</div>
+      <div class="card-label">❌ The Problem</div>
       <div class="card-text">
-        "I own a property free and clear, but I need that equity to buy this new one. And I'm self-employed — no traditional lender counts my income. I don't have $100K liquid. This deal dies unless I find a way to pull money out without selling."
-      </div>
-    </div>
-    <div class="live-prompt animate-on-scroll">
-      <div class="icon">🎤</div>
-      <p><strong>Tiffani takes over now.</strong><br>She'll look at your assets, your properties, and structure a loan where your property qualifies itself.</p>
-    </div>
-    <div class="card question-card animate-on-scroll">
-      <div class="card-label">💬 Group Question</div>
-      <div class="card-text">
-        <strong>Is this actually impossible? How do you buy real estate with no cash and no traditional income?</strong>
+        "I own a property free and clear, but I need that equity to buy this new one. I'm self-employed — no traditional lender counts my income. Without $100K liquid, this deal dies."
       </div>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 7: Scenario 3 — The Reveal -->
+<!-- SLIDE 7: Scenario 3 — The Solution -->
 <section style="background: linear-gradient(180deg, #0f172a 0%, #0a0a0a 100%);">
   <div class="container">
     <div class="section-header">
-      <span class="section-badge">The Reveal</span>
-      <h2 class="section-title">The Cash-Strapped Investor — Solved</h2>
+      <span class="section-badge">How Tiffani Solved It</span>
+      <h2 class="section-title">The Cash-Strapped Investor</h2>
     </div>
     <div class="card solution-card animate-on-scroll">
-      <div class="card-label">✅ What Tiffani Found</div>
+      <div class="card-label">✅ The Strategy</div>
       <div class="card-text">
         He owned an investment property <strong>free and clear</strong>. Tiffani structured a <strong>cash-out DSCR loan</strong> on that property.<br><br>
         DSCR = Debt Service Coverage Ratio. Based on the <span class="highlight">property's future rental income</span>, not his personal income. Perfect for self-employed investors.
@@ -389,16 +305,16 @@
       <div class="card-label">🎁 The Bonus Win</div>
       <div class="card-text">
         He pulled $100K from the paid-off property as his down payment. The new property had <strong>two entrances</strong> — rented to two families for ~$2,500 total, covering the new mortgage.<br><br>
-        <strong>Zero personal income used. Zero cash out of pocket. One smart loan structure.</strong> His deal lived.
+        <strong>Zero personal income used. Zero cash out of pocket. One smart loan structure.</strong>
       </div>
     </div>
     <div style="text-align: center;">
-      <div class="hero-badge">🦸‍♀️ Mortgage Superhero Strikes Again</div>
+      <div class="hero-badge">🦸‍♀️ Problem Solved</div>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 8: The Pattern + Contact -->
+<!-- SLIDE 8: Close -->
 <section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
   <div class="container">
     <div class="section-header">
@@ -422,30 +338,24 @@
     <div class="card animate-on-scroll" style="border-color: rgba(251, 191, 36, 0.2); background: rgba(251, 191, 36, 0.03);">
       <div class="card-label" style="color: #fbbf24;">🎯 The Bottom Line</div>
       <div class="card-text">
-        If someone tells you something is impossible, <strong>get a second opinion.</strong> Especially if that second opinion is Tiffani.
+        If someone tells you something is impossible, <strong>get a second opinion.</strong>
       </div>
     </div>
 
     <div class="cta-box animate-on-scroll" style="margin-top: 40px;">
       <img src="qr-code.jpg" alt="Scan to contact Tiffani" style="width: 200px; height: 200px; border-radius: 12px; margin-bottom: 24px;">
-      
       <h3 style="font-size: 1.5rem; margin-bottom: 4px;">Tiffani Swensen</h3>
       <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 4px;">Real Estate Agent / Owner</p>
       <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 24px;">Simply Home</p>
-      
       <div style="margin: 24px 0;">
         <a href="tel:8014037779" class="btn btn-primary">Call Me</a>
         <a href="mailto:tiffani@simplyhome.io" class="btn btn-secondary">Email Me</a>
       </div>
-      
       <div style="background: rgba(255,255,255,0.03); border-radius: 12px; padding: 20px; margin: 20px auto; text-align: center; max-width: 400px;">
         <p style="color: #94a3b8; font-size: 0.9rem; margin: 6px 0;">📍 1052 Pheasant Tail Dr, Bluffdale, UT 84065</p>
         <p style="color: #94a3b8; font-size: 0.9rem; margin: 6px 0;">🌐 simplyhome.io</p>
       </div>
-      
-      <p style="color: #64748b; font-size: 0.85rem; margin-top: 20px;">
-        Real estate made simple. Even when it sounds impossible.
-      </p>
+      <p style="color: #64748b; font-size: 0.85rem; margin-top: 20px;">Real estate made simple. Even when it sounds impossible.</p>
     </div>
   </div>
 </section>
