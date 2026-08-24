@@ -12,7 +12,7 @@
     font-family: 'Inter', sans-serif;
     background: #0a0a0a;
     color: #e2e8f0;
-    line-height: 1.65;
+    line-height: 1.7;
     overflow-x: hidden;
   }
   .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
@@ -79,27 +79,27 @@
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.05);
     border-radius: 18px;
-    padding: 28px;
+    padding: 32px;
     margin-bottom: 14px;
   }
   .card-label {
     font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px;
     color: #475569; margin-bottom: 14px; font-weight: 500;
   }
-  .card-body {
-    font-size: 1rem; line-height: 1.75; color: #cbd5e1;
+  .story {
+    font-size: 1.05rem; line-height: 1.8; color: #cbd5e1;
   }
-  .card-body p { margin-bottom: 12px; }
-  .card-body p:last-child { margin-bottom: 0; }
-  .card-body strong { color: #f8fafc; font-weight: 500; }
+  .story p { margin-bottom: 14px; }
+  .story p:last-child { margin-bottom: 0; }
+  .story strong { color: #f8fafc; font-weight: 500; }
 
   .teal { color: #14b8a6; font-weight: 500; }
   .amber { color: #fbbf24; font-weight: 500; }
 
   .quote-block {
-    border-left: 2px solid rgba(248, 113, 113, 0.3);
+    border-left: 2px solid rgba(248, 113, 113, 0.25);
     padding-left: 18px;
-    margin: 16px 0;
+    margin: 18px 0;
     font-style: italic;
     color: #94a3b8;
   }
@@ -110,13 +110,16 @@
     border-radius: 1px; margin-bottom: 14px;
   }
 
-  .point {
-    padding: 9px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.035);
-    font-size: 0.97rem; line-height: 1.55; color: #cbd5e1;
+  .solution-highlight {
+    background: rgba(20, 184, 166, 0.05);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-top: 16px;
   }
-  .point:last-child { border-bottom: none; padding-bottom: 0; }
-  .point:first-child { padding-top: 0; }
+  .solution-highlight p {
+    font-size: 0.95rem; line-height: 1.6; color: #94a3b8; margin: 0;
+  }
+  .solution-highlight strong { color: #14b8a6; }
 
   .contact-box {
     background: rgba(255,255,255,0.02);
@@ -169,22 +172,25 @@
     </div>
 
     <div class="card animate-on-scroll">
-      <div class="card-label">The Situation</div>
+      <div class="card-label">Read This Aloud</div>
       <div class="divider"></div>
-      <div class="card-body">
-        <p><strong>Jake</strong> walked into my office a nervous wreck. He's a veteran who served our country and has his Certificate of Eligibility — meaning he can buy a home with <span class="teal">zero money down</span>. But he was convinced he'd never qualify.</p>
-        <p>Over the past two years, he's had <span class="amber">six different jobs</span>. On paper, that looks like chaos. To make matters worse, he's <strong>100% disabled</strong> and worried lenders would see him as high-risk. His spouse had already written off homeownership as a pipe dream.</p>
-        <div class="quote-block">"I have no stability. Six jobs in two years? I'm unqualified. And I'm disabled — who would give me a loan?"</div>
+      <div class="story">
+        <p>"I'm Jake. I'm a veteran, and I have my Certificate of Eligibility, so I know I can buy a home with <span class="teal">zero money down</span>. But I've got a problem — over the past two years, I've had <span class="amber">six different jobs</span>.</p>
+
+        <p>On paper, I look like a mess. And I'm <strong>100% disabled</strong>, which I worry makes me even riskier to lenders. My spouse has already told me homeownership is a pipe dream. I don't think I'll ever qualify."</p>
       </div>
     </div>
 
     <div class="card animate-on-scroll">
       <div class="card-label">The Resolution</div>
       <div class="divider"></div>
-      <div class="card-body">
-        <p>I sat down with Marcus and walked through his full work history. Here's what jumped out: <strong>every single job was in the same industry</strong>. And when he switched employers, there was <span class="teal">never more than a 3-day gap</span>. That's not instability — that's consistency.</p>
+      <div class="story">
+        <p>Jake's work history told a different story than the numbers suggested. Every job was in the <strong>same industry</strong>, and he never had more than a <span class="teal">3-day gap</span> between positions. That's consistency — not chaos.</p>
+
         <p>He qualified for a <strong>VA loan</strong> using his Certificate of Eligibility. Six jobs and all.</p>
-        <p>And because he's <span class="amber">100% disabled</span>, I got his <strong>property taxes removed entirely</strong>. His monthly payment dropped even further — more money in his pocket every single month.</p>
+      </div>
+      <div class="solution-highlight">
+        <p><strong>Bonus win:</strong> Because he's 100% disabled, his <strong>property taxes were removed entirely</strong>. Lower monthly payment, more money in his pocket every month.</p>
       </div>
     </div>
   </div>
@@ -199,22 +205,25 @@
     </div>
 
     <div class="card animate-on-scroll">
-      <div class="card-label">The Situation</div>
+      <div class="card-label">Read This Aloud</div>
       <div class="divider"></div>
-      <div class="card-body">
-        <p><strong>Emily</strong> owns a home in Herriman but her heart is set on Cottonwood Heights — a more coveted area where homes move fast and competition is fierce. Her real estate agent delivered the hard truth: <strong>contingent offers won't even be looked at</strong> in that market.</p>
-        <p>She has to sell before she can buy. But she can't buy without selling first. Classic catch-22.</p>
-        <div class="quote-block">"I have to sell before I can buy. But I can't buy without selling first. It's a chicken-and-egg problem in the most competitive market around."</div>
+      <div class="story">
+        <p>"I'm Emily. I own a home in Herriman, but I want to move to <strong>Cottonwood Heights</strong>. It's where I want to be — better schools, closer to work, just a better fit for my family.</p>
+
+        <p>But my agent just told me the hard truth: <strong>contingent offers won't even be looked at</strong> in that market. Too competitive. I have to sell my current home before I can buy a new one. But I can't buy without selling first. I'm stuck in a catch-22."</p>
       </div>
     </div>
 
     <div class="card animate-on-scroll">
       <div class="card-label">The Resolution</div>
       <div class="divider"></div>
-      <div class="card-body">
-        <p>I ran her numbers on a <strong>conventional loan</strong> first. Her debt-to-income was too tight — she'd need to sell her Herriman home before buying anything.</p>
-        <p>But then we looked at <span class="teal">FHA</span>. FHA has more flexible DTI limits, and I realized: <strong>she could qualify carrying both mortgage payments at the same time</strong>. That meant she could buy the Cottonwood Heights home <span class="amber">without a sale contingency</span>.</p>
-        <p>She closed on the new house, had two full weeks to pack and move, <strong>then</strong> sold the Herriman home. No bridge loan. No double move. No storage unit. A seamless transition her agent thought was impossible.</p>
+      <div class="story">
+        <p>Emily's debt-to-income on a conventional loan was too tight — she'd need to sell first. But <strong>FHA</strong> has more flexible DTI limits.</p>
+
+        <p>She could qualify carrying <span class="teal">both mortgage payments at the same time</span>. That meant buying in Cottonwood Heights <strong>without a sale contingency</strong> — the exact thing her agent said was impossible.</p>
+      </div>
+      <div class="solution-highlight">
+        <p><strong>Bonus win:</strong> She closed on the new house, had two full weeks to move, then sold the Herriman home. <strong>No bridge loan. No double move. No storage unit.</strong></p>
       </div>
     </div>
   </div>
@@ -229,23 +238,27 @@
     </div>
 
     <div class="card animate-on-scroll">
-      <div class="card-label">The Situation</div>
+      <div class="card-label">Read This Aloud</div>
       <div class="divider"></div>
-      <div class="card-body">
-        <p><strong>Tom</strong> found a <span class="amber">$400,000 investment property</span> — fairly priced, huge upside potential, exactly the kind of deal investors dream about. He needs <strong>25% down</strong>, roughly $100,000. Problem: he doesn't have $100K liquid.</p>
-        <p>He's also <strong>self-employed</strong>, which means his income doesn't fit neatly into a W-2 box. Traditional lenders see him as complicated at best.</p>
-        <div class="quote-block">"I own a property free and clear, but I need that equity to buy this new one. I'm self-employed — no traditional lender counts my income. Without $100K liquid, this deal dies."</div>
+      <div class="story">
+        <p>"I'm Tom. I found a <span class="amber">$400,000 investment property</span> — fairly priced, great location, huge upside. I need <strong>25% down</strong>, about $100,000. But I don't have that kind of cash sitting around.</p>
+
+        <p>I'm also <strong>self-employed</strong>. My income is solid, but it doesn't fit in a W-2 box, so traditional lenders don't know what to do with me. I own another property free and clear, but I need that equity to buy this new one. Without $100K liquid, this deal dies."</p>
       </div>
     </div>
 
     <div class="card animate-on-scroll">
       <div class="card-label">The Resolution</div>
       <div class="divider"></div>
-      <div class="card-body">
-        <p>I asked about his assets. Turns out he owns another investment property <strong>free and clear</strong>. That's untapped equity sitting there.</p>
-        <p>I structured a <span class="teal">cash-out DSCR loan</span> on that paid-off property. DSCR = Debt Service Coverage Ratio — it qualifies based on the <strong>property's future rental income</strong>, not his personal income. Perfect for self-employed investors.</p>
-        <p>He pulled $100K from the existing property and used it as his down payment. The new property has <strong>two separate entrances</strong> — we rent to two families for about <span class="amber">$2,500 total</span>, which covers the new mortgage payment.</p>
-        <p><strong>Zero personal income used. Zero cash out of pocket. One smart loan structure.</strong> His deal lived.</p>
+      <div class="story">
+        <p>Tom had untapped equity in his paid-off investment property. We structured a <span class="teal">cash-out DSCR loan</span> on that property.</p>
+
+        <p>DSCR = Debt Service Coverage Ratio. It qualifies based on the <strong>property's future rental income</strong>, not personal income. Perfect for self-employed investors.</p>
+
+        <p>He pulled $100K from the existing property for his down payment. The new property has <strong>two separate entrances</strong> — two families at ~$2,500 total rent, covering the new mortgage.</p>
+      </div>
+      <div class="solution-highlight">
+        <p><strong>Bonus win:</strong> Zero personal income used. Zero cash out of pocket. One smart loan structure. His deal lived.</p>
       </div>
     </div>
   </div>
@@ -260,14 +273,15 @@
     </div>
 
     <div class="card animate-on-scroll">
-      <div class="card-body">
-        <p>Every one of these clients had been told <span class="amber">"impossible"</span> before they found me. Marcus was ready to give up on homeownership. Sarah was told she'd never get into Cottonwood Heights. David thought his deal was dead.</p>
+      <div class="story">
+        <p>Every one of these clients had been told <span class="amber">"impossible"</span> before they walked through my door. Jake was ready to give up on homeownership. Emily was told she'd never get into Cottonwood Heights. Tom thought his deal was dead.</p>
+
         <p>They weren't impossible. They just needed the <span class="teal">right loan program</span>.</p>
       </div>
     </div>
 
     <div class="card animate-on-scroll">
-      <div class="card-body">
+      <div class="story">
         <p>VA loans. FHA flexibility. DSCR for investors. Most lenders show you one path. I find the path that <strong>actually works for your situation</strong>.</p>
       </div>
     </div>
