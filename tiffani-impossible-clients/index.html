@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Impossible Clients, Tiffani Swensen | Simply Home</title>
+<title>Sounds Impossible, But It's Not — Tiffani Swensen | Simply Home</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -33,6 +33,8 @@
     position: relative;
   }
   section .container { width: 100%; }
+
+  /* HERO */
   .hero {
     background: linear-gradient(180deg, #0f172a 0%, #0a0a0a 100%);
     position: relative;
@@ -59,6 +61,8 @@
     font-size: clamp(1rem, 1.8vw, 1.2rem); color: #64748b;
     max-width: 480px; margin: 0 auto; line-height: 1.5; font-weight: 400;
   }
+
+  /* HEADERS */
   .slide-header { text-align: center; margin-bottom: 32px; }
   .slide-num {
     font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;
@@ -69,10 +73,14 @@
     margin-bottom: 6px; letter-spacing: -0.02em; color: #f8fafc;
   }
   .slide-tag { color: #64748b; font-size: 0.9rem; }
+
+  /* CARDS */
   .card {
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.05);
-    border-radius: 18px; padding: 28px; margin-bottom: 12px;
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 12px;
   }
   .story {
     font-size: 1.05rem; line-height: 1.85; color: #cbd5e1;
@@ -80,41 +88,38 @@
   .story p { margin-bottom: 14px; }
   .story p:last-child { margin-bottom: 0; }
   .story strong { color: #f8fafc; font-weight: 500; }
+
   .teal { color: #14b8a6; font-weight: 500; }
   .amber { color: #fbbf24; font-weight: 500; }
   .rose { color: #f87171; font-weight: 500; }
 
-  .issue-box {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 14px; padding: 18px 22px; margin-top: 16px;
+  /* ISSUE / ANSWER BOXES */
+  .box {
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-top: 14px;
   }
-  .issue-label {
-    font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px;
-    color: #475569; margin-bottom: 10px; font-weight: 600;
-  }
-  .issue-item {
-    padding: 7px 0; font-size: 0.93rem; color: #94a3b8;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-  }
-  .issue-item:last-child { border-bottom: none; padding-bottom: 0; }
-  .issue-item:first-child { padding-top: 0; }
+  .issue-box { background: rgba(255,255,255,0.015); border: 1px solid rgba(255,255,255,0.05); }
+  .answer-box { background: rgba(20, 184, 166, 0.04); border: 1px solid rgba(20, 184, 166, 0.1); }
+  .insight-box { background: rgba(251, 191, 36, 0.03); border: 1px solid rgba(251, 191, 36, 0.1); }
+  .stat-box { background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255,255,255,0.04); }
 
-  .answer-box {
-    background: rgba(20, 184, 166, 0.04);
-    border: 1px solid rgba(20, 184, 166, 0.1);
-    border-radius: 14px; padding: 18px 22px; margin-top: 14px;
-  }
-  .answer-label {
+  .box-label {
     font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px;
-    color: #14b8a6; margin-bottom: 10px; font-weight: 600;
+    margin-bottom: 10px; font-weight: 600;
   }
-  .answer-item {
-    padding: 7px 0; font-size: 0.93rem; color: #cbd5e1;
-    border-bottom: 1px solid rgba(20, 184, 166, 0.06);
+  .issue-box .box-label { color: #475569; }
+  .answer-box .box-label { color: #14b8a6; }
+  .insight-box .box-label { color: #fbbf24; }
+  .stat-box .box-label { color: #64748b; }
+
+  .box-item {
+    padding: 7px 0;
+    font-size: 0.93rem;
+    border-bottom: 1px solid rgba(255,255,255,0.035);
   }
-  .answer-item:last-child { border-bottom: none; padding-bottom: 0; }
-  .answer-item:first-child { padding-top: 0; }
+  .box-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .box-item:first-child { padding-top: 0; }
 
   .divider {
     width: 28px; height: 2px;
@@ -122,6 +127,27 @@
     border-radius: 1px; margin: 14px 0;
   }
 
+  .insight-quote {
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+  }
+  .insight-quote em { color: #fbbf24; font-style: normal; font-weight: 500; }
+
+  /* COMPARISON */
+  .compare { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 14px; }
+  .compare-col {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 14px;
+    padding: 18px;
+  }
+  .compare-col .box-label { color: #475569; margin-bottom: 8px; }
+  .compare-col ul { list-style: none; }
+  .compare-col li { color: #94a3b8; font-size: 0.9rem; padding: 3px 0; }
+
+  /* CONTACT */
   .contact-box {
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.05);
@@ -143,16 +169,21 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
   .btn-secondary:hover { background: rgba(255,255,255,0.04); }
+
   footer {
     background: #0a0a0a; padding: 32px 24px; text-align: center;
     border-top: 1px solid rgba(255,255,255,0.03);
   }
   footer p { color: #334155; font-size: 0.75rem; }
+
+  @media (min-width: 640px) {
+    .compare { grid-template-columns: 1fr 1fr; }
+  }
 </style>
 </head>
 <body>
 
-<!-- SLIDE 1: HERO -->
+<!-- === SLIDE 1: HERO === -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
@@ -163,7 +194,24 @@
   </div>
 </section>
 
-<!-- ============ SCENARIO 1: PROBLEM ============ -->
+<!-- === SLIDE 2: HOOK === -->
+<section style="background: linear-gradient(180deg, #0f172a 0%, #0a0a0a 100%);">
+  <div class="container">
+    <div class="slide-header">
+      <div class="slide-num"></div>
+      <h2 class="slide-title">Before We Begin</h2>
+      <p class="slide-tag"></p>
+    </div>
+    <div class="card animate-on-scroll" style="text-align:center; padding: 36px 28px;">
+      <div class="story" style="font-size: 1.15rem;">
+        <p>Quick show of hands,<br><strong>has a lender ever told you or someone you know <span class="rose">"no"</span>?</strong></p>
+        <p style="margin-top: 20px; color: #64748b; font-size: 1rem;">Today: three people who heard no.<br>Here's what made it yes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === SLIDE 3: S1 PROBLEM === -->
 <section style="background: #0a0a0a;">
   <div class="container">
     <div class="slide-header">
@@ -176,17 +224,17 @@
         <p>"Hi, I'm Jake. I'm a veteran who served our country, and I have my Certificate of Eligibility, which means I can buy a home with <span class="teal">zero money down</span>. I've been wanting to buy for a while.</p>
         <p>But here's the thing, over the past two years, I've had <span class="amber">six different jobs</span>. They've all been in the same field, but I know how that looks on paper. I'm also <strong>100% disabled</strong>, which adds another layer of concern. Every lender I've talked to has made it clear: I'm not their ideal borrower."</p>
       </div>
-      <div class="issue-box">
-        <div class="issue-label">Why Traditional Lenders Said No</div>
-        <div class="issue-item">❌ <span class="rose">Six job changes in two years</span>, seen as unstable</div>
-        <div class="issue-item">❌ <span class="rose">100% disabled</span>, perceived as complicated</div>
-        <div class="issue-item">❌ Assumed unqualified despite having a COE</div>
+      <div class="box issue-box">
+        <div class="box-label">Why Traditional Lenders Said No</div>
+        <div class="box-item">❌ <span class="rose">Six job changes in two years</span>, seen as unstable</div>
+        <div class="box-item">❌ <span class="rose">100% disabled</span>, perceived as complicated</div>
+        <div class="box-item">❌ Assumed unqualified despite having a COE</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ SCENARIO 1: SOLUTION ============ -->
+<!-- === SLIDE 4: S1 SOLUTION === -->
 <section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
   <div class="container">
     <div class="slide-header">
@@ -195,27 +243,31 @@
       <p class="slide-tag">Jake, how each barrier was removed</p>
     </div>
     <div class="card animate-on-scroll">
-      <div class="answer-box">
-        <div class="answer-label">Barrier 1: Six Jobs in Two Years</div>
-        <div class="answer-item">✅ All jobs were in the <strong>same industry</strong></div>
-        <div class="answer-item">✅ Never more than a <span class="teal">3-day gap</span> between positions</div>
-        <div class="answer-item">✅ Underwriting saw <strong>consistency</strong>, not risk</div>
-        <div class="answer-item">✅ Qualified for a <strong>VA loan</strong> with his COE</div>
+      <div class="box answer-box">
+        <div class="box-label">Barrier 1: Six Jobs in Two Years</div>
+        <div class="box-item">✅ Every job was in the <strong>same industry</strong></div>
+        <div class="box-item">✅ Never more than a <span class="teal">3-day gap</span> between positions, that is consistency, not chaos</div>
+        <div class="box-item">✅ Qualified for a <strong>VA loan</strong> with his COE</div>
       </div>
-      <div class="answer-box">
-        <div class="answer-label">Barrier 2: Disability Status</div>
-        <div class="answer-item">✅ <span class="amber">Property taxes removed entirely</span>, a benefit for 100% disabled veterans</div>
-        <div class="answer-item">✅ Lower monthly payment, more monthly savings</div>
+      <div class="box answer-box">
+        <div class="box-label">Barrier 2: Disability Status</div>
+        <div class="box-item">✅ <span class="amber">Property taxes removed entirely</span>, a benefit for 100% disabled veterans</div>
+        <div class="box-item">✅ Lower monthly payment, more monthly savings</div>
+      </div>
+      <div class="box insight-box" style="margin-top: 16px;">
+        <div class="box-label">What I Saw That Others Missed</div>
+        <div class="insight-quote">"Other lenders saw six jobs. I saw <em>six proofs he could get hired</em> in his field."</div>
       </div>
       <div class="divider"></div>
       <div class="story">
-        <p><strong>Jake bought his home.</strong> Jobs that looked like a liability on the surface told a completely different story once someone took the time to understand them.</p>
+        <p><strong>Jake bought his home.</strong> What looked like a liability on the surface told a completely different story once someone took the time to understand it.</p>
+        <p style="margin-top: 12px; color: #94a3b8; font-size: 0.95rem;"><span class="amber">$200+/month</span> back in his pocket from property tax removal alone. That means something.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ SCENARIO 2: PROBLEM ============ -->
+<!-- === SLIDE 5: S2 PROBLEM === -->
 <section style="background: #0a0a0a;">
   <div class="container">
     <div class="slide-header">
@@ -228,17 +280,17 @@
         <p>"Hi, I'm Emily. I own a home in Herriman, but I've been wanting to move to <strong>Cottonwood Heights</strong> for a while, it's closer to work, better schools for my kids, just a better fit for where my family is right now.</p>
         <p>The challenge is the market there. It's competitive. I was told that if my offer depends on selling my current home first, sellers won't even consider it. I understand where they're coming from, but that leaves me in a tough spot, I need to sell to buy, but I can't buy without selling first."</p>
       </div>
-      <div class="issue-box">
-        <div class="issue-label">Why Traditional Lenders Said No</div>
-        <div class="issue-item">❌ <span class="rose">Contingent offers</span> rejected in competitive markets</div>
-        <div class="issue-item">❌ Conventional DTI too tight, can't qualify for two mortgages</div>
-        <div class="issue-item">❌ Seemed forced to sell first, rent, then buy</div>
+      <div class="box issue-box">
+        <div class="box-label">Why Traditional Lenders Said No</div>
+        <div class="box-item">❌ <span class="rose">Contingent offers</span> rejected in competitive markets</div>
+        <div class="box-item">❌ Conventional DTI too tight, can't qualify for two mortgages</div>
+        <div class="box-item">❌ Seemed forced to sell first, rent, then buy</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ SCENARIO 2: SOLUTION ============ -->
+<!-- === SLIDE 6: S2 SOLUTION === -->
 <section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
   <div class="container">
     <div class="slide-header">
@@ -247,19 +299,47 @@
       <p class="slide-tag">Emily, how each barrier was removed</p>
     </div>
     <div class="card animate-on-scroll">
-      <div class="answer-box">
-        <div class="answer-label">Barrier 1: Contingent Offers Get Rejected</div>
-        <div class="answer-item">✅ Evaluated options beyond conventional loans</div>
-        <div class="answer-item">✅ <span class="teal">FHA</span> has more flexible DTI guidelines</div>
-        <div class="answer-item">✅ Emily qualified to carry <strong>both mortgages</strong></div>
-        <div class="answer-item">✅ Made an offer <span class="amber">without a contingency</span></div>
+      <div class="box answer-box">
+        <div class="box-label">Barrier 1: Can't Get Offer Accepted</div>
+        <div class="box-item">✅ Evaluated options beyond conventional loans</div>
+        <div class="box-item">✅ <span class="teal">FHA</span> has more flexible DTI guidelines</div>
+        <div class="box-item">✅ Emily qualified to carry <strong>both mortgages</strong></div>
+        <div class="box-item">✅ Made an offer <span class="amber">without a contingency</span></div>
       </div>
-      <div class="answer-box">
-        <div class="answer-label">Barrier 2: Sell First, Then Buy</div>
-        <div class="answer-item">✅ Closed on the new home first</div>
-        <div class="answer-item">✅ Had <strong>two weeks</strong> to move at her own pace</div>
-        <div class="answer-item">✅ Sold the Herriman home after moving out</div>
-        <div class="answer-item">✅ <span class="amber">No bridge loan. No double move.</span></div>
+      <div class="box answer-box">
+        <div class="box-label">Barrier 2: Sell First, Then Buy</div>
+        <div class="box-item">✅ Closed on the new house first</div>
+        <div class="box-item">✅ Had <strong>two weeks</strong> to move at her own pace</div>
+        <div class="box-item">✅ Sold the Herriman home after moving out</div>
+        <div class="box-item">✅ <span class="amber">No bridge loan. No double move.</span></div>
+      </div>
+      <div class="box insight-box" style="margin-top: 16px;">
+        <div class="box-label">What I Saw That Others Missed</div>
+        <div class="insight-quote">"Other lenders saw a buyer who needed to sell. I saw <em>a buyer who could carry two mortgages</em>."</div>
+      </div>
+      <div class="compare" style="margin-top: 16px;">
+        <div class="compare-col">
+          <div class="box-label">Without This Strategy</div>
+          <ul>
+            <li>Sell current home</li>
+            <li>Find a rental</li>
+            <li>Move once</li>
+            <li>Buy new home</li>
+            <li>Move again</li>
+            <li>2+ months of chaos</li>
+          </ul>
+        </div>
+        <div class="compare-col">
+          <div class="box-label">With FHA Strategy</div>
+          <ul>
+            <li>Buy new home</li>
+            <li>Move once</li>
+            <li>Sell from new home</li>
+            <li>No bridge loan needed</li>
+            <li>No double move</li>
+            <li>Seamless transition</li>
+          </ul>
+        </div>
       </div>
       <div class="divider"></div>
       <div class="story">
@@ -269,7 +349,7 @@
   </div>
 </section>
 
-<!-- ============ SCENARIO 3: PROBLEM ============ -->
+<!-- === SLIDE 7: S3 PROBLEM === -->
 <section style="background: #0a0a0a;">
   <div class="container">
     <div class="slide-header">
@@ -282,17 +362,17 @@
         <p>"Hi, I'm Tom. I'm self-employed, and I've been investing in real estate for a while. I found a <span class="amber">$400,000 property</span> that's fairly priced with huge upside, it's exactly the kind of deal I look for. I need <strong>25% down</strong>, about $100,000.</p>
         <p>The issue is cash flow. I'm self-employed, my income is solid, but it doesn't look like a W-2, so traditional lenders aren't sure how to evaluate me. I own another investment property free and clear, so I know I have equity, but I haven't been able to access it in a way that works for this deal. Without $100K liquid, I'm stuck."</p>
       </div>
-      <div class="issue-box">
-        <div class="issue-label">Why Traditional Lenders Said No</div>
-        <div class="issue-item">❌ Needs <span class="rose">$100K down</span>, no liquid cash available</div>
-        <div class="issue-item">❌ <span class="rose">Self-employed</span>, income doesn't fit traditional verification</div>
-        <div class="issue-item">❌ Has equity locked in another property but can't access it conventionally</div>
+      <div class="box issue-box">
+        <div class="box-label">Why Traditional Lenders Said No</div>
+        <div class="box-item">❌ Needs <span class="rose">$100K down</span>, no liquid cash available</div>
+        <div class="box-item">❌ <span class="rose">Self-employed</span>, income doesn't fit traditional verification</div>
+        <div class="box-item">❌ Has equity in another property but can't access it conventionally</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ SCENARIO 3: SOLUTION ============ -->
+<!-- === SLIDE 8: S3 SOLUTION === -->
 <section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
   <div class="container">
     <div class="slide-header">
@@ -301,53 +381,87 @@
       <p class="slide-tag">Tom, how each barrier was removed</p>
     </div>
     <div class="card animate-on-scroll">
-      <div class="answer-box">
-        <div class="answer-label">Barrier 1: No Cash for Down Payment</div>
-        <div class="answer-item">✅ Structured <span class="teal">cash-out DSCR loan</span> on paid-off property</div>
-        <div class="answer-item">✅ Pulled <strong>$100K</strong> from existing equity</div>
-        <div class="answer-item">✅ Used as down payment on new property</div>
+      <div class="box answer-box">
+        <div class="box-label">Barrier 1: No Cash for Down Payment</div>
+        <div class="box-item">✅ Structured <span class="teal">cash-out DSCR loan</span> on paid-off property</div>
+        <div class="box-item">✅ Pulled <strong>$100K</strong> from existing equity</div>
+        <div class="box-item">✅ Used as down payment on new property</div>
       </div>
-      <div class="answer-box">
-        <div class="answer-label">Barrier 2: Self-Employed Income</div>
-        <div class="answer-item">✅ DSCR loan uses <strong>property income</strong>, not personal income</div>
-        <div class="answer-item">✅ Self-employed status = <span class="amber">completely irrelevant</span></div>
+      <div class="box answer-box">
+        <div class="box-label">Barrier 2: Self-Employed Income</div>
+        <div class="box-item">✅ DSCR loan uses <strong>property income</strong>, not personal income</div>
+        <div class="box-item">✅ Self-employed status = <span class="amber">completely irrelevant</span></div>
       </div>
-      <div class="answer-box">
-        <div class="answer-label">Barrier 3: Will the New Property Cash Flow?</div>
-        <div class="answer-item">✅ Two separate entrances = <strong>two rental units</strong></div>
-        <div class="answer-item">✅ ~$2,500 total rent covers the new mortgage</div>
-        <div class="answer-item">✅ Property pays for itself</div>
+      <div class="box answer-box">
+        <div class="box-label">Barrier 3: Will the Property Cash Flow?</div>
+        <div class="box-item">✅ Two separate entrances = <strong>two rental units</strong></div>
+        <div class="box-item">✅ ~$2,500 total rent covers the new mortgage</div>
+        <div class="box-item">✅ Property pays for itself</div>
+      </div>
+      <div class="box insight-box" style="margin-top: 16px;">
+        <div class="box-label">What I Saw That Others Missed</div>
+        <div class="insight-quote">"Other lenders saw self-employed. I saw <em>a property that would pay for itself</em>."</div>
       </div>
       <div class="divider"></div>
       <div class="story">
-        <p><strong>Tom closed the deal.</strong> The equity was always there, it just needed the right loan structure to unlock it.</p>
+        <p><strong>Tom closed the deal.</strong> Zero personal income used. Zero cash out of pocket. One smart loan structure.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== CLOSE ========== -->
-<section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
+<!-- === SLIDE 9: STATS / THESE AREN'T OUTLIERS === -->
+<section style="background: #0a0a0a;">
   <div class="container">
     <div class="slide-header">
       <div class="slide-num">The Pattern</div>
-      <h2 class="slide-title">What These All Have in Common</h2>
+      <h2 class="slide-title">These Aren't Outliers</h2>
+      <p class="slide-tag">The programs that make these deals work</p>
+    </div>
+    <div class="card animate-on-scroll">
+      <div class="box stat-box" style="margin-top: 0;">
+        <div class="box-label">VA Loans</div>
+        <div class="box-item" style="color: #cbd5e1; border: none; padding: 4px 0;"><span class="teal">528,000+</span> veterans bought homes with VA loans in FY2025, up 27% year over year. The program just guaranteed its <strong>29 millionth</strong> loan since 1944.</div>
+      </div>
+      <div class="box stat-box" style="margin-top: 12px;">
+        <div class="box-label">FHA Loans</div>
+        <div class="box-item" style="color: #cbd5e1; border: none; padding: 4px 0;">In 2025, FHA helped <span class="teal">236,000+</span> buyers, including <span class="teal">140,000+</span> first-timers. When conventional says no, FHA often says yes.</div>
+      </div>
+      <div class="box stat-box" style="margin-top: 12px;">
+        <div class="box-label">DSCR Loans</div>
+        <div class="box-item" style="color: #cbd5e1; border: none; padding: 4px 0;">Investor DSCR originations are up <span class="teal">35%</span> annually. Self-employed investors finally have a path that uses property income, not personal W-2s.</div>
+      </div>
+      <div class="divider"></div>
+      <div class="story">
+        <p>Jake, Emily, and Tom aren't exceptions. <strong>These programs exist because millions of qualified borrowers get told no when the answer should be <span class="teal">"let's look at another option"</span>.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === SLIDE 10: CLOSE + CONTACT === -->
+<section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
+  <div class="container">
+    <div class="slide-header">
+      <div class="slide-num"></div>
+      <h2 class="slide-title">The Bottom Line</h2>
     </div>
     <div class="card animate-on-scroll">
       <div class="story">
-        <p>Every one of these clients had been told <span class="amber">"impossible"</span> before they walked through my door. Jake was told his work history disqualified him. Emily was told she'd never get into Cottonwood Heights without selling first. Tom was told self-employed investors needed cash in hand.</p>
+        <p>Every one of these clients had been told <span class="amber">"impossible"</span> before they walked through my door. Jake was ready to give up on homeownership. Emily was told she'd never get into Cottonwood Heights. Tom thought his deal was dead.</p>
         <p>They weren't impossible. They just needed the <span class="teal">right loan program</span>, and someone willing to look beyond the surface.</p>
       </div>
     </div>
     <div class="card animate-on-scroll">
       <div class="story">
-        <p>VA loans. FHA flexibility. DSCR for investors. Most lenders give you one path. I find the one that <strong>actually works for your situation</strong>.</p>
+        <p>VA loans. FHA flexibility. DSCR for investors. Most lenders show you one path. I find the path that <strong>actually works for your situation</strong>.</p>
+        <p style="margin-top: 14px; color: #94a3b8; font-size: 0.95rem;">Know someone who heard "no"? I specialize in second opinions.</p>
       </div>
     </div>
     <div class="contact-box animate-on-scroll" style="margin-top: 28px;">
       <img src="qr-code.jpg" alt="Contact Tiffani" class="qr">
       <h3 style="font-size: 1.3rem; margin-bottom: 2px; color: #f8fafc;">Tiffani Swensen</h3>
-      <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 20px;">Real Estate Agent / Owner · Simply Home</p>
+      <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 20px;">Real Estate Agent / Owner, Simply Home</p>
       <div style="margin: 12px 0;">
         <a href="tel:8014037779" class="btn btn-primary">Call</a>
         <a href="mailto:tiffani@simplyhome.io" class="btn btn-secondary">Email</a>
