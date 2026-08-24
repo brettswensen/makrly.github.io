@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Impossible Clients — Tiffani Swensen | Simply Home Mortgage</title>
+<title>Impossible Clients — Tiffani Swensen | Simply Home</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -12,14 +12,14 @@
     font-family: 'Inter', sans-serif;
     background: #0a0a0a;
     color: #e2e8f0;
-    line-height: 1.65;
+    line-height: 1.6;
     overflow-x: hidden;
   }
-  .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
 
   .animate-on-scroll {
-    opacity: 0; transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0; transform: translateY(24px);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
 
@@ -31,38 +31,27 @@
   section {
     min-height: 100vh;
     display: flex; align-items: center; justify-content: center;
-    padding: 60px 24px;
+    padding: 48px 24px;
     scroll-snap-align: start; scroll-snap-stop: always;
     position: relative;
   }
   section .container { width: 100%; }
 
+  /* HERO */
   .hero {
     background: linear-gradient(180deg, #0f172a 0%, #0a0a0a 100%);
     position: relative;
   }
   .hero::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 70%;
-    background: radial-gradient(ellipse at 50% 0%, rgba(20, 184, 166, 0.12) 0%, transparent 60%);
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 60%;
+    background: radial-gradient(ellipse at 50% 0%, rgba(20, 184, 166, 0.1) 0%, transparent 60%);
     pointer-events: none;
-  }
-  .hero::after {
-    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50%;
-    background: linear-gradient(to top, rgba(10, 10, 10, 1) 0%, transparent 100%);
-    pointer-events: none;
-  }
-  .hero-grid {
-    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-    background-size: 100px 100px; pointer-events: none;
   }
   .hero-content { text-align: center; position: relative; z-index: 1; }
-  .hero-logo { width: 180px; margin-bottom: 28px; opacity: 0.95; }
+  .hero-logo { width: 160px; margin-bottom: 28px; opacity: 0.9; }
   .hero h1 {
-    font-size: clamp(2.4rem, 6.5vw, 4rem); font-weight: 800;
-    margin-bottom: 16px; letter-spacing: -0.03em; line-height: 0.95;
+    font-size: clamp(2.5rem, 7vw, 4.2rem); font-weight: 800;
+    margin-bottom: 14px; letter-spacing: -0.03em; line-height: 0.95;
     color: #f8fafc;
   }
   .hero h1 span {
@@ -72,288 +61,297 @@
     background-clip: text; animation: shimmer 3s ease infinite;
   }
   .hero-subtitle {
-    font-size: clamp(1.05rem, 2vw, 1.25rem); color: #94a3b8;
-    max-width: 520px; margin: 0 auto 36px; line-height: 1.6; font-weight: 400;
+    font-size: clamp(1rem, 1.8vw, 1.2rem); color: #64748b;
+    max-width: 480px; margin: 0 auto; line-height: 1.5; font-weight: 400;
   }
 
-  .section-header { text-align: center; margin-bottom: 44px; }
-  .section-badge {
-    display: inline-block; padding: 5px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 50px; color: #64748b;
-    font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px;
-    margin-bottom: 16px;
+  /* HEADERS */
+  .slide-header { text-align: center; margin-bottom: 32px; }
+  .slide-num {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;
+    color: #475569; margin-bottom: 10px;
   }
-  .section-title {
-    font-size: clamp(1.7rem, 3.5vw, 2.4rem); font-weight: 700;
-    margin-bottom: 10px; letter-spacing: -0.02em; color: #f8fafc;
+  .slide-title {
+    font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700;
+    margin-bottom: 8px; letter-spacing: -0.02em; color: #f8fafc;
   }
-  .section-subtitle { color: #64748b; font-size: 1rem; max-width: 440px; margin: 0 auto; line-height: 1.6; }
+  .slide-tag { color: #64748b; font-size: 0.95rem; }
 
+  /* CARDS */
   .card {
-    background: rgba(255,255,255,0.025);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 20px;
-    padding: 32px;
-    margin-bottom: 16px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 12px;
   }
   .card-label {
-    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px;
-    font-weight: 500; margin-bottom: 14px; color: #64748b;
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px;
+    color: #475569; margin-bottom: 12px; font-weight: 500;
   }
-  .card-text { font-size: 1.05rem; line-height: 1.7; color: #cbd5e1; }
-  .card-text strong { color: #f8fafc; font-weight: 600; }
 
-  .impact-word { color: #14b8a6; font-weight: 600; }
-  .problem-word { color: #f87171; font-weight: 600; }
-  .solution-word { color: #4ade80; font-weight: 600; }
-  .highlight-word { color: #fbbf24; font-weight: 600; }
+  /* LISTS */
+  .point {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 1rem; line-height: 1.55; color: #cbd5e1;
+  }
+  .point:last-child { border-bottom: none; padding-bottom: 0; }
+  .point:first-child { padding-top: 0; }
+  .teal { color: #14b8a6; font-weight: 500; }
+  .amber { color: #fbbf24; font-weight: 500; }
+  .rose { color: #f87171; font-weight: 500; }
 
-  .separator {
-    width: 40px; height: 3px;
+  /* QUOTE */
+  .quote {
+    font-style: italic;
+    color: #94a3b8;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    padding: 8px 0;
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 32px; height: 2px;
     background: linear-gradient(90deg, #14b8a6, transparent);
-    border-radius: 2px; margin: 8px 0 16px;
+    border-radius: 1px; margin-bottom: 16px;
   }
 
-  .cta-box {
+  /* CONTACT */
+  .contact-box {
     background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 20px;
-    padding: 40px 32px;
-    text-align: center;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 20px; padding: 36px 28px; text-align: center;
   }
-
+  .qr { width: 160px; height: 160px; border-radius: 14px; margin-bottom: 24px; opacity: 0.9; }
   .btn {
-    padding: 14px 28px; border-radius: 50px; font-weight: 600;
+    padding: 12px 26px; border-radius: 50px; font-weight: 600;
     text-decoration: none; transition: all 0.3s ease;
-    font-size: 0.9rem; display: inline-block; margin: 4px;
+    font-size: 0.9rem; display: inline-block; margin: 3px;
   }
   .btn-primary {
     background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
     color: #0a0a0a;
   }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(20, 184, 166, 0.2); }
+  .btn-primary:hover { transform: translateY(-2px); }
   .btn-secondary {
-    background: transparent; color: #e2e8f0;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: transparent; color: #94a3b8;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
-  .btn-secondary:hover { background: rgba(255,255,255,0.05); }
+  .btn-secondary:hover { background: rgba(255,255,255,0.04); }
 
   footer {
-    background: #0a0a0a; padding: 40px 24px; text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.04);
+    background: #0a0a0a; padding: 32px 24px; text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.03);
   }
-  footer p { color: #475569; font-size: 0.8rem; }
-
-  @media (min-width: 768px) {
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .two-col .card { margin-bottom: 0; }
-  }
+  footer p { color: #334155; font-size: 0.75rem; }
 </style>
 </head>
 <body>
 
-<!-- SLIDE 1: Title -->
+<!-- SLIDE 1: HERO -->
 <section class="hero">
-  <div class="hero-grid"></div>
   <div class="container">
     <div class="hero-content">
-      <img src="simply-home-logo-wide.webp" alt="Simply Home Mortgage" class="hero-logo">
+      <img src="simply-home-logo-wide.webp" alt="Simply Home" class="hero-logo">
       <h1><span>Impossible</span><br>Clients</h1>
-      <p class="hero-subtitle">
-        Three borrowers. Three situations that sound impossible.<br>
-        Spoiler: they're not.
-      </p>
+      <p class="hero-subtitle">Three borrowers. Three "impossible" situations. And how they got solved.</p>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 2: Scenario 1 — Problem -->
-<section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
+<!-- ========== SCENARIO 1 ========== -->
+<!-- SLIDE 2: Problem -->
+<section style="background: #0a0a0a;">
   <div class="container">
-    <div class="section-header">
-      <span class="section-badge">Scenario 1 of 3</span>
-      <h2 class="section-title">The Job-Hopping Veteran</h2>
-      <p class="section-subtitle">Six jobs in two years. Zero confidence.</p>
+    <div class="slide-header">
+      <div class="slide-num">Scenario 1 of 3</div>
+      <h2 class="slide-title">The Job-Hopping Veteran</h2>
+      <p class="slide-tag"><span class="rose">"I'll never qualify with my work history."</span></p>
     </div>
+
     <div class="card animate-on-scroll">
       <div class="card-label">The Client</div>
-      <div class="separator"></div>
-      <div class="card-text">
-        A disabled veteran with a Certificate of Eligibility who can buy with <strong>zero down</strong>. He's had <span class="impact-word">6 jobs in the last 2 years</span> and is <strong>100% disabled</strong>. His spouse thinks homeownership is a pipe dream.
-      </div>
+      <div class="divider"></div>
+      <div class="point">Veteran with Certificate of Eligibility — can buy with <span class="teal">zero down</span></div>
+      <div class="point"><span class="amber">6 jobs in 2 years</span></div>
+      <div class="point">100% disabled</div>
+      <div class="point">Spouse says homeownership is a pipe dream</div>
     </div>
+
     <div class="card animate-on-scroll">
       <div class="card-label">The Problem</div>
-      <div class="separator"></div>
-      <div class="card-text">
-        "I have no stability. Six jobs in two years? I'm unqualified. And I'm disabled — who would give me a loan?"
-      </div>
+      <div class="divider"></div>
+      <div class="quote">"I have no stability. Six jobs in two years? I'm unqualified. And I'm disabled — who would give me a loan?"</div>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 3: Scenario 1 — Solution -->
-<section style="background: linear-gradient(180deg, #0f172a 0%, #0a0a0a 100%);">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-badge">The Solution</span>
-      <h2 class="section-title">The Job-Hopping Veteran</h2>
-    </div>
-    <div class="card animate-on-scroll">
-      <div class="card-label">What Tiffani Found</div>
-      <div class="separator"></div>
-      <div class="card-text">
-        She walked through his 2-year work history. Six jobs — but every single one was <strong>in the same industry</strong>. And there was <strong>never more than a 3-day gap</strong> between positions.<br><br>
-        That showed consistency, not chaos. He qualified for a <span class="impact-word">VA loan</span> with his Certificate of Eligibility.
-      </div>
-    </div>
-    <div class="card animate-on-scroll">
-      <div class="card-label">The Bonus Win</div>
-      <div class="separator"></div>
-      <div class="card-text">
-        Because he's <strong>100% disabled</strong>, Tiffani also got his <span class="impact-word">property taxes removed entirely</span>. More money in his pocket every month.
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 4: Scenario 2 — Problem -->
+<!-- SLIDE 3: Solution -->
 <section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
   <div class="container">
-    <div class="section-header">
-      <span class="section-badge">Scenario 2 of 3</span>
-      <h2 class="section-title">The Contingent Buyer</h2>
-      <p class="section-subtitle">Stuck between two homes in a hot market.</p>
+    <div class="slide-header">
+      <div class="slide-num">The Solution</div>
+      <h2 class="slide-title">The Job-Hopping Veteran</h2>
     </div>
+
+    <div class="card animate-on-scroll">
+      <div class="card-label">What Worked</div>
+      <div class="divider"></div>
+      <div class="point">Every job was in the <span class="teal">same industry</span></div>
+      <div class="point">Never more than a <span class="teal">3-day gap</span> between positions — showed consistency, not chaos</div>
+      <div class="point">Qualified for <span class="teal">VA loan</span> with COE</div>
+    </div>
+
+    <div class="card animate-on-scroll">
+      <div class="card-label">The Extra Win</div>
+      <div class="divider"></div>
+      <div class="point">100% disabled = <span class="amber">property taxes removed entirely</span></div>
+      <div class="point">Lower monthly payment, more money in pocket</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SCENARIO 2 ========== -->
+<!-- SLIDE 4: Problem -->
+<section style="background: #0a0a0a;">
+  <div class="container">
+    <div class="slide-header">
+      <div class="slide-num">Scenario 2 of 3</div>
+      <h2 class="slide-title">The Contingent Buyer</h2>
+      <p class="slide-tag"><span class="rose">"I can't buy without selling first."</span></p>
+    </div>
+
     <div class="card animate-on-scroll">
       <div class="card-label">The Client</div>
-      <div class="separator"></div>
-      <div class="card-text">
-        Owns a home in <strong>Herriman</strong> and wants to move to <strong>Cottonwood Heights</strong> — a more coveted, competitive area. Her agent told her contingent offers won't even be looked at.
-      </div>
+      <div class="divider"></div>
+      <div class="point">Owns in <strong>Herriman</strong>, wants <strong>Cottonwood Heights</strong></div>
+      <div class="point">Agent says contingent offers won't even be looked at</div>
     </div>
+
     <div class="card animate-on-scroll">
       <div class="card-label">The Problem</div>
-      <div class="separator"></div>
-      <div class="card-text">
-        "I have to sell before I can buy. But I can't buy without selling first. It's a chicken-and-egg problem in the most competitive market around."
-      </div>
+      <div class="divider"></div>
+      <div class="quote">"I have to sell before I can buy. But I can't buy without selling first. Chicken-and-egg in the most competitive market around."</div>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 5: Scenario 2 — Solution -->
-<section style="background: linear-gradient(180deg, #0f172a 0%, #0a0a0a 100%);">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-badge">The Solution</span>
-      <h2 class="section-title">The Contingent Buyer</h2>
-    </div>
-    <div class="card animate-on-scroll">
-      <div class="card-label">What Tiffani Found</div>
-      <div class="separator"></div>
-      <div class="card-text">
-        Her debt-to-income on a conventional loan was too tight — she'd need to sell first. But on an <strong>FHA loan</strong>, the DTI limits are more flexible.<br><br>
-        She could qualify carrying <span class="impact-word">both mortgage payments at once</span>. That meant buying Cottonwood Heights <strong>without a sale contingency</strong>.
-      </div>
-    </div>
-    <div class="card animate-on-scroll">
-      <div class="card-label">The Bonus Win</div>
-      <div class="separator"></div>
-      <div class="card-text">
-        She closed on the new house, had 2 full weeks to move, then sold the Herriman home. <span class="impact-word">No bridge loan. No double move.</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 6: Scenario 3 — Problem -->
+<!-- SLIDE 5: Solution -->
 <section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
   <div class="container">
-    <div class="section-header">
-      <span class="section-badge">Scenario 3 of 3</span>
-      <h2 class="section-title">The Cash-Strapped Investor</h2>
-      <p class="section-subtitle">Great deal, no cash, self-employed.</p>
+    <div class="slide-header">
+      <div class="slide-num">The Solution</div>
+      <h2 class="slide-title">The Contingent Buyer</h2>
     </div>
+
+    <div class="card animate-on-scroll">
+      <div class="card-label">What Worked</div>
+      <div class="divider"></div>
+      <div class="point">Conventional DTI was too tight — needed to sell first</div>
+      <div class="point"><span class="teal">FHA</span> has more flexible DTI limits</div>
+      <div class="point">Could qualify carrying <span class="amber">both mortgages at once</span></div>
+      <div class="point">Bought Cottonwood Heights <span class="teal">without a sale contingency</span></div>
+    </div>
+
+    <div class="card animate-on-scroll">
+      <div class="card-label">The Extra Win</div>
+      <div class="divider"></div>
+      <div class="point">Closed on new house, had 2 weeks to move, <strong>then</strong> sold Herriman home</div>
+      <div class="point"><span class="amber">No bridge loan. No double move.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SCENARIO 3 ========== -->
+<!-- SLIDE 6: Problem -->
+<section style="background: #0a0a0a;">
+  <div class="container">
+    <div class="slide-header">
+      <div class="slide-num">Scenario 3 of 3</div>
+      <h2 class="slide-title">The Cash-Strapped Investor</h2>
+      <p class="slide-tag"><span class="rose">"I have assets but no cash. This deal dies."</span></p>
+    </div>
+
     <div class="card animate-on-scroll">
       <div class="card-label">The Client</div>
-      <div class="separator"></div>
-      <div class="card-text">
-        Found a <strong>$400,000 investment property</strong> with huge potential. Needs <strong>25% down</strong> — about $100,000. Self-employed, so traditional income verification doesn't work.
-      </div>
+      <div class="divider"></div>
+      <div class="point"><span class="amber">$400K investment property</span>, fairly priced, huge potential</div>
+      <div class="point">Needs <strong>25% down</strong> — about $100K</div>
+      <div class="point">Self-employed — traditional income verification doesn't work</div>
     </div>
+
     <div class="card animate-on-scroll">
       <div class="card-label">The Problem</div>
-      <div class="separator"></div>
-      <div class="card-text">
-        "I own a property free and clear, but I need that equity to buy this new one. I'm self-employed — no traditional lender counts my income. Without $100K liquid, this deal dies."
-      </div>
+      <div class="divider"></div>
+      <div class="quote">"I own a property free and clear but need that equity to buy. No traditional lender counts my income. Without $100K liquid, this deal dies."</div>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 7: Scenario 3 — Solution -->
-<section style="background: linear-gradient(180deg, #0f172a 0%, #0a0a0a 100%);">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-badge">The Solution</span>
-      <h2 class="section-title">The Cash-Strapped Investor</h2>
-    </div>
-    <div class="card animate-on-scroll">
-      <div class="card-label">What Tiffani Found</div>
-      <div class="separator"></div>
-      <div class="card-text">
-        He owned an investment property <strong>free and clear</strong>. Tiffani structured a <span class="impact-word">cash-out DSCR loan</span> on that property.<br><br>
-        DSCR = Debt Service Coverage Ratio. Based on the <strong>property's future rental income</strong>, not his personal income. Perfect for self-employed investors.
-      </div>
-    </div>
-    <div class="card animate-on-scroll">
-      <div class="card-label">The Bonus Win</div>
-      <div class="separator"></div>
-      <div class="card-text">
-        He pulled $100K from the paid-off property as his down payment. The new property had <strong>two entrances</strong> — two families at ~$2,500 total, covering the new mortgage.<br><br>
-        <strong>Zero personal income used. Zero cash out of pocket.</strong>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 8: Close -->
+<!-- SLIDE 7: Solution -->
 <section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
   <div class="container">
-    <div class="section-header">
-      <span class="section-badge">The Pattern</span>
-      <h2 class="section-title">What All Three Have in Common</h2>
-    </div>
-    <div class="card animate-on-scroll">
-      <div class="card-label">The "No" They Heard Before</div>
-      <div class="separator"></div>
-      <div class="card-text">
-        Every client had been told "impossible" before they found Tiffani. The veteran was ready to give up. The buyer was told she'd never get into Cottonwood Heights. The investor thought his deal was dead.<br><br>
-        <span class="impact-word">They weren't impossible. They just needed the right loan program.</span>
-      </div>
-    </div>
-    <div class="card animate-on-scroll">
-      <div class="card-label">The Lesson</div>
-      <div class="separator"></div>
-      <div class="card-text">
-        VA loans. FHA flexibility. DSCR for investors. Most lenders show you one path. Tiffani finds the path that <strong>actually works for your situation</strong>.
-      </div>
+    <div class="slide-header">
+      <div class="slide-num">The Solution</div>
+      <h2 class="slide-title">The Cash-Strapped Investor</h2>
     </div>
 
-    <div class="cta-box animate-on-scroll" style="margin-top: 36px;">
-      <img src="qr-code.jpg" alt="Scan to contact Tiffani" style="width: 180px; height: 180px; border-radius: 16px; margin-bottom: 28px; opacity: 0.9;">
-      <h3 style="font-size: 1.4rem; margin-bottom: 4px; color: #f8fafc;">Tiffani Swensen</h3>
-      <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 2px;">Real Estate Agent / Owner</p>
-      <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 24px;">Simply Home</p>
-      <div style="margin: 16px 0;">
-        <a href="tel:8014037779" class="btn btn-primary">Call Me</a>
-        <a href="mailto:tiffani@simplyhome.io" class="btn btn-secondary">Email Me</a>
+    <div class="card animate-on-scroll">
+      <div class="card-label">What Worked</div>
+      <div class="divider"></div>
+      <div class="point">Owned investment property <strong>free and clear</strong></div>
+      <div class="point">Structured <span class="teal">cash-out DSCR loan</span> on that property</div>
+      <div class="point">DSCR = property's <span class="amber">future rental income</span>, not personal income</div>
+      <div class="point">Pulled $100K for down payment on new property</div>
+    </div>
+
+    <div class="card animate-on-scroll">
+      <div class="card-label">The Extra Win</div>
+      <div class="divider"></div>
+      <div class="point">New property had <strong>two entrances</strong> — rent to two families</div>
+      <div class="point">~$2,500 total rent covers the new mortgage</div>
+      <div class="point"><span class="amber">Zero personal income used. Zero cash out of pocket.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CLOSE ========== -->
+<!-- SLIDE 8: Pattern + Contact -->
+<section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
+  <div class="container">
+    <div class="slide-header">
+      <div class="slide-num">The Pattern</div>
+      <h2 class="slide-title">What All Three Have in Common</h2>
+    </div>
+
+    <div class="card animate-on-scroll">
+      <div class="divider"></div>
+      <div class="point">Every client had been told <span class="rose">"impossible"</span> before</div>
+      <div class="point">The veteran was ready to give up on homeownership</div>
+      <div class="point">The buyer was told she'd never get into Cottonwood Heights</div>
+      <div class="point">The investor thought his deal was dead</div>
+    </div>
+
+    <div class="card animate-on-scroll">
+      <div class="divider"></div>
+      <div class="point"><span class="teal">They weren't impossible.</span> They just needed the right loan program.</div>
+      <div class="point">VA loans. FHA flexibility. DSCR for investors.</div>
+      <div class="point">Most lenders show one path. I find the one that works.</div>
+    </div>
+
+    <div class="contact-box animate-on-scroll" style="margin-top: 28px;">
+      <img src="qr-code.jpg" alt="Contact Tiffani" class="qr">
+      <h3 style="font-size: 1.3rem; margin-bottom: 2px; color: #f8fafc;">Tiffani Swensen</h3>
+      <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 20px;">Real Estate Agent / Owner · Simply Home</p>
+      <div style="margin: 12px 0;">
+        <a href="tel:8014037779" class="btn btn-primary">Call</a>
+        <a href="mailto:tiffani@simplyhome.io" class="btn btn-secondary">Email</a>
       </div>
-      <div style="margin-top: 20px;">
-        <p style="color: #64748b; font-size: 0.85rem; margin: 4px 0;">1052 Pheasant Tail Dr, Bluffdale, UT 84065</p>
-        <p style="color: #64748b; font-size: 0.85rem; margin: 4px 0;">simplyhome.io</p>
+      <div style="margin-top: 16px;">
+        <p style="color: #475569; font-size: 0.8rem; margin: 3px 0;">1052 Pheasant Tail Dr, Bluffdale, UT 84065</p>
+        <p style="color: #475569; font-size: 0.8rem; margin: 3px 0;">simplyhome.io</p>
       </div>
     </div>
   </div>
@@ -370,7 +368,7 @@
     entries.forEach(entry => {
       if (entry.isIntersecting) entry.target.classList.add('visible');
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
   document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 </script>
 
