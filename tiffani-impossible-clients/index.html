@@ -79,15 +79,11 @@
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.05);
     border-radius: 18px;
-    padding: 32px;
-    margin-bottom: 14px;
-  }
-  .card-label {
-    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px;
-    color: #475569; margin-bottom: 14px; font-weight: 500;
+    padding: 28px;
+    margin-bottom: 12px;
   }
   .story {
-    font-size: 1.05rem; line-height: 1.8; color: #cbd5e1;
+    font-size: 1.05rem; line-height: 1.85; color: #cbd5e1;
   }
   .story p { margin-bottom: 14px; }
   .story p:last-child { margin-bottom: 0; }
@@ -95,31 +91,51 @@
 
   .teal { color: #14b8a6; font-weight: 500; }
   .amber { color: #fbbf24; font-weight: 500; }
+  .rose { color: #f87171; font-weight: 500; }
 
-  .quote-block {
-    border-left: 2px solid rgba(248, 113, 113, 0.25);
-    padding-left: 18px;
-    margin: 18px 0;
-    font-style: italic;
-    color: #94a3b8;
+  .issue-box {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-top: 16px;
   }
+  .issue-label {
+    font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px;
+    color: #475569; margin-bottom: 10px; font-weight: 600;
+  }
+  .issue-item {
+    padding: 7px 0;
+    font-size: 0.93rem; color: #94a3b8;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .issue-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .issue-item:first-child { padding-top: 0; }
+
+  .answer-box {
+    background: rgba(20, 184, 166, 0.04);
+    border: 1px solid rgba(20, 184, 166, 0.1);
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-top: 14px;
+  }
+  .answer-label {
+    font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px;
+    color: #14b8a6; margin-bottom: 10px; font-weight: 600;
+  }
+  .answer-item {
+    padding: 7px 0;
+    font-size: 0.93rem; color: #cbd5e1;
+    border-bottom: 1px solid rgba(20, 184, 166, 0.06);
+  }
+  .answer-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .answer-item:first-child { padding-top: 0; }
 
   .divider {
     width: 28px; height: 2px;
     background: linear-gradient(90deg, #14b8a6, transparent);
-    border-radius: 1px; margin-bottom: 14px;
+    border-radius: 1px; margin: 14px 0;
   }
-
-  .solution-highlight {
-    background: rgba(20, 184, 166, 0.05);
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin-top: 16px;
-  }
-  .solution-highlight p {
-    font-size: 0.95rem; line-height: 1.6; color: #94a3b8; margin: 0;
-  }
-  .solution-highlight strong { color: #14b8a6; }
 
   .contact-box {
     background: rgba(255,255,255,0.02);
@@ -163,102 +179,180 @@
   </div>
 </section>
 
-<!-- ========== SCENARIO 1 ========== -->
+<!-- ============ SCENARIO 1: PROBLEM ============ -->
 <section style="background: #0a0a0a;">
   <div class="container">
     <div class="slide-header">
       <div class="slide-num">Scenario 1 of 3</div>
       <h2 class="slide-title">The Job-Hopping Veteran</h2>
+      <p class="slide-tag">Jake's story — why it seemed impossible</p>
     </div>
 
     <div class="card animate-on-scroll">
-      <div class="card-label">Read This Aloud</div>
-      <div class="divider"></div>
       <div class="story">
         <p>"I'm Jake. I'm a veteran, and I have my Certificate of Eligibility, so I know I can buy a home with <span class="teal">zero money down</span>. But I've got a problem — over the past two years, I've had <span class="amber">six different jobs</span>.</p>
 
-        <p>On paper, I look like a mess. And I'm <strong>100% disabled</strong>, which I worry makes me even riskier to lenders. My spouse has already told me homeownership is a pipe dream. I don't think I'll ever qualify."</p>
+        <p>On paper, I look like a mess. I'm also <strong>100% disabled</strong>, which I worry makes me even riskier to lenders. My spouse has already told me homeownership is a pipe dream."</p>
       </div>
-    </div>
 
-    <div class="card animate-on-scroll">
-      <div class="card-label">The Resolution</div>
-      <div class="divider"></div>
-      <div class="story">
-        <p>Jake's work history told a different story than the numbers suggested. Every job was in the <strong>same industry</strong>, and he never had more than a <span class="teal">3-day gap</span> between positions. That's consistency — not chaos.</p>
-
-        <p>He qualified for a <strong>VA loan</strong> using his Certificate of Eligibility. Six jobs and all.</p>
-      </div>
-      <div class="solution-highlight">
-        <p><strong>Bonus win:</strong> Because he's 100% disabled, his <strong>property taxes were removed entirely</strong>. Lower monthly payment, more money in his pocket every month.</p>
+      <div class="issue-box">
+        <div class="issue-label">Why It Seemed Impossible</div>
+        <div class="issue-item">❌ <span class="rose">6 jobs in 2 years</span> = looks unstable</div>
+        <div class="issue-item">❌ <span class="rose">100% disabled</span> = perceived as high-risk</div>
+        <div class="issue-item">❌ No lender would touch him</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== SCENARIO 2 ========== -->
+<!-- ============ SCENARIO 1: SOLUTION ============ -->
 <section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
+  <div class="container">
+    <div class="slide-header">
+      <div class="slide-num">The Resolution</div>
+      <h2 class="slide-title">The Job-Hopping Veteran</h2>
+      <p class="slide-tag">How each issue was solved</p>
+    </div>
+
+    <div class="card animate-on-scroll">
+      <div class="answer-box">
+        <div class="answer-label">Issue 1: 6 Jobs in 2 Years</div>
+        <div class="answer-item">✅ Every job was in the <strong>same industry</strong></div>
+        <div class="answer-item">✅ Never more than a <span class="teal">3-day gap</span> between jobs = consistency, not chaos</div>
+        <div class="answer-item">✅ Qualified for a <strong>VA loan</strong> with COE</div>
+      </div>
+
+      <div class="answer-box">
+        <div class="answer-label">Issue 2: 100% Disabled</div>
+        <div class="answer-item">✅ Property taxes <span class="amber">removed entirely</span></div>
+        <div class="answer-item">✅ Lower monthly payment, more money in pocket</div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="story">
+        <p><strong>Jake bought his home.</strong> What looked like a pipe dream became reality — with money left over every month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCENARIO 2: PROBLEM ============ -->
+<section style="background: #0a0a0a;">
   <div class="container">
     <div class="slide-header">
       <div class="slide-num">Scenario 2 of 3</div>
       <h2 class="slide-title">The Contingent Buyer</h2>
+      <p class="slide-tag">Emily's story — why it seemed impossible</p>
     </div>
 
     <div class="card animate-on-scroll">
-      <div class="card-label">Read This Aloud</div>
-      <div class="divider"></div>
       <div class="story">
         <p>"I'm Emily. I own a home in Herriman, but I want to move to <strong>Cottonwood Heights</strong>. It's where I want to be — better schools, closer to work, just a better fit for my family.</p>
 
-        <p>But my agent just told me the hard truth: <strong>contingent offers won't even be looked at</strong> in that market. Too competitive. I have to sell my current home before I can buy a new one. But I can't buy without selling first. I'm stuck in a catch-22."</p>
+        <p>But my agent just told me the hard truth: <strong>contingent offers won't even be looked at</strong> in that market. I have to sell my current home before I can buy a new one. But I can't buy without selling first. I'm stuck in a catch-22."</p>
       </div>
-    </div>
 
-    <div class="card animate-on-scroll">
-      <div class="card-label">The Resolution</div>
-      <div class="divider"></div>
-      <div class="story">
-        <p>Emily's debt-to-income on a conventional loan was too tight — she'd need to sell first. But <strong>FHA</strong> has more flexible DTI limits.</p>
-
-        <p>She could qualify carrying <span class="teal">both mortgage payments at the same time</span>. That meant buying in Cottonwood Heights <strong>without a sale contingency</strong> — the exact thing her agent said was impossible.</p>
-      </div>
-      <div class="solution-highlight">
-        <p><strong>Bonus win:</strong> She closed on the new house, had two full weeks to move, then sold the Herriman home. <strong>No bridge loan. No double move. No storage unit.</strong></p>
+      <div class="issue-box">
+        <div class="issue-label">Why It Seemed Impossible</div>
+        <div class="issue-item">❌ <span class="rose">Contingent offers rejected</span> in hot market</div>
+        <div class="issue-item">❌ Conventional DTI too tight — can't carry two mortgages</div>
+        <div class="issue-item">❌ Must sell first, but needs somewhere to live</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== SCENARIO 3 ========== -->
+<!-- ============ SCENARIO 2: SOLUTION ============ -->
+<section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
+  <div class="container">
+    <div class="slide-header">
+      <div class="slide-num">The Resolution</div>
+      <h2 class="slide-title">The Contingent Buyer</h2>
+      <p class="slide-tag">How each issue was solved</p>
+    </div>
+
+    <div class="card animate-on-scroll">
+      <div class="answer-box">
+        <div class="answer-label">Issue 1: Can't Get Offer Accepted</div>
+        <div class="answer-item">✅ Switched from <strong>conventional</strong> to <span class="teal">FHA</span></div>
+        <div class="answer-item">✅ FHA's flexible DTI = could carry <strong>both mortgages</strong></div>
+        <div class="answer-item">✅ Made offer <span class="amber">without a contingency</span></div>
+      </div>
+
+      <div class="answer-box">
+        <div class="answer-label">Issue 2: Sell Before Buy</div>
+        <div class="answer-item">✅ Closed on new house first</div>
+        <div class="answer-item">✅ Had <strong>2 weeks</strong> to move</div>
+        <div class="answer-item">✅ Sold Herriman home after moving out</div>
+        <div class="answer-item">✅ <span class="amber">No bridge loan. No double move.</span></div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="story">
+        <p><strong>Emily got her Cottonwood Heights home.</strong> Her agent's "impossible" became a seamless transition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCENARIO 3: PROBLEM ============ -->
 <section style="background: #0a0a0a;">
   <div class="container">
     <div class="slide-header">
       <div class="slide-num">Scenario 3 of 3</div>
       <h2 class="slide-title">The Cash-Strapped Investor</h2>
+      <p class="slide-tag">Tom's story — why it seemed impossible</p>
     </div>
 
     <div class="card animate-on-scroll">
-      <div class="card-label">Read This Aloud</div>
-      <div class="divider"></div>
       <div class="story">
         <p>"I'm Tom. I found a <span class="amber">$400,000 investment property</span> — fairly priced, great location, huge upside. I need <strong>25% down</strong>, about $100,000. But I don't have that kind of cash sitting around.</p>
 
         <p>I'm also <strong>self-employed</strong>. My income is solid, but it doesn't fit in a W-2 box, so traditional lenders don't know what to do with me. I own another property free and clear, but I need that equity to buy this new one. Without $100K liquid, this deal dies."</p>
       </div>
+
+      <div class="issue-box">
+        <div class="issue-label">Why It Seemed Impossible</div>
+        <div class="issue-item">❌ Needs <span class="rose">$100K down</span>, no liquid cash</div>
+        <div class="issue-item">❌ <span class="rose">Self-employed</span> = no traditional income verification</div>
+        <div class="issue-item">❌ Has equity trapped in another property, but can't access it</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCENARIO 3: SOLUTION ============ -->
+<section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
+  <div class="container">
+    <div class="slide-header">
+      <div class="slide-num">The Resolution</div>
+      <h2 class="slide-title">The Cash-Strapped Investor</h2>
+      <p class="slide-tag">How each issue was solved</p>
     </div>
 
     <div class="card animate-on-scroll">
-      <div class="card-label">The Resolution</div>
+      <div class="answer-box">
+        <div class="answer-label">Issue 1: No Cash for Down Payment</div>
+        <div class="answer-item">✅ Structured <span class="teal">cash-out DSCR loan</span> on paid-off property</div>
+        <div class="answer-item">✅ Pulled <strong>$100K</strong> from existing equity</div>
+        <div class="answer-item">✅ Used as down payment on new $400K property</div>
+      </div>
+
+      <div class="answer-box">
+        <div class="answer-label">Issue 2: Self-Employed Income</div>
+        <div class="answer-item">✅ DSCR = uses <strong>property's future rental income</strong>, not personal income</div>
+        <div class="answer-item">✅ Self-employed status = irrelevant</div>
+      </div>
+
+      <div class="answer-box">
+        <div class="answer-label">Issue 3: New Property Cash Flow</div>
+        <div class="answer-item">✅ Two separate entrances = <strong>two rental units</strong></div>
+        <div class="answer-item">✅ ~$2,500 total rent covers new mortgage</div>
+      </div>
+
       <div class="divider"></div>
       <div class="story">
-        <p>Tom had untapped equity in his paid-off investment property. We structured a <span class="teal">cash-out DSCR loan</span> on that property.</p>
-
-        <p>DSCR = Debt Service Coverage Ratio. It qualifies based on the <strong>property's future rental income</strong>, not personal income. Perfect for self-employed investors.</p>
-
-        <p>He pulled $100K from the existing property for his down payment. The new property has <strong>two separate entrances</strong> — two families at ~$2,500 total rent, covering the new mortgage.</p>
-      </div>
-      <div class="solution-highlight">
-        <p><strong>Bonus win:</strong> Zero personal income used. Zero cash out of pocket. One smart loan structure. His deal lived.</p>
+        <p><strong>Tom closed the deal.</strong> Zero personal income used. Zero cash out of pocket. One smart loan structure.</p>
       </div>
     </div>
   </div>
@@ -319,4 +413,3 @@
 
 </body>
 </html>
-<!-- deployed Mon Aug 24 15:27:50 MDT 2026 -->
