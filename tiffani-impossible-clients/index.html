@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impossible Clients — Tiffani Swensen | Simply Home Mortgage</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  /* Section Base */
+  section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    position: relative;
+  }
+  
+  section .container {
+    width: 100%;
+  }
+  
+  /* Hero */
+  .hero {
+    background: linear-gradient(180deg, #0f172a 0%, #0a0a0a 100%);
+    position: relative;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 70%;
+    background: radial-gradient(ellipse at 50% 0%, rgba(20, 184, 166, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(10, 10, 10, 1) 0%, transparent 100%);
+    pointer-events: none;
+  }
+  
+  .hero-grid {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+      linear-gradient(rgba(20, 184, 166, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20, 184, 166, 0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+  }
+  
+  .hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero-icon {
+    font-size: 64px;
+    margin-bottom: 24px;
+  }
+  
+  .hero h1 {
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+  }
+  
+  .hero h1 span {
+    background: linear-gradient(135deg, #14b8a6 0%, #5eead4 50%, #14b8a6 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s ease infinite;
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  
+  .hero-tagline {
+    margin-top: 28px;
+    color: #14b8a6;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  
+  .presenter-name {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-top: 8px;
+  }
+  
+  /* Section Headers */
+  .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .section-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(20, 184, 166, 0.08);
+    border: 1px solid rgba(20, 184, 166, 0.2);
+    border-radius: 50px;
+    color: #14b8a6;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  
+  .section-subtitle {
+    color: #64748b;
+    font-size: 1.05rem;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* Cards */
+  .card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(20, 184, 166, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .card-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #94a3b8;
+  }
+  
+  .card-text strong {
+    color: #f8fafc;
+  }
+  
+  .highlight {
+    color: #fbbf24;
+    font-weight: 600;
+  }
+  
+  /* Problem Card */
+  .problem-card {
+    border-color: rgba(248, 113, 113, 0.15);
+    background: rgba(248, 113, 113, 0.03);
+  }
+  
+  .problem-card .card-label {
+    color: #f87171;
+  }
+  
+  /* Solution Card */
+  .solution-card {
+    border-color: rgba(34, 197, 94, 0.15);
+    background: rgba(34, 197, 94, 0.03);
+  }
+  
+  .solution-card .card-label {
+    color: #4ade80;
+  }
+  
+  /* Client Card */
+  .client-card {
+    border-color: rgba(139, 92, 246, 0.15);
+    background: rgba(139, 92, 246, 0.03);
+  }
+  
+  .client-card .card-label {
+    color: #a78bfa;
+  }
+  
+  /* Question Card */
+  .question-card {
+    border-color: rgba(251, 191, 36, 0.15);
+    background: rgba(251, 191, 36, 0.03);
+  }
+  
+  .question-card .card-label {
+    color: #fbbf24;
+  }
+  
+  /* Volunteer Box */
+  .volunteer-box {
+    background: rgba(20, 184, 166, 0.05);
+    border: 1px dashed rgba(20, 184, 166, 0.3);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .volunteer-box .icon {
+    font-size: 36px;
+    margin-bottom: 8px;
+  }
+  
+  .volunteer-box p {
+    font-size: 0.95rem;
+    color: #5eead4;
+    line-height: 1.5;
+  }
+  
+  .volunteer-box strong {
+    color: #14b8a6;
+  }
+  
+  /* Hero Badge */
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(20, 184, 166, 0.1);
+    border: 1px solid rgba(20, 184, 166, 0.25);
+    color: #14b8a6;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+  
+  /* CTA Box */
+  .cta-box {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    margin-top: 32px;
+  }
+  
+  .cta-title {
+    color: #14b8a6;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  
+  .cta-text {
+    color: #94a3b8;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .cta-highlight {
+    color: #14b8a6;
+    font-weight: 600;
+  }
+  
+  /* Timeline */
+  .timeline {
+    max-width: 700px;
+    margin: 0 auto 32px;
+  }
+  
+  .timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 24px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border-left: 3px solid rgba(20, 184, 166, 0.3);
+  }
+  
+  .timeline-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .timeline-content {
+    flex: 1;
+  }
+  
+  .timeline-label {
+    color: #14b8a6;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  
+  .timeline-text {
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  /* Number Cards */
+  .number-card {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+    color: #0a0a0a;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+  }
+  
+  /* Contact */
+  .contact-info {
+    text-align: center;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  
+  .contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  
+  .contact-info p {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin: 4px 0;
+  }
+  
+  .license {
+    color: #14b8a6;
+    font-weight: 500;
+    margin-top: 16px;
+    font-size: 0.85rem;
+  }
+  
+  .btn {
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    display: inline-block;
+    margin: 4px;
+  }
+  
+  .btn-primary {
+    background: #14b8a6;
+    color: #0a0a0a;
+  }
+  
+  .btn-primary:hover {
+    background: #2dd4bf;
+    transform: translateY(-2px);
+  }
+  
+  .btn-secondary {
+    background: transparent;
+    color: #14b8a6;
+    border: 1px solid rgba(20, 184, 166, 0.4);
+  }
+  
+  .btn-secondary:hover {
+    background: rgba(20, 184, 166, 0.1);
+  }
+  
+  /* Footer */
+  footer {
+    background: #0a0a0a;
+    padding: 40px 24px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  
+  footer p {
+    color: #475569;
+    font-size: 0.8rem;
+  }
+  
+  /* Slide Counter */
+  .slide-counter {
+    text-align: center;
+    color: #475569;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Slide 0: Title -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="container">
+    <div class="hero-content">
+      <img src="simply-home-logo-wide.webp" alt="Simply Home Mortgage" class="hero-logo" style="width:200px; margin-bottom:24px;">
+      <div class="hero-icon">🦸‍♀️</div>
+      <h1><span>Impossible</span><br>Clients</h1>
+      <p class="hero-subtitle">
+        Three borrowers. Three situations that sound impossible.<br>
+        Spoiler: they're not.
+      </p>
+      <div class="volunteer-box" style="max-width:500px; margin:24px auto;">
+        <p><strong>How This Works:</strong> I'll hand a card to a volunteer. They become the client and read their "impossible" situation out loud. The group guesses: Is it actually impossible? Then I reveal how we made it work.</p>
+      </div>
+      <p class="hero-tagline">Mortgage Superhero at Your Service</p>
+      <p class="presenter-name">Tiffani Swensen — Simply Home Mortgage</p>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 1: Scenario 1 Intro -->
+<section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Scenario 1 of 3</span>
+      <h2 class="section-title">The Job-Hopping Veteran</h2>
+    </div>
+    <div class="volunteer-box animate-on-scroll">
+      <div class="icon">🙋‍♂️</div>
+      <p><strong>Volunteer:</strong> Read this card. You're about to meet your lender and you think your situation is hopeless.</p>
+    </div>
+    <div class="card client-card animate-on-scroll">
+      <div class="card-label">👤 Meet the Client</div>
+      <div class="card-text">
+        You're a veteran who served in the military. You have your Certificate of Eligibility and know you can buy with <strong>zero down</strong>. But there's a problem: <span class="highlight">you've had 6 jobs in the last 2 years.</span><br><br>
+        You're also <strong>100% disabled</strong> and worried no lender will touch you. Your spouse thinks buying a home is a pipe dream.
+      </div>
+    </div>
+    <div class="card problem-card animate-on-scroll">
+      <div class="card-label">❌ The "Impossible" Problem</div>
+      <div class="card-text">
+        "I have no stability. Six jobs in two years? I'm unqualified. And I'm disabled — who would give me a loan?"
+      </div>
+    </div>
+    <div class="card question-card animate-on-scroll">
+      <div class="card-label">💬 Ask the Group</div>
+      <div class="card-text">
+        <strong>Is this actually impossible? What would you do?</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 2: Scenario 1 Resolution -->
+<section style="background: linear-gradient(180deg, #0f172a 0%, #0a0a0a 100%);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">The Reveal</span>
+      <h2 class="section-title">The Job-Hopping Veteran</h2>
+    </div>
+    <div class="card solution-card animate-on-scroll">
+      <div class="card-label">✅ The Strategy</div>
+      <div class="card-text">
+        I sat down and walked through his <strong>2-year work history</strong>. Yes, 6 jobs. But here's what mattered: <span class="highlight">every job was in the same industry</span>, and there was <strong>never more than a 3-day gap</strong> between positions.<br><br>
+        That showed <strong>consistency</strong>, not chaos. He qualified for a <strong>VA loan</strong> with his Certificate of Eligibility.
+      </div>
+    </div>
+    <div class="card solution-card animate-on-scroll">
+      <div class="card-label">🎁 The Bonus Win</div>
+      <div class="card-text">
+        Because he's <strong>100% disabled</strong>, we also got his <strong>property taxes removed entirely</strong>. His monthly payment dropped even further.<br><br>
+        What felt impossible became his dream home — with money left over every month.
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <div class="hero-badge">🦸‍♀️ Mortgage Superhero Strikes Again</div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 3: Scenario 2 Intro -->
+<section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Scenario 2 of 3</span>
+      <h2 class="section-title">The Contingent Buyer</h2>
+    </div>
+    <div class="volunteer-box animate-on-scroll">
+      <div class="icon">🙋‍♀️</div>
+      <p><strong>Volunteer:</strong> You're living in Herriman but your heart is set on Cottonwood Heights — and your agent just told you it's never going to happen.</p>
+    </div>
+    <div class="card client-card animate-on-scroll">
+      <div class="card-label">👤 Meet the Client</div>
+      <div class="card-text">
+        You own a home in <strong>Herriman</strong> and want to move to <strong>Cottonwood Heights</strong>. It's a more coveted area with hotter competition.<br><br>
+        Your real estate agent says: <span class="highlight">"If your offer is contingent on selling your Herriman house, they won't even look at it."</span>
+      </div>
+    </div>
+    <div class="card problem-card animate-on-scroll">
+      <div class="card-label">❌ The "Impossible" Problem</div>
+      <div class="card-text">
+        "I have to sell before I can buy. But I can't buy without selling first. It's a chicken-and-egg problem in the most competitive market around."
+      </div>
+    </div>
+    <div class="card question-card animate-on-scroll">
+      <div class="card-label">💬 Ask the Group</div>
+      <div class="card-text">
+        <strong>Is this actually impossible? What's the workaround?</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 4: Scenario 2 Resolution -->
+<section style="background: linear-gradient(180deg, #0f172a 0%, #0a0a0a 100%);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">The Reveal</span>
+      <h2 class="section-title">The Contingent Buyer</h2>
+    </div>
+    <div class="card solution-card animate-on-scroll">
+      <div class="card-label">✅ The Strategy</div>
+      <div class="card-text">
+        We looked at her <strong>debt-to-income ratio</strong> on a conventional loan. It was tight — she'd need to sell first.<br><br>
+        But then we explored <strong>FHA</strong>. With FHA's more flexible DTI limits, <span class="highlight">she could qualify carrying BOTH mortgage payments.</span><br><br>
+        That meant she could buy the Cottonwood Heights home <strong>without a contingency</strong>.
+      </div>
+    </div>
+    <div class="card solution-card animate-on-scroll">
+      <div class="card-label">🎁 The Bonus Win</div>
+      <div class="card-text">
+        She closed on the new house, had 2 weeks to move, <strong>then</strong> sold the Herriman home — no bridge loan, no double move, no storage unit.<br><br>
+        Her agent's "impossible" became a <strong>seamless transition</strong> from one home to the next.
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <div class="hero-badge">🦸‍♀️ Mortgage Superhero Strikes Again</div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 5: Scenario 3 Intro -->
+<section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Scenario 3 of 3</span>
+      <h2 class="section-title">The Cash-Strapped Investor</h2>
+    </div>
+    <div class="volunteer-box animate-on-scroll">
+      <div class="icon">🙋‍♂️</div>
+      <p><strong>Volunteer:</strong> You're a self-employed investor with a paid-off property and a can't-miss deal. But there's a $100,000 problem.</p>
+    </div>
+    <div class="card client-card animate-on-scroll">
+      <div class="card-label">👤 Meet the Client</div>
+      <div class="card-text">
+        You found a <strong>$400,000 investment property</strong> that's fairly priced and has great potential. You need <strong>25% down</strong> — about $100,000.<br><br>
+        Problem: you don't have $100K liquid. And you're <strong>self-employed</strong>, so traditional income verification is a nightmare.
+      </div>
+    </div>
+    <div class="card problem-card animate-on-scroll">
+      <div class="card-label">❌ The "Impossible" Problem</div>
+      <div class="card-text">
+        "I have assets, but not cash. My income is solid but doesn't fit in a W-2 box. Without a big down payment, this deal dies."
+      </div>
+    </div>
+    <div class="card question-card animate-on-scroll">
+      <div class="card-label">💬 Ask the Group</div>
+      <div class="card-text">
+        <strong>Is this actually impossible? How do you buy real estate with no cash down and no traditional income?</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 6: Scenario 3 Resolution -->
+<section style="background: linear-gradient(180deg, #0f172a 0%, #0a0a0a 100%);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">The Reveal</span>
+      <h2 class="section-title">The Cash-Strapped Investor</h2>
+    </div>
+    <div class="card solution-card animate-on-scroll">
+      <div class="card-label">✅ The Strategy</div>
+      <div class="card-text">
+        He owned another investment property <strong>free and clear</strong>. We did a <strong>cash-out DSCR loan</strong> on that property.<br><br>
+        DSCR = Debt Service Coverage Ratio. It's based on the <span class="highlight">property's future rental income</span>, not his personal income. Perfect for self-employed investors.
+      </div>
+    </div>
+    <div class="card solution-card animate-on-scroll">
+      <div class="card-label">🎁 The Bonus Win</div>
+      <div class="card-text">
+        He pulled $100K from the paid-off property as his down payment. The new property had <strong>two entrances</strong> — we could rent to two families for ~$2,500 total, covering the new mortgage.<br><br>
+        <strong>Zero personal income used. Zero cash out of pocket. One smart loan structure.</strong>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <div class="hero-badge">🦸‍♀️ Mortgage Superhero Strikes Again</div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 7: The Pattern -->
+<section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">The Pattern</span>
+      <h2 class="section-title">What Do All Three Have in Common?</h2>
+    </div>
+    <div class="card animate-on-scroll">
+      <div class="card-label">🔍 The Real Story</div>
+      <div class="card-text">
+        Every single one of these clients had been told <strong>"no"</strong> or <strong>"impossible"</strong> before they found me.<br><br>
+        The veteran was ready to give up on homeownership. The buyer was told she'd never get into Cottonwood Heights. The investor thought his deal was dead.<br><br>
+        <span class="highlight">They weren't impossible. They just needed the right loan program.</span>
+      </div>
+    </div>
+    <div class="card animate-on-scroll">
+      <div class="card-label">💡 The Lesson</div>
+      <div class="card-text">
+        VA loans. FHA flexibility. DSCR for investors. Bridge loans. 1031 exchanges. Construction loans.<br><br>
+        Most lenders present <strong>one path</strong>. I find the path that <strong>actually works for your situation</strong>.
+      </div>
+    </div>
+    <div class="card animate-on-scroll" style="border-color:rgba(20,184,166,0.2); background:rgba(20,184,166,0.03);">
+      <div class="card-label" style="color:#14b8a6;">🎯 The Bottom Line</div>
+      <div class="card-text">
+        If someone tells you something is impossible, get a second opinion. <strong>Especially if that second opinion is me.</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 8: Contact/Close -->
+<section style="background: linear-gradient(180deg, #0f172a 0%, #0a0a0a 100%);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Let's Connect</span>
+      <h2 class="section-title">Impossible Is Just a Starting Point</h2>
+      <p class="section-subtitle">Whether you're buying your first home, moving up, or building a portfolio</p>
+    </div>
+    <div style="text-align:center; margin-bottom:32px;">
+      <div style="font-size:64px; margin-bottom:16px;">🦸‍♀️</div>
+      <p style="color:#94a3b8; font-size:1.05rem; max-width:500px; margin:0 auto; line-height:1.6;">
+        The right strategy changes everything. Let's find yours.
+      </p>
+    </div>
+    <div class="card animate-on-scroll" style="max-width:500px; margin:0 auto 24px; text-align:center;">
+      <div class="card-label" style="justify-content:center;">📇 Tiffani Swensen</div>
+      <div class="card-text" style="color:#e2e8f0;">
+        Simply Home Mortgage<br>
+        NMLS #[your number]<br><br>
+        📞 [phone]<br>
+        📧 [email]<br><br>
+        <strong style="color:#14b8a6;">Real estate made simple.</strong><br>
+        Even when it sounds <span class="highlight">impossible</span>.
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:24px;">
+      <a href="tel:8014037779" class="btn btn-primary">Call Me</a>
+      <a href="mailto:tiffani@simplyhome.io" class="btn btn-secondary">Email Me</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Simply Home Mortgage. All rights reserved. | simplyhome.io</p>
+  </div>
+</footer>
+
+<script>
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
+<!-- Built for Tiffani Swensen BNI presentation 2026-08-24 -->
