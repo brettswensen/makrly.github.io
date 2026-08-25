@@ -10,8 +10,8 @@
   html { scroll-behavior: smooth; scroll-snap-type: y mandatory; }
   body {
     font-family: 'Inter', sans-serif;
-    background: #ffffff;
-    color: #0f172a;
+    background: #0a0a0a;
+    color: #e2e8f0;
     line-height: 1.7;
     overflow-x: hidden;
   }
@@ -36,12 +36,12 @@
 
   /* HERO */
   .hero {
-    background: #f0fdfa;
+    background: linear-gradient(180deg, #0f172a 0%, #0a0a0a 100%);
     position: relative;
   }
   .hero::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 60%;
-    background: radial-gradient(ellipse at 50% 0%, rgba(20, 184, 166, 0.08) 0%, transparent 60%);
+    background: radial-gradient(ellipse at 50% 0%, rgba(20, 184, 166, 0.1) 0%, transparent 60%);
     pointer-events: none;
   }
   .hero-content { text-align: center; position: relative; z-index: 1; }
@@ -49,10 +49,10 @@
   .hero h1 {
     font-size: clamp(2.5rem, 7vw, 4.2rem); font-weight: 800;
     margin-bottom: 14px; letter-spacing: -0.03em; line-height: 0.95;
-    color: #0f172a;
+    color: #f8fafc;
   }
   .hero h1 span {
-    background: linear-gradient(135deg, #14b8a6 0%, #0d9488 50%, #14b8a6 100%);
+    background: linear-gradient(135deg, #14b8a6 0%, #5eead4 50%, #14b8a6 100%);
     background-size: 200% auto;
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     background-clip: text; animation: shimmer 3s ease infinite;
@@ -66,32 +66,32 @@
   .slide-header { text-align: center; margin-bottom: 32px; }
   .slide-num {
     font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;
-    color: #94a3b8; margin-bottom: 10px;
+    color: #475569; margin-bottom: 10px;
   }
   .slide-title {
     font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700;
-    margin-bottom: 6px; letter-spacing: -0.02em; color: #0f172a;
+    margin-bottom: 6px; letter-spacing: -0.02em; color: #f8fafc;
   }
   .slide-tag { color: #64748b; font-size: 0.9rem; }
 
   /* CARDS */
   .card {
-    background: #fafafa;
-    border: 1px solid #e2e8f0;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
     border-radius: 18px;
     padding: 28px;
     margin-bottom: 12px;
   }
   .story {
-    font-size: 1.05rem; line-height: 1.85; color: #334155;
+    font-size: 1.05rem; line-height: 1.85; color: #cbd5e1;
   }
   .story p { margin-bottom: 14px; }
   .story p:last-child { margin-bottom: 0; }
-  .story strong { color: #0f172a; font-weight: 500; }
+  .story strong { color: #f8fafc; font-weight: 500; }
 
-  .teal { color: #0d9488; font-weight: 500; }
-  .amber { color: #d97706; font-weight: 500; }
-  .rose { color: #dc2626; font-weight: 500; }
+  .teal { color: #14b8a6; font-weight: 500; }
+  .amber { color: #fbbf24; font-weight: 500; }
+  .rose { color: #f87171; font-weight: 500; }
 
   /* ISSUE / ANSWER BOXES */
   .box {
@@ -99,25 +99,24 @@
     padding: 18px 22px;
     margin-top: 14px;
   }
-  .issue-box { background: #fef2f2; border: 1px solid #fecaca; }
-  .answer-box { background: #f0fdf4; border: 1px solid #bbf7d0; }
-  .insight-box { background: #fffbeb; border: 1px solid #fde68a; }
-  .stat-box { background: #f1f5f9; border: 1px solid #e2e8f0; }
+  .issue-box { background: rgba(255,255,255,0.015); border: 1px solid rgba(255,255,255,0.05); }
+  .answer-box { background: rgba(20, 184, 166, 0.04); border: 1px solid rgba(20, 184, 166, 0.1); }
+  .insight-box { background: rgba(251, 191, 36, 0.03); border: 1px solid rgba(251, 191, 36, 0.1); }
+  .stat-box { background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255,255,255,0.04); }
 
   .box-label {
     font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px;
     margin-bottom: 10px; font-weight: 600;
   }
-  .issue-box .box-label { color: #dc2626; }
-  .answer-box .box-label { color: #059669; }
-  .insight-box .box-label { color: #d97706; }
-  .stat-box .box-label { color: #475569; }
+  .issue-box .box-label { color: #475569; }
+  .answer-box .box-label { color: #14b8a6; }
+  .insight-box .box-label { color: #fbbf24; }
+  .stat-box .box-label { color: #64748b; }
 
   .box-item {
     padding: 7px 0;
     font-size: 0.93rem;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    color: #334155;
+    border-bottom: 1px solid rgba(255,255,255,0.035);
   }
   .box-item:last-child { border-bottom: none; padding-bottom: 0; }
   .box-item:first-child { padding-top: 0; }
@@ -132,50 +131,50 @@
     font-style: italic;
     font-size: 1rem;
     line-height: 1.6;
-    color: #475569;
+    color: #cbd5e1;
   }
-  .insight-quote em { color: #d97706; font-style: normal; font-weight: 500; }
+  .insight-quote em { color: #fbbf24; font-style: normal; font-weight: 500; }
 
   /* COMPARISON */
   .compare { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 14px; }
   .compare-col {
-    background: #fafafa;
-    border: 1px solid #e2e8f0;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
     border-radius: 14px;
     padding: 18px;
   }
   .compare-col .box-label { color: #475569; margin-bottom: 8px; }
   .compare-col ul { list-style: none; }
-  .compare-col li { color: #64748b; font-size: 0.9rem; padding: 3px 0; }
+  .compare-col li { color: #94a3b8; font-size: 0.9rem; padding: 3px 0; }
 
   /* CONTACT */
   .contact-box {
-    background: #fafafa;
-    border: 1px solid #e2e8f0;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
     border-radius: 20px; padding: 36px 28px; text-align: center;
   }
-  .qr { width: 150px; height: 150px; border-radius: 14px; margin-bottom: 22px; opacity: 0.9; background: #ffffff; }
+  .qr { width: 150px; height: 150px; border-radius: 14px; margin-bottom: 22px; opacity: 0.9; }
   .btn {
     padding: 12px 26px; border-radius: 50px; font-weight: 600;
     text-decoration: none; transition: all 0.3s ease;
     font-size: 0.9rem; display: inline-block; margin: 3px;
   }
   .btn-primary {
-    background: #0d9488;
-    color: #ffffff;
+    background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+    color: #0a0a0a;
   }
-  .btn-primary:hover { transform: translateY(-2px); background: #0f766e; }
+  .btn-primary:hover { transform: translateY(-2px); }
   .btn-secondary {
-    background: transparent; color: #64748b;
-    border: 1px solid #e2e8f0;
+    background: transparent; color: #94a3b8;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
-  .btn-secondary:hover { background: #f8fafc; }
+  .btn-secondary:hover { background: rgba(255,255,255,0.04); }
 
   footer {
-    background: #f8fafc; padding: 32px 24px; text-align: center;
-    border-top: 1px solid #e2e8f0;
+    background: #0a0a0a; padding: 32px 24px; text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.03);
   }
-  footer p { color: #94a3b8; font-size: 0.75rem; }
+  footer p { color: #334155; font-size: 0.75rem; }
 
   @media (min-width: 640px) {
     .compare { grid-template-columns: 1fr 1fr; }
@@ -196,7 +195,7 @@
 </section>
 
 <!-- === SLIDE 2: HOOK === -->
-<section style="background: #f8fafc;">
+<section style="background: linear-gradient(180deg, #0f172a 0%, #0a0a0a 100%);">
   <div class="container">
     <div class="slide-header">
       <div class="slide-num"></div>
@@ -213,7 +212,7 @@
 </section>
 
 <!-- === SLIDE 3: S1 PROBLEM === -->
-<section style="background: #ffffff;">
+<section style="background: #0a0a0a;">
   <div class="container">
     <div class="slide-header">
       <div class="slide-num">Scenario 1 of 3</div>
@@ -236,7 +235,7 @@
 </section>
 
 <!-- === SLIDE 4: S1 SOLUTION === -->
-<section style="background: #f8fafc;">
+<section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
   <div class="container">
     <div class="slide-header">
       <div class="slide-num">The Solution</div>
@@ -269,7 +268,7 @@
 </section>
 
 <!-- === SLIDE 5: S2 PROBLEM === -->
-<section style="background: #ffffff;">
+<section style="background: #0a0a0a;">
   <div class="container">
     <div class="slide-header">
       <div class="slide-num">Scenario 2 of 3</div>
@@ -292,7 +291,7 @@
 </section>
 
 <!-- === SLIDE 6: S2 SOLUTION === -->
-<section style="background: #f8fafc;">
+<section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
   <div class="container">
     <div class="slide-header">
       <div class="slide-num">The Solution</div>
@@ -351,7 +350,7 @@
 </section>
 
 <!-- === SLIDE 7: S3 PROBLEM === -->
-<section style="background: #ffffff;">
+<section style="background: #0a0a0a;">
   <div class="container">
     <div class="slide-header">
       <div class="slide-num">Scenario 3 of 3</div>
@@ -374,7 +373,7 @@
 </section>
 
 <!-- === SLIDE 8: S3 SOLUTION === -->
-<section style="background: #f8fafc;">
+<section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
   <div class="container">
     <div class="slide-header">
       <div class="slide-num">The Solution</div>
@@ -412,7 +411,7 @@
 </section>
 
 <!-- === SLIDE 9: STATS / THESE AREN'T OUTLIERS === -->
-<section style="background: #ffffff;">
+<section style="background: #0a0a0a;">
   <div class="container">
     <div class="slide-header">
       <div class="slide-num">The Pattern</div>
@@ -422,15 +421,15 @@
     <div class="card animate-on-scroll">
       <div class="box stat-box" style="margin-top: 0;">
         <div class="box-label">VA Loans</div>
-        <div class="box-item" style="color: #334155; border: none; padding: 4px 0;"><span class="teal">528,000+</span> veterans bought homes with VA loans in FY2025, up 27% year over year. The program just guaranteed its <strong>29 millionth</strong> loan since 1944.</div>
+        <div class="box-item" style="color: #cbd5e1; border: none; padding: 4px 0;"><span class="teal">528,000+</span> veterans bought homes with VA loans in FY2025, up 27% year over year. The program just guaranteed its <strong>29 millionth</strong> loan since 1944.</div>
       </div>
       <div class="box stat-box" style="margin-top: 12px;">
         <div class="box-label">FHA Loans</div>
-        <div class="box-item" style="color: #334155; border: none; padding: 4px 0;">In 2025, FHA helped <span class="teal">236,000+</span> buyers, including <span class="teal">140,000+</span> first-timers. When conventional says no, FHA often says yes.</div>
+        <div class="box-item" style="color: #cbd5e1; border: none; padding: 4px 0;">In 2025, FHA helped <span class="teal">236,000+</span> buyers, including <span class="teal">140,000+</span> first-timers. When conventional says no, FHA often says yes.</div>
       </div>
       <div class="box stat-box" style="margin-top: 12px;">
         <div class="box-label">DSCR Loans</div>
-        <div class="box-item" style="color: #334155; border: none; padding: 4px 0;">Investor DSCR originations are up <span class="teal">35%</span> annually. Self-employed investors finally have a path that uses property income, not personal W-2s.</div>
+        <div class="box-item" style="color: #cbd5e1; border: none; padding: 4px 0;">Investor DSCR originations are up <span class="teal">35%</span> annually. Self-employed investors finally have a path that uses property income, not personal W-2s.</div>
       </div>
       <div class="divider"></div>
       <div class="story">
@@ -441,7 +440,7 @@
 </section>
 
 <!-- === SLIDE 10: CLOSE + CONTACT === -->
-<section style="background: #f8fafc;">
+<section style="background: linear-gradient(180deg, #0a0a0a 0%, #0f172a 100%);">
   <div class="container">
     <div class="slide-header">
       <div class="slide-num"></div>
@@ -461,7 +460,7 @@
     </div>
     <div class="contact-box animate-on-scroll" style="margin-top: 28px;">
       <img src="qr-code.jpg" alt="Contact Tiffani" class="qr">
-      <h3 style="font-size: 1.3rem; margin-bottom: 2px; color: #0f172a;">Tiffani Swensen</h3>
+      <h3 style="font-size: 1.3rem; margin-bottom: 2px; color: #f8fafc;">Tiffani Swensen</h3>
       <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 20px;">Real Estate Agent / Owner, Simply Home</p>
       <div style="margin: 12px 0;">
         <a href="tel:8014037779" class="btn btn-primary">Call</a>
