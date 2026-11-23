@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Makrly | AI systems for small business operations</title>
-  <meta name="description" content="Makrly builds AI systems for small businesses, including intake, quoting, team handoffs, and customer communication." />
+  <meta name="robots" content="index, follow" />
+  <title>Makrly | AI that makes work easier</title>
+  <meta name="description" content="Makrly finds what takes too long and builds AI solutions that save you and your team time." />
   <link rel="icon" type="image/x-icon" href="/shared-assets/favicons/final-first-choice/approved-system-v6-left9/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/shared-assets/favicons/final-first-choice/approved-system-v6-left9/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/shared-assets/favicons/final-first-choice/approved-system-v6-left9/favicon-16x16.png" />
@@ -54,22 +55,15 @@
     .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1)}
     .reveal.in{opacity:1;transform:none}
 
-    .hero{padding:84px 0 72px;position:relative;overflow:hidden}
+    .hero{padding:52px 0 88px;position:relative;overflow:hidden}
     .hero:before{content:"";position:absolute;right:-140px;top:-120px;width:540px;height:540px;background:radial-gradient(circle,rgba(25,222,193,.24),transparent 62%)}
     .hero:after{content:"";position:absolute;left:-220px;bottom:-240px;width:560px;height:560px;background:radial-gradient(circle,rgba(56,189,248,.14),transparent 66%)}
-    .hero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:38px;align-items:center}
-    h1{font-size:clamp(36px,6.4vw,68px);line-height:.98;letter-spacing:-.034em;margin:16px 0 16px;max-width:900px;text-wrap:balance}
+    .hero-grid{position:relative;display:block}
+    h1{font-size:clamp(48px,6.5vw,78px);line-height:1.02;letter-spacing:-.038em;margin:0 0 22px;max-width:1120px;text-wrap:balance}
     .teal{color:var(--mk-teal-400)}
-    .lede{color:var(--mk-gray-200);font-size:clamp(18px,2.1vw,21px);line-height:1.58;max-width:700px}
+    .lede{color:var(--mk-gray-200);font-size:clamp(18px,2.1vw,21px);line-height:1.58;max-width:760px}
     .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-    .cred-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-    .cred{padding:8px 12px;border-radius:999px;background:rgba(148,163,184,.1);border:1px solid rgba(148,163,184,.24);font-size:12px;color:var(--mk-gray-100)}
     .btn-alt{background:rgba(148,163,184,.14);border:1px solid rgba(148,163,184,.24);color:var(--mk-gray-50)}
-    .hero-card{background:linear-gradient(180deg,#0f172a,#0b1220);border:1px solid rgba(148,163,184,.24);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-2);position:relative;overflow:hidden}
-    .hero-card:before{content:"";position:absolute;inset:-1px;background:linear-gradient(125deg,rgba(25,222,193,.22),transparent 45%,rgba(56,189,248,.18));opacity:.7;pointer-events:none}
-    .hero-card > *{position:relative;z-index:1}
-    .hero-card h3{margin:0 0 6px;font-size:20px}
-    .hero-card p{margin:0;color:var(--mk-gray-200);line-height:1.55}
     .workflow-card{margin-top:16px;border:1px solid rgba(148,163,184,.24);border-radius:14px;background:linear-gradient(180deg,rgba(15,23,42,.85),rgba(2,6,23,.85));padding:14px;position:relative;overflow:hidden}
     .workflow-card:after{content:"";position:absolute;inset:-1px;background:radial-gradient(circle at 80% 10%,rgba(25,222,193,.24),transparent 45%);pointer-events:none}
     .graph-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
@@ -114,6 +108,7 @@
     .card:hover:after{transform:scale(1.08)}
     .card h3{margin:10px 0 10px;font-size:20px}
     .card p{margin:0;color:var(--mk-gray-200);line-height:1.55}
+    #services .card h3{font-size:clamp(23px,2.25vw,28px);line-height:1.16;margin:20px 0 14px}
     .tag{display:inline-block;font-size:12px;color:var(--mk-cyan-400);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 
     .process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:28px;position:relative}
@@ -136,9 +131,13 @@
     .cta > *{position:relative;z-index:1}
     .cta h3{margin:0 0 10px;font-size:32px;line-height:1.1}
     .cta p{margin:0;color:var(--mk-gray-200);max-width:760px}
+    .cta-intro{margin-bottom:28px}
+    .cta-intro h2{font-size:clamp(36px,5vw,60px);line-height:1.06;max-width:1000px;margin:0 0 18px}
+    .cta-intro p{font-size:18px;line-height:1.6;max-width:780px}
     .cta-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
     .cta-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:start}
     .cta-form{margin-top:24px}
+    .cta-grid .cta-form{margin-top:0}
     .cta-form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
     .cta-input,.cta-select,.cta-textarea{width:100%;padding:13px 14px;border-radius:10px;border:1px solid rgba(148,163,184,.35);background:#f8fafc;color:#0b1220;font-size:15px;font-family:inherit}
     .cta-input::placeholder,.cta-textarea::placeholder{color:#64748b}
@@ -253,10 +252,7 @@
 
       .hero-actions,.cta-actions{flex-direction:column;align-items:stretch}
       .hero-actions .btn,.cta-actions .btn{justify-content:center}
-      .cred-row{gap:8px}
-      .cred{font-size:11px;padding:7px 10px}
 
-      .hero-card{padding:18px}
       .workflow-card{padding:12px}
       .stats{grid-template-columns:1fr}
 
@@ -293,6 +289,32 @@
       *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
       .reveal{opacity:1;transform:none}
     }
+    html{scroll-behavior:smooth;scroll-padding-top:96px}
+    .entry-section{padding-top:92px;padding-bottom:96px}
+    .entry-kicker{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0f766e}
+    .entry-intro{max-width:840px;margin-bottom:30px}
+    .entry-intro h2{max-width:790px}
+    .entry-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:16px}
+    .entry-path{display:flex;flex-direction:column;align-items:flex-start;background:#fff;border:1px solid #d8e1ec;border-radius:var(--radius-lg);padding:30px;min-height:288px;box-shadow:0 12px 28px rgba(15,23,42,.06)}
+    .entry-path.secondary{background:#eaf4f3;border-color:#c6dcd9}
+    .entry-path .overline{font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#0f766e}
+    .entry-path h3{font-size:clamp(24px,2.7vw,32px);line-height:1.16;margin:18px 0 10px;letter-spacing:-.025em;color:#0b1220}
+    .entry-path p{font-size:16px;line-height:1.58;color:#334155;margin:0 0 22px}
+    .entry-path a{margin-top:auto;color:#0c6965;font-weight:700;font-size:14px;border-bottom:1px solid currentColor;padding:11px 0;min-height:44px;display:inline-flex;align-items:center}
+    .btn,.nav > .btn{min-height:44px}
+    .entry-path a:hover,.entry-path a:focus-visible{color:#07433f}
+    .shared-path{font-size:14px;color:#475569;margin:20px 0 0;line-height:1.55;max-width:840px}
+    .approach-outcome{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;background:#112039;border:1px solid rgba(25,222,193,.28);border-radius:18px;padding:26px;margin-top:24px}
+    .approach-outcome h3{font-size:20px;margin:0 0 8px}
+    .approach-outcome p{font-size:15px;color:var(--mk-gray-200);line-height:1.6;margin:0}
+    .approach-outcome ul{padding-left:18px;font-size:14px;color:var(--mk-gray-100)}
+    .approach-outcome li+li{margin-top:5px}
+    .capability-note{margin:22px 0 0;color:#475569;line-height:1.6;max-width:790px}
+    .example-caption{font-size:12px;color:var(--mk-gray-400);margin-top:8px}
+    a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--mk-teal-400);outline-offset:3px}
+    @media(max-width:800px){.entry-grid,.approach-outcome{grid-template-columns:1fr}.entry-path{min-height:0}}
+    @media(max-width:680px){.entry-section{padding:68px 0}.entry-path{padding:22px}.approach-outcome{padding:20px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
 <body>
@@ -302,12 +324,13 @@
         <img src="https://makrly.io/shared-assets/signatures/makrly-horizontal-logo-dark-bg-tight.svg?v=1" alt="Makrly logo" />
       </a>
       <nav class="links">
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
+        <a href="#start">Where to start</a>
+        <a href="#services">Examples</a>
+        <a href="#process">Approach</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="btn btn-primary" href="#contact">Book AI workflow audit</a>
+      <a class="btn btn-primary" href="#contact">Talk with us</a>
     </div>
   </header>
 
@@ -315,113 +338,90 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="reveal">
-          <span class="pill"><span class="dot"></span>Built for operational efficiency</span>
-          <h1><span class="teal">AI systems</span> that make daily operations easier for small business teams.</h1>
-          <p class="lede">Most teams lose time in the same places: intake, quoting, handoffs, and follow-up. Makrly maps the workflow, builds the system, and keeps improving it after launch.</p>
+          <h1>Show us where the work gets stuck. <span class="teal">We’ll build a better way through it.</span></h1>
+          <p class="lede">We learn how your business works, then build AI solutions that save you and your team time on repeat work, follow-ups, and finding answers.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Get a solution map</a>
-            <a class="btn btn-alt" href="#services">See solution lanes</a>
-          </div>
-          <div class="cred-row">
-            <span class="cred">Operational AI strategy</span>
-            <span class="cred">Workflow-first implementation</span>
-            <span class="cred">Fast iteration cycles</span>
+            <a class="btn btn-primary" href="#start">Find a better way</a>
+            <a class="btn btn-alt" href="#process">How we work</a>
           </div>
         </div>
-        <aside class="hero-card reveal" data-delay="120">
-          <h3>What a good system should do</h3>
-          <p>Your team should know what came in, who owns it, what gets generated, and what happens next. If any of that is fuzzy, the workflow needs work.</p>
-          <div class="workflow-card" aria-hidden="true">
-            <div class="graph-head">
-              <span class="graph-label">Live Workflow Signal</span>
-              <span class="graph-pulse"><i></i>active</span>
-            </div>
-            <svg class="workflow-svg" viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="mkLine" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#19DEC1"/>
-                  <stop offset="100%" stop-color="#38BDF8"/>
-                </linearGradient>
-              </defs>
-              <rect x="0" y="0" width="360" height="140" rx="10" fill="rgba(15,23,42,.35)" stroke="rgba(148,163,184,.16)"/>
-              <g stroke="rgba(148,163,184,.18)" stroke-width="1">
-                <line x1="22" y1="28" x2="338" y2="28"/>
-                <line x1="22" y1="56" x2="338" y2="56"/>
-                <line x1="22" y1="84" x2="338" y2="84"/>
-                <line x1="22" y1="112" x2="338" y2="112"/>
-              </g>
-              <path d="M24 94 C54 92, 60 44, 92 48 C120 52, 132 102, 160 98 C192 92, 208 38, 236 46 C266 54, 282 108, 336 78" fill="none" stroke="rgba(56,189,248,.26)" stroke-width="6" stroke-linecap="round" class="signal-glow"/>
-              <path d="M24 94 C54 92, 60 44, 92 48 C120 52, 132 102, 160 98 C192 92, 208 38, 236 46 C266 54, 282 108, 336 78" fill="none" stroke="url(#mkLine)" stroke-width="4" stroke-linecap="round" class="signal-path"/>
-              <path d="M24 94 C54 92, 60 44, 92 48 C120 52, 132 102, 160 98 C192 92, 208 38, 236 46 C266 54, 282 108, 336 78" fill="none" stroke="rgba(25,222,193,.7)" stroke-width="1.8" stroke-linecap="round" class="signal-wave"/>
-              <circle cx="336" cy="78" r="5" fill="#19DEC1" class="signal-node"/>
-            </svg>
-          </div>
-          <div class="stats">
-            <div class="stat"><strong>Faster intake</strong><span>less back-and-forth admin</span></div>
-            <div class="stat"><strong>Cleaner handoffs</strong><span>standardized outputs</span></div>
-            <div class="stat"><strong>Better visibility</strong><span>clear next actions</span></div>
-          </div>
-        </aside>
+      </div>
+    </section>
+
+    <section id="start" class="white-block entry-section">
+      <div class="container">
+        <div class="entry-intro reveal">
+          <h2>You don't have to figure out the AI part alone.</h2>
+          <p class="sub">Tell us what takes too long, or ask us where AI might help.</p>
+        </div>
+        <div class="entry-grid">
+          <article class="entry-path reveal" data-delay="60">
+            <span class="overline">You know what is not working</span>
+            <h3>“This keeps taking too much time.”</h3>
+            <p>Maybe leads wait on follow-up, information gets entered twice, or a customer request gets passed around. We will get to the cause.</p>
+            <a href="#contact" data-starting-point="known-bottleneck">Tell us what keeps happening →</a>
+          </article>
+          <article class="entry-path secondary reveal" data-delay="120">
+            <span class="overline">You want to use AI</span>
+            <h3>“AI could help us. Where do we begin?”</h3>
+            <p>You do not need to pick a tool or dream up a use case. We will look at your business with you and find a useful place to begin.</p>
+            <a href="#contact" data-starting-point="exploring-ai">Find a place to start →</a>
+          </article>
+        </div>
+
       </div>
     </section>
 
     <section id="services" class="white-block">
       <div class="container">
-        <span class="pill reveal"><span class="dot"></span>Core services</span>
-        <h2 class="reveal" data-delay="60">AI lanes built for real business operations.</h2>
-        <p class="sub reveal" data-delay="120">If you are testing AI for the first time or replacing a messy setup, we map it, build it, test it, and adjust it with your team.</p>
+        <h2 class="reveal" data-delay="60">You and your team have better things to do than chase down details.</h2>
         <div class="services">
           <article class="card reveal" data-delay="40">
-            <span class="tag">AI Workflow Automation</span>
-            <h3>Intake, routing, and follow-up flows</h3>
-            <p>Capture requests the same way every time, route them to the right person, and automate the repetitive follow-up.</p>
+            <span class="tag">HVAC</span>
+            <h3>Faster service follow-up.</h3>
+            <p>AI brings calls, texts, and job history together, then prepares a response. The person handling the request checks it before it goes out.</p>
           </article>
           <article class="card reveal" data-delay="100">
-            <span class="tag">Custom AI Tools</span>
-            <h3>Quote + scope packaging systems</h3>
-            <p>Turn field notes, measurements, and job details into quote drafts your team can review and send fast.</p>
+            <span class="tag">Real Estate</span>
+            <h3>Less time chasing deal details.</h3>
+            <p>AI gathers the updates, documents, and next steps into a clear status summary. The agent checks it before sharing it with a client.</p>
           </article>
           <article class="card reveal" data-delay="160">
-            <span class="tag">Web + Communication Layer</span>
-            <h3>Digital presence connected to workflow</h3>
-            <p>Connect your website and forms to the tools your team already uses so nothing gets lost between sales and delivery.</p>
+            <span class="tag">Distribution</span>
+            <h3>Quicker quote prep.</h3>
+            <p>AI gathers the request, product details, and past orders into a quote draft. A person checks price and availability before it goes out.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="contrast-break contrast-b reveal" aria-label="contrast break">
+    <section class="contrast-break contrast-b reveal" aria-label="From friction to flow">
       <div class="container">
         <div class="break-intro">
-          <span class="pill"><span class="dot"></span>Before vs after</span>
-          <h2>What changes when the workflow is engineered.</h2>
-          <p>Same team. Same volume. Different operating system. This is the shift from ad-hoc handoffs to a repeatable process that moves faster with less friction.</p>
+          <h2>Less time piecing things together. More time moving forward.</h2>
+          <p>A missed handoff or one more manual step may seem small. Multiply it across a week and you feel it. So does your team.</p>
         </div>
         <div class="break-split">
           <div class="break-panel before">
-            <p class="break-kicker">Before</p>
-            <h3>Manual handoffs<br>missed context</h3>
-            <p>Requests live in texts, notes, and inbox threads. Team members fill gaps from memory, so details slip between sales and delivery.</p>
+            <p class="break-kicker">Today</p>
+            <h3>Details scattered.<br>Work waiting.</h3>
+            <p>People search for answers, repeat the same prep, and remind each other what comes next.</p>
             <ul class="break-list">
-              <li>Different intake format every time</li>
-              <li>Quote details get re-entered in multiple places</li>
-              <li>Follow-up depends on who remembers</li>
+              <li>Information lives in different places</li>
+              <li>Follow-ups are easy to miss</li>
+              <li>The same prep lands on someone again</li>
             </ul>
-            <span class="break-metric">2 day average quote turnaround</span>
           </div>
-          <div class="break-rail" aria-hidden="true">
-            <div class="break-rail-track"></div>
-          </div>
+          <div class="break-rail" aria-hidden="true"><div class="break-rail-track"></div></div>
           <div class="break-panel after">
-            <p class="break-kicker">After</p>
-            <h3>Structured flows<br>clear next actions</h3>
-            <p>Every request enters the same path, gets routed immediately, and produces a consistent output your team can act on right away.</p>
+            <p class="break-kicker">With the right help</p>
+            <h3>Answers at hand.<br>A clear next step.</h3>
+            <p>AI pulls together what is needed and helps prepare the next step. You or someone on your team checks it and decides what happens.</p>
             <ul class="break-list">
-              <li>Standard intake with required context</li>
-              <li>Auto-drafted quote package for review</li>
-              <li>Assigned next step and status visibility</li>
+              <li>Details easier to find</li>
+              <li>Follow-ups easier to stay on top of</li>
+              <li>People make the important calls</li>
             </ul>
-            <span class="break-metric">Same-day quote delivery on most jobs</span>
           </div>
         </div>
       </div>
@@ -430,17 +430,17 @@
     <section id="process">
       <div class="container">
         <span class="pill reveal"><span class="dot"></span>How we work</span>
-        <h2 class="reveal" data-delay="60">Simple, transparent, fast.</h2>
-        <p class="sub reveal" data-delay="120">Short build cycles. Clear checkpoints. No bloated agency process.</p>
+        <h2 class="reveal" data-delay="60">We listen first. Then we build what helps.</h2>
+        <p class="sub reveal" data-delay="120">A slow follow-up might begin several steps earlier. We trace the whole path before deciding what to build.</p>
         <div class="process">
-          <div class="step reveal" data-delay="40"><b>1</b><h4>Workflow diagnostic</h4><p>We map your current process, bottlenecks, and handoff gaps across intake, quoting, and communication.</p></div>
-          <div class="step reveal" data-delay="90"><b>2</b><h4>Solution architecture</h4><p>We define the operating system: what gets captured, transformed, routed, and delivered.</p></div>
-          <div class="step reveal" data-delay="140"><b>3</b><h4>Build + preview</h4><p>You get a live preview environment quickly so workflows can be tested in real context.</p></div>
-          <div class="step reveal" data-delay="190"><b>4</b><h4>Refine + roll out</h4><p>We adjust based on team feedback, then support adoption with practical implementation support.</p></div>
+          <div class="step reveal" data-delay="40"><b>1</b><h4>See how the work gets done</h4><p>We talk with the people closest to the problem, wherever it shows up in your business.</p></div>
+          <div class="step reveal" data-delay="90"><b>2</b><h4>Show you what we would build</h4><p>You get a clear proposal: what the AI would do, what it would not do, and where people stay involved.</p></div>
+          <div class="step reveal" data-delay="140"><b>3</b><h4>Build it with you</h4><p>We test it on real work with the people who will use it.</p></div>
+          <div class="step reveal" data-delay="190"><b>4</b><h4>Make sure it holds up</h4><p>We help you put it to use and adjust what is not working.</p></div>
         </div>
-        <div class="panel reveal" data-delay="220" style="margin-top:20px">
-          <h3>Real example</h3>
-          <p>A roofing team was taking up to 2 days to send quotes because job details were scattered across texts and notes. We standardized intake, structured scope notes, and generated draft quotes from the same workflow. They moved to same-day quote turnaround on most jobs.</p>
+        <div class="approach-outcome reveal" data-delay="220">
+          <div><h3>You will see what we would build and why</h3><p>We will show you where time goes and what we think is worth fixing first. If something is not worth building, we will tell you.</p></div>
+          <ul><li>Where the time is going</li><li>What we would build first</li><li>What your people will still decide</li><li>How you and your team would use it</li></ul>
         </div>
       </div>
     </section>
@@ -448,24 +448,24 @@
     <section id="about" class="white-block">
       <div class="container about">
         <div class="reveal">
-          <span class="pill"><span class="dot"></span>Why Makrly</span>
-          <h2>Built for owners who need systems that work in the real world.</h2>
-          <p class="sub">Makrly works with small teams that want practical results, not AI theater. We design around your current process, then improve it step by step.</p>
-          <p class="sub">We do not replace your team. We remove busywork, clean up handoffs, and make execution easier.</p>
+          <span class="pill"><span class="dot"></span>Who we are</span>
+          <h2>You know your business. We build AI to make the work easier.</h2>
+          <p class="sub">We work with small and midsize businesses, especially trades and service companies. Years of business experience help us spot the little problems that eat up a lot of time.</p>
+          <p class="sub">We build to help people, not replace them. You and the people doing the work help shape the solution. You stay in charge when judgment matters.</p>
         </div>
         <div class="panel reveal" data-delay="120">
-          <h3>What clients get from this approach</h3>
+          <h3>More than a new tool</h3>
           <ul>
-            <li>Workflows that are easier to run day to day.</li>
-            <li>Consistent outputs for quoting, scoping, and handoffs.</li>
-            <li>AI tools that fit the team you already have.</li>
-            <li>An implementation partner that stays close through rollout.</li>
+            <li>A clear view of what is slowing you down.</li>
+            <li>AI built around your business, not a template.</li>
+            <li>A way to use it in the work you already do.</li>
+            <li>Help getting you and your team comfortable with it.</li>
           </ul>
           <div class="value-grid">
-            <div class="value-chip">Less admin drag</div>
-            <div class="value-chip">Faster internal response</div>
-            <div class="value-chip">Higher execution consistency</div>
-            <div class="value-chip">Clearer team accountability</div>
+            <div class="value-chip">Built for your business</div>
+            <div class="value-chip">Start where it matters</div>
+            <div class="value-chip">People stay in control</div>
+            <div class="value-chip">Help along the way</div>
           </div>
         </div>
       </div>
@@ -474,12 +474,12 @@
     <section id="contact">
       <div class="container">
         <div class="cta reveal">
+          <div class="cta-intro">
+            <h2>What’s one thing you’re tired of doing the hard way?</h2>
+            <p>Tell us what takes your time or slows your team down. We’ll look for a practical way AI can make it easier.</p>
+          </div>
           <div class="cta-grid">
             <div>
-              <span class="pill"><span class="dot"></span>Next step</span>
-              <h3>Let's map your first operational AI workflow.</h3>
-              <p>Tell us a little about your process. We will reply with a focused plan for the first system to build.</p>
-
               <form class="cta-form" id="mk-contact-form" action="https://formspree.io/f/xeenbzke" method="POST">
                 <div class="cta-form-row">
                   <input class="cta-input" type="text" name="first_name" placeholder="First name" required>
@@ -489,19 +489,17 @@
                   <input class="cta-input" type="tel" name="phone" placeholder="Phone" required>
                   <input class="cta-input" type="email" name="email" placeholder="Email" required>
                 </div>
-                <select class="cta-select" name="priority_workflow" required>
-                  <option value="" disabled selected>What do you want to improve first?</option>
-                  <option>Intake and lead routing</option>
-                  <option>Quoting and scope generation</option>
-                  <option>Team handoffs and follow-up</option>
-                  <option>Website form to ops workflow</option>
-                  <option>General AI operations plan</option>
+                <select class="cta-select" name="starting_point" id="mk-starting-point" required>
+                  <option value="" disabled selected>Where are you starting?</option>
+                  <option value="known-bottleneck">I know what is taking too long</option>
+                  <option value="exploring-ai">I want to use AI but need help getting started</option>
+                  <option value="other">Something else</option>
                 </select>
-                <textarea class="cta-textarea" name="project_notes" placeholder="Share the current bottleneck, team size, and what a win looks like." required></textarea>
-                <input type="hidden" name="_subject" value="New Makrly site lead (Contrast B form)">
+                <textarea class="cta-textarea" name="project_notes" placeholder="What are you or your team doing the hard way?" required></textarea>
+                <input type="hidden" name="_subject" value="New Makrly website inquiry">
                 <input type="text" name="_gotcha" style="display:none">
                 <div class="cta-form-actions">
-                  <button type="submit" class="cta-submit" id="mk-contact-submit">Get solution map
+                  <button type="submit" class="cta-submit" id="mk-contact-submit">Tell us about it
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
                   </button>
                   <a class="cta-call" id="mk-contact-email" href="mailto:brett@makrly.io">Or email brett@makrly.io</a>
@@ -514,15 +512,15 @@
               <h4>What happens next</h4>
               <div class="ql">
                 <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9-6-18-3 9H2"/></svg></div>
-                <div><div class="t1">Fast response</div><div class="t2">We usually reply the same business day.</div></div>
+                <div><div class="t1">A real conversation</div><div class="t2">We ask what is happening now.</div></div>
               </div>
               <div class="ql">
                 <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-                <div><div class="t1">Practical plan</div><div class="t2">You get clear scope and recommended first build.</div></div>
+                <div><div class="t1">A clear recommendation</div><div class="t2">You will see what we recommend and why.</div></div>
               </div>
               <div class="ql">
                 <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 3 18 18"/><path d="M17 17H7a4 4 0 0 1-4-4V7"/><path d="M21 7v6a4 4 0 0 1-4 4"/></svg></div>
-                <div><div class="t1">No fluff</div><div class="t2">No long pitch deck. Just the workflow path forward.</div></div>
+                <div><div class="t1">You stay involved</div><div class="t2">You and the people doing the work help test and improve what we build.</div></div>
               </div>
             </aside>
           </div>
@@ -533,7 +531,7 @@
 
   <footer>
     <div class="container">
-      © <span id="year"></span> Makrly. Practical AI systems for small business operations.
+      © <span id="year"></span> Makrly. AI solutions built around real work.
     </div>
   </footer>
 
@@ -552,6 +550,12 @@
     }, { threshold: 0.16 });
     revealEls.forEach((el) => io.observe(el));
 
+    document.querySelectorAll('[data-starting-point]').forEach(link => {
+      link.addEventListener('click', () => {
+        const select = document.getElementById('mk-starting-point');
+        if (select) select.value = link.dataset.startingPoint;
+      });
+    });
     const mkForm = document.getElementById('mk-contact-form');
     const mkSubmit = document.getElementById('mk-contact-submit');
     const mkSuccess = document.getElementById('mk-form-success');
