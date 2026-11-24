@@ -109,6 +109,11 @@
     .card h3{margin:10px 0 10px;font-size:20px}
     .card p{margin:0;color:var(--mk-gray-200);line-height:1.55}
     #services .card h3{font-size:clamp(23px,2.25vw,28px);line-height:1.16;margin:20px 0 14px}
+    #services .card .estimate{margin-top:18px;padding-top:16px;border-top:1px solid #d8e1ec;font-size:14px;line-height:1.45}
+    #services .card .estimate strong{display:block;color:#0e7490;font-size:22px;line-height:1.2;margin-bottom:4px}
+    #services .card:hover .estimate{border-top-color:rgba(226,232,240,.3)}
+    #services .card:hover .estimate strong{color:#7dd3fc}
+    #services .example-note{max-width:760px;margin:18px 0 0;color:#475569;font-size:14px;line-height:1.5}
     .tag{display:inline-block;font-size:12px;color:var(--mk-cyan-400);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 
     .process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:28px;position:relative}
@@ -379,19 +384,23 @@
           <article class="card reveal" data-delay="40">
             <span class="tag">HVAC</span>
             <h3>Faster service follow-up.</h3>
-            <p>AI brings calls, texts, and job history together, then prepares a response. The person handling the request checks it before it goes out.</p>
+            <p>A customer asks for an update. AI gathers the appointment details, service notes, and recent messages into a draft reply. The person handling the request checks the details before sending it.</p>
+            <p class="estimate"><strong>2 hours a week</strong>Modeled: 12 requests a week, from 15 to 5 minutes each.</p>
           </article>
           <article class="card reveal" data-delay="100">
             <span class="tag">Real Estate</span>
-            <h3>Less time chasing deal details.</h3>
-            <p>AI gathers the updates, documents, and next steps into a clear status summary. The agent checks it before sharing it with a client.</p>
+            <h3>Less time chasing transaction details.</h3>
+            <p>AI brings together deadlines, document status, and recent updates into a buyer or seller summary. The agent checks what is accurate and what still needs attention before sharing it.</p>
+            <p class="estimate"><strong>1 hour 20 minutes a week</strong>Modeled: 8 updates a week, from 20 to 10 minutes each.</p>
           </article>
           <article class="card reveal" data-delay="160">
-            <span class="tag">Distribution</span>
-            <h3>Quicker quote prep.</h3>
-            <p>AI gathers the request, product details, and past orders into a quote draft. A person checks price and availability before it goes out.</p>
+            <span class="tag">Roofing</span>
+            <h3>Inspection notes, ready to explain.</h3>
+            <p>AI turns inspection notes, photos, and measurements into a draft explanation of the findings and next steps. The estimator verifies the findings and pricing before it reaches the homeowner.</p>
+            <p class="estimate"><strong>2 hours 30 minutes a week</strong>Modeled: 6 summaries a week, from 45 to 20 minutes each.</p>
           </article>
         </div>
+        <p class="example-note">Time figures are modeled examples based on the task volumes and before-and-after times shown, not measured results from Makrly clients. Actual time savings vary.</p>
       </div>
     </section>
 
